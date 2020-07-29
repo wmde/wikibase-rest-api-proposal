@@ -1,13 +1,13 @@
 {
     "get": {
-        "summary": "Item Aliases List by language",
+        "summary": "Property Description List by language",
         "parameters": [
             { "$ref": "../../../../parameters.json#/itemId" },
             { "$ref": "../../../../parameters.json#/lang" }
         ],
         "responses": {
             "200": { 
-                "description": "A list of aliases by language",
+                "description": "A list of descriptions by language",
                 "content": {
                     "application/json": {
                         "schema": { 

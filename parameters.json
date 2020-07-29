@@ -1,4 +1,22 @@
 {
+    "entityId":{
+        "in": "path",
+        "name": "entityId",
+        "required": true,
+        "schema": {
+            "type" : "string",
+            "pattern": "^(Q|P)[1-9]\\d{0,9}$"
+        }
+    },
+    "lang": {
+        "name": "lang",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "type": "string",
+            "pattern": "^[a-z]{2}[a-z0-9-]*$"
+        }
+    },
     "pageOffset": {
         "in": "query",
         "name": "page",

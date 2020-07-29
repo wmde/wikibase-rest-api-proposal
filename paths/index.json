@@ -2,13 +2,28 @@
     "/entities/items": {
         "$ref": "./entities/items/list.json"
     },
-    "/entities/items/{itemId}": {
+    "/entities/items/{entityId}": {
         "$ref": "./entities/items/single.json"
     },
-    "/entities/items/{itemId}/aliases/{lang}": {
+    "/entities/items/{entityId}/aliases/{lang}": {
         "$ref": "./entities/items/aliases/singleLang.json"
+    },
+    "/entities/items/{entityId}/descriptions/{lang}": {
+        "$ref": "./entities/items/descriptions/singleLang.json"
+    },
+    "/entities/items/{entityId}/labels/{lang}": {
+        "$ref": "./entities/items/labels/singleLang.json"
     },
     "/entities/properties": {
         "$ref": "./entities/properties/list.json"
-    } 
+    },
+    "/entities/properties/{entityId}/aliases/{lang}": {
+        "$ref": "./entities/properties/aliases/singleLang.json"
+    },
+    "/entities/properties/{entityId}/descriptions/{lang}": {
+        "$ref": "./entities/properties/descriptions/singleLang.json"
+    },
+    "/entities/properties/{entityId}/labels/{lang}": {
+        "$ref": "./entities/properties/labels/singleLang.json"
+    }
 }
