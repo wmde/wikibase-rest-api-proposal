@@ -3,7 +3,8 @@
         "tags": [ "items" ],
         "summary": "Single Item",
         "parameters": [
-            { "$ref": "../../../parameters.json#/entityId" }
+            { "$ref": "../../../parameters.json#/entityId" },
+            { "$ref": "../../../parameters.json#/fields" }
         ],
         "responses": {
             "200": { "$ref": "../../../responses.json#/Item" },

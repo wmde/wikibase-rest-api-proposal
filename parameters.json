@@ -1,7 +1,17 @@
 {
+    "fields": {
+        "in": "query",
+        "name": "_fields",
+        "description": "Comma separated list of fields to include in each response object",
+        "required": false,
+        "schema": {
+            "type": "string"
+        }
+    },
     "entityId":{
         "in": "path",
         "name": "entityId",
+        "description": "The id of the required item or property",
         "required": true,
         "schema": {
             "type" : "string",
@@ -11,16 +21,36 @@
     "lang": {
         "name": "lang",
         "in": "path",
+        "description": "Resource language",
         "required": true,
         "schema": {
             "type": "string",
             "pattern": "^[a-z]{2}[a-z0-9-]*$"
         }
     },
-    "pageOffset": {
+    "offset": {
         "in": "query",
+        "description": "Results from offset index number and up",
+        "name": "offset",
+        "required": false,
+        "schema": {
+            "type": "integer"
+        }
+    },
+    "page": {
+        "in": "query",
+        "description": "Result page number",
         "name": "page",
-        "required": "false",
+        "required": false,
+        "schema": {
+            "type": "integer"
+        }
+    },
+    "per_page": {
+        "in": "query",
+        "description": "Number of results per page",
+        "name": "per_page",
+        "required": false,
         "schema": {
             "type": "integer"
         }
