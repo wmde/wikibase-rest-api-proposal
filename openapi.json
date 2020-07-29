@@ -40,6 +40,14 @@
             "description": "Wikidata.org Help:Badges",
             "url" : "https://www.wikidata.org/wiki/Help:Badges"
         }
+    },
+    {
+        "name": "statements",
+        "description": "Statements",
+        "externalDocs": {
+            "description": "Mediawiki Statements",
+            "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
+        }
     }
 ],
     "paths": {
