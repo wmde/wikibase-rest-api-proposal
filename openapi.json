@@ -10,6 +10,12 @@
     "components": {
         "parameters": {
             "$ref": "./parameters.json"
+        },
+        "responses": {
+            "$ref": "./responses.json"
+        },
+        "schemas": {
+            "$ref": "./schemas.json"
         }
     },
     "paths": {

@@ -10,9 +10,9 @@
             }
         }],
         "responses": {
-            "200": {
-                "description": "Successful!"
-            }
+            "200": { "$ref": "../../../responses.json#/Item" },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }
     }
 }

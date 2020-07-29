@@ -1,0 +1,113 @@
+{
+    "NotFound": {
+        "description": "The specified resource was not found",
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Error" }
+            }
+        }
+    },
+    "UnexpectedError": {
+        "description": "An unexpected error has occured",
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Error" }
+            }
+        }
+    },
+    "Item": {
+        "description": "A single wikibase item",
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Entity" }
+            }
+        }
+    },
+    "ItemList": {
+        "description": "A list of wikibase items",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "array",
+                    "items": { "$ref": "./schemas.json#/Entity" } 
+                }
+            }
+        }
+    },
+    "Property": {
+        "description": "A single wikibase property",
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Entity" }
+            }
+        }
+    },
+    "PropertyList": {
+        "description": "A list of wikibase properties",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "array",
+                    "items": { "$ref": "./schemas.json#/Entity" } 
+                }
+            }
+        }
+    },
+    "Statement": {
+        "description": "A single wikibase statement",
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Statement" }
+            }
+        }
+    },
+    "StatementList": {
+        "description": "A list of wikibase statements",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "array",
+                    "items": { "$ref": "./schemas.json#/Statement" } 
+                }
+            }
+        }
+    },
+    "Snak": {
+        "description": "A list of wikibase statements",
+        "content": {
+            "application/json": {
+                "schema":  { "$ref": "./schemas.json#/Snak" }
+            }
+        }
+    },
+    "SnakList": {
+        "description": "A list of wikibase statements",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "array",
+                    "items": { "$ref": "./schemas.json#/Snak" } 
+                }
+            }
+        }
+    },
+    "SnakMap": {
+        "description": "A list of wikibase statements",
+        "content": {
+            "application/json": {
+                "schema":  { "$ref": "./schemas.json#/SnakMap" }
+            }
+        }
+    },
+    "SnakMapList": {
+        "description": "A list of wikibase statements",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "array",
+                    "items": { "$ref": "./schemas.json#/SnakMap" } 
+                }
+            }
+        }
+    }
+}
