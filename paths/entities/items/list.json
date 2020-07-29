@@ -1,9 +1,12 @@
 {
     "get": {
-        "tags": [ "items" ],
-        "summary": "Lists Items",
+        "tags": ["items"],
+        "summary": "Retrieve a list of Wikibase Items",
         "parameters": [
-            { "$ref": "../../../parameters.json#/pageOffset" }
+            { "$ref": "../../../parameters.json#/fields" },
+            { "$ref": "../../../parameters.json#/offset" },
+            { "$ref": "../../../parameters.json#/page" },
+            { "$ref": "../../../parameters.json#/per_page" }
         ],
         "responses": {
             "200": { "$ref": "../../../responses.json#/ItemList" },
