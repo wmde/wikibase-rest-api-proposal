@@ -1,0 +1,11 @@
+{
+    "/entities/items": {
+        "$ref": "./entities/items/list.json"
+    },
+    "/entities/items/{itemId}": {
+        "$ref": "./entities/items/list.json"
+    },
+    "/entities/properties": {
+        "$ref": "./entities/properties/list.json"
+    } 
+}
