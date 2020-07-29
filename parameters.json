@@ -55,6 +55,24 @@
             "type": "integer"
         }
     },
+    "qualifierHash": {
+        "in": "path",
+        "name": "qualifierHash",
+        "description": "Single qualifier by hash",
+        "required": true,
+        "schema": {
+            "type" : "string"
+        }
+    },
+    "referenceHash": {
+        "in": "path",
+        "name": "referenceHash",
+        "description": "Single reference by hash",
+        "required": true,
+        "schema": {
+            "type" : "string"
+        }
+    },
     "statementId": {
         "in": "path",
         "name": "statementId",

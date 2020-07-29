@@ -128,7 +128,7 @@
         }
     },
     "Snak": {
-        "description": "A list of wikibase statements",
+        "description": "A property - value pair Object",
         "content": {
             "application/json": {
                 "schema":  { "$ref": "./schemas.json#/Snak" }
@@ -136,7 +136,7 @@
         }
     },
     "SnakList": {
-        "description": "A list of wikibase statements",
+        "description": "A list of Snak (Property - Value pair) Objects",
         "content": {
             "application/json": {
                 "schema": {
@@ -147,7 +147,7 @@
         }
     },
     "SnakMap": {
-        "description": "A list of wikibase statements",
+        "description": "A map of propertyId to Snak Object",
         "content": {
             "application/json": {
                 "schema":  { "$ref": "./schemas.json#/SnakMap" }
@@ -155,7 +155,7 @@
         }
     },
     "SnakMapList": {
-        "description": "A list of wikibase statements",
+        "description": "A list of Snakmaps",
         "content": {
             "application/json": {
                 "schema": {
