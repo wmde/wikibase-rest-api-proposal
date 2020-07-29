@@ -3,14 +3,14 @@
         "tags": [ "statements" ],
         "summary": "Single reference by hash",
         "parameters": [
-            { "$ref": "../../parameters.json#/statementId" },
-            { "$ref": "../../parameters.json#/referenceHash" },
-            { "$ref": "../../parameters.json#/fields" }
+            { "$ref": "../../../parameters.json#/statementId" },
+            { "$ref": "../../../parameters.json#/referenceHash" },
+            { "$ref": "../../../parameters.json#/fields" }
         ],
         "responses": {
-            "200": { "$ref": "../../responses.json#/SnakMap" },
-            "404": { "$ref": "../../responses.json#/NotFound" },
-            "default": { "$ref": "../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../../responses.json#/SnakMap" },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }
     }
 }
