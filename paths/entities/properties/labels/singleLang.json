@@ -1,5 +1,6 @@
 {
     "get": {
+        "tags": [ "properties" ],
         "summary": "Property Labels List by language",
         "parameters": [
             { "$ref": "../../../../parameters.json#/entityId" },

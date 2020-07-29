@@ -18,6 +18,30 @@
             "$ref": "./schemas.json"
         }
     },
+    "tags": [{
+        "name": "items",
+        "description": "Items",
+        "externalDocs": {
+            "description": "Mediawiki Datamodel - Items",
+            "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Items"
+        }
+    },{
+        "name": "properties",
+        "description": "Mediawiki Properties",
+        "externalDocs": {
+            "description": "Datamodel - Items",
+            "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Properties"
+        }
+    },
+    {
+        "name": "badges",
+        "description": "Badges",
+        "externalDocs": {
+            "description": "Wikidata.org Help:Badges",
+            "url" : "https://www.wikidata.org/wiki/Help:Badges"
+        }
+    }
+],
     "paths": {
         "$ref": "./paths/index.json"
     }
