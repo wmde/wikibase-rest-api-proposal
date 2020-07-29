@@ -1,0 +1,18 @@
+{
+    "get": {
+        "summary": "Single Alias List by language",
+        "parameters": [{
+            "name": "lang",
+            "in": "path",
+            "required": true,
+            "schema": {
+                
+            }
+        }],
+        "responses": {
+            "200": {
+                "description": "Successful!"
+            }
+        }
+    }
+}
