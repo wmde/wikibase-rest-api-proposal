@@ -1,0 +1,17 @@
+{
+    "get": {
+        "summary": "Lists Items",
+        "parameters": [{
+            "name": "page",
+            "in": "query",
+            "schema": {
+                "type": "string"
+            }
+        }],
+        "responses": {
+            "200": {
+                "description": "Successful!"
+            }
+        }
+    }
+}

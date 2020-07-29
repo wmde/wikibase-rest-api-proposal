@@ -1,0 +1,18 @@
+{
+    "get": {
+        "summary": "Single Item",
+        "parameters": [{
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+                
+            }
+        }],
+        "responses": {
+            "200": {
+                "description": "Successful!"
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "openapi":"3.0.2",
+    "info": {
+        "title":"Wikibase REST fantasies",
+        "version":"1.0"
+    },
+    "servers": [
+        {"url":"https://www.wikidata.org/w/rest.php/wikibase/v0"}
+    ],
+    "paths": {
+        "$ref": "./paths/index.json"
+    }
+}

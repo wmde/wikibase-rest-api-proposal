@@ -1,0 +1,14 @@
+{
+    "get": {
+        "summary": "Lists Properties",
+        "parameters": [{
+            "name": "page",
+            "in": "query"
+        }],
+        "responses": {
+            "200": {
+                "description": "Successful!"
+            }
+        }
+    }
+}
