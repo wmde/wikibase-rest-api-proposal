@@ -54,5 +54,15 @@
         "schema": {
             "type": "integer"
         }
+    },
+    "statementId": {
+        "in": "path",
+        "name": "statementId",
+        "description": "The id of the required statement",
+        "required": true,
+        "schema": {
+            "type" : "string",
+            "pattern": "^(Q|P)[1-9]\\d{0,9}\\$[a-z]+$"
+        }
     }
 }

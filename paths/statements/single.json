@@ -1,1 +1,15 @@
-{}
+{
+    "get": {
+        "tags": [ "statements" ],
+        "summary": "Single statement from an entity (items | properties)",
+        "parameters": [
+            { "$ref": "../../parameters.json#/statementId" },
+            { "$ref": "../../parameters.json#/fields" }
+        ],
+        "responses": {
+            "200": { "$ref": "../../responses.json#/StatementList" },
+            "404": { "$ref": "../../responses.json#/NotFound" },
+            "default": { "$ref": "../../responses.json#/UnexpectedError" }
+        }
+    }
+}

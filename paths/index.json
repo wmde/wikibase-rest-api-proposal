@@ -37,5 +37,8 @@
     },
     "/entities/properties/{entityId}/statements": {
         "$ref": "./statements/list.json"
+    },
+    "/statements/{statementId}": {
+        "$ref": "./statements/single.json"
     }
 }
