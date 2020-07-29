@@ -3,7 +3,7 @@
         "tags": [ "items" ],
         "summary": "Lists Items",
         "parameters": [
-            { "$ref": "../../../parameters.json#/pageOffset" }
+            { "$ref": "../../../parameters.json#/offset" }
         ],
         "responses": {
             "200": { "$ref": "../../../responses.json#/ItemList" },
