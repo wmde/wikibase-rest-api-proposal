@@ -3,7 +3,10 @@
         "$ref": "./entities/items/list.json"
     },
     "/entities/items/{itemId}": {
-        "$ref": "./entities/items/list.json"
+        "$ref": "./entities/items/single.json"
+    },
+    "/entities/items/{itemId}/aliases/{lang}": {
+        "$ref": "./entities/items/aliases/singleLang.json"
     },
     "/entities/properties": {
         "$ref": "./entities/properties/list.json"
