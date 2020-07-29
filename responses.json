@@ -53,6 +53,37 @@
             }
         }
     },
+    "AliasesList": {
+        "description": "A list of aliases by language",
+            "content": {
+                "application/json": {
+                    "schema": { 
+                        "type": "array",
+                        "items": { "type": "string" }
+                        }
+                }
+            }
+    },
+    "EntityDescription": {
+        "description": "Entity Description by language",
+            "content": {
+                "application/json": {
+                    "schema": { 
+                        "type": "object"
+                        }
+                }
+            }
+    },
+    "EntityLabel": {
+        "description": "Entity Label by language",
+            "content": {
+                "application/json": {
+                    "schema": { 
+                        "type": "object"
+                        }
+                }
+            }
+    },
     "Statement": {
         "description": "A single wikibase statement",
         "content": {
