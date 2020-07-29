@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": [ "items" ],
+        "tags": [ "properties" ],
         "summary": "Retrieves an entity's aliases list",
         "parameters": [
             { "$ref": "../../../../parameters.json#/offset" },
