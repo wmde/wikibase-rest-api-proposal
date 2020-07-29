@@ -62,7 +62,7 @@
         "required": true,
         "schema": {
             "type" : "string",
-            "pattern": "^(Q|P)[1-9]\\d{0,9}\\$[a-z]+$"
+            "pattern": "^(Q|P)[1-9]\\d{0,9}\\$.+$"
         }
     }
 }
