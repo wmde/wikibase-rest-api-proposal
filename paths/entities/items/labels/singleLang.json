@@ -1,5 +1,6 @@
 {
     "get": {
+        "tags": [ "items" ],
         "summary": "Item Label by language",
         "parameters": [
             { "$ref": "../../../../parameters.json#/entityId" },

@@ -1,5 +1,6 @@
 {
     "get": {
+        "tags": [ "items" ],
         "summary": "Single Item",
         "parameters": [
             { "$ref": "../../../parameters.json#/entityId" }

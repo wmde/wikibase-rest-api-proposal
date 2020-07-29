@@ -1,5 +1,6 @@
 {
     "get": {
+        "tags": [ "properties" ],
         "summary": "Lists Properties",
         "responses": {
             "200": { "$ref": "../../../responses.json#/PropertyList" },

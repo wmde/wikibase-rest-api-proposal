@@ -17,6 +17,9 @@
     "/entities/properties": {
         "$ref": "./entities/properties/list.json"
     },
+    "/entities/properties/{entityId}": {
+        "$ref": "./entities/properties/single.json"
+    },
     "/entities/properties/{entityId}/aliases/{lang}": {
         "$ref": "./entities/properties/aliases/singleLang.json"
     },
