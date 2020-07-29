@@ -1,1 +1,16 @@
-{}
+{
+    "get": {
+        "tags": [ "statements" ],
+        "summary": "Single qualifier by hash",
+        "parameters": [
+            { "$ref": "../../parameters.json#/statementId" },
+            { "$ref": "../../parameters.json#/qualifierHash" },
+            { "$ref": "../../parameters.json#/fields" }
+        ],
+        "responses": {
+            "200": { "$ref": "../../responses.json#/Snak" },
+            "404": { "$ref": "../../responses.json#/NotFound" },
+            "default": { "$ref": "../../responses.json#/UnexpectedError" }
+        }
+    }
+}

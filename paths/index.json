@@ -58,5 +58,8 @@
     },
     "/statements/{statementId}": {
         "$ref": "./statements/single.json"
+    },
+    "/statements/{statementId}/qualifiers/{qualifierHash}": {
+        "$ref": "./statements/qualifiers/single.json"
     }
 }
