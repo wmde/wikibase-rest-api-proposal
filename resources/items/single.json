@@ -1,0 +1,14 @@
+{
+    "get": {
+        "summary": "Retrieve a single Wikibase Item by ID",
+        "parameters": [
+            { "$ref": "../../parameters.json#/entityId" },
+            { "$ref": "../../parameters.json#/fields" }
+        ],
+        "responses": {
+            "200": { "$ref": "../../responses.json#/Item" },
+            "404": { "$ref": "../../responses.json#/NotFound" },
+            "default": { "$ref": "../../responses.json#/UnexpectedError" }
+        }
+    }
+}

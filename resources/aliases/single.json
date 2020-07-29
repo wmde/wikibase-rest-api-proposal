@@ -1,13 +1,13 @@
 {
     "get": {
-        "summary": "Property Alias List by language",
+        "summary": "Retrieve entity aliases by language",
         "parameters": [
-            { "$ref": "../../../../parameters.json#/entityId" },
-            { "$ref": "../../../../parameters.json#/lang" }
+            { "$ref": "../../parameters.json#/entityId" },
+            { "$ref": "../../parameters.json#/lang" }
         ],
         "responses": {
             "200": { 
-                "description": "A list of aliases by language",
+                "description": "A list of aliases",
                 "content": {
                     "application/json": {
                         "schema": { 
@@ -17,8 +17,8 @@
                     }
                 }
              },
-            "404": { "$ref": "../../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../../responses.json#/UnexpectedError" }
+            "404": { "$ref": "../../responses.json#/NotFound" },
+            "default": { "$ref": "../../responses.json#/UnexpectedError" }
         }
     }
 }

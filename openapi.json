@@ -19,6 +19,6 @@
         }
     },
     "paths": {
-        "$ref": "./paths/index.json"
+        "$ref": "./paths.json"
     }
 }

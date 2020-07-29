@@ -1,0 +1,29 @@
+{
+    "/entities/items": {
+        "$ref": "./resources/items/list.json"
+    },
+    "/entities/items/{entityId}": {
+        "$ref": "./resources/items/single.json"
+    },
+    "/entities/items/{entityId}/aliases/{lang}": {
+        "$ref": "./resources/aliases/single.json"
+    },
+    "/entities/items/{entityId}/descriptions/{lang}": {
+        "$ref": "./resources/descriptions/single.json"
+    },
+    "/entities/items/{entityId}/labels/{lang}": {
+        "$ref": "./resources/labels/single.json"
+    },
+    "/entities/properties": {
+        "$ref": "./resources/properties/list.json"
+    },
+    "/entities/properties/{entityId}/aliases/{lang}": {
+        "$ref": "./resources/aliases/single.json"
+    },
+    "/entities/properties/{entityId}/descriptions/{lang}": {
+        "$ref": "./resources/descriptions/single.json"
+    },
+    "/entities/properties/{entityId}/labels/{lang}": {
+        "$ref": "./resources/labels/single.json"
+    }
+}

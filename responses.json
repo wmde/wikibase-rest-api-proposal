@@ -8,7 +8,7 @@
         }
     },
     "UnexpectedError": {
-        "description": "An unexpected error has occured",
+        "description": "An unexpected error has occurred",
         "content": {
             "application/json": {
                 "schema": { "$ref": "./schemas.json#/Error" }
