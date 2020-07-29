@@ -5,8 +5,13 @@
         "version":"1.0"
     },
     "servers": [
-        {"url":"https://www.wikidata.org/w/rest.php/wikibase/v0"}
+        { "url":"https://www.wikidata.org/w/rest.php/wikibase/v0" }
     ],
+    "components": {
+        "parameters": {
+            "$ref": "./parameters.json"
+        }
+    },
     "paths": {
         "$ref": "./paths/index.json"
     }

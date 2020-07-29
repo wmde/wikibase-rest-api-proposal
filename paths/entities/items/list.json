@@ -1,13 +1,9 @@
 {
     "get": {
         "summary": "Lists Items",
-        "parameters": [{
-            "name": "page",
-            "in": "query",
-            "schema": {
-                "type": "string"
-            }
-        }],
+        "parameters": [
+            { "$ref": "../../../parameters.json#/pageOffset" }
+        ],
         "responses": {
             "200": {
                 "description": "Successful!"
