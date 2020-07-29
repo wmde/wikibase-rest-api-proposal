@@ -1,7 +1,13 @@
 {
     "get": {
-        "tags": [ "properties" ],
-        "summary": "Lists Properties",
+        "tags": ["properties"],
+        "summary": "Retrieve a list of Wikibase Properties",
+        "parameters": [
+            { "$ref": "../../../parameters.json#/fields" },
+            { "$ref": "../../../parameters.json#/offset" },
+            { "$ref": "../../../parameters.json#/page" },
+            { "$ref": "../../../parameters.json#/per_page" }
+        ],
         "responses": {
             "200": { "$ref": "../../../responses.json#/PropertyList" },
             "404": { "$ref": "../../../responses.json#/NotFound" },
