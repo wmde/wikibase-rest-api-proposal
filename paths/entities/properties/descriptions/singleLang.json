@@ -2,7 +2,7 @@
     "get": {
         "summary": "Property Description List by language",
         "parameters": [
-            { "$ref": "../../../../parameters.json#/itemId" },
+            { "$ref": "../../../../parameters.json#/entityId" },
             { "$ref": "../../../../parameters.json#/lang" }
         ],
         "responses": {
