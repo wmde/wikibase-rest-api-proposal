@@ -53,14 +53,11 @@
             }
         }
     },
-    "AliasesList": {
+    "EntityAliases": {
         "description": "A list of aliases by language",
             "content": {
                 "application/json": {
-                    "schema": { 
-                        "type": "array",
-                        "items": { "type": "string" }
-                        }
+                    "schema":  { "$ref": "./schemas.json#/AliasList" }
                 }
             }
     },
@@ -68,9 +65,7 @@
         "description": "Entity Description by language",
             "content": {
                 "application/json": {
-                    "schema": { 
-                        "type": "object"
-                        }
+                    "schema": { "$ref": "./schemas.json#/Fingerprint" }
                 }
             }
     },
@@ -78,9 +73,38 @@
         "description": "Entity Label by language",
             "content": {
                 "application/json": {
-                    "schema": { 
-                        "type": "object"
-                        }
+                    "schema": { "$ref": "./schemas.json#/Fingerprint" }
+                }
+            }
+    },
+    "EntityAliasesList": {
+        "description": "A list of aliases by language",
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "array",
+                        "items": { "$ref": "./schemas.json#/AliasList" } 
+                    }
+                }
+            }
+    },
+    "EntityDescriptionList": {
+        "description": "Entity Description by language",
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "array",
+                        "items": { "$ref": "./schemas.json#/Fingerprint" } 
+                    }
+                }
+            }
+    },
+    "EntityLabelList": {
+        "description": "Entity Label by language",
+            "content": {
+                "application/json": {
+                    "type": "array",
+                    "items": { "$ref": "./schemas.json#/Fingerprint" } 
                 }
             }
     },
