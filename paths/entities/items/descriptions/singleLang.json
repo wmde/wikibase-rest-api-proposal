@@ -7,17 +7,7 @@
             { "$ref": "../../../../parameters.json#/lang" }
         ],
         "responses": {
-            "200": { 
-                "description": "A list of descriptions by language",
-                "content": {
-                    "application/json": {
-                        "schema": { 
-                            "type": "array",
-                            "items": { "type": "string" }
-                         }
-                    }
-                }
-             },
+            "200": { "$ref": "../../../../responses.json#/EntityDescription" },
             "404": { "$ref": "../../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../../responses.json#/UnexpectedError" }
         }
