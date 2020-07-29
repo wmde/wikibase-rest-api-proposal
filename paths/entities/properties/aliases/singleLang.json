@@ -8,7 +8,7 @@
         ],
         "responses": {
             "200": { 
-                "$ref": "../../../../responses.json#/AliasesList"
+                "$ref": "../../../../responses.json#/EntityAliases"
              },
             "404": { "$ref": "../../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../../responses.json#/UnexpectedError" }

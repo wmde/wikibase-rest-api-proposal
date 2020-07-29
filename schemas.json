@@ -1,4 +1,8 @@
 {
+    "AliasList": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/Fingerprint" }
+    },
     "Error": { 
         "type": "object",
         "properties": {
@@ -8,6 +12,7 @@
         "required": [ "code", "message" ]
     },
     "Entity": { "type": "object" },
+    "Fingerprint": { "type": "object" },
     "Statement": { "type": "object" },
     "Snak": { "type": "object" },
     "SnakMap": { "type": "object" }

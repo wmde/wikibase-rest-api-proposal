@@ -1,0 +1,16 @@
+{
+    "get": {
+        "tags": [ "properties" ],
+        "summary": "Retrieves an entity's description list",
+        "parameters": [
+            { "$ref": "../../../../parameters.json#/offset" },
+            { "$ref": "../../../../parameters.json#/page" },
+            { "$ref": "../../../../parameters.json#/per_page" }
+        ],
+        "responses": {
+            "200": { "$ref": "../../../../responses.json#/EntityDescriptionList" },
+            "404": { "$ref": "../../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../../responses.json#/UnexpectedError" }
+        }
+    }
+}

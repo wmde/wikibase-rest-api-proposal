@@ -8,11 +8,20 @@
     "/entities/items/{entityId}": {
         "$ref": "./entities/items/single.json"
     },
+    "/entities/items/{entityId}/aliases": {
+        "$ref": "./entities/items/aliases/list.json"
+    },
     "/entities/items/{entityId}/aliases/{lang}": {
         "$ref": "./entities/items/aliases/singleLang.json"
     },
+    "/entities/items/{entityId}/descriptions": {
+        "$ref": "./entities/items/descriptions/list.json"
+    },
     "/entities/items/{entityId}/descriptions/{lang}": {
         "$ref": "./entities/items/descriptions/singleLang.json"
+    },
+    "/entities/items/{entityId}/labels": {
+        "$ref": "./entities/items/labels/list.json"
     },
     "/entities/items/{entityId}/labels/{lang}": {
         "$ref": "./entities/items/labels/singleLang.json"
@@ -26,11 +35,20 @@
     "/entities/properties/{entityId}": {
         "$ref": "./entities/properties/single.json"
     },
+    "/entities/properties/{entityId}/aliases": {
+        "$ref": "./entities/properties/aliases/list.json"
+    },
     "/entities/properties/{entityId}/aliases/{lang}": {
         "$ref": "./entities/properties/aliases/singleLang.json"
     },
+    "/entities/properties/{entityId}/descriptions": {
+        "$ref": "./entities/properties/descriptions/list.json"
+    },
     "/entities/properties/{entityId}/descriptions/{lang}": {
         "$ref": "./entities/properties/descriptions/singleLang.json"
+    },
+    "/entities/properties/{entityId}/labels": {
+        "$ref": "./entities/properties/labels/list.json"
     },
     "/entities/properties/{entityId}/labels/{lang}": {
         "$ref": "./entities/properties/labels/singleLang.json"
