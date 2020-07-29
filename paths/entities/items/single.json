@@ -1,14 +1,9 @@
 {
     "get": {
         "summary": "Single Item",
-        "parameters": [{
-            "name": "itemId",
-            "in": "path",
-            "required": true,
-            "schema": {
-                
-            }
-        }],
+        "parameters": [
+            { "$ref": "../../../parameters.json#/entityId" }
+        ],
         "responses": {
             "200": { "$ref": "../../../responses.json#/Item" },
             "404": { "$ref": "../../../responses.json#/NotFound" },
