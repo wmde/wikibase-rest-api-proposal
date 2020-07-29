@@ -8,15 +8,7 @@
         ],
         "responses": {
             "200": { 
-                "description": "A list of aliases by language",
-                "content": {
-                    "application/json": {
-                        "schema": { 
-                            "type": "array",
-                            "items": { "type": "string" }
-                         }
-                    }
-                }
+                "$ref": "../../../../responses.json#/AliasesList"
              },
             "404": { "$ref": "../../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../../responses.json#/UnexpectedError" }

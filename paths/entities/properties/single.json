@@ -4,7 +4,7 @@
         "summary": "Single Property",
         "parameters": [
             { "$ref": "../../../parameters.json#/entityId" },
-            { "$ref": "../../../parameters.json#/fields" },
+            { "$ref": "../../../parameters.json#/fields" }
         ],
         "responses": {
             "200": { "$ref": "../../../responses.json#/Item" },
