@@ -1,10 +1,6 @@
 {
     "get": {
         "summary": "Lists Properties",
-        "parameters": [{
-            "name": "page",
-            "in": "query"
-        }],
         "responses": {
             "200": { "$ref": "../../../responses.json#/PropertyList" },
             "404": { "$ref": "../../../responses.json#/NotFound" },
