@@ -323,6 +323,26 @@
             }
           }
         }
+      },
+      "ReferenceHash": {
+        "description": "Modified Reference Hash",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ReferenceHash"
+            }
+          }
+        }
+      },
+      "QualifierHash": {
+        "description": "Modified Qualifier Hash",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/QualifierHash"
+            }
+          }
+        }
       }
     },
     "schemas": {
@@ -352,6 +372,12 @@
       },
       "Fingerprint": {
         "type": "object"
+      },
+      "QualifierHash": {
+        "type": "string"
+      },
+      "ReferenceHash": {
+        "type": "string"
       },
       "Statement": {
         "type": "object"
@@ -1199,6 +1225,34 @@
             "$ref": "#/components/responses/UnexpectedError"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "statements"
+        ],
+        "summary": "Add a new Qualifier to a Statement",
+        "requestBody": {
+          "description": "A Wikibase Snak object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Snak"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QualifierHash"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
       }
     },
     "/statements/{statementId}/qualifiers/{qualifierHash}": {
@@ -1222,6 +1276,31 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/Snak"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "statements"
+        ],
+        "summary": "Update a qualifier",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/qualifierHash"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1statements~1%7BstatementId%7D~1qualifiers/post/requestBody"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/QualifierHash"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
