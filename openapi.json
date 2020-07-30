@@ -570,6 +570,38 @@
             "$ref": "#/components/responses/UnexpectedError"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "items"
+        ],
+        "summary": "Replace a Wikibase Entity by Id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1entities~1items/post/requestBody"
+        },
+        "responses": {
+          "200": {
+            "description": "Wikibase Entity ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
       }
     },
     "/entities/items/{entityId}/aliases": {
@@ -877,15 +909,7 @@
         ],
         "summary": "Add a new Statement to an entity (Item | Property)",
         "requestBody": {
-          "description": "A Wikibase Statement object",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Statement"
-              }
-            }
-          }
+          "$ref": "#/paths/~1statements~1%7BstatementId%7D/put/requestBody"
         },
         "responses": {
           "200": {
@@ -992,6 +1016,38 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/Item"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "properties"
+        ],
+        "summary": "Replace a Wikibase Entity by Id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1entities~1properties/post/requestBody"
+        },
+        "responses": {
+          "200": {
+            "description": "Wikibase Entity ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1194,6 +1250,46 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/StatementList"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "statements"
+        ],
+        "summary": "Replace a Wikibase Statement by Id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/statementId"
+          }
+        ],
+        "requestBody": {
+          "description": "A Wikibase Statement object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Statement"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Wikibase Statement ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
