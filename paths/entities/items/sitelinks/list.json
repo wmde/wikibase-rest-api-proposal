@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": [ "entities", "items" ],
+        "tags": [ "items" ],
         "summary": "Retrieves an item's sitelinks",
         "parameters": [
             { "$ref": "../../../../parameters.json#/entityId" },
@@ -16,7 +16,7 @@
     },
     "post": {
         "tags": [ "items" ],
-        "summary": "Creates an item's sitelinks",
+        "summary": "Creates an item's sitelink",
         "parameters": [
             { "$ref": "../../../../parameters.json#/entityId" }
         ],

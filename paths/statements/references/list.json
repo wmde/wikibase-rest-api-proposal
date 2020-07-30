@@ -19,6 +19,10 @@
     "post": {
         "tags": ["statements"],
         "summary": "Add a new Reference to a Statement",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references`",
+        "parameters": [
+            { "$ref": "../../../parameters.json#/statementId" }
+        ],
         "requestBody": { "$ref": "../../../requests.json#/Reference" },
         "responses": {
             "200": { "$ref": "../../../responses.json#/ReferenceHash" },
