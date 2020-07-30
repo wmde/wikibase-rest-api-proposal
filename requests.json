@@ -25,5 +25,14 @@
                 "schema": { "$ref": "./schemas.json#/Statement" }
             }
         }
+    },
+    "Sitelink": {
+        "description": "A Wikibase Sitelink object",
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Sitelink" }
+            }
+        }
     }
 }

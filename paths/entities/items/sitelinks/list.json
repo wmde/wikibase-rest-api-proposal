@@ -3,10 +3,24 @@
         "tags": [ "items" ],
         "summary": "Retrieves an item's sitelinks",
         "parameters": [
+            { "$ref": "../../../../parameters.json#/entityId" },
             { "$ref": "../../../../parameters.json#/offset" },
             { "$ref": "../../../../parameters.json#/page" },
             { "$ref": "../../../../parameters.json#/per_page" }
         ],
+        "responses": {
+            "200": { "$ref": "../../../../responses.json#/SitelinkList" },
+            "404": { "$ref": "../../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../../responses.json#/UnexpectedError" }
+        }
+    },
+    "post": {
+        "tags": [ "items" ],
+        "summary": "Retrieves an item's sitelinks",
+        "parameters": [
+            { "$ref": "../../../../parameters.json#/entityId" }
+        ],
+        "requestBody": { "$ref": "../../../../requests.json#/Sitelink" },
         "responses": {
             "200": { "$ref": "../../../../responses.json#/SitelinkList" },
             "404": { "$ref": "../../../../responses.json#/NotFound" },
