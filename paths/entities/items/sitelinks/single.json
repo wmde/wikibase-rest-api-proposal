@@ -1,7 +1,7 @@
 {
     "get": {
-        "tags": [ "items" ],
-        "summary": "Item's sitelink by language",
+        "tags": [ "entities", "items" ],
+        "summary": "Retrieve an Item's sitelink by language",
         "parameters": [
             { "$ref": "../../../../parameters.json#/entityId" },
             { "$ref": "../../../../parameters.json#/lang" }

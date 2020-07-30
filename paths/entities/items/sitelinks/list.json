@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": [ "items" ],
+        "tags": [ "entities", "items" ],
         "summary": "Retrieves an item's sitelinks",
         "parameters": [
             { "$ref": "../../../../parameters.json#/offset" },

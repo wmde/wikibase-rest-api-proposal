@@ -1,13 +1,14 @@
 {
     "get": {
-        "tags": [ "properties" ],
-        "summary": "Single Property",
+        "tags": [ "entities" ],
+        "summary": "Retrieve an entity's label by language",
         "parameters": [
+            { "$ref": "../../../parameters.json#/entityType" },
             { "$ref": "../../../parameters.json#/entityId" },
-            { "$ref": "../../../parameters.json#/fields" }
+            { "$ref": "../../../parameters.json#/lang" }
         ],
         "responses": {
-            "200": { "$ref": "../../../responses.json#/Item" },
+            "200": { "$ref": "../../../responses.json#/EntityLabel" },
             "404": { "$ref": "../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }

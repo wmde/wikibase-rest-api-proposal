@@ -1,22 +1,17 @@
 {
     "get": {
-        "tags": ["properties"],
-        "summary": "Retrieve a list of Wikibase Properties",
+        "tags": [ "entities" ],
+        "summary": "Retrieves an entity's alias lists",
         "parameters": [
-            { "$ref": "../../../parameters.json#/fields" },
+            { "$ref": "../../../parameters.json#/entityType" },
             { "$ref": "../../../parameters.json#/offset" },
             { "$ref": "../../../parameters.json#/page" },
             { "$ref": "../../../parameters.json#/per_page" }
         ],
         "responses": {
-            "200": { "$ref": "../../../responses.json#/PropertyList" },
+            "200": { "$ref": "../../../responses.json#/EntityAliasesList" },
             "404": { "$ref": "../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }
-    },
-    "post": {
-        "tags": ["properties"],
-        "summary": "Create a new Wikibase Property",
-        "requestBody": { "$ref": "../../../requests.json#/Property" }
     }
 }

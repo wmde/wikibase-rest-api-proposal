@@ -19,18 +19,27 @@
         }
     },
     "tags": [{
-        "name": "items",
-        "description": "Items",
+        "name": "entities",
+        "description": "Wikibase Entities",
         "externalDocs": {
-            "description": "Mediawiki Datamodel - Items",
+            "description": "Wikibase Data Model - Values",
+            "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Values"
+        }
+    },
+    {
+        "name": "items",
+        "description": "Wikibase Items",
+        "externalDocs": {
+            "description": "Wikibase Datamodel - Items",
             "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Items"
         }
-    },{
-        "name": "properties",
-        "description": "Mediawiki Properties",
+    },
+    {
+        "name": "statements",
+        "description": "Wikibase Statements",
         "externalDocs": {
-            "description": "Datamodel - Items",
-            "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Properties"
+            "description": "Wikibase Data Model - Statements",
+            "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
         }
     },
     {
@@ -39,14 +48,6 @@
         "externalDocs": {
             "description": "Wikidata.org Help:Badges",
             "url" : "https://www.wikidata.org/wiki/Help:Badges"
-        }
-    },
-    {
-        "name": "statements",
-        "description": "Statements",
-        "externalDocs": {
-            "description": "Mediawiki Statements",
-            "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
         }
     }
 ],
