@@ -15,5 +15,15 @@
             "404": { "$ref": "../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }
+    },
+    "post": {
+        "tags": ["statements"],
+        "summary": "Add a new Reference to a Statement",
+        "requestBody": { "$ref": "../../../requests.json#/Reference" },
+        "responses": {
+            "200": { "$ref": "../../../responses.json#/ReferenceHash" },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+        }
     }
 }

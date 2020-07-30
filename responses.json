@@ -185,5 +185,21 @@
                 }
             }
         }
+    },
+    "ReferenceHash": {
+        "description": "Modified Reference Hash",
+            "content": {
+                "application/json": {
+                    "schema": { "$ref": "./schemas.json#/ReferenceHash" }
+                }
+            }
+    },
+    "QualifierHash": {
+        "description": "Modified Qualifier Hash",
+            "content": {
+                "application/json": {
+                    "schema": { "$ref": "./schemas.json#/QualifierHash" }
+                }
+            }
     }
 }
