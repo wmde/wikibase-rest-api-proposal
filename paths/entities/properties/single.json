@@ -11,5 +11,22 @@
             "404": { "$ref": "../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }
+    },
+    "put": {
+        "tags": ["properties"],
+        "summary": "Replace a Wikibase Entity by Id",
+        "requestBody": { "$ref": "../../../requests.json#/Property" },
+        "responses": {
+            "200": { 
+                "description": "Wikibase Entity ID",
+                "content": {
+                    "application/json": {
+                        "schema": { "type": "string" }
+                    }
+                }
+             },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+        }
     }
 }
