@@ -17,12 +17,30 @@
             }
         }
     },
+    "Qualifier": {
+        "description": "A Wikibase Snak object",
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Snak" }
+            }
+        }
+    },
     "Statement": {
         "description": "A Wikibase Statement object",
         "required": true,
         "content": {
             "application/json": {
                 "schema": { "$ref": "./schemas.json#/Statement" }
+            }
+        }
+    },
+    "Reference": {
+        "description": "A Wikibase SnakMap object",
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/SnakMap" }
             }
         }
     },
