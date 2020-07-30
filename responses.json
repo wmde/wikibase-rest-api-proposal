@@ -188,7 +188,7 @@
         "description": "Modified Reference Hash",
             "content": {
                 "application/json": {
-                    "schema": { "$ref": "./schemas.json#/Fingerprint" }
+                    "schema": { "$ref": "./schemas.json#/ReferenceHash" }
                 }
             }
     },
@@ -196,7 +196,7 @@
         "description": "Modified Qualifier Hash",
             "content": {
                 "application/json": {
-                    "schema": { "$ref": "./schemas.json#/Fingerprint" }
+                    "schema": { "$ref": "./schemas.json#/QualifierHash" }
                 }
             }
     }
