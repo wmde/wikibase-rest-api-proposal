@@ -1,0 +1,11 @@
+{
+    "Item": {
+        "description": "A Wikibase Item object",
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Entity" }
+            }
+        }
+    }
+}
