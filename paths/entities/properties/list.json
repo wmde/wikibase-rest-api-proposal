@@ -17,6 +17,18 @@
     "post": {
         "tags": ["properties"],
         "summary": "Create a new Wikibase Property",
-        "requestBody": { "$ref": "../../../requests.json#/Property" }
+        "requestBody": { "$ref": "../../../requests.json#/Property" },
+        "responses": {
+            "200": { 
+                "description": "A Wikibase Entity ID",
+                "content": {
+                    "application/json": {
+                        "schema": { "type": "string" }
+                    }
+                }
+             },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+        }
     }
 }
