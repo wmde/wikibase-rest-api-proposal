@@ -4,6 +4,7 @@
         "summary": "Retrieves an entity's labels list",
         "parameters": [
             { "$ref": "../../../parameters.json#/entityType" },
+            { "$ref": "../../../parameters.json#/entityId" },
             { "$ref": "../../../parameters.json#/offset" },
             { "$ref": "../../../parameters.json#/page" },
             { "$ref": "../../../parameters.json#/per_page" }

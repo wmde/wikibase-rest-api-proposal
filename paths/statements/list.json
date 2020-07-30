@@ -3,6 +3,7 @@
         "tags": ["entities", "statements"],
         "summary": "Retrieve a list of entity Statements",
         "parameters": [
+            { "$ref": "../../parameters.json#/entityType" },
             { "$ref": "../../parameters.json#/entityId" },
             { "$ref": "../../parameters.json#/fields" },
             { "$ref": "../../parameters.json#/offset" },
@@ -19,6 +20,7 @@
         "tags": ["entities", "statements"],
         "summary": "Add a new Statement to an entity (Item | Property)",
         "parameters": [
+            { "$ref": "../../parameters.json#/entityType" },
             { "$ref": "../../parameters.json#/entityId" }
         ],
         "requestBody": { "$ref": "../../requests.json#/Statement" },
