@@ -1,0 +1,24 @@
+{
+  "name": "wikibase-rest-fantasies",
+  "version": "0.0.1",
+  "description": "Wikibase REST fantasies",
+  "main": "openapi.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "swagger-cli validate openapi.json",
+    "build": "swagger-cli bundle openapi.json -o docs/openapi.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmde/wikibase-rest-fantasies.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wmde/wikibase-rest-fantasies/issues"
+  },
+  "homepage": "https://github.com/wmde/wikibase-rest-fantasies#readme",
+  "devDependencies": {
+    "@apidevtools/swagger-cli": "^4.0.4"
+  }
+}
