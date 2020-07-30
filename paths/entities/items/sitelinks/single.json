@@ -1,10 +1,10 @@
 {
     "get": {
-        "tags": [ "entities", "items" ],
-        "summary": "Retrieve an Item's sitelink by language",
+        "tags": [ "items" ],
+        "summary": "Item's sitelink by wiki-id",
         "parameters": [
             { "$ref": "../../../../parameters.json#/entityId" },
-            { "$ref": "../../../../parameters.json#/lang" }
+            { "$ref": "../../../../parameters.json#/wikiId" }
         ],
         "responses": {
             "200": { "$ref": "../../../../responses.json#/Sitelink" },

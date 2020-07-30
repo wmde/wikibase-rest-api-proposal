@@ -84,8 +84,10 @@
         "description": "Entity Label by language",
             "content": {
                 "application/json": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Fingerprint" } 
+                    "schema": {
+                        "type": "array",
+                        "items": { "$ref": "./schemas.json#/Fingerprint" } 
+                    }
                 }
             }
     },
@@ -164,5 +166,21 @@
                 }
             }
         }
+    },
+    "ReferenceHash": {
+        "description": "Modified Reference Hash",
+            "content": {
+                "application/json": {
+                    "schema": { "$ref": "./schemas.json#/ReferenceHash" }
+                }
+            }
+    },
+    "QualifierHash": {
+        "description": "Modified Qualifier Hash",
+            "content": {
+                "application/json": {
+                    "schema": { "$ref": "./schemas.json#/QualifierHash" }
+                }
+            }
     }
 }

@@ -32,7 +32,7 @@
     "/entities/items/{entityId}/sitelinks": {
         "$ref": "./entities/items/sitelinks/list.json"
     },
-    "/entities/items/{entityId}/sitelinks/{lang}": {
+    "/entities/items/{entityId}/sitelinks/{wikiId}": {
         "$ref": "./entities/items/sitelinks/single.json"
     },
     "/statements/{statementId}": {

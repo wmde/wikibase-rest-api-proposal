@@ -92,5 +92,14 @@
             "type" : "string",
             "pattern": "^(Q|P)[1-9]\\d{0,9}\\$.+$"
         }
+    },
+    "wikiId": {
+        "name": "wikiId",
+        "in": "path",
+        "description": "The id of the wiki that the sitelink directs to",
+        "required": true,
+        "schema": {
+            "type": "string"
+        }
     }
 }
