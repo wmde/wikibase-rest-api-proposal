@@ -13,5 +13,10 @@
             "404": { "$ref": "../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }
+    },
+    "post": {
+        "tags": ["items"],
+        "summary": "Create a new Wikibase Item",
+        "requestBody": { "$ref": "../../../requests.json#/Item" }
     }
 }
