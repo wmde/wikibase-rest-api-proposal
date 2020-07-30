@@ -108,6 +108,25 @@
                 }
             }
     },
+    "Sitelink": {
+        "description": "A single sitelink",
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Sitelink" }
+            }
+        }
+    },
+    "SitelinkList": {
+        "description": "A single sitelink",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "array",
+                    "items": { "$ref": "./schemas.json#/Sitelink" } 
+                }
+            }
+        }
+    },
     "Statement": {
         "description": "A single wikibase statement",
         "content": {

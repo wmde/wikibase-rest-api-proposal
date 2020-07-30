@@ -26,6 +26,12 @@
     "/entities/items/{entityId}/labels/{lang}": {
         "$ref": "./entities/items/labels/singleLang.json"
     },
+    "/entities/items/{entityId}/sitelinks": {
+        "$ref": "./entities/items/sitelinks/list.json"
+    },
+    "/entities/items/{entityId}/sitelinks/{lang}": {
+        "$ref": "./entities/items/sitelinks/single.json"
+    },
     "/entities/items/{entityId}/statements": {
         "$ref": "./statements/list.json"
     },
