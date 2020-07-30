@@ -16,6 +16,9 @@
     "put": {
         "tags": ["statements"],
         "summary": "Replace a Wikibase Statement by Id",
+        "parameters": [
+            { "$ref": "../../parameters.json#/statementId" }
+        ],
         "requestBody": { "$ref": "../../requests.json#/Statement" },
         "responses": {
             "200": { 
