@@ -1,4 +1,4 @@
-name: Bundle openapi spec
+name: Validate openapi spec
 
 on: [push]
 
