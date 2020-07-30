@@ -13,5 +13,21 @@
             "404": { "$ref": "../../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../../responses.json#/UnexpectedError" }
         }
+    },
+    "put": {
+        "tags": ["properties"],
+        "summary": "Add / Replace a whole alias list by language",
+        "parameters": [
+            { "$ref": "../../../../parameters.json#/entityId" },
+            { "$ref": "../../../../parameters.json#/lang" }
+        ],
+        "requestBody": { "$ref": "../../../../requests.json#/Property" },
+        "responses": {
+            "200": { 
+                "$ref": "../../../../responses.json#/EntityAliases"
+             },
+            "404": { "$ref": "../../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../../responses.json#/UnexpectedError" }
+        }
     }
 }
