@@ -2,6 +2,7 @@
     "get": {
         "tags": [ "statements" ],
         "summary": "Single statement from an entity (items | properties)",
+        "description": "This endpoint is also accessible through `\\entities\\(item|property)\\{entityId}\\statements\\{statementId}`",
         "parameters": [
             { "$ref": "../../parameters.json#/statementId" },
             { "$ref": "../../parameters.json#/fields" }

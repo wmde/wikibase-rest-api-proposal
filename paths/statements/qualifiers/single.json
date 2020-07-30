@@ -2,6 +2,7 @@
     "get": {
         "tags": [ "statements" ],
         "summary": "Single qualifier by hash",
+        "description": "This endpoint is also accessible through `\\entities\\(item|property)\\{entityId}\\statements\\{statementId}\\qualifiers\\{qualifierHash}`",
         "parameters": [
             { "$ref": "../../../parameters.json#/statementId" },
             { "$ref": "../../../parameters.json#/qualifierHash" },

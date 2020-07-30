@@ -35,24 +35,6 @@
     "/entities/items/{entityId}/statements": {
         "$ref": "./statements/list.json"
     },
-    "/entities/items/{entityId}/statements/{statementId}": {
-        "$ref": "./statements/single.json"
-    },
-    "/entities/items/{entityId}/statements/{statementId}/datatype": {
-        "$ref": "./statements/datatype/single.json"
-    },
-    "/entities/items/{entityId/statements/{statementId}/qualifiers": {
-        "$ref": "./statements/qualifiers/list.json"
-    },
-    "/entities/items/{entityId/statements/{statementId}/qualifiers/{qualifierHash}": {
-        "$ref": "./statements/qualifiers/single.json"
-    },
-    "/entities/items/{entityId/statements/{statementId}/references": {
-        "$ref": "./statements/references/single.json"
-    },
-    "/entities/items/{entityId/statements/{statementId}/references/{qualifierHash}": {
-        "$ref": "./statements/references/single.json"
-    },
     "/entities/properties": {
         "$ref": "./entities/properties/list.json"
     },
@@ -79,24 +61,6 @@
     },
     "/entities/properties/{entityId}/statements": {
         "$ref": "./statements/list.json"
-    },
-    "/entities/properties/{entityId}/statements/{statementId}": {
-        "$ref": "./statements/single.json"
-    },
-    "/entities/properties/{entityId}/statements/{statementId}/datatype": {
-        "$ref": "./statements/datatype/single.json"
-    },
-    "/entities/properties/{entityId/statements/{statementId}/qualifiers": {
-        "$ref": "./statements/qualifiers/list.json"
-    },
-    "/entities/properties/{entityId/statements/{statementId}/qualifiers/{qualifierHash}": {
-        "$ref": "./statements/qualifiers/single.json"
-    },
-    "/entities/properties/{entityId/statements/{statementId}/references": {
-        "$ref": "./statements/references/single.json"
-    },
-    "/entities/properties/{entityId/statements/{statementId}/references/{qualifierHash}": {
-        "$ref": "./statements/references/single.json"
     },
     "/statements/{statementId}": {
         "$ref": "./statements/single.json"
