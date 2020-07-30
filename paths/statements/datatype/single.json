@@ -1,0 +1,21 @@
+{
+    "get": {
+        "tags": [ "statements" ],
+        "summary": "Single qualifier by hash",
+        "parameters": [
+            { "$ref": "../../../parameters.json#/statementId" }
+        ],
+        "responses": {
+            "200": {
+                "description": "The statement's data type string",
+                "content": {
+                    "application/json": {
+                        "schema": { "type": "string" }
+                    }
+                }
+            },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+        }
+    }
+}

@@ -29,6 +29,12 @@
     "/entities/items/{entityId}/statements": {
         "$ref": "./statements/list.json"
     },
+    "/entities/items/{entityId}/statements/{statementId}": {
+        "$ref": "./statements/single.json"
+    },
+    "/entities/items/{entityId}/statements/{statementId}/datatype": {
+        "$ref": "./statements/datatype/single.json"
+    },
     "/entities/items/{entityId/statements/{statementId}/qualifiers": {
         "$ref": "./statements/qualifiers/list.json"
     },
@@ -68,6 +74,12 @@
     "/entities/properties/{entityId}/statements": {
         "$ref": "./statements/list.json"
     },
+    "/entities/properties/{entityId}/statements/{statementId}": {
+        "$ref": "./statements/single.json"
+    },
+    "/entities/properties/{entityId}/statements/{statementId}/datatype": {
+        "$ref": "./statements/datatype/single.json"
+    },
     "/entities/properties/{entityId/statements/{statementId}/qualifiers": {
         "$ref": "./statements/qualifiers/list.json"
     },
@@ -82,6 +94,9 @@
     },
     "/statements/{statementId}": {
         "$ref": "./statements/single.json"
+    },
+    "/statements/{statementId}/datatype": {
+        "$ref": "./statements/datatype/single.json"
     },
     "/statements/{statementId}/qualifiers": {
         "$ref": "./statements/qualifiers/list.json"
