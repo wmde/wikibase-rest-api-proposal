@@ -43,5 +43,14 @@
                 "schema": { "$ref": "./schemas.json#/SnakMap" }
             }
         }
+    },
+    "Sitelink": {
+        "description": "A Wikibase Sitelink object",
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Sitelink" }
+            }
+        }
     }
 }
