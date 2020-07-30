@@ -48,7 +48,7 @@
         "$ref": "./statements/qualifiers/single.json"
     },
     "/statements/{statementId}/references": {
-        "$ref": "./statements/references/single.json"
+        "$ref": "./statements/references/list.json"
     },
     "/statements/{statementId}/references/{qualifierHash}": {
         "$ref": "./statements/references/single.json"
