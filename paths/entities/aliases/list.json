@@ -13,22 +13,5 @@
             "404": { "$ref": "../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }
-    },
-    "post": {
-        "tags": ["items"],
-        "summary": "Create a new Wikibase Item | Property",
-        "requestBody": { "$ref": "../../../requests.json#/Entity" },
-        "responses": {
-            "200": { 
-                "description": "A Wikibase Entity ID",
-                "content": {
-                    "application/json": {
-                        "schema": { "type": "string" }
-                    }
-                }
-             },
-            "404": { "$ref": "../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
-        }
     }
 }
