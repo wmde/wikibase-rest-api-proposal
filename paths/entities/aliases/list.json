@@ -16,8 +16,8 @@
     },
     "post": {
         "tags": ["items"],
-        "summary": "Create a new Wikibase Item",
-        "requestBody": { "$ref": "../../../requests.json#/Item" },
+        "summary": "Create a new Wikibase Item | Property",
+        "requestBody": { "$ref": "../../../requests.json#/Entity" },
         "responses": {
             "200": { 
                 "description": "A Wikibase Entity ID",
