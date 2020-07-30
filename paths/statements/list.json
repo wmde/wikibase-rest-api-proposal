@@ -14,5 +14,10 @@
             "404": { "$ref": "../../responses.json#/NotFound" },
             "default": { "$ref": "../../responses.json#/UnexpectedError" }
         }
+    },
+    "post": {
+        "tags": ["statements"],
+        "summary": "Add a new Statement to an entity (Item | Property)",
+        "requestBody": { "$ref": "../../requests.json#/Statement" }
     }
 }

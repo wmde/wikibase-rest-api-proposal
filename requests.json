@@ -7,5 +7,23 @@
                 "schema": { "$ref": "./schemas.json#/Entity" }
             }
         }
+    },
+    "Property": {
+        "description": "A Wikibase Property object",
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Entity" }
+            }
+        }
+    },
+    "Statement": {
+        "description": "A Wikibase Statement object",
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Statement" }
+            }
+        }
     }
 }
