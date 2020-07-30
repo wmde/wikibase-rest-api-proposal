@@ -28,8 +28,8 @@
                     }
                 }
              },
-            "404": { "$ref": "../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+            "404": { "$ref": "../../responses.json#/NotFound" },
+            "default": { "$ref": "../../responses.json#/UnexpectedError" }
         }
     }
 }
