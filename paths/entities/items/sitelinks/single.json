@@ -1,1 +1,15 @@
-{}
+{
+    "get": {
+        "tags": [ "items" ],
+        "summary": "Item's sitelink by language",
+        "parameters": [
+            { "$ref": "../../../../parameters.json#/entityId" },
+            { "$ref": "../../../../parameters.json#/lang" }
+        ],
+        "responses": {
+            "200": { "$ref": "../../../../responses.json#/Sitelink" },
+            "404": { "$ref": "../../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../../responses.json#/UnexpectedError" }
+        }
+    }
+}
