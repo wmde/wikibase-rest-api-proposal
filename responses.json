@@ -183,5 +183,21 @@
                 }
             }
         }
+    },
+    "ReferenceHash": {
+        "description": "Modified Reference Hash",
+            "content": {
+                "application/json": {
+                    "schema": { "$ref": "./schemas.json#/Fingerprint" }
+                }
+            }
+    },
+    "QualifierHash": {
+        "description": "Modified Qualifier Hash",
+            "content": {
+                "application/json": {
+                    "schema": { "$ref": "./schemas.json#/Fingerprint" }
+                }
+            }
     }
 }

@@ -13,6 +13,8 @@
     },
     "Entity": { "type": "object" },
     "Fingerprint": { "type": "object" },
+    "QualifierHash": { "type": "object" },
+    "ReferenceHash": { "type": "object" },
     "Statement": { "type": "object" },
     "Sitelink": { "type": "object" },
     "Snak": { "type": "object" },

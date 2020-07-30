@@ -12,5 +12,18 @@
             "404": { "$ref": "../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }
+    },
+    "post": {
+        "tags": ["statements"],
+        "summary": "Update a qualifier",
+        "parameters": [
+            { "$ref": "../../../parameters.json#/qualifierHash" }
+        ],
+        "requestBody": { "$ref": "../../../requests.json#/Qualifier" },
+        "responses": {
+            "200": { "$ref": "../../../responses.json#/QualifierHash" },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+        }
     }
 }
