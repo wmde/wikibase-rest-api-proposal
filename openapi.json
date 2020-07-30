@@ -94,6 +94,15 @@
           "type": "string",
           "pattern": "^(Q|P)[1-9]\\d{0,9}\\$.+$"
         }
+      },
+      "wikiId": {
+        "name": "wikiId",
+        "in": "path",
+        "description": "The id of the wiki that the sitelink directs to",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
       }
     },
     "responses": {
@@ -742,6 +751,9 @@
         "summary": "Retrieves an item's sitelinks",
         "parameters": [
           {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
             "$ref": "#/components/parameters/offset"
           },
           {
@@ -762,20 +774,53 @@
             "$ref": "#/components/responses/UnexpectedError"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "items"
+        ],
+        "summary": "Creates an item's sitelinks",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "description": "A Wikibase Sitelink object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sitelink"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SitelinkList"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
       }
     },
-    "/entities/items/{entityId}/sitelinks/{lang}": {
+    "/entities/items/{entityId}/sitelinks/{wikiId}": {
       "get": {
         "tags": [
           "items"
         ],
-        "summary": "Item's sitelink by language",
+        "summary": "Item's sitelink by wiki-id",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityId"
           },
           {
-            "$ref": "#/components/parameters/lang"
+            "$ref": "#/components/parameters/wikiId"
           }
         ],
         "responses": {
