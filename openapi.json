@@ -223,9 +223,11 @@
         "description": "Entity Label by language",
         "content": {
           "application/json": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Fingerprint"
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Fingerprint"
+              }
             }
           }
         }
@@ -486,6 +488,24 @@
                 "$ref": "#/components/schemas/Entity"
               }
             }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "A Wikibase Entity ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
           }
         }
       }
@@ -795,6 +815,24 @@
               }
             }
           }
+        },
+        "responses": {
+          "200": {
+            "description": "A Wikibase Statement ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
         }
       }
     },
@@ -844,6 +882,24 @@
                 "$ref": "#/components/schemas/Entity"
               }
             }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "A Wikibase Entity ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
           }
         }
       }
@@ -1055,7 +1111,7 @@
           "statements"
         ],
         "summary": "Single statement from an entity (items | properties)",
-        "description": "This endpoint is also accessible through `\\entities\\(item|property)\\{entityId}\\statements\\{statementId}`",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -1114,7 +1170,7 @@
           "statements"
         ],
         "summary": "Lists qualifiers for a Statement",
-        "description": "This endpoint is also accessible through `\\entities\\(item|property)\\{entityId}\\statements\\{statementId}\\qualifiers`",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}\\qualifiers`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -1151,7 +1207,7 @@
           "statements"
         ],
         "summary": "Single qualifier by hash",
-        "description": "This endpoint is also accessible through `\\entities\\(item|property)\\{entityId}\\statements\\{statementId}\\qualifiers\\{qualifierHash}`",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers/{qualifierHash}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -1182,7 +1238,7 @@
           "statements"
         ],
         "summary": "Single reference by hash",
-        "description": "This endpoint is also accessible through `\\entities\\(item|property)\\{entityId}\\statements\\{statementId}\\references\\{referenceHash}`",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references/{referenceHash}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
