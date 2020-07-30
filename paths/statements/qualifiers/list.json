@@ -2,7 +2,7 @@
     "get": {
         "tags": [ "statements" ],
         "summary": "Lists qualifiers for a Statement",
-        "description": "This endpoint is also accessible through `\\entities\\(item|property)\\{entityId}\\statements\\{statementId}\\qualifiers`",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}\\qualifiers`",
         "parameters": [
             { "$ref": "../../../parameters.json#/statementId" },
             { "$ref": "../../../parameters.json#/fields" },
@@ -12,6 +12,16 @@
         ],
         "responses": {
             "200": { "$ref": "../../../responses.json#/SnakList" },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+        }
+    },
+    "post": {
+        "tags": ["statements"],
+        "summary": "Add a new Qualifier to a Statement",
+        "requestBody": { "$ref": "../../../requests.json#/Qualifier" },
+        "responses": {
+            "200": { "$ref": "../../../responses.json#/QualifierHash" },
             "404": { "$ref": "../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }
