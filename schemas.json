@@ -30,7 +30,7 @@
             }
         },
         "required": ["op", "path"]
-    }
+    },
     "Term": {
         "type": "object",
         "properties": {
