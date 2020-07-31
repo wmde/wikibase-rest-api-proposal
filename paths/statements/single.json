@@ -32,5 +32,18 @@
             "404": { "$ref": "../../responses.json#/NotFound" },
             "default": { "$ref": "../../responses.json#/UnexpectedError" }
         }
+    },
+    "delete": {
+        "tags": [ "statements" ],
+        "summary": "Single statement from an entity (items | properties)",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}`",
+        "parameters": [
+            { "$ref": "../../parameters.json#/statementId" }
+        ],
+        "responses": {
+            "200": { "$ref": "../../responses.json#/OK" },
+            "404": { "$ref": "../../responses.json#/NotFound" },
+            "default": { "$ref": "../../responses.json#/UnexpectedError" }
+        }
     }
 }
