@@ -1,4 +1,13 @@
 {
+    "AliasList": {
+        "description": "A List of Aliases",
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/AliasList" }
+            }
+        }
+    },
     "Entity": {
         "description": "A Wikibase entity object (Item / Property)",
         "required": true,
@@ -41,6 +50,15 @@
         "content": {
             "application/json": {
                 "schema": { "$ref": "./schemas.json#/Sitelink" }
+            }
+        }
+    },
+    "Term": {
+        "description": "An object that contains a language : string pair",
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Term" }
             }
         }
     }
