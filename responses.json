@@ -8,7 +8,7 @@
         }
     },
     "UnexpectedError": {
-        "description": "An unexpected error has occured",
+        "description": "An unexpected error has occurred",
         "content": {
             "application/json": {
                 "schema": { "$ref": "./schemas.json#/Error" }
@@ -16,7 +16,7 @@
         }
     },
     "Entity": {
-        "description": "A single wikibase item",
+        "description": "A single wikibase entity",
         "content": {
             "application/json": {
                 "schema": { "$ref": "./schemas.json#/Entity" }
@@ -24,7 +24,7 @@
         }
     },
     "EntityList": {
-        "description": "A list of wikibase items",
+        "description": "A list of wikibase entities",
         "content": {
             "application/json": {
                 "schema": {
