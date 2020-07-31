@@ -177,7 +177,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Fingerprint"
+              "$ref": "#/components/schemas/Term"
             }
           }
         }
@@ -187,7 +187,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Fingerprint"
+              "$ref": "#/components/schemas/Term"
             }
           }
         }
@@ -212,7 +212,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/Fingerprint"
+                "$ref": "#/components/schemas/Term"
               }
             }
           }
@@ -225,7 +225,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/Fingerprint"
+                "$ref": "#/components/schemas/Term"
               }
             }
           }
@@ -348,7 +348,7 @@
       "AliasList": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Fingerprint"
+          "$ref": "#/components/schemas/Term"
         }
       },
       "Error": {
@@ -369,8 +369,20 @@
       "Entity": {
         "type": "object"
       },
-      "Fingerprint": {
-        "type": "object"
+      "Term": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "language",
+          "value"
+        ]
       },
       "QualifierHash": {
         "type": "string"
