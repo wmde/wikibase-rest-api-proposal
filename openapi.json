@@ -566,14 +566,7 @@
         },
         "responses": {
           "200": {
-            "description": "A Wikibase Entity ID",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/Entity"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -631,14 +624,7 @@
         },
         "responses": {
           "200": {
-            "description": "Wikibase Entity ID",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/Entity"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1168,14 +1154,7 @@
         },
         "responses": {
           "200": {
-            "description": "A Wikibase Statement ID",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/Statement"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1407,14 +1386,7 @@
         },
         "responses": {
           "200": {
-            "description": "Wikibase Statement ID",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/Statement"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
