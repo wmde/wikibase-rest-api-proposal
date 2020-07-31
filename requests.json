@@ -1,4 +1,16 @@
 {
+    "PatchList": {
+        "description": "A list of JSON-PATCH objects that describe changes to the resource",
+        "required": true,
+        "content": {
+            "application/json-patch+json": {
+                "schema": {
+                    "type": "array",
+                    "items": { "$ref": "./schemas.json#/DocumentPatch" }
+                }
+            }
+        }
+    },
     "Entity": {
         "description": "A Wikibase entity object (Item / Property)",
         "required": true,
