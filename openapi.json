@@ -1055,37 +1055,6 @@
         }
       }
     },
-    "/statements/{statementId}/datatype": {
-      "get": {
-        "tags": [
-          "statements"
-        ],
-        "summary": "Single qualifier by hash",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/statementId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "The statement's data type string",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      }
-    },
     "/statements/{statementId}/qualifiers": {
       "get": {
         "tags": [
