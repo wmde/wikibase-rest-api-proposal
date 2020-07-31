@@ -46,7 +46,7 @@
         "description": "Entity Description by language",
             "content": {
                 "application/json": {
-                    "schema": { "$ref": "./schemas.json#/Fingerprint" }
+                    "schema": { "$ref": "./schemas.json#/Term" }
                 }
             }
     },
@@ -54,7 +54,7 @@
         "description": "Entity Label by language",
             "content": {
                 "application/json": {
-                    "schema": { "$ref": "./schemas.json#/Fingerprint" }
+                    "schema": { "$ref": "./schemas.json#/Term" }
                 }
             }
     },
@@ -75,7 +75,7 @@
                 "application/json": {
                     "schema": {
                         "type": "array",
-                        "items": { "$ref": "./schemas.json#/Fingerprint" } 
+                        "items": { "$ref": "./schemas.json#/Term" } 
                     }
                 }
             }
@@ -86,7 +86,7 @@
                 "application/json": {
                     "schema": {
                         "type": "array",
-                        "items": { "$ref": "./schemas.json#/Fingerprint" } 
+                        "items": { "$ref": "./schemas.json#/Term" } 
                     }
                 }
             }
