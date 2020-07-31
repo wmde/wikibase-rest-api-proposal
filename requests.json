@@ -11,6 +11,15 @@
             }
         }
     },
+    "AliasList": {
+        "description": "A List of Aliases",
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/AliasList" }
+            }
+        }
+    },
     "Entity": {
         "description": "A Wikibase entity object (Item / Property)",
         "required": true,
@@ -53,6 +62,15 @@
         "content": {
             "application/json": {
                 "schema": { "$ref": "./schemas.json#/Sitelink" }
+            }
+        }
+    },
+    "Term": {
+        "description": "An object with information about a value and the language it is in",
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Term" }
             }
         }
     }
