@@ -29,5 +29,34 @@
             "404": { "$ref": "../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }
+    },
+    "patch": {
+        "tags": [ "entities" ],
+        "summary": "Updates an entity's alias list by language",
+        "parameters": [
+            { "$ref": "../../../parameters.json#/entityType" },
+            { "$ref": "../../../parameters.json#/entityId" },
+            { "$ref": "../../../parameters.json#/lang" }
+        ],
+        "requestBody": { "$ref": "../../../requests.json#/PatchList" },
+        "responses": {
+            "200": { "$ref": "../../../responses.json#/EntityAliases" },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+        }
+    },
+    "delete": {
+        "tags": [ "entities" ],
+        "summary": "Deletes an entity's alias list by language",
+        "parameters": [
+            { "$ref": "../../../parameters.json#/entityType" },
+            { "$ref": "../../../parameters.json#/entityId" },
+            { "$ref": "../../../parameters.json#/lang" }
+        ],
+        "responses": {
+            "200": { "$ref": "../../../responses.json#/OK" },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+        }
     }
 }

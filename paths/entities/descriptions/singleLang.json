@@ -27,5 +27,19 @@
             "404": { "$ref": "../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }
+    },
+    "delete": {
+        "tags": [ "entities" ],
+        "summary": "Deletes an entity's description by language",
+        "parameters": [
+            { "$ref": "../../../parameters.json#/entityType" },
+            { "$ref": "../../../parameters.json#/entityId" },
+            { "$ref": "../../../parameters.json#/lang" }
+        ],
+        "responses": {
+            "200": { "$ref": "../../../responses.json#/OK" },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+        }
     }
 }
