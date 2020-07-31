@@ -18,6 +18,16 @@
             "pattern": "^(Q|P)[1-9]\\d{0,9}$"
         }
     },
+    "entityType":{
+        "in": "path",
+        "name": "entityType",
+        "description": "The type of the required entity. Can only be one of `items` or `properties`.",
+        "required": true,
+        "schema": {
+            "type" : "string",
+            "enum": ["items", "properties"]
+        }
+    },
     "lang": {
         "name": "lang",
         "in": "path",

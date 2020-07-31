@@ -1,32 +1,30 @@
 {
     "get": {
-        "tags": ["entities", "statements"],
-        "summary": "Retrieve a list of entity Statements",
+        "tags": ["entities"],
+        "summary": "Retrieve a list of Wikibase Entities (Items or Properties)",
         "parameters": [
             { "$ref": "../../parameters.json#/entityType" },
-            { "$ref": "../../parameters.json#/entityId" },
             { "$ref": "../../parameters.json#/fields" },
             { "$ref": "../../parameters.json#/offset" },
             { "$ref": "../../parameters.json#/page" },
             { "$ref": "../../parameters.json#/per_page" }
         ],
         "responses": {
-            "200": { "$ref": "../../responses.json#/StatementList" },
+            "200": { "$ref": "../../responses.json#/EntityList" },
             "404": { "$ref": "../../responses.json#/NotFound" },
             "default": { "$ref": "../../responses.json#/UnexpectedError" }
         }
     },
     "post": {
-        "tags": ["entities", "statements"],
-        "summary": "Add a new Statement to an entity (Item | Property)",
+        "tags": ["entities"],
+        "summary": "Create a new Wikibase Entity",
         "parameters": [
-            { "$ref": "../../parameters.json#/entityType" },
-            { "$ref": "../../parameters.json#/entityId" }
+            { "$ref": "../../parameters.json#/entityType" }
         ],
-        "requestBody": { "$ref": "../../requests.json#/Statement" },
+        "requestBody": { "$ref": "../../requests.json#/Entity" },
         "responses": {
             "200": { 
-                "description": "A Wikibase Statement ID",
+                "description": "A Wikibase Entity ID",
                 "content": {
                     "application/json": {
                         "schema": { "type": "string" }

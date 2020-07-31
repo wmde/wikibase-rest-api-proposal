@@ -15,7 +15,7 @@
             }
         }
     },
-    "Item": {
+    "Entity": {
         "description": "A single wikibase item",
         "content": {
             "application/json": {
@@ -23,27 +23,8 @@
             }
         }
     },
-    "ItemList": {
+    "EntityList": {
         "description": "A list of wikibase items",
-        "content": {
-            "application/json": {
-                "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Entity" } 
-                }
-            }
-        }
-    },
-    "Property": {
-        "description": "A single wikibase property",
-        "content": {
-            "application/json": {
-                "schema": { "$ref": "./schemas.json#/Entity" }
-            }
-        }
-    },
-    "PropertyList": {
-        "description": "A list of wikibase properties",
         "content": {
             "application/json": {
                 "schema": {

@@ -16,7 +16,7 @@
     },
     "post": {
         "tags": [ "items" ],
-        "summary": "Creates an item's sitelinks",
+        "summary": "Creates an item's sitelink",
         "parameters": [
             { "$ref": "../../../../parameters.json#/entityId" }
         ],

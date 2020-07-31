@@ -1,15 +1,6 @@
 {
-    "Item": {
-        "description": "A Wikibase Item object",
-        "required": true,
-        "content": {
-            "application/json": {
-                "schema": { "$ref": "./schemas.json#/Entity" }
-            }
-        }
-    },
-    "Property": {
-        "description": "A Wikibase Property object",
+    "Entity": {
+        "description": "A Wikibase entity object (Item / Property)",
         "required": true,
         "content": {
             "application/json": {

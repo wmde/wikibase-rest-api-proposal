@@ -1,0 +1,18 @@
+{
+    "get": {
+        "tags": [ "entities" ],
+        "summary": "Retrieves an entity's alias lists",
+        "parameters": [
+            { "$ref": "../../../parameters.json#/entityType" },
+            { "$ref": "../../../parameters.json#/entityId" },
+            { "$ref": "../../../parameters.json#/offset" },
+            { "$ref": "../../../parameters.json#/page" },
+            { "$ref": "../../../parameters.json#/per_page" }
+        ],
+        "responses": {
+            "200": { "$ref": "../../../responses.json#/EntityAliasesList" },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+        }
+    }
+}
