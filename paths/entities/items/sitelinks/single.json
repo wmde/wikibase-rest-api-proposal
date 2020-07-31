@@ -11,5 +11,18 @@
             "404": { "$ref": "../../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../../responses.json#/UnexpectedError" }
         }
-    }
+    },
+    "delete": {
+        "tags": [ "items" ],
+        "summary": "Item's sitelink by wiki-id",
+        "parameters": [
+            { "$ref": "../../../../parameters.json#/entityId" },
+            { "$ref": "../../../../parameters.json#/wikiId" }
+        ],
+        "responses": {
+            "200": { "$ref": "../../../../responses.json#/OK" },
+            "404": { "$ref": "../../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../../responses.json#/UnexpectedError" }
+        }
+    },
 }
