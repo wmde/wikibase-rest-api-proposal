@@ -12,5 +12,20 @@
             "404": { "$ref": "../../../responses.json#/NotFound" },
             "default": { "$ref": "../../../responses.json#/UnexpectedError" }
         }
+    },
+    "put": {
+        "tags": ["entities"],
+        "summary": "Add / Replace a label to an entity by language",
+        "parameters": [
+            { "$ref": "../../../parameters.json#/entityType" },
+            { "$ref": "../../../parameters.json#/entityId" },
+            { "$ref": "../../../parameters.json#/lang" }
+        ],
+        "requestBody": { "$ref": "../../../requests.json#/Term" },
+        "responses": {
+            "200": { "$ref": "../../../responses.json#/EntityLabel" },
+            "404": { "$ref": "../../../responses.json#/NotFound" },
+            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+        }
     }
 }
