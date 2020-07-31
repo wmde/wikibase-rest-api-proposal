@@ -372,6 +372,32 @@
       "Entity": {
         "type": "object"
       },
+      "DocumentPatch": {
+        "description": "A JSONPatch object as defined by RFC 6902",
+        "type": "object",
+        "properties": {
+          "op": {
+            "description": "The operation to perform",
+            "type": "string",
+            "enum": [
+              "add",
+              "remove",
+              "replace"
+            ]
+          },
+          "path": {
+            "description": "A JSON-Pointer for the property to manipulate",
+            "type": "string"
+          },
+          "value": {
+            "description": "The value to be used within the operation"
+          }
+        },
+        "required": [
+          "op",
+          "path"
+        ]
+      },
       "Term": {
         "type": "object",
         "properties": {
@@ -622,6 +648,45 @@
           }
         }
       },
+      "patch": {
+        "tags": [
+          "entities"
+        ],
+        "summary": "Update a Wikibase Entity by Id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "description": "A list of JSON-PATCH objects that describe changes to the resource",
+          "required": true,
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DocumentPatch"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Entity"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
       "delete": {
         "tags": [
           "entities"
@@ -682,6 +747,34 @@
             "$ref": "#/components/responses/UnexpectedError"
           }
         }
+      },
+      "patch": {
+        "tags": [
+          "entities"
+        ],
+        "summary": "Updates an entity's alias lists",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1entities~1%7BentityType%7D~1%7BentityId%7D/patch/requestBody"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EntityAliasesList"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
       }
     },
     "/entities/{entityType}/{entityId}/aliases/{lang}": {
@@ -701,6 +794,37 @@
             "$ref": "#/components/parameters/lang"
           }
         ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EntityAliases"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "entities"
+        ],
+        "summary": "Updates an entity's alias list by language",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
+            "$ref": "#/components/parameters/lang"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1entities~1%7BentityType%7D~1%7BentityId%7D/patch/requestBody"
+        },
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityAliases"
@@ -765,6 +889,34 @@
             "$ref": "#/components/parameters/per_page"
           }
         ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EntityDescriptionList"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "entities"
+        ],
+        "summary": "Updates an entity's description list",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1entities~1%7BentityType%7D~1%7BentityId%7D/patch/requestBody"
+        },
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityDescriptionList"
@@ -859,6 +1011,34 @@
             "$ref": "#/components/parameters/per_page"
           }
         ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EntityLabelList"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "entities"
+        ],
+        "summary": "Updates an entity's label list",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1entities~1%7BentityType%7D~1%7BentityId%7D/patch/requestBody"
+        },
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityLabelList"
@@ -1077,7 +1257,7 @@
         "tags": [
           "items"
         ],
-        "summary": "Item's sitelink by wiki-id",
+        "summary": "Retrieves an Item's sitelink by wiki-id",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityId"
@@ -1086,6 +1266,34 @@
             "$ref": "#/components/parameters/wikiId"
           }
         ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Sitelink"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "items"
+        ],
+        "summary": "Updates an Item's sitelink by wiki-id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
+            "$ref": "#/components/parameters/wikiId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1entities~1%7BentityType%7D~1%7BentityId%7D/patch/requestBody"
+        },
         "responses": {
           "200": {
             "$ref": "#/components/responses/Sitelink"
@@ -1129,7 +1337,7 @@
         "tags": [
           "statements"
         ],
-        "summary": "Single statement from an entity (items | properties)",
+        "summary": "Retrieves a single Statement from an entity (items | properties)",
         "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}`",
         "parameters": [
           {
@@ -1141,7 +1349,32 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/StatementList"
+            "$ref": "#/components/responses/Statement"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "statements"
+        ],
+        "summary": "Updates a Wikibase Statement by Id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/statementId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1statements~1%7BstatementId%7D/put/requestBody"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Statement"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1155,7 +1388,7 @@
         "tags": [
           "statements"
         ],
-        "summary": "Replace a Wikibase Statement by Id",
+        "summary": "Replaces a Wikibase Statement by Id",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
