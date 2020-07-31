@@ -1,21 +1,34 @@
 {
     "get": {
         "tags": [ "statements" ],
-        "summary": "Single statement from an entity (items | properties)",
+        "summary": "Retrieves a single Statement from an entity (items | properties)",
         "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}`",
         "parameters": [
             { "$ref": "../../parameters.json#/statementId" },
             { "$ref": "../../parameters.json#/fields" }
         ],
         "responses": {
-            "200": { "$ref": "../../responses.json#/StatementList" },
+            "200": { "$ref": "../../responses.json#/Statement" },
+            "404": { "$ref": "../../responses.json#/NotFound" },
+            "default": { "$ref": "../../responses.json#/UnexpectedError" }
+        }
+    },
+    "patch": {
+        "tags": ["statements"],
+        "summary": "Updates a Wikibase Statement by Id",
+        "parameters": [
+            { "$ref": "../../parameters.json#/statementId" }
+        ],
+        "requestBody": { "$ref": "../../requests.json#/Statement" },
+        "responses": {
+            "200": { "$ref": "../../responses.json#/Statement" },
             "404": { "$ref": "../../responses.json#/NotFound" },
             "default": { "$ref": "../../responses.json#/UnexpectedError" }
         }
     },
     "put": {
         "tags": ["statements"],
-        "summary": "Replace a Wikibase Statement by Id",
+        "summary": "Replaces a Wikibase Statement by Id",
         "parameters": [
             { "$ref": "../../parameters.json#/statementId" }
         ],
