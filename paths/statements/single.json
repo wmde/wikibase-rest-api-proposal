@@ -34,14 +34,7 @@
         ],
         "requestBody": { "$ref": "../../requests.json#/Statement" },
         "responses": {
-            "200": { 
-                "description": "Wikibase Statement ID",
-                "content": {
-                    "application/json": {
-                        "schema": { "type": "string" }
-                    }
-                }
-             },
+            "200": { "$ref": "../../responses.json#/Statement" },
             "404": { "$ref": "../../responses.json#/NotFound" },
             "default": { "$ref": "../../responses.json#/UnexpectedError" }
         }
