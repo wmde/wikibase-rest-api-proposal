@@ -792,6 +792,45 @@
           }
         }
       },
+      "put": {
+        "tags": [
+          "entities"
+        ],
+        "summary": "Add / Replace a whole alias list by language",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
+            "$ref": "#/components/parameters/lang"
+          }
+        ],
+        "requestBody": {
+          "description": "A List of Aliases",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AliasList"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EntityDescription"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
       "patch": {
         "tags": [
           "entities"
@@ -945,6 +984,37 @@
           }
         }
       },
+      "put": {
+        "tags": [
+          "entities"
+        ],
+        "summary": "Add / Replace a description to an entity by language",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
+            "$ref": "#/components/parameters/lang"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1entities~1%7BentityType%7D~1%7BentityId%7D~1labels~1%7Blang%7D/put/requestBody"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EntityDescription"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
       "delete": {
         "tags": [
           "entities"
@@ -1055,6 +1125,45 @@
             "$ref": "#/components/parameters/lang"
           }
         ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EntityLabel"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "entities"
+        ],
+        "summary": "Add / Replace a label to an entity by language",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
+            "$ref": "#/components/parameters/lang"
+          }
+        ],
+        "requestBody": {
+          "description": "An object with information about a value and the language it is in",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Term"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityLabel"
