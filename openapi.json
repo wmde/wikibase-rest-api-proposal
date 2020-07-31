@@ -348,6 +348,24 @@
       }
     },
     "schemas": {
+      "Labels": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Term"
+        }
+      },
+      "Descriptions": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Term"
+        }
+      },
+      "Aliases": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/AliasList"
+        }
+      },
       "AliasList": {
         "type": "array",
         "items": {
@@ -368,9 +386,6 @@
           "code",
           "message"
         ]
-      },
-      "Entity": {
-        "type": "object"
       },
       "DocumentPatch": {
         "description": "A JSONPatch object as defined by RFC 6902",
@@ -397,6 +412,95 @@
           "op",
           "path"
         ]
+      },
+      "Item": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Entity"
+          },
+          {
+            "$ref": "#/components/schemas/Fingerprintable"
+          },
+          {
+            "$ref": "#/components/schemas/StatementsBearing"
+          }
+        ]
+      },
+      "Property": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Entity"
+          },
+          {
+            "$ref": "#/components/schemas/Fingerprintable"
+          },
+          {
+            "$ref": "#/components/schemas/StatementsBearing"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "datatype": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "datatype"
+            ]
+          }
+        ]
+      },
+      "Fingerprintable": {
+        "type": "object",
+        "properties": {
+          "labels": {
+            "$ref": "#/components/schemas/Labels"
+          },
+          "descriptions": {
+            "$ref": "#/components/schemas/Descriptions"
+          },
+          "aliases": {
+            "$ref": "#/components/schemas/Aliases"
+          }
+        },
+        "required": [
+          "labels",
+          "descriptions",
+          "aliases"
+        ]
+      },
+      "StatementsBearing": {
+        "type": "object",
+        "properties": {
+          "statements": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "statements"
+        ]
+      },
+      "Entity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "modified": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ],
+        "discriminator": {
+          "propertyName": "type"
+        }
       },
       "Term": {
         "type": "object",
