@@ -30,6 +30,19 @@
           "pattern": "^(Q|P)[1-9]\\d{0,9}$"
         }
       },
+      "entityType": {
+        "in": "path",
+        "name": "entityType",
+        "description": "The type of the required entity. Can only be one of `items` or `properties`.",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "items",
+            "properties"
+          ]
+        }
+      },
       "lang": {
         "name": "lang",
         "in": "path",
@@ -126,7 +139,7 @@
           }
         }
       },
-      "Item": {
+      "Entity": {
         "description": "A single wikibase item",
         "content": {
           "application/json": {
@@ -136,31 +149,8 @@
           }
         }
       },
-      "ItemList": {
+      "EntityList": {
         "description": "A list of wikibase items",
-        "content": {
-          "application/json": {
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Entity"
-              }
-            }
-          }
-        }
-      },
-      "Property": {
-        "description": "A single wikibase property",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/Entity"
-            }
-          }
-        }
-      },
-      "PropertyList": {
-        "description": "A list of wikibase properties",
         "content": {
           "application/json": {
             "schema": {
@@ -404,19 +394,27 @@
   },
   "tags": [
     {
-      "name": "items",
-      "description": "Items",
+      "name": "entities",
+      "description": "Wikibase Entities",
       "externalDocs": {
-        "description": "Mediawiki Datamodel - Items",
+        "description": "Wikibase Data Model - Values",
+        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Values"
+      }
+    },
+    {
+      "name": "items",
+      "description": "Wikibase Items",
+      "externalDocs": {
+        "description": "Wikibase Datamodel - Items",
         "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Items"
       }
     },
     {
-      "name": "properties",
-      "description": "Mediawiki Properties",
+      "name": "statements",
+      "description": "Wikibase Statements",
       "externalDocs": {
-        "description": "Datamodel - Items",
-        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Properties"
+        "description": "Wikibase Data Model - Statements",
+        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
       }
     },
     {
@@ -425,14 +423,6 @@
       "externalDocs": {
         "description": "Wikidata.org Help:Badges",
         "url": "https://www.wikidata.org/wiki/Help:Badges"
-      }
-    },
-    {
-      "name": "statements",
-      "description": "Statements",
-      "externalDocs": {
-        "description": "Mediawiki Statements",
-        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
       }
     }
   ],
@@ -477,13 +467,16 @@
         }
       }
     },
-    "/entities/items": {
+    "/entities/{entityType}": {
       "get": {
         "tags": [
-          "items"
+          "entities"
         ],
-        "summary": "Retrieve a list of Wikibase Items",
+        "summary": "Retrieve a list of Wikibase Entities (Items or Properties)",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
           {
             "$ref": "#/components/parameters/fields"
           },
@@ -499,7 +492,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ItemList"
+            "$ref": "#/components/responses/EntityList"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -511,11 +504,16 @@
       },
       "post": {
         "tags": [
-          "items"
+          "entities"
         ],
-        "summary": "Create a new Wikibase Item",
+        "summary": "Create a new Wikibase Entity",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          }
+        ],
         "requestBody": {
-          "description": "A Wikibase Item object",
+          "description": "A Wikibase entity object (Item / Property)",
           "required": true,
           "content": {
             "application/json": {
@@ -545,13 +543,16 @@
         }
       }
     },
-    "/entities/items/{entityId}": {
+    "/entities/{entityType}/{entityId}": {
       "get": {
         "tags": [
-          "items"
+          "entities"
         ],
-        "summary": "Single Item",
+        "summary": "Single Entity",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
           {
             "$ref": "#/components/parameters/entityId"
           },
@@ -561,7 +562,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/Item"
+            "$ref": "#/components/responses/Entity"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -573,16 +574,19 @@
       },
       "put": {
         "tags": [
-          "items"
+          "entities"
         ],
         "summary": "Replace a Wikibase Entity by Id",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
           {
             "$ref": "#/components/parameters/entityId"
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1entities~1items/post/requestBody"
+          "$ref": "#/paths/~1entities~1%7BentityType%7D/post/requestBody"
         },
         "responses": {
           "200": {
@@ -604,13 +608,19 @@
         }
       }
     },
-    "/entities/items/{entityId}/aliases": {
+    "/entities/{entityType}/{entityId}/aliases": {
       "get": {
         "tags": [
-          "items"
+          "entities"
         ],
-        "summary": "Retrieves an entity's aliases list",
+        "summary": "Retrieves an entity's alias lists",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
           {
             "$ref": "#/components/parameters/offset"
           },
@@ -634,13 +644,16 @@
         }
       }
     },
-    "/entities/items/{entityId}/aliases/{lang}": {
+    "/entities/{entityType}/{entityId}/aliases/{lang}": {
       "get": {
         "tags": [
-          "items"
+          "entities"
         ],
-        "summary": "Item Aliases List by language",
+        "summary": "Retrieves an entity's alias list by language",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
           {
             "$ref": "#/components/parameters/entityId"
           },
@@ -661,13 +674,19 @@
         }
       }
     },
-    "/entities/items/{entityId}/descriptions": {
+    "/entities/{entityType}/{entityId}/descriptions": {
       "get": {
         "tags": [
-          "items"
+          "entities"
         ],
         "summary": "Retrieves an entity's description list",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
           {
             "$ref": "#/components/parameters/offset"
           },
@@ -691,13 +710,16 @@
         }
       }
     },
-    "/entities/items/{entityId}/descriptions/{lang}": {
+    "/entities/{entityType}/{entityId}/descriptions/{lang}": {
       "get": {
         "tags": [
-          "items"
+          "entities"
         ],
-        "summary": "Item Description by language",
+        "summary": "Retrieves an entity's description by language",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
           {
             "$ref": "#/components/parameters/entityId"
           },
@@ -718,13 +740,19 @@
         }
       }
     },
-    "/entities/items/{entityId}/labels": {
+    "/entities/{entityType}/{entityId}/labels": {
       "get": {
         "tags": [
-          "items"
+          "entities"
         ],
         "summary": "Retrieves an entity's labels list",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
           {
             "$ref": "#/components/parameters/offset"
           },
@@ -748,13 +776,16 @@
         }
       }
     },
-    "/entities/items/{entityId}/labels/{lang}": {
+    "/entities/{entityType}/{entityId}/labels/{lang}": {
       "get": {
         "tags": [
-          "items"
+          "entities"
         ],
-        "summary": "Item Label by language",
+        "summary": "Retrieve an entity's label by language",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
           {
             "$ref": "#/components/parameters/entityId"
           },
@@ -765,6 +796,82 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityLabel"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      }
+    },
+    "/entities/{entityType}/{entityId}/statements": {
+      "get": {
+        "tags": [
+          "entities",
+          "statements"
+        ],
+        "summary": "Retrieve a list of entity Statements",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/per_page"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/StatementList"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "entities",
+          "statements"
+        ],
+        "summary": "Add a new Statement to an entity (Item | Property)",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1statements~1%7BstatementId%7D/put/requestBody"
+        },
+        "responses": {
+          "200": {
+            "description": "A Wikibase Statement ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -811,7 +918,7 @@
         "tags": [
           "items"
         ],
-        "summary": "Creates an item's sitelinks",
+        "summary": "Creates an item's sitelink",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityId"
@@ -867,370 +974,6 @@
           }
         }
       }
-    },
-    "/entities/items/{entityId}/statements": {
-      "get": {
-        "tags": [
-          "statements"
-        ],
-        "summary": "Retrieve a list of entity Statements",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/entityId"
-          },
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/per_page"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/StatementList"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "statements"
-        ],
-        "summary": "Add a new Statement to an entity (Item | Property)",
-        "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/put/requestBody"
-        },
-        "responses": {
-          "200": {
-            "description": "A Wikibase Statement ID",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      }
-    },
-    "/entities/properties": {
-      "get": {
-        "tags": [
-          "properties"
-        ],
-        "summary": "Retrieve a list of Wikibase Properties",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/per_page"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/PropertyList"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "properties"
-        ],
-        "summary": "Create a new Wikibase Property",
-        "requestBody": {
-          "description": "A Wikibase Property object",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Entity"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "A Wikibase Entity ID",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      }
-    },
-    "/entities/properties/{entityId}": {
-      "get": {
-        "tags": [
-          "properties"
-        ],
-        "summary": "Single Property",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/entityId"
-          },
-          {
-            "$ref": "#/components/parameters/fields"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/Item"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "properties"
-        ],
-        "summary": "Replace a Wikibase Entity by Id",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/entityId"
-          }
-        ],
-        "requestBody": {
-          "$ref": "#/paths/~1entities~1properties/post/requestBody"
-        },
-        "responses": {
-          "200": {
-            "description": "Wikibase Entity ID",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      }
-    },
-    "/entities/properties/{entityId}/aliases": {
-      "get": {
-        "tags": [
-          "properties"
-        ],
-        "summary": "Retrieves an entity's aliases list",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/per_page"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/EntityAliasesList"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      }
-    },
-    "/entities/properties/{entityId}/aliases/{lang}": {
-      "get": {
-        "tags": [
-          "properties"
-        ],
-        "summary": "Property Alias List by language",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/entityId"
-          },
-          {
-            "$ref": "#/components/parameters/lang"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/EntityAliases"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      }
-    },
-    "/entities/properties/{entityId}/descriptions": {
-      "get": {
-        "tags": [
-          "properties"
-        ],
-        "summary": "Retrieves an entity's description list",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/per_page"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/EntityDescriptionList"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      }
-    },
-    "/entities/properties/{entityId}/descriptions/{lang}": {
-      "get": {
-        "tags": [
-          "properties"
-        ],
-        "summary": "Property Description List by language",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/entityId"
-          },
-          {
-            "$ref": "#/components/parameters/lang"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/EntityDescription"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      }
-    },
-    "/entities/properties/{entityId}/labels": {
-      "get": {
-        "tags": [
-          "properties"
-        ],
-        "summary": "Retrieves an entity's labels list",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/per_page"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/EntityLabelList"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      }
-    },
-    "/entities/properties/{entityId}/labels/{lang}": {
-      "get": {
-        "tags": [
-          "properties"
-        ],
-        "summary": "Property Labels List by language",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/entityId"
-          },
-          {
-            "$ref": "#/components/parameters/lang"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/EntityLabel"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      }
-    },
-    "/entities/properties/{entityId}/statements": {
-      "$ref": "#/paths/~1entities~1items~1%7BentityId%7D~1statements"
     },
     "/statements/{statementId}": {
       "get": {
@@ -1337,7 +1080,7 @@
           "statements"
         ],
         "summary": "Lists qualifiers for a Statement",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}\\qualifiers`",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -1372,6 +1115,12 @@
           "statements"
         ],
         "summary": "Add a new Qualifier to a Statement",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers`",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/statementId"
+          }
+        ],
         "requestBody": {
           "description": "A Wikibase Snak object",
           "required": true,
@@ -1431,7 +1180,11 @@
           "statements"
         ],
         "summary": "Update a qualifier",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers/{qualifierHash}`",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/statementId"
+          },
           {
             "$ref": "#/components/parameters/qualifierHash"
           }
@@ -1453,6 +1206,77 @@
       }
     },
     "/statements/{statementId}/references": {
+      "get": {
+        "tags": [
+          "statements"
+        ],
+        "summary": "Lists references for a Statement",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references`",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/statementId"
+          },
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/per_page"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SnakMapList"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "statements"
+        ],
+        "summary": "Add a new Reference to a Statement",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references`",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/statementId"
+          }
+        ],
+        "requestBody": {
+          "description": "A Wikibase SnakMap object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SnakMap"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ReferenceHash"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      }
+    },
+    "/statements/{statementId}/references/{referenceHash}": {
       "get": {
         "tags": [
           "statements"
@@ -1481,10 +1305,36 @@
             "$ref": "#/components/responses/UnexpectedError"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "statements"
+        ],
+        "summary": "Update a reference",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references/{referenceHash}`",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/statementId"
+          },
+          {
+            "$ref": "#/components/parameters/referenceHash"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1statements~1%7BstatementId%7D~1references/post/requestBody"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ReferenceHash"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
       }
-    },
-    "/statements/{statementId}/references/{qualifierHash}": {
-      "$ref": "#/paths/~1statements~1%7BstatementId%7D~1references"
     }
   }
 }
