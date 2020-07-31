@@ -119,6 +119,9 @@
       }
     },
     "responses": {
+      "OK": {
+        "description": "OK"
+      },
       "NotFound": {
         "description": "The specified resource was not found",
         "content": {
@@ -618,6 +621,31 @@
             "$ref": "#/components/responses/UnexpectedError"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "entities"
+        ],
+        "summary": "Single Entity",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
       }
     },
     "/entities/{entityType}/{entityId}/aliases": {
@@ -676,6 +704,34 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityAliases"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "entities"
+        ],
+        "summary": "Deletes an entity's alias list by language",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
+            "$ref": "#/components/parameters/lang"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -750,6 +806,34 @@
             "$ref": "#/components/responses/UnexpectedError"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "entities"
+        ],
+        "summary": "Deletes an entity's description by language",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
+            "$ref": "#/components/parameters/lang"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
       }
     },
     "/entities/{entityType}/{entityId}/labels": {
@@ -808,6 +892,34 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityLabel"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "entities"
+        ],
+        "summary": "Delete an entity's label by language",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityType"
+          },
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
+            "$ref": "#/components/parameters/lang"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -985,6 +1097,31 @@
             "$ref": "#/components/responses/UnexpectedError"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "items"
+        ],
+        "summary": "Item's sitelink by wiki-id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
+            "$ref": "#/components/parameters/wikiId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
       }
     },
     "/statements/{statementId}": {
@@ -1045,6 +1182,29 @@
                 }
               }
             }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "statements"
+        ],
+        "summary": "Single statement from an entity (items | properties)",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}`",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/statementId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1184,6 +1344,32 @@
             "$ref": "#/components/responses/UnexpectedError"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "statements"
+        ],
+        "summary": "Single qualifier by hash",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers/{qualifierHash}`",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/statementId"
+          },
+          {
+            "$ref": "#/components/parameters/qualifierHash"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
       }
     },
     "/statements/{statementId}/references": {
@@ -1307,6 +1493,32 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/ReferenceHash"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "statements"
+        ],
+        "summary": "Single reference by hash",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references/{referenceHash}`",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/statementId"
+          },
+          {
+            "$ref": "#/components/parameters/referenceHash"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
