@@ -1,7 +1,7 @@
 {
     "AliasList": {
         "type": "array",
-        "items": { "$ref": "./schemas.json#/Fingerprint" }
+        "items": { "$ref": "./schemas.json#/Term" }
     },
     "Error": { 
         "type": "object",
@@ -12,7 +12,6 @@
         "required": [ "code", "message" ]
     },
     "Entity": { "type": "object" },
-    "Fingerprint": { "type": "object" },
     "DocumentPatch": {
         "description": "A JSONPatch object as defined by RFC 6902", 
         "type": "object",
@@ -31,6 +30,21 @@
             }
         },
         "required": ["op", "path"]
+    }
+    "Term": {
+        "type": "object",
+        "properties": {
+            "language": {
+                "type": "string"
+            },
+            "value": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "language",
+            "value"
+        ]
     },
     "QualifierHash": { "type": "string" },
     "ReferenceHash": { "type": "string" },
