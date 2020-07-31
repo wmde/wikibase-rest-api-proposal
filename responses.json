@@ -1,4 +1,7 @@
 {
+    "OK": {
+        "description": "OK"
+    },
     "NotFound": {
         "description": "The specified resource was not found",
         "content": {
