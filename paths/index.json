@@ -50,7 +50,7 @@
     "/statements/{statementId}/references": {
         "$ref": "./statements/references/list.json"
     },
-    "/statements/{statementId}/references/{qualifierHash}": {
+    "/statements/{statementId}/references/{referenceHash}": {
         "$ref": "./statements/references/single.json"
     }
 }
