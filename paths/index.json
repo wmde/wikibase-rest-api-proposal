@@ -38,9 +38,6 @@
     "/statements/{statementId}": {
         "$ref": "./statements/single.json"
     },
-    "/statements/{statementId}/datatype": {
-        "$ref": "./statements/datatype/single.json"
-    },
     "/statements/{statementId}/qualifiers": {
         "$ref": "./statements/qualifiers/list.json"
     },
