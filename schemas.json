@@ -1,7 +1,7 @@
 {
     "AliasList": {
         "type": "array",
-        "items": { "$ref": "./schemas.json#/Fingerprint" }
+        "items": { "$ref": "./schemas.json#/Term" }
     },
     "Error": { 
         "type": "object",
@@ -12,7 +12,21 @@
         "required": [ "code", "message" ]
     },
     "Entity": { "type": "object" },
-    "Fingerprint": { "type": "object" },
+    "Term": {
+        "type": "object",
+        "properties": {
+            "language": {
+                "type": "string"
+            },
+            "value": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "language",
+            "value"
+        ]
+    },
     "QualifierHash": { "type": "string" },
     "ReferenceHash": { "type": "string" },
     "Statement": { "type": "object" },
