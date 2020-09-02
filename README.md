@@ -21,4 +21,4 @@ The following elements are considered non essential for the design decisions and
 
 ## Preview
 
-REST API schema can be previewed using [Swagger Editor](https://editor.swagger.io/), by pasting the contents of the "compiled" schema file (`https://raw.githubusercontent.com/wmde/wikibase-rest-fantasies/gh-pages/openapi.json`).
+REST API schema can be previewed using https://wikibase-rest-fantasies.wmflabs.org/.
