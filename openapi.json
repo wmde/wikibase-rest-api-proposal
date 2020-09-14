@@ -41,14 +41,6 @@
             "description": "Wikibase Data Model - Statements",
             "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
         }
-    },
-    {
-        "name": "badges",
-        "description": "Badges",
-        "externalDocs": {
-            "description": "Wikidata.org Help:Badges",
-            "url" : "https://www.wikidata.org/wiki/Help:Badges"
-        }
     }
 ],
     "paths": {
