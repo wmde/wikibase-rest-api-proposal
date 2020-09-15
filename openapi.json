@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": "Wikibase REST fantasies",
+    "title": "Wikibase REST API Proposal",
     "version": "1.0"
   },
   "servers": [
@@ -561,9 +561,57 @@
         "description": "Wikibase Data Model - Statements",
         "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
       }
+    },
+    {
+      "name": "badges",
+      "description": "Badges",
+      "externalDocs": {
+        "description": "Wikidata.org Help:Badges",
+        "url": "https://www.wikidata.org/wiki/Help:Badges"
+      }
     }
   ],
   "paths": {
+    "/badges": {
+      "get": {
+        "tags": [
+          "badges"
+        ],
+        "summary": "Retrieve a list of sitelink Badges",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/per_page"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of wikibase item ids which define sitelink badges",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      }
+    },
     "/entities/{entityType}": {
       "get": {
         "tags": [
