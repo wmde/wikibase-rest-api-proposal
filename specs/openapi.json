@@ -1,0 +1,58 @@
+{
+    "openapi":"3.0.2",
+    "info": {
+        "title":"Wikibase REST fantasies",
+        "version":"1.0"
+    },
+    "servers": [
+        { "url":"https://www.wikidata.org/w/rest.php/wikibase/v0" }
+    ],
+    "components": {
+        "parameters": {
+            "$ref": "./parameters.json"
+        },
+        "responses": {
+            "$ref": "./responses.json"
+        },
+        "schemas": {
+            "$ref": "./schemas.json"
+        }
+    },
+    "tags": [
+        {
+            "name": "entities",
+            "description": "Wikibase Entities",
+            "externalDocs": {
+                "description": "Wikibase Data Model - Values",
+                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Values"
+            }
+        },
+        {
+            "name": "items",
+            "description": "Wikibase Items",
+            "externalDocs": {
+                "description": "Wikibase Datamodel - Items",
+                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Items"
+            }
+        },
+        {
+            "name": "statements",
+            "description": "Wikibase Statements",
+            "externalDocs": {
+                "description": "Wikibase Data Model - Statements",
+                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
+            }
+        },
+        {
+            "name": "badges",
+            "description": "Badges",
+            "externalDocs": {
+                "description": "Wikidata.org Help:Badges",
+                "url" : "https://www.wikidata.org/wiki/Help:Badges"
+            }
+        }
+    ],
+    "paths": {
+        "$ref": "./paths/index.json"
+    }
+}
