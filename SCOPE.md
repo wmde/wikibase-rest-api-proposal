@@ -1,16 +1,12 @@
 # Scope
 
-The REST API specification is meant to provide the functionality currently offer by Wikibase "Action API".
+The REST API specification is meant to provide the main functionality currently offered by the Wikibase "Action API".
 
-The scope of the schema is limited to the primary entity types (Items & Properties) and the main [CRU(D)](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) actions for those entities.
+You can read more about the principles covering the schedule of work [here](PRINCIPLES.md#Schedule)
 
 ## Intentionally not implemented
 
 The following elements are considered non essential for the design decisions and are intentionally excluded from the prototype schema:
-
-### Deletions
-
-As entity specific deletion is not yet covered by any Wikibase API the deletion part of CRUD is not covered in this specification.
 
 ### Search
 
