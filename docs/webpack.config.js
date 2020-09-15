@@ -14,6 +14,14 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /openapi\.json$/,
+                use: [
+                    { 
+                        loader: path.resolve(rootPath, 'loaders', 'openapi-loader.js')
+                    },
+                ]
+            },
+            {
                 test: /\.css$/,
                 use: [
                     { loader: 'style-loader' },
@@ -31,11 +39,7 @@ module.exports = {
                     // that file handles the OAuth2 redirect after authenticating the end-user.
                     from: 'node_modules/swagger-ui/dist/oauth2-redirect.html',
                     to: outputPath
-                },
-                {
-                    from: 'specs',
-                    to: outputPath
-                },
+                }
             ]
         }),
         new HtmlWebpackPlugin({
