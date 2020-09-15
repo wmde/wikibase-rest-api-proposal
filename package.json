@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "swagger-cli validate specs/openapi.json",
-    "build": "build:docs",
+    "build": "run-s build:docs build:spec",
     "build:docs": "webpack --config docs/webpack.config.js",
     "build:spec": "swagger-cli bundle specs/openapi.json -o dist/openapi.json",
-    "watch:docs": "webpack-dev-server --config docs/webpack.config.js",
+    "watch": "webpack-dev-server --config docs/webpack.config.js",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
@@ -31,6 +31,8 @@
     "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.4.1",
     "json-loader": "^0.5.7",
+    "npm-run-all": "^4.1.5",
+    "openapi-types": "^7.0.1",
     "style-loader": "^1.2.1",
     "swagger-ui": "^3.33.0",
     "webpack": "^4.44.1",
