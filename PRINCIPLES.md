@@ -19,11 +19,18 @@ We need to get the basic stuff covered early, and then we can elaborate to more 
 
 https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Mediawiki/Design_principles#Identifiers
 
-Additional clarification:
+### Path \<type> clarifications
 
-- `<type>` at the top level of endpoint paths can include multiple types for seperation.
-  - Example: `entity/item` or `entity/property`
-  
+`<type>` at the top level of endpoint paths can include multiple types for seperation.
+
+Example: `entities/items` or `entities/properties`
+
+### Plurality
+
+We have seen inconsistencies in previous APIs that can lead to confusion or wrong assumptions. "Consistency is valuable" and thus we will use plurals in all path parts.
+
+Example: `entities/items/<id>/statements/<id>/qualifiers/<hash>`
+
 ## Operations
 
 https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Mediawiki/Design_principles#Operations
