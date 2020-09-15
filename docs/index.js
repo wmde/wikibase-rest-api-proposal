@@ -12,7 +12,7 @@ const ui = SwaggerUI({
 });
 
 ui.initOAuth({
-    appName: "Swagger UI Webpack Demo",
+    appName: "Wikibase REST API Proposal",
     // See https://demo.identityserver.io/ for configuration details.
     clientId: 'implicit'
 });
