@@ -3,30 +3,30 @@
         "tags": [ "entities" ],
         "summary": "Retrieves an entity's alias lists",
         "parameters": [
-            { "$ref": "../../../parameters.json#/entityType" },
-            { "$ref": "../../../parameters.json#/entityId" },
-            { "$ref": "../../../parameters.json#/offset" },
-            { "$ref": "../../../parameters.json#/page" },
-            { "$ref": "../../../parameters.json#/per_page" }
+            { "$ref": "../../../global/parameters.json#/entityType" },
+            { "$ref": "../../../global/parameters.json#/entityId" },
+            { "$ref": "../../../global/parameters.json#/offset" },
+            { "$ref": "../../../global/parameters.json#/page" },
+            { "$ref": "../../../global/parameters.json#/per_page" }
         ],
         "responses": {
-            "200": { "$ref": "../../../responses.json#/EntityAliasesList" },
-            "404": { "$ref": "../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../../global/responses.json#/EntityAliasesList" },
+            "404": { "$ref": "../../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../../global/responses.json#/UnexpectedError" }
         }
     },
     "patch": {
         "tags": [ "entities" ],
         "summary": "Updates an entity's alias lists",
         "parameters": [
-            { "$ref": "../../../parameters.json#/entityType" },
-            { "$ref": "../../../parameters.json#/entityId" }
+            { "$ref": "../../../global/parameters.json#/entityType" },
+            { "$ref": "../../../global/parameters.json#/entityId" }
         ],
-        "requestBody": { "$ref": "../../../requests.json#/PatchList" },
+        "requestBody": { "$ref": "../../../global/requests.json#/PatchList" },
         "responses": {
-            "200": { "$ref": "../../../responses.json#/EntityAliasesList" },
-            "404": { "$ref": "../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../../global/responses.json#/EntityAliasesList" },
+            "404": { "$ref": "../../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../../global/responses.json#/UnexpectedError" }
         }
     }
 }

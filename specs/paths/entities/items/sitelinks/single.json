@@ -3,40 +3,40 @@
         "tags": [ "items" ],
         "summary": "Retrieves an Item's sitelink by wiki-id",
         "parameters": [
-            { "$ref": "../../../../parameters.json#/entityId" },
-            { "$ref": "../../../../parameters.json#/wikiId" }
+            { "$ref": "../../../../global/parameters.json#/entityId" },
+            { "$ref": "../../../../global/parameters.json#/wikiId" }
         ],
         "responses": {
-            "200": { "$ref": "../../../../responses.json#/Sitelink" },
-            "404": { "$ref": "../../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../../../global/responses.json#/Sitelink" },
+            "404": { "$ref": "../../../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../../../global/responses.json#/UnexpectedError" }
         }
     },
     "patch": {
         "tags": [ "items" ],
         "summary": "Updates an Item's sitelink by wiki-id",
         "parameters": [
-            { "$ref": "../../../../parameters.json#/entityId" },
-            { "$ref": "../../../../parameters.json#/wikiId" }
+            { "$ref": "../../../../global/parameters.json#/entityId" },
+            { "$ref": "../../../../global/parameters.json#/wikiId" }
         ],
-        "requestBody": { "$ref": "../../../../requests.json#/PatchList" },
+        "requestBody": { "$ref": "../../../../global/requests.json#/PatchList" },
         "responses": {
-            "200": { "$ref": "../../../../responses.json#/Sitelink" },
-            "404": { "$ref": "../../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../../../global/responses.json#/Sitelink" },
+            "404": { "$ref": "../../../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../../../global/responses.json#/UnexpectedError" }
         }
     },
     "delete": {
         "tags": [ "items" ],
         "summary": "Item's sitelink by wiki-id",
         "parameters": [
-            { "$ref": "../../../../parameters.json#/entityId" },
-            { "$ref": "../../../../parameters.json#/wikiId" }
+            { "$ref": "../../../../global/parameters.json#/entityId" },
+            { "$ref": "../../../../global/parameters.json#/wikiId" }
         ],
         "responses": {
-            "200": { "$ref": "../../../../responses.json#/OK" },
-            "404": { "$ref": "../../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../../../global/responses.json#/OK" },
+            "404": { "$ref": "../../../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../../../global/responses.json#/UnexpectedError" }
         }
     },
 }

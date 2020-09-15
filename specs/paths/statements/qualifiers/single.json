@@ -4,14 +4,14 @@
         "summary": "Single qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers/{qualifierHash}`",
         "parameters": [
-            { "$ref": "../../../parameters.json#/statementId" },
-            { "$ref": "../../../parameters.json#/qualifierHash" },
-            { "$ref": "../../../parameters.json#/fields" }
+            { "$ref": "../../../global/parameters.json#/statementId" },
+            { "$ref": "../../../global/parameters.json#/qualifierHash" },
+            { "$ref": "../../../global/parameters.json#/fields" }
         ],
         "responses": {
-            "200": { "$ref": "../../../responses.json#/Snak" },
-            "404": { "$ref": "../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../../global/responses.json#/Snak" },
+            "404": { "$ref": "../../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../../global/responses.json#/UnexpectedError" }
         }
     },
     "post": {
@@ -19,14 +19,14 @@
         "summary": "Update a qualifier",
         "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers/{qualifierHash}`",
         "parameters": [
-            { "$ref": "../../../parameters.json#/statementId" },
-            { "$ref": "../../../parameters.json#/qualifierHash" }
+            { "$ref": "../../../global/parameters.json#/statementId" },
+            { "$ref": "../../../global/parameters.json#/qualifierHash" }
         ],
-        "requestBody": { "$ref": "../../../requests.json#/Qualifier" },
+        "requestBody": { "$ref": "../../../global/requests.json#/Qualifier" },
         "responses": {
-            "200": { "$ref": "../../../responses.json#/QualifierHash" },
-            "404": { "$ref": "../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../../global/responses.json#/QualifierHash" },
+            "404": { "$ref": "../../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../../global/responses.json#/UnexpectedError" }
         }
     },
     "delete": {
@@ -34,13 +34,13 @@
         "summary": "Single qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers/{qualifierHash}`",
         "parameters": [
-            { "$ref": "../../../parameters.json#/statementId" },
-            { "$ref": "../../../parameters.json#/qualifierHash" }
+            { "$ref": "../../../global/parameters.json#/statementId" },
+            { "$ref": "../../../global/parameters.json#/qualifierHash" }
         ],
         "responses": {
-            "200": { "$ref": "../../../responses.json#/OK" },
-            "404": { "$ref": "../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../../global/responses.json#/OK" },
+            "404": { "$ref": "../../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../../global/responses.json#/UnexpectedError" }
         }
     }
 }

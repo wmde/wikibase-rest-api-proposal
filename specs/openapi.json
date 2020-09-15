@@ -9,13 +9,13 @@
     ],
     "components": {
         "parameters": {
-            "$ref": "./parameters.json"
+            "$ref": "./global/parameters.json"
         },
         "responses": {
-            "$ref": "./responses.json"
+            "$ref": "./global/responses.json"
         },
         "schemas": {
-            "$ref": "./schemas.json"
+            "$ref": "./global/schemas.json"
         }
     },
     "tags": [

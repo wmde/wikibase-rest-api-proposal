@@ -4,16 +4,16 @@
         "summary": "Lists references for a Statement",
         "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references`",
         "parameters": [
-            { "$ref": "../../../parameters.json#/statementId" },
-            { "$ref": "../../../parameters.json#/fields" },
-            { "$ref": "../../../parameters.json#/offset" },
-            { "$ref": "../../../parameters.json#/page" },
-            { "$ref": "../../../parameters.json#/per_page" }
+            { "$ref": "../../../global/parameters.json#/statementId" },
+            { "$ref": "../../../global/parameters.json#/fields" },
+            { "$ref": "../../../global/parameters.json#/offset" },
+            { "$ref": "../../../global/parameters.json#/page" },
+            { "$ref": "../../../global/parameters.json#/per_page" }
         ],
         "responses": {
-            "200": { "$ref": "../../../responses.json#/SnakMapList" },
-            "404": { "$ref": "../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../../global/responses.json#/SnakMapList" },
+            "404": { "$ref": "../../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../../global/responses.json#/UnexpectedError" }
         }
     },
     "post": {
@@ -21,13 +21,13 @@
         "summary": "Add a new Reference to a Statement",
         "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references`",
         "parameters": [
-            { "$ref": "../../../parameters.json#/statementId" }
+            { "$ref": "../../../global/parameters.json#/statementId" }
         ],
-        "requestBody": { "$ref": "../../../requests.json#/Reference" },
+        "requestBody": { "$ref": "../../../global/requests.json#/Reference" },
         "responses": {
-            "200": { "$ref": "../../../responses.json#/ReferenceHash" },
-            "404": { "$ref": "../../../responses.json#/NotFound" },
-            "default": { "$ref": "../../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../../global/responses.json#/ReferenceHash" },
+            "404": { "$ref": "../../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../../global/responses.json#/UnexpectedError" }
         }
     }
 }
