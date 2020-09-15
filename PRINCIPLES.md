@@ -10,8 +10,10 @@ https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Me
 
 ## Schedule
 
-- **Get the minimum done first.** We're focusing on the CRU part of CRUD for the standard Wikibase datamodel entities.
-- **Existing mass used API functionality before less used features before new functionality.** We need to get the basic stuff covered early, and then we can elaborate to more specific activity. Having the base functionality done first is going to get us the most input from developers.
+- **Existing mass used API functionality before less used features before new functionality.**
+- **Core Wikibase entities before supplementary infomation before extended entities.**
+
+We need to get the basic stuff covered early, and then we can elaborate to more specific activity. Having the base functionality done first is going to get us the most input from developers.
 
 ## Identifiers
 
@@ -25,10 +27,6 @@ Additional clarification:
 ## Operations
 
 https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Mediawiki/Design_principles#Operations
-
-Additional clarification:
-
-- **DELETE** will not be covered initially. See [SCOPE.md](SCOPE.md).
 
 ## Data types
 
