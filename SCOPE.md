@@ -51,3 +51,5 @@ Any additional development though would be done within the extension itself. Suc
 ### Modules that combine with other action modules
 
 If not already explicitly included above, any existing action API modules that are intended for use with other action API modules, such as those provided by MediaWiki core, are excluded from the scope of this specification.
+
+For example the `entityterms` module which can be combined with other MediaWiki page lookups to retrieve terms of a connected entity from something like pageid or category list.
