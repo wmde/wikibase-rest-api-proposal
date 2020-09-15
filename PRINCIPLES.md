@@ -28,6 +28,12 @@ Additional clarification:
 
 https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Mediawiki/Design_principles#Operations
 
+### PATCH
+
+Additional to the Mediawiki core principles we will also use `PATCH`.
+
+`PATCH` operations will make use of [JSON-Patch (RFC6902)](https://tools.ietf.org/html/rfc6902) which defines a structure for expressing a sequence of operations to apply to JSON objects.
+
 ## Data types
 
 https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Mediawiki/Design_principles#Data_types
