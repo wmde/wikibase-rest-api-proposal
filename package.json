@@ -1,7 +1,7 @@
 {
-  "name": "wikibase-rest-fantasies",
+  "name": "wikibase-rest-api-proposal",
   "version": "0.0.1",
-  "description": "Wikibase REST fantasies",
+  "description": "Wikibase REST API proposal",
   "main": "openapi.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wmde/wikibase-rest-fantasies.git"
+    "url": "git+https://github.com/wmde/wikibase-rest-api-proposal.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wmde/wikibase-rest-fantasies/issues"
+    "url": "https://github.com/wmde/wikibase-rest-api-proposal/issues"
   },
-  "homepage": "https://github.com/wmde/wikibase-rest-fantasies#readme",
+  "homepage": "https://github.com/wmde/wikibase-rest-api-proposal#readme",
   "devDependencies": {
     "@apidevtools/swagger-cli": "^4.0.4",
     "@apidevtools/swagger-parser": "^10.0.2",

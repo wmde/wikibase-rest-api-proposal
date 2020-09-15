@@ -1,4 +1,4 @@
-# wikibase-rest-fantasies
+# Wikibase REST API Proposal
 
 Prototype of the schema of the future Wikibase REST API.
 
@@ -21,4 +21,4 @@ The following elements are considered non essential for the design decisions and
 
 ## Preview
 
-REST API schema can be previewed using https://wikibase-rest-fantasies.wmflabs.org/.
+REST API schema can be previewed using https://wmde.github.io/wikibase-rest-api-proposal.

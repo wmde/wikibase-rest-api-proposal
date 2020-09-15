@@ -1,7 +1,7 @@
 {
     "openapi":"3.0.2",
     "info": {
-        "title":"Wikibase REST fantasies",
+        "title":"Wikibase REST API Proposal",
         "version":"1.0"
     },
     "servers": [
