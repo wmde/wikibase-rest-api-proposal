@@ -34,7 +34,7 @@ The existing modules serve mainly as part of the Wikibase UI editing and display
 - `wbformatvalue`
 - `wbparsevalue`
 
-### Client focused modules
+### Wikibase Client modules
 
 - `wbsearch`
 - `wbsubscribers`
