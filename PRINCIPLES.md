@@ -10,25 +10,36 @@ https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Me
 
 ## Schedule
 
-- **Get the minimum done first.** We're focusing on the CRU part of CRUD for the standard Wikibase datamodel entities.
-- **Existing mass used API functionality before less used features before new functionality.** We need to get the basic stuff covered early, and then we can elaborate to more specific activity. Having the base functionality done first is going to get us the most input from developers.
+- **Existing mass used API functionality before less used features before new functionality.**
+- **Core Wikibase entities before supplementary infomation before extended entities.**
+
+We need to get the basic stuff covered early, and then we can elaborate to more specific activity. Having the base functionality done first is going to get us the most input from developers.
 
 ## Identifiers
 
 https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Mediawiki/Design_principles#Identifiers
 
-Additional clarification:
+### Path \<type> clarifications
 
-- `<type>` at the top level of endpoint paths can include multiple types for seperation.
-  - Example: `entity/item` or `entity/property`
-  
+`<type>` at the top level of endpoint paths can include multiple types for seperation.
+
+Example: `entities/items` or `entities/properties`
+
+### Plurality
+
+We have seen inconsistencies in previous APIs that can lead to confusion or wrong assumptions. "Consistency is valuable" and thus we will use plurals in all path parts.
+
+Example: `entities/items/<id>/statements/<id>/qualifiers/<hash>`
+
 ## Operations
 
 https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Mediawiki/Design_principles#Operations
 
-Additional clarification:
+### PATCH
 
-- **DELETE** will not be covered initially. See [SCOPE.md](SCOPE.md).
+Additional to the Mediawiki core principles we will also use `PATCH`.
+
+`PATCH` operations will make use of [JSON-Patch (RFC6902)](https://tools.ietf.org/html/rfc6902) which defines a structure for expressing a sequence of operations to apply to JSON objects.
 
 ## Data types
 
