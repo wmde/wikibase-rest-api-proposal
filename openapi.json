@@ -534,6 +534,18 @@
       },
       "SnakMap": {
         "type": "object"
+      },
+      "MediawikiEditComment": {
+        "type": "string"
+      },
+      "MediawikiEditTags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/MediawikiEditTag"
+        }
+      },
+      "MediawikiEditTag": {
+        "type": "string"
       }
     }
   },
@@ -610,12 +622,22 @@
           }
         ],
         "requestBody": {
-          "description": "A Wikibase entity object (Item / Property)",
+          "description": "Edit payload containing a Wikibase entity object (Item / Property)",
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Entity"
+                "properties": {
+                  "entity": {
+                    "$ref": "#/components/schemas/Entity"
+                  },
+                  "comment": {
+                    "$ref": "#/components/schemas/MediawikiEditComment"
+                  },
+                  "tags": {
+                    "$ref": "#/components/schemas/MediawikiEditTags"
+                  }
+                }
               }
             }
           }
@@ -865,12 +887,22 @@
           }
         ],
         "requestBody": {
-          "description": "A List of Aliases",
+          "description": "Edit payload containing list of Aliases",
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AliasList"
+                "properties": {
+                  "aliases": {
+                    "$ref": "#/components/schemas/AliasList"
+                  },
+                  "comment": {
+                    "$ref": "#/components/schemas/MediawikiEditComment"
+                  },
+                  "tags": {
+                    "$ref": "#/components/schemas/MediawikiEditTags"
+                  }
+                }
               }
             }
           }
@@ -1210,12 +1242,22 @@
           }
         ],
         "requestBody": {
-          "description": "An object with information about a value and the language it is in",
+          "description": "Edit payload containing an object with information about a value and the language it is in",
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Term"
+                "properties": {
+                  "term": {
+                    "$ref": "#/components/schemas/Term"
+                  },
+                  "comment": {
+                    "$ref": "#/components/schemas/MediawikiEditComment"
+                  },
+                  "tags": {
+                    "$ref": "#/components/schemas/MediawikiEditTags"
+                  }
+                }
               }
             }
           }
@@ -1539,12 +1581,22 @@
           }
         ],
         "requestBody": {
-          "description": "A Wikibase Statement object",
+          "description": "Edit payload containing a Wikibase Statement object",
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Statement"
+                "properties": {
+                  "statement": {
+                    "$ref": "#/components/schemas/Statement"
+                  },
+                  "comment": {
+                    "$ref": "#/components/schemas/MediawikiEditComment"
+                  },
+                  "tags": {
+                    "$ref": "#/components/schemas/MediawikiEditTags"
+                  }
+                }
               }
             }
           }
