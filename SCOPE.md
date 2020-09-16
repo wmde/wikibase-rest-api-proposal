@@ -8,11 +8,13 @@ You can read more about the principles covering the schedule of work [here](PRIN
 
 The following elements are considered non essential for the design decisions and are intentionally excluded from the prototype schema:
 
-### Search
+### Search & Alternate lookups
 
 A `wbsearchentities` equivalent has not been included in the specification.
 
-Investigations will be carried out to determine if such functionality may make sense to be included as part of the primary entity retrieval endpoint, or if search should remain a separate topic.
+Some features of `wbgetentities` are not included in the specification, such as lookup by `site` and `title`.
+
+Investigations will be carried out to determine if such functionality may make sense to be included as part of the primary entity retrieval / listing endpoint, or if search and lookup should remain a separate topic.
 
 ### Badges
 
