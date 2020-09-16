@@ -3,31 +3,31 @@
         "tags": ["entities", "statements"],
         "summary": "Retrieve a list of entity Statements",
         "parameters": [
-            { "$ref": "../../parameters.json#/entityType" },
-            { "$ref": "../../parameters.json#/entityId" },
-            { "$ref": "../../parameters.json#/fields" },
-            { "$ref": "../../parameters.json#/offset" },
-            { "$ref": "../../parameters.json#/page" },
-            { "$ref": "../../parameters.json#/per_page" }
+            { "$ref": "../../global/parameters.json#/entityType" },
+            { "$ref": "../../global/parameters.json#/entityId" },
+            { "$ref": "../../global/parameters.json#/fields" },
+            { "$ref": "../../global/parameters.json#/offset" },
+            { "$ref": "../../global/parameters.json#/page" },
+            { "$ref": "../../global/parameters.json#/per_page" }
         ],
         "responses": {
-            "200": { "$ref": "../../responses.json#/StatementList" },
-            "404": { "$ref": "../../responses.json#/NotFound" },
-            "default": { "$ref": "../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../global/responses.json#/StatementList" },
+            "404": { "$ref": "../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
         }
     },
     "post": {
         "tags": ["entities", "statements"],
         "summary": "Add a new Statement to an entity (Item | Property)",
         "parameters": [
-            { "$ref": "../../parameters.json#/entityType" },
-            { "$ref": "../../parameters.json#/entityId" }
+            { "$ref": "../../global/parameters.json#/entityType" },
+            { "$ref": "../../global/parameters.json#/entityId" }
         ],
-        "requestBody": { "$ref": "../../requests.json#/Statement" },
+        "requestBody": { "$ref": "../../global/requests.json#/Statement" },
         "responses": {
-            "200": { "$ref": "../../responses.json#/Statement" },
-            "404": { "$ref": "../../responses.json#/NotFound" },
-            "default": { "$ref": "../../responses.json#/UnexpectedError" }
+            "200": { "$ref": "../../global/responses.json#/Statement" },
+            "404": { "$ref": "../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
         }
     }
 }
