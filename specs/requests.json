@@ -11,21 +11,33 @@
             }
         }
     },
-    "AliasList": {
-        "description": "A List of Aliases",
+    "EditAliasList": {
+        "description": "Edit payload containing list of Aliases",
         "required": true,
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/AliasList" }
+                "schema": {
+                    "properties": {
+                        "aliases": {
+                            "$ref": "./schemas.json#/AliasList"
+                        }
+                    }
+                }
             }
         }
     },
-    "Entity": {
-        "description": "A Wikibase entity object (Item / Property)",
+    "EditEntity": {
+        "description": "Edit payload containing a Wikibase entity object (Item / Property)",
         "required": true,
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Entity" }
+                "schema": {
+                    "properties": {
+                        "entity": {
+                            "$ref": "./schemas.json#/Entity"
+                        }
+                    }
+                }
             }
         }
     },
@@ -38,12 +50,18 @@
             }
         }
     },
-    "Statement": {
-        "description": "A Wikibase Statement object",
+    "EditStatement": {
+        "description": "Edit payload containing a Wikibase Statement object",
         "required": true,
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Statement" }
+                "schema": {
+                    "properties": {
+                        "statement": {
+                            "$ref": "./schemas.json#/Statement"
+                        }
+                    }
+                }
             }
         }
     },
@@ -65,12 +83,18 @@
             }
         }
     },
-    "Term": {
-        "description": "An object with information about a value and the language it is in",
+    "EditTerm": {
+        "description": "Edit payload containing an object with information about a value and the language it is in",
         "required": true,
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Term" }
+                "schema": {
+                    "properties": {
+                        "term": {
+                            "$ref": "./schemas.json#/Term"
+                        }
+                    }
+                }
             }
         }
     }

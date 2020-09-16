@@ -23,7 +23,9 @@
             { "$ref": "../../../parameters.json#/entityId" },
             { "$ref": "../../../parameters.json#/lang" }
         ],
-        "requestBody": { "$ref": "../../../requests.json#/AliasList" },
+        "requestBody": {
+            "$ref": "../../../requests.json#/EditAliasList"
+        },
         "responses": {
             "200": { "$ref": "../../../responses.json#/EntityDescription" },
             "404": { "$ref": "../../../responses.json#/NotFound" },

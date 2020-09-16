@@ -23,7 +23,7 @@
             { "$ref": "../../parameters.json#/entityType" },
             { "$ref": "../../parameters.json#/entityId" }
         ],
-        "requestBody": { "$ref": "../../requests.json#/Statement" },
+        "requestBody": { "$ref": "../../requests.json#/EditStatement" },
         "responses": {
             "200": { "$ref": "../../responses.json#/Statement" },
             "404": { "$ref": "../../responses.json#/NotFound" },

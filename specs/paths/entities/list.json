@@ -21,7 +21,7 @@
         "parameters": [
             { "$ref": "../../parameters.json#/entityType" }
         ],
-        "requestBody": { "$ref": "../../requests.json#/Entity" },
+        "requestBody": { "$ref": "../../requests.json#/EditEntity" },
         "responses": {
             "200": { "$ref": "../../responses.json#/Entity" },
             "404": { "$ref": "../../responses.json#/NotFound" },
