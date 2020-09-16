@@ -37,6 +37,7 @@
             { "$ref": "../../../global/parameters.json#/statementId" },
             { "$ref": "../../../global/parameters.json#/referenceHash" }
         ],
+        "requestBody": { "$ref": "../../../global/requests.json#/Edit" },
         "responses": {
             "200": { "$ref": "../../../global/responses.json#/OK" },
             "404": { "$ref": "../../../global/responses.json#/NotFound" },

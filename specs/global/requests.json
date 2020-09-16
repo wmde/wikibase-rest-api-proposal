@@ -122,6 +122,23 @@
             }
         }
     },
+    "Edit": {
+        "description": "Edit payload containing edit meta data",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "properties": {
+                        "comment": {
+                            "$ref": "./schemas.json#/MediawikiEditComment"
+                        },
+                        "tags": {
+                            "$ref": "./schemas.json#/MediawikiEditTags"
+                        }
+                    }
+                }
+            }
+        }
+    },
     "Deletion": {
         "description": "Delete payload including a reason for deletion",
         "content": {
