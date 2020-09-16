@@ -121,5 +121,22 @@
                 }
             }
         }
+    },
+    "Deletion": {
+        "description": "Delete payload including a reason for deletion",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "properties": {
+                        "reason": {
+                            "$ref": "./schemas.json#/MediawikiDeletionReason"
+                        },
+                        "tags": {
+                            "$ref": "./schemas.json#/MediawikiEditTags"
+                        }
+                    }
+                }
+            }
+        }
     }
 }
