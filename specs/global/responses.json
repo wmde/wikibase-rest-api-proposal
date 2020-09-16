@@ -18,6 +18,22 @@
             }
         }
     },
+    "UnauthenticatedError": {
+        "description": "An authentication error has occurred. This can happen due to missing authentication (i.e. no token presented) on resources which require it.",
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Error" }
+            }
+        }
+    },
+    "UnauthorizedError": {
+        "description": "An authorization error has occurred. This can happen if an authenticated user has insufficient privileges.",
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Error" }
+            }
+        }
+    },
     "Entity": {
         "description": "A single wikibase entity",
         "content": {
