@@ -17,16 +17,21 @@ Make sure you have [Node](https://nodejs.org/en/download/package-manager/) v10 o
 All documented commands should be run from the root directory of the cloned repository.
 
 ### Install Dependencies
+
 ```bash
 npm install
 ```
 
 ### Start development server
+
 ```bash
 npm run watch
 ```
 
+Note: this will NOT watch changes to files in the specs directory except for `openapi.json`
+
 ### Build for deployment
+
 ```bash
 npm run build
 ```
