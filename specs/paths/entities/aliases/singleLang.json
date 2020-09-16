@@ -24,7 +24,7 @@
             { "$ref": "../../../parameters.json#/lang" }
         ],
         "requestBody": {
-            "$ref": "../../../requests.json#/EditAliasList"
+            "$ref": "../../../requests.json#/AliasList"
         },
         "responses": {
             "200": { "$ref": "../../../responses.json#/EntityDescription" },

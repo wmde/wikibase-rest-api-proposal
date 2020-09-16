@@ -11,7 +11,7 @@
             }
         }
     },
-    "EditAliasList": {
+    "AliasList": {
         "description": "Edit payload containing list of Aliases",
         "required": true,
         "content": {
@@ -32,7 +32,7 @@
             }
         }
     },
-    "EditEntity": {
+    "Entity": {
         "description": "Edit payload containing a Wikibase entity object (Item / Property)",
         "required": true,
         "content": {
@@ -62,7 +62,7 @@
             }
         }
     },
-    "EditStatement": {
+    "Statement": {
         "description": "Edit payload containing a Wikibase Statement object",
         "required": true,
         "content": {
@@ -101,7 +101,7 @@
             }
         }
     },
-    "EditTerm": {
+    "Term": {
         "description": "Edit payload containing an object with information about a value and the language it is in",
         "required": true,
         "content": {
