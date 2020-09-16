@@ -39,7 +39,7 @@ The existing modules serve mainly as part of the Wikibase UI editing and display
 
 ### Extensions
 
-Wikibase extensions will be able to make sure of the primary layer of Wikibase API endpoints where appropriate. For example you will be able to interact with statement on Lexemes or MediaInfo entities using the statement realted endpoints.
+Wikibase extensions will be able to make sure of the primary layer of Wikibase API endpoints where appropriate. For example you will be able to interact with statement on Lexemes or MediaInfo entities using the statement related endpoints.
 
 Any additional development though would be done within the extension itself. Such development would draw from the learnings in the Wikibase API, but the endpoints would be a separate project.
 
