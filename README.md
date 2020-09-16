@@ -28,8 +28,6 @@ npm install
 npm run watch
 ```
 
-Note: this will NOT watch changes to files in the specs directory except for `openapi.json`
-
 ### Build for deployment
 
 ```bash
