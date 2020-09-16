@@ -16,6 +16,12 @@
         },
         "schemas": {
             "$ref": "./global/schemas.json"
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
         }
     },
     "tags": [
@@ -46,5 +52,8 @@
     ],
     "paths": {
         "$ref": "./paths/index.json"
-    }
+    },
+    "security": [
+        { "bearerAuth": [] }
+    ]
 }

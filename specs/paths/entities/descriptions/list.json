@@ -15,6 +15,8 @@
             "200": { "$ref": "../../../global/responses.json#/EntityDescriptionList" },
             "304": { "$ref": "../../../global/responses.json#/NotModified" },
             "404": { "$ref": "../../../global/responses.json#/NotFound" },
+            "501": { "$ref": "../../../global/responses.json#/UnauthenticatedError" },
+            "503": { "$ref": "../../../global/responses.json#/UnauthorizedError" },
             "default": { "$ref": "../../../global/responses.json#/UnexpectedError" }
         }
     },
@@ -29,6 +31,8 @@
         "responses": {
             "200": { "$ref": "../../../global/responses.json#/EntityDescriptionList" },
             "404": { "$ref": "../../../global/responses.json#/NotFound" },
+            "501": { "$ref": "../../../global/responses.json#/UnauthenticatedError" },
+            "503": { "$ref": "../../../global/responses.json#/UnauthorizedError" },
             "default": { "$ref": "../../../global/responses.json#/UnexpectedError" }
         }
     }
