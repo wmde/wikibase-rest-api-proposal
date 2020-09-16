@@ -1,22 +1,20 @@
 # Scope
 
-The REST API specification is meant to provide the functionality currently offer by Wikibase "Action API".
+The REST API specification is meant to provide the main functionality currently offered by the Wikibase "Action API".
 
-The scope of the schema is limited to the primary entity types (Items & Properties) and the main [CRU(D)](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) actions for those entities.
+You can read more about the principles covering the schedule of work [here](PRINCIPLES.md#Schedule)
 
 ## Intentionally not implemented
 
 The following elements are considered non essential for the design decisions and are intentionally excluded from the prototype schema:
 
-### Deletions
-
-As entity specific deletion is not yet covered by any Wikibase API the deletion part of CRUD is not covered in this specification.
-
-### Search
+### Search & Alternate lookups
 
 A `wbsearchentities` equivalent has not been included in the specification.
 
-Investigations will be carried out to determine if such functionality may make sense to be included as part of the primary entity retrieval endpoint, or if search should remain a separate topic.
+Some features of `wbgetentities` are not included in the specification, such as lookup by `site` and `title`.
+
+Investigations will be carried out to determine if such functionality may make sense to be included as part of the primary entity retrieval / listing endpoint, or if search and lookup should remain a separate topic.
 
 ### Badges
 
@@ -43,11 +41,17 @@ The existing modules serve mainly as part of the Wikibase UI editing and display
 
 ### Extensions
 
-- Lexeme: `wblmergelexemes`, `wbladdform`,  `wbladdsense` `wbleditformelements`, `wbleditsenseelements`, `wblremoveform`, `wblremovesense`
+Wikibase extensions will be able to make sure of the primary layer of Wikibase API endpoints where appropriate. For example you will be able to interact with statement on Lexemes or MediaInfo entities using the statement related endpoints.
+
+Any additional development though would be done within the extension itself. Such development would draw from the learnings in the Wikibase API, but the endpoints would be a separate project.
+
 - MediaInfo
 - PropertySuggester: `wbsgetsuggestions`
 - QualityConstraints: `wbcheckconstraints`, `wbcheckconstraintparameters`
+- Lexeme: `wblmergelexemes`, `wbladdform`,  `wbladdsense` `wbleditformelements`, `wbleditsenseelements`, `wblremoveform`, `wblremovesense`
 
 ### Modules that combine with other action modules
 
 If not already explicitly included above, any existing action API modules that are intended for use with other action API modules, such as those provided by MediaWiki core, are excluded from the scope of this specification.
+
+For example the `entityterms` module which can be combined with other MediaWiki page lookups to retrieve terms of a connected entity from something like pageid or category list.
