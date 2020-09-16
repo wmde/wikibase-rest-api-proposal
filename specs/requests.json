@@ -20,6 +20,9 @@
                     "properties": {
                         "aliases": {
                             "$ref": "./schemas.json#/AliasList"
+                        },
+                        "comment": {
+                            "$ref": "./schemas.json#/MediawikiEditComment"
                         }
                     }
                 }
@@ -35,6 +38,9 @@
                     "properties": {
                         "entity": {
                             "$ref": "./schemas.json#/Entity"
+                        },
+                        "comment": {
+                            "$ref": "./schemas.json#/MediawikiEditComment"
                         }
                     }
                 }
@@ -59,6 +65,9 @@
                     "properties": {
                         "statement": {
                             "$ref": "./schemas.json#/Statement"
+                        },
+                        "comment": {
+                            "$ref": "./schemas.json#/MediawikiEditComment"
                         }
                     }
                 }
@@ -92,6 +101,9 @@
                     "properties": {
                         "term": {
                             "$ref": "./schemas.json#/Term"
+                        },
+                        "comment": {
+                            "$ref": "./schemas.json#/MediawikiEditComment"
                         }
                     }
                 }

@@ -157,5 +157,6 @@
     "Statement": { "type": "object" },
     "Sitelink": { "type": "object" },
     "Snak": { "type": "object" },
-    "SnakMap": { "type": "object" }
+    "SnakMap": { "type": "object" },
+    "MediawikiEditComment": { "type": "string" }
 }
