@@ -158,5 +158,10 @@
     "Sitelink": { "type": "object" },
     "Snak": { "type": "object" },
     "SnakMap": { "type": "object" },
-    "MediawikiEditComment": { "type": "string" }
+    "MediawikiEditComment": { "type": "string" },
+    "MediawikiEditTags": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/MediawikiEditTag" }
+    },
+    "MediawikiEditTag": { "type": "string" }
 }

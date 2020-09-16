@@ -23,6 +23,9 @@
                         },
                         "comment": {
                             "$ref": "./schemas.json#/MediawikiEditComment"
+                        },
+                        "tags": {
+                            "$ref": "./schemas.json#/MediawikiEditTags"
                         }
                     }
                 }
@@ -41,6 +44,9 @@
                         },
                         "comment": {
                             "$ref": "./schemas.json#/MediawikiEditComment"
+                        },
+                        "tags": {
+                            "$ref": "./schemas.json#/MediawikiEditTags"
                         }
                     }
                 }
@@ -68,6 +74,9 @@
                         },
                         "comment": {
                             "$ref": "./schemas.json#/MediawikiEditComment"
+                        },
+                        "tags": {
+                            "$ref": "./schemas.json#/MediawikiEditTags"
                         }
                     }
                 }
@@ -104,6 +113,9 @@
                         },
                         "comment": {
                             "$ref": "./schemas.json#/MediawikiEditComment"
+                        },
+                        "tags": {
+                            "$ref": "./schemas.json#/MediawikiEditTags"
                         }
                     }
                 }
