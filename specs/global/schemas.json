@@ -164,5 +164,27 @@
         "type": "array",
         "items": { "$ref": "./schemas.json#/MediawikiEditTag" }
     },
-    "MediawikiEditTag": { "type": "string" }
+    "MediawikiEditTag": { "type": "string" },
+    "MediawikiEdit": {
+        "type": "object",
+        "properties": {
+            "comment": {
+                "$ref": "./schemas.json#/MediawikiEditComment"
+            },
+            "tags": {
+                "$ref": "./schemas.json#/MediawikiEditTags"
+            }
+        }
+    },
+    "MediawikiDeletion": {
+        "type": "object",
+        "properties": {
+            "reason": {
+                "$ref": "./schemas.json#/MediawikiDeletionReason"
+            },
+            "tags": {
+                "$ref": "./schemas.json#/MediawikiEditTags"
+            }
+        }
+    }
 }

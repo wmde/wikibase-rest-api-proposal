@@ -17,17 +17,15 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "properties": {
-                        "aliases": {
-                            "$ref": "./schemas.json#/AliasList"
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "properties": { "aliases": { "$ref": "./schemas.json#/AliasList" } }
                         },
-                        "comment": {
-                            "$ref": "./schemas.json#/MediawikiEditComment"
-                        },
-                        "tags": {
-                            "$ref": "./schemas.json#/MediawikiEditTags"
+                        {
+                            "$ref": "./schemas.json#/MediawikiEdit"
                         }
-                    }
+                    ]
                 }
             }
         }
@@ -38,17 +36,15 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "properties": {
-                        "entity": {
-                            "$ref": "./schemas.json#/Entity"
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "properties": { "entity": { "$ref": "./schemas.json#/Entity" } }
                         },
-                        "comment": {
-                            "$ref": "./schemas.json#/MediawikiEditComment"
-                        },
-                        "tags": {
-                            "$ref": "./schemas.json#/MediawikiEditTags"
+                        {
+                            "$ref": "./schemas.json#/MediawikiEdit"
                         }
-                    }
+                    ]
                 }
             }
         }
@@ -68,17 +64,15 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "properties": {
-                        "statement": {
-                            "$ref": "./schemas.json#/Statement"
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "properties": { "statement": { "$ref": "./schemas.json#/Statement" } }
                         },
-                        "comment": {
-                            "$ref": "./schemas.json#/MediawikiEditComment"
-                        },
-                        "tags": {
-                            "$ref": "./schemas.json#/MediawikiEditTags"
+                        {
+                            "$ref": "./schemas.json#/MediawikiEdit"
                         }
-                    }
+                    ]
                 }
             }
         }
@@ -107,17 +101,15 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "properties": {
-                        "term": {
-                            "$ref": "./schemas.json#/Term"
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "properties": { "term": { "$ref": "./schemas.json#/Term" } }
                         },
-                        "comment": {
-                            "$ref": "./schemas.json#/MediawikiEditComment"
-                        },
-                        "tags": {
-                            "$ref": "./schemas.json#/MediawikiEditTags"
+                        {
+                            "$ref": "./schemas.json#/MediawikiEdit"
                         }
-                    }
+                    ]
                 }
             }
         }
@@ -127,14 +119,7 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "properties": {
-                        "comment": {
-                            "$ref": "./schemas.json#/MediawikiEditComment"
-                        },
-                        "tags": {
-                            "$ref": "./schemas.json#/MediawikiEditTags"
-                        }
-                    }
+                    "$ref": "./schemas.json#/MediawikiEdit"
                 }
             }
         }
@@ -144,14 +129,7 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "properties": {
-                        "reason": {
-                            "$ref": "./schemas.json#/MediawikiDeletionReason"
-                        },
-                        "tags": {
-                            "$ref": "./schemas.json#/MediawikiEditTags"
-                        }
-                    }
+                    "$ref": "./schemas.json#/MediawikiDeletion"
                 }
             }
         }
