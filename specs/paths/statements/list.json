@@ -14,6 +14,7 @@
         ],
         "responses": {
             "200": { "$ref": "../../global/responses.json#/StatementList" },
+            "304": { "$ref": "../../global/responses.json#/NotModified" },
             "404": { "$ref": "../../global/responses.json#/NotFound" },
             "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
         }

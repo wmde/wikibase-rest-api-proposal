@@ -1,6 +1,37 @@
 {
     "OK": {
-        "description": "OK"
+        "description": "OK",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        }
+    },
+    "NotModified": {
+        "description": "The specified resource has not modified since last provided revision number or date",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        }
     },
     "NotFound": {
         "description": "The specified resource was not found",
@@ -20,6 +51,20 @@
     },
     "Entity": {
         "description": "A single wikibase entity",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
         "content": {
             "application/json": {
                 "schema": { "$ref": "./schemas.json#/Entity" }
@@ -39,63 +84,161 @@
     },
     "EntityAliases": {
         "description": "A list of aliases by language",
-            "content": {
-                "application/json": {
-                    "schema":  { "$ref": "./schemas.json#/AliasList" }
-                }
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
             }
+        },
+        "content": {
+            "application/json": {
+                "schema":  { "$ref": "./schemas.json#/AliasList" }
+            }
+        }
     },
     "EntityDescription": {
         "description": "Entity Description by language",
-            "content": {
-                "application/json": {
-                    "schema": { "$ref": "./schemas.json#/Term" }
-                }
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
             }
+        },
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Term" }
+            }
+        }
     },
     "EntityLabel": {
         "description": "Entity Label by language",
-            "content": {
-                "application/json": {
-                    "schema": { "$ref": "./schemas.json#/Term" }
-                }
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
             }
+        },
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Term" }
+            }
+        }
     },
     "EntityAliasesList": {
         "description": "A list of aliases by language",
-            "content": {
-                "application/json": {
-                    "schema": {
-                        "type": "array",
-                        "items": { "$ref": "./schemas.json#/AliasList" } 
-                    }
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "array",
+                    "items": { "$ref": "./schemas.json#/AliasList" } 
                 }
             }
+        }
     },
     "EntityDescriptionList": {
         "description": "Entity Description by language",
-            "content": {
-                "application/json": {
-                    "schema": {
-                        "type": "array",
-                        "items": { "$ref": "./schemas.json#/Term" } 
-                    }
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "array",
+                    "items": { "$ref": "./schemas.json#/Term" } 
                 }
             }
+        }
     },
     "EntityLabelList": {
         "description": "Entity Label by language",
-            "content": {
-                "application/json": {
-                    "schema": {
-                        "type": "array",
-                        "items": { "$ref": "./schemas.json#/Term" } 
-                    }
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "array",
+                    "items": { "$ref": "./schemas.json#/Term" } 
                 }
             }
+        }
     },
     "Sitelink": {
         "description": "A single sitelink",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
         "content": {
             "application/json": {
                 "schema": { "$ref": "./schemas.json#/Sitelink" }
@@ -104,6 +247,20 @@
     },
     "SitelinkList": {
         "description": "A single sitelink",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
         "content": {
             "application/json": {
                 "schema": {
@@ -115,6 +272,20 @@
     },
     "Statement": {
         "description": "A single wikibase statement",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
         "content": {
             "application/json": {
                 "schema": { "$ref": "./schemas.json#/Statement" }
@@ -123,6 +294,20 @@
     },
     "StatementList": {
         "description": "A list of wikibase statements",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
         "content": {
             "application/json": {
                 "schema": {
@@ -134,6 +319,20 @@
     },
     "Snak": {
         "description": "A property - value pair Object",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
         "content": {
             "application/json": {
                 "schema":  { "$ref": "./schemas.json#/Snak" }
@@ -142,6 +341,20 @@
     },
     "SnakList": {
         "description": "A list of Snak (Property - Value pair) Objects",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
         "content": {
             "application/json": {
                 "schema": {
@@ -153,6 +366,20 @@
     },
     "SnakMap": {
         "description": "A map of propertyId to Snak Object",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
         "content": {
             "application/json": {
                 "schema":  { "$ref": "./schemas.json#/SnakMap" }
@@ -161,6 +388,20 @@
     },
     "SnakMapList": {
         "description": "A list of Snakmaps",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
         "content": {
             "application/json": {
                 "schema": {
