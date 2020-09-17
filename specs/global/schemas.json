@@ -175,7 +175,17 @@
             }
         }
     },
-    "Snak": { "type": "object" },
+    "Snak": {
+        "type": "object",
+        "properties": {
+            "property": {
+                "type": "string"
+            },
+            "value": {
+                "type": "object"
+            }
+        }
+    },
     "SnakMap": { "type": "object" },
     "MediawikiEditComment": { "type": "string" },
     "MediawikiDeletionReason": { "type": "string" },
