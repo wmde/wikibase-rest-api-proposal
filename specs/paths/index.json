@@ -1,50 +1,50 @@
 {
-    "/entities/{entityType}": {
+    "/entities/{entity_type}": {
         "$ref": "./entities/list.json"
     },
-    "/entities/{entityType}/{entityId}": {
+    "/entities/{entity_type}/{entity_id}": {
         "$ref": "./entities/single.json"
     },
-    "/entities/{entityType}/{entityId}/aliases": {
+    "/entities/{entity_type}/{entity_id}/aliases": {
         "$ref": "./entities/aliases/list.json"
     },
-    "/entities/{entityType}/{entityId}/aliases/{lang}": {
+    "/entities/{entity_type}/{entity_id}/aliases/{lang}": {
         "$ref": "./entities/aliases/singleLang.json"
     },
-    "/entities/{entityType}/{entityId}/descriptions": {
+    "/entities/{entity_type}/{entity_id}/descriptions": {
         "$ref": "./entities/descriptions/list.json"
     },
-    "/entities/{entityType}/{entityId}/descriptions/{lang}": {
+    "/entities/{entity_type}/{entity_id}/descriptions/{lang}": {
         "$ref": "./entities/descriptions/singleLang.json"
     },
-    "/entities/{entityType}/{entityId}/labels": {
+    "/entities/{entity_type}/{entity_id}/labels": {
         "$ref": "./entities/labels/list.json"
     },
-    "/entities/{entityType}/{entityId}/labels/{lang}": {
+    "/entities/{entity_type}/{entity_id}/labels/{lang}": {
         "$ref": "./entities/labels/singleLang.json"
     },
-    "/entities/{entityType}/{entityId}/statements": {
+    "/entities/{entity_type}/{entity_id}/statements": {
         "$ref": "./statements/list.json"
     },
-    "/entities/items/{entityId}/sitelinks": {
+    "/entities/items/{entity_id}/sitelinks": {
         "$ref": "./entities/items/sitelinks/list.json"
     },
-    "/entities/items/{entityId}/sitelinks/{wikiId}": {
+    "/entities/items/{entity_id}/sitelinks/{wiki_id}": {
         "$ref": "./entities/items/sitelinks/single.json"
     },
-    "/statements/{statementId}": {
+    "/statements/{statement_id}": {
         "$ref": "./statements/single.json"
     },
-    "/statements/{statementId}/qualifiers": {
+    "/statements/{statement_id}/qualifiers": {
         "$ref": "./statements/qualifiers/list.json"
     },
-    "/statements/{statementId}/qualifiers/{qualifierHash}": {
+    "/statements/{statement_id}/qualifiers/{qualifier_hash}": {
         "$ref": "./statements/qualifiers/single.json"
     },
-    "/statements/{statementId}/references": {
+    "/statements/{statement_id}/references": {
         "$ref": "./statements/references/list.json"
     },
-    "/statements/{statementId}/references/{referenceHash}": {
+    "/statements/{statement_id}/references/{reference_hash}": {
         "$ref": "./statements/references/single.json"
     }
 }
