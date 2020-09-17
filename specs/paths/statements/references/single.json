@@ -2,7 +2,7 @@
     "get": {
         "tags": [ "statements" ],
         "summary": "Single reference by hash",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references/{referenceHash}`",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
             { "$ref": "../../../global/parameters.json#/statementId" },
             { "$ref": "../../../global/parameters.json#/referenceHash" },
@@ -20,7 +20,7 @@
     "post": {
         "tags": ["statements"],
         "summary": "Update a reference",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references/{referenceHash}`",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
             { "$ref": "../../../global/parameters.json#/statementId" },
             { "$ref": "../../../global/parameters.json#/referenceHash" }
@@ -37,7 +37,7 @@
     "delete": {
         "tags": [ "statements" ],
         "summary": "Single reference by hash",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references/{referenceHash}`",
+        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
             { "$ref": "../../../global/parameters.json#/statementId" },
             { "$ref": "../../../global/parameters.json#/referenceHash" }

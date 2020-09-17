@@ -10,7 +10,7 @@
     },
     "entityId":{
         "in": "path",
-        "name": "entityId",
+        "name": "entity_id",
         "description": "The id of the required item or property",
         "required": true,
         "schema": {
@@ -20,7 +20,7 @@
     },
     "entityType":{
         "in": "path",
-        "name": "entityType",
+        "name": "entity_type",
         "description": "The type of the required entity. Can only be one of `items` or `properties`.",
         "required": true,
         "schema": {
@@ -67,7 +67,7 @@
     },
     "qualifierHash": {
         "in": "path",
-        "name": "qualifierHash",
+        "name": "qualifier_hash",
         "description": "Single qualifier by hash",
         "required": true,
         "schema": {
@@ -76,7 +76,7 @@
     },
     "referenceHash": {
         "in": "path",
-        "name": "referenceHash",
+        "name": "reference_hash",
         "description": "Single reference by hash",
         "required": true,
         "schema": {
@@ -85,7 +85,7 @@
     },
     "statementId": {
         "in": "path",
-        "name": "statementId",
+        "name": "statement_id",
         "description": "The id of the required statement",
         "required": true,
         "schema": {
@@ -94,7 +94,7 @@
         }
     },
     "wikiId": {
-        "name": "wikiId",
+        "name": "wiki_id",
         "in": "path",
         "description": "The id of the wiki that the sitelink directs to",
         "required": true,
