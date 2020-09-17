@@ -806,6 +806,28 @@
       },
       "MediawikiEditTag": {
         "type": "string"
+      },
+      "MediawikiEdit": {
+        "type": "object",
+        "properties": {
+          "comment": {
+            "$ref": "#/components/schemas/MediawikiEditComment"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/MediawikiEditTags"
+          }
+        }
+      },
+      "MediawikiDeletion": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "$ref": "#/components/schemas/MediawikiDeletionReason"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/MediawikiEditTags"
+          }
+        }
       }
     }
   },
@@ -887,17 +909,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "properties": {
-                  "entity": {
-                    "$ref": "#/components/schemas/Entity"
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "entity": {
+                        "$ref": "#/components/schemas/Entity"
+                      }
+                    }
                   },
-                  "comment": {
-                    "$ref": "#/components/schemas/MediawikiEditComment"
-                  },
-                  "tags": {
-                    "$ref": "#/components/schemas/MediawikiEditTags"
+                  {
+                    "$ref": "#/components/schemas/MediawikiEdit"
                   }
-                }
+                ]
               }
             }
           }
@@ -1038,14 +1062,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "properties": {
-                  "reason": {
-                    "$ref": "#/components/schemas/MediawikiDeletionReason"
-                  },
-                  "tags": {
-                    "$ref": "#/components/schemas/MediawikiEditTags"
-                  }
-                }
+                "$ref": "#/components/schemas/MediawikiDeletion"
               }
             }
           }
@@ -1196,17 +1213,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "properties": {
-                  "aliases": {
-                    "$ref": "#/components/schemas/AliasList"
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "aliases": {
+                        "$ref": "#/components/schemas/AliasList"
+                      }
+                    }
                   },
-                  "comment": {
-                    "$ref": "#/components/schemas/MediawikiEditComment"
-                  },
-                  "tags": {
-                    "$ref": "#/components/schemas/MediawikiEditTags"
+                  {
+                    "$ref": "#/components/schemas/MediawikiEdit"
                   }
-                }
+                ]
               }
             }
           }
@@ -1593,17 +1612,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "properties": {
-                  "term": {
-                    "$ref": "#/components/schemas/Term"
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "term": {
+                        "$ref": "#/components/schemas/Term"
+                      }
+                    }
                   },
-                  "comment": {
-                    "$ref": "#/components/schemas/MediawikiEditComment"
-                  },
-                  "tags": {
-                    "$ref": "#/components/schemas/MediawikiEditTags"
+                  {
+                    "$ref": "#/components/schemas/MediawikiEdit"
                   }
-                }
+                ]
               }
             }
           }
@@ -1974,17 +1995,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "properties": {
-                  "statement": {
-                    "$ref": "#/components/schemas/Statement"
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "statement": {
+                        "$ref": "#/components/schemas/Statement"
+                      }
+                    }
                   },
-                  "comment": {
-                    "$ref": "#/components/schemas/MediawikiEditComment"
-                  },
-                  "tags": {
-                    "$ref": "#/components/schemas/MediawikiEditTags"
+                  {
+                    "$ref": "#/components/schemas/MediawikiEdit"
                   }
-                }
+                ]
               }
             }
           }
@@ -2017,14 +2040,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "properties": {
-                  "comment": {
-                    "$ref": "#/components/schemas/MediawikiEditComment"
-                  },
-                  "tags": {
-                    "$ref": "#/components/schemas/MediawikiEditTags"
-                  }
-                }
+                "$ref": "#/components/schemas/MediawikiEdit"
               }
             }
           }
