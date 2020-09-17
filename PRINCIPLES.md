@@ -31,6 +31,10 @@ We have seen inconsistencies in previous APIs that can lead to confusion or wron
 
 Example: `entities/items/<id>/statements/<id>/qualifiers/<hash>`
 
+### Snake-case for multi-word properties
+
+We do not apply this principle to parameters included in the path.
+
 ## Operations
 
 https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Mediawiki/Design_principles#Operations
