@@ -1,12 +1,19 @@
 {
     "PatchList": {
-        "description": "A list of JSON-PATCH objects that describe changes to the resource",
+        "description": "Edit payload containing a list of JSON-PATCH objects that describe changes to the resource",
         "required": true,
         "content": {
-            "application/json-patch+json": {
+            "application/json": {
                 "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/DocumentPatch" }
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "properties": { "patches": { "$ref": "./schemas.json#/DocumentPatchList" } }
+                        },
+                        {
+                            "$ref": "./schemas.json#/MediawikiEdit"
+                        }
+                    ]
                 }
             }
         }
