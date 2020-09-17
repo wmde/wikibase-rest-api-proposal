@@ -159,10 +159,81 @@
     },
     "QualifierHash": { "type": "string" },
     "ReferenceHash": { "type": "string" },
-    "Statement": { "type": "object" },
-    "Sitelink": { "type": "object" },
-    "Snak": { "type": "object" },
-    "SnakMap": { "type": "object" },
+    "Statement": {
+        "type": "object",
+        "properties": {
+            "mainsnak" : {
+                "$ref": "./schemas.json#/Snak"
+            },
+            "id": {
+                "type": "string"
+            },
+            "rank": {
+                "type": "string"
+            },
+            "qualifiers": {
+                "$ref": "./schemas.json#/SnakMap"
+            },
+            "references": {
+                "$ref": "./schemas.json#/SnakMapList"
+            }
+        }
+    },
+    "Sitelink": {
+        "type": "object",
+        "properties": {
+            "site": {
+                "type": "string"
+            },
+            "title": {
+                "type": "string"
+            },
+            "badges": {
+                "type": "array",
+                "items": { "type": "string" }
+            }
+        }
+    },
+    "Snak": {
+        "type": "object",
+        "properties": {
+            "snaktype": {
+                "type": "string"
+            },
+            "property": {
+                "type": "string"
+            },
+            "datatype": {
+                "type": "string"
+            },
+            "datavalue": {
+                "type": "object",
+                "additionalProperties": true,
+                "example": {
+                    "type" : "string",
+                    "value" : "I am a goat"
+                }
+            }
+        }
+    },
+    "SnakList": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/Snak" }
+    },
+    "SnakMap": {
+        "type": "object",
+        "additionalProperties": {
+            "$ref": "./schemas.json#/SnakList"
+        },
+        "example": {
+            "P31": [],
+            "P100": []
+        }
+    },
+    "SnakMapList": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/SnakMap" }
+    },
     "MediawikiEditComment": { "type": "string" },
     "MediawikiDeletionReason": { "type": "string" },
     "MediawikiEditTags": {

@@ -381,7 +381,7 @@
         }
     },
     "SnakMap": {
-        "description": "A map of propertyId to Snak Object",
+        "description": "A map of propertyId to Snak Objects",
         "headers": {
             "Last-Modified": {
                 "schema": {
