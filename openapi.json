@@ -247,7 +247,7 @@
         }
       },
       "EntityAliases": {
-        "description": "A list of aliases by language",
+        "description": "A list of aliases for the requested language",
         "headers": {
           "Last-Modified": {
             "schema": {
@@ -339,7 +339,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/AliasList"
+                "$ref": "#/components/schemas/Aliases"
               }
             }
           }
@@ -364,10 +364,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Term"
-              }
+              "$ref": "#/components/schemas/Descriptions"
             }
           }
         }
@@ -391,10 +388,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Term"
-              }
+              "$ref": "#/components/schemas/Labels"
             }
           }
         }
@@ -629,18 +623,56 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/Term"
+        },
+        "example": {
+          "en": {
+            "language": "en",
+            "value": "Japan"
+          },
+          "fr": {
+            "language": "fr",
+            "value": "Japon"
+          }
         }
       },
       "Descriptions": {
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/Term"
+        },
+        "example": {
+          "en": {
+            "language": "en",
+            "value": "Science-fiction writer"
+          },
+          "fr": {
+            "language": "fr",
+            "value": "écrivain de science-fiction"
+          }
         }
       },
       "Aliases": {
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/AliasList"
+        },
+        "example": {
+          "en": [
+            {
+              "language": "en",
+              "value": "world"
+            },
+            {
+              "language": "en",
+              "value": "earth"
+            }
+          ],
+          "fr": [
+            {
+              "language": "fr",
+              "value": "monde"
+            }
+          ]
         }
       },
       "AliasList": {
@@ -1353,7 +1385,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/EntityDescription"
+            "$ref": "#/components/responses/EntityAliases"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1996,7 +2028,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/SitelinkList"
+            "$ref": "#/components/responses/Sitelink"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
