@@ -3,6 +3,16 @@
         "type": "object",
         "additionalProperties": {
             "$ref": "./schemas.json#/Term"
+        },
+        "example": {
+            "en": {
+                "language": "en",
+                "value": "Japan"
+            },
+            "fr": {
+                "language": "fr",
+                "value": "Japon"
+            }
         }
     },
     "Descriptions": {
