@@ -101,5 +101,21 @@
         "schema": {
             "type": "string"
         }
+    },
+    "ifNoneMatch": {
+        "name": "If-None-Match",
+        "in": "header",
+        "description": "Conditionally request a resource only if changed since specified entity revision number",
+        "schema": {
+            "type": "string"
+        }
+    },
+    "ifModifiedSince": {
+        "name": "If-Modified-Since",
+        "in": "header",
+        "description": "Conditionally request a resource only if it changed since specified date",
+        "schema": {
+            "type": "string"
+        }
     }
 }

@@ -6,10 +6,13 @@
             { "$ref": "../../../../global/parameters.json#/entityId" },
             { "$ref": "../../../../global/parameters.json#/offset" },
             { "$ref": "../../../../global/parameters.json#/page" },
-            { "$ref": "../../../../global/parameters.json#/per_page" }
+            { "$ref": "../../../../global/parameters.json#/per_page" },
+            { "$ref": "../../../../global/parameters.json#/ifNoneMatch" },
+            { "$ref": "../../../../global/parameters.json#/ifModifiedSince" }
         ],
         "responses": {
             "200": { "$ref": "../../../../global/responses.json#/SitelinkList" },
+            "304": { "$ref": "../../../../global/responses.json#/NotModified" },
             "404": { "$ref": "../../../../global/responses.json#/NotFound" },
             "default": { "$ref": "../../../../global/responses.json#/UnexpectedError" }
         }

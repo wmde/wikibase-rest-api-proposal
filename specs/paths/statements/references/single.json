@@ -6,10 +6,13 @@
         "parameters": [
             { "$ref": "../../../global/parameters.json#/statementId" },
             { "$ref": "../../../global/parameters.json#/referenceHash" },
-            { "$ref": "../../../global/parameters.json#/fields" }
+            { "$ref": "../../../global/parameters.json#/fields" },
+            { "$ref": "../../../global/parameters.json#/ifNoneMatch" },
+            { "$ref": "../../../global/parameters.json#/ifModifiedSince" }
         ],
         "responses": {
             "200": { "$ref": "../../../global/responses.json#/SnakMap" },
+            "304": { "$ref": "../../../global/responses.json#/NotModified" },
             "404": { "$ref": "../../../global/responses.json#/NotFound" },
             "default": { "$ref": "../../../global/responses.json#/UnexpectedError" }
         }
