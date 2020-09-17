@@ -240,8 +240,7 @@
                 "type": "array",
                 "items": { "type": "string" }
             }
-        },
-        "example"
+        }
     },
     "SitelinkMap": {
         "type": "object",

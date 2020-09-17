@@ -262,7 +262,7 @@
         }
     },
     "SitelinkList": {
-        "description": "A single sitelink",
+        "description": "A list of sitelinks by site id",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -279,10 +279,7 @@
         },
         "content": {
             "application/json": {
-                "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Sitelink" } 
-                }
+                "schema": { "$ref": "./schemas.json#/SitelinkMap" } 
             }
         }
     },
