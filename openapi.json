@@ -1064,27 +1064,7 @@
           }
         ],
         "requestBody": {
-          "description": "Edit payload containing a list of JSON-PATCH objects that describe changes to the resource",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "allOf": [
-                  {
-                    "type": "object",
-                    "properties": {
-                      "patches": {
-                        "$ref": "#/components/schemas/DocumentPatchList"
-                      }
-                    }
-                  },
-                  {
-                    "$ref": "#/components/schemas/MediawikiEdit"
-                  }
-                ]
-              }
-            }
-          }
+          "$ref": "#/paths/~1statements~1%7BstatementId%7D/patch/requestBody"
         },
         "responses": {
           "200": {
@@ -1204,7 +1184,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1entities~1%7BentityType%7D~1%7BentityId%7D/patch/requestBody"
+          "$ref": "#/paths/~1statements~1%7BstatementId%7D/patch/requestBody"
         },
         "responses": {
           "200": {
@@ -1337,7 +1317,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1entities~1%7BentityType%7D~1%7BentityId%7D/patch/requestBody"
+          "$ref": "#/paths/~1statements~1%7BstatementId%7D/patch/requestBody"
         },
         "responses": {
           "200": {
@@ -1459,7 +1439,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1entities~1%7BentityType%7D~1%7BentityId%7D/patch/requestBody"
+          "$ref": "#/paths/~1statements~1%7BstatementId%7D/patch/requestBody"
         },
         "responses": {
           "200": {
@@ -1651,7 +1631,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1entities~1%7BentityType%7D~1%7BentityId%7D/patch/requestBody"
+          "$ref": "#/paths/~1statements~1%7BstatementId%7D/patch/requestBody"
         },
         "responses": {
           "200": {
@@ -2013,7 +1993,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1entities~1%7BentityType%7D~1%7BentityId%7D/patch/requestBody"
+          "$ref": "#/paths/~1statements~1%7BstatementId%7D/patch/requestBody"
         },
         "responses": {
           "200": {
@@ -2115,7 +2095,27 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/put/requestBody"
+          "description": "Edit payload containing a list of JSON-PATCH objects that describe changes to the resource",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "patches": {
+                        "$ref": "#/components/schemas/DocumentPatchList"
+                      }
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/MediawikiEdit"
+                  }
+                ]
+              }
+            }
+          }
         },
         "responses": {
           "200": {
