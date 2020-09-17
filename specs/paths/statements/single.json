@@ -22,7 +22,7 @@
         "parameters": [
             { "$ref": "../../global/parameters.json#/statementId" }
         ],
-        "requestBody": { "$ref": "../../global/requests.json#/Statement" },
+        "requestBody": { "$ref": "../../global/requests.json#/PatchList" },
         "responses": {
             "200": { "$ref": "../../global/responses.json#/Statement" },
             "404": { "$ref": "../../global/responses.json#/NotFound" },
