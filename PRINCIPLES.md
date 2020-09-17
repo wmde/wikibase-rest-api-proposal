@@ -49,6 +49,8 @@ https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Me
 
 https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Mediawiki/Design_principles#Headers
 
+In addition to the principles mentioned above, the Wikibase API also supports headers for [conditional requests](https://www.mediawiki.org/wiki/API:REST_API/Conditional_requests) to optimize client side caching.
+
 ## Errors
 
 https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Mediawiki/Design_principles#Errors
