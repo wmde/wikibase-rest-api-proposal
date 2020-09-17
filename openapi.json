@@ -664,6 +664,13 @@
           "message"
         ]
       },
+      "DocumentPatchList": {
+        "description": "A list of JSONPatch objects as defined by RFC 6902",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DocumentPatch"
+        }
+      },
       "DocumentPatch": {
         "description": "A JSONPatch object as defined by RFC 6902",
         "type": "object",
@@ -1057,15 +1064,24 @@
           }
         ],
         "requestBody": {
-          "description": "A list of JSON-PATCH objects that describe changes to the resource",
+          "description": "Edit payload containing a list of JSON-PATCH objects that describe changes to the resource",
           "required": true,
           "content": {
-            "application/json-patch+json": {
+            "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/DocumentPatch"
-                }
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "patches": {
+                        "$ref": "#/components/schemas/DocumentPatchList"
+                      }
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/MediawikiEdit"
+                  }
+                ]
               }
             }
           }
@@ -1912,7 +1928,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Sitelink"
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "sitelink": {
+                        "$ref": "#/components/schemas/Sitelink"
+                      }
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/MediawikiEdit"
+                  }
+                ]
               }
             }
           }
@@ -2260,7 +2288,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Snak"
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "snak": {
+                        "$ref": "#/components/schemas/Snak"
+                      }
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/MediawikiEdit"
+                  }
+                ]
               }
             }
           }
@@ -2456,7 +2496,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SnakMap"
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "reference": {
+                        "$ref": "#/components/schemas/SnakMap"
+                      }
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/MediawikiEdit"
+                  }
+                ]
               }
             }
           }
