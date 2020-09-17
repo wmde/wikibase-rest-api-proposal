@@ -184,7 +184,7 @@
             "application/json": {
                 "schema": {
                     "type": "array",
-                    "items": { "$ref": "./schemas.json#/AliasList" } 
+                    "items": { "$ref": "./schemas.json#/Aliases" } 
                 }
             }
         }

@@ -15,6 +15,24 @@
         "type": "object",
         "additionalProperties": {
             "$ref": "./schemas.json#/AliasList"
+        },
+        "example": {
+            "en": [
+                { 
+                    "language": "en",
+                    "value": "world"
+                },
+                { 
+                    "language": "en",
+                    "value": "earth"
+                }
+            ],
+            "fr": [
+                { 
+                    "language": "fr",
+                    "value": "monde"
+                }
+            ]
         }
     },
     "AliasList": {
