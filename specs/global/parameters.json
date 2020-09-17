@@ -71,7 +71,7 @@
         "description": "Single qualifier by hash",
         "required": true,
         "schema": {
-            "type" : "string"
+            "$ref": "./schemas.json#/QualifierHash"
         }
     },
     "referenceHash": {
@@ -80,7 +80,7 @@
         "description": "Single reference by hash",
         "required": true,
         "schema": {
-            "type" : "string"
+            "$ref": "./schemas.json#/ReferenceHash"
         }
     },
     "statementId": {
