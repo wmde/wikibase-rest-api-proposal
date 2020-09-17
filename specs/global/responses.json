@@ -121,7 +121,11 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./schemas.json#/AliasList" }
+                "schema":  {
+                    "properties": {
+                        "aliases": { "$ref": "./schemas.json#/AliasList" }
+                    }
+                }
             }
         }
     },
