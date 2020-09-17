@@ -116,11 +116,58 @@
         "schema": {
           "type": "string"
         }
+      },
+      "ifNoneMatch": {
+        "name": "If-None-Match",
+        "in": "header",
+        "description": "Conditionally request a resource only if changed since specified entity revision number",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "ifModifiedSince": {
+        "name": "If-Modified-Since",
+        "in": "header",
+        "description": "Conditionally request a resource only if it changed since specified date",
+        "schema": {
+          "type": "string"
+        }
       }
     },
     "responses": {
       "OK": {
-        "description": "OK"
+        "description": "OK",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        }
+      },
+      "NotModified": {
+        "description": "The specified resource has not modified since last provided revision number or date",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        }
       },
       "NotFound": {
         "description": "The specified resource was not found",
@@ -144,6 +191,20 @@
       },
       "Entity": {
         "description": "A single wikibase entity",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -167,6 +228,20 @@
       },
       "EntityAliases": {
         "description": "A list of aliases by language",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -177,6 +252,20 @@
       },
       "EntityDescription": {
         "description": "Entity Description by language",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -187,6 +276,20 @@
       },
       "EntityLabel": {
         "description": "Entity Label by language",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -197,6 +300,20 @@
       },
       "EntityAliasesList": {
         "description": "A list of aliases by language",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -210,6 +327,20 @@
       },
       "EntityDescriptionList": {
         "description": "Entity Description by language",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -223,6 +354,20 @@
       },
       "EntityLabelList": {
         "description": "Entity Label by language",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -236,6 +381,20 @@
       },
       "Sitelink": {
         "description": "A single sitelink",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -246,6 +405,20 @@
       },
       "SitelinkList": {
         "description": "A single sitelink",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -259,6 +432,20 @@
       },
       "Statement": {
         "description": "A single wikibase statement",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -269,6 +456,20 @@
       },
       "StatementList": {
         "description": "A list of wikibase statements",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -282,6 +483,20 @@
       },
       "Snak": {
         "description": "A property - value pair Object",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -292,6 +507,20 @@
       },
       "SnakList": {
         "description": "A list of Snak (Property - Value pair) Objects",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -305,6 +534,20 @@
       },
       "SnakMap": {
         "description": "A map of propertyId to Snak Object",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -315,6 +558,20 @@
       },
       "SnakMapList": {
         "description": "A list of Snakmaps",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -673,11 +930,20 @@
           },
           {
             "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/Entity"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -818,11 +1084,20 @@
           },
           {
             "$ref": "#/components/parameters/per_page"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityAliasesList"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -876,11 +1151,20 @@
           },
           {
             "$ref": "#/components/parameters/lang"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityAliases"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1023,11 +1307,20 @@
           },
           {
             "$ref": "#/components/parameters/per_page"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityDescriptionList"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1081,11 +1374,20 @@
           },
           {
             "$ref": "#/components/parameters/lang"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityDescription"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1179,11 +1481,20 @@
           },
           {
             "$ref": "#/components/parameters/per_page"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityLabelList"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1237,11 +1548,20 @@
           },
           {
             "$ref": "#/components/parameters/lang"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/EntityLabel"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1357,11 +1677,20 @@
           },
           {
             "$ref": "#/components/parameters/per_page"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/StatementList"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1419,11 +1748,20 @@
           },
           {
             "$ref": "#/components/parameters/per_page"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/SitelinkList"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1479,11 +1817,20 @@
           },
           {
             "$ref": "#/components/parameters/wikiId"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/Sitelink"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1563,11 +1910,20 @@
           },
           {
             "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/Statement"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1708,11 +2064,20 @@
           },
           {
             "$ref": "#/components/parameters/per_page"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/SnakList"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1773,11 +2138,20 @@
           },
           {
             "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/Snak"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1868,11 +2242,20 @@
           },
           {
             "$ref": "#/components/parameters/per_page"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/SnakMapList"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1933,11 +2316,20 @@
           },
           {
             "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
           }
         ],
         "responses": {
           "200": {
             "$ref": "#/components/responses/SnakMap"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
