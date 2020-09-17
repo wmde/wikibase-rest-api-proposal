@@ -8,11 +8,23 @@ You can read more about the principles covering the schedule of work [here](PRIN
 
 The following elements are considered non essential for the design decisions and are intentionally excluded from the prototype schema:
 
-### Search & Alternate lookups
+### Alternate lookups
+
+Some features of `wbgetentities` are not included in the specification, such as lookup by `site` and `title`. This also applies to other occurrences of “filtering results” by properties other than the primary keys in the paths.
+
+Investigations will be carried out to determine if such functionality may make sense to be included as part of the primary entity retrieval / listing endpoint, or if search and lookup should remain a separate topic.
+
+### Queries restricting response size
+
+Some API end points provide the capability to reduce the size of the response by applying restrictions to what is returned. One example is the languages in which `wbgetentities` labels/descriptions/aliases are returned. This functionality is not currently part of this specification.
+
+### Queries augmenting responses
+
+Some API end points provide the capability to augment responses by additional information. One example is the fallback languages for `wbgetentities` labels/descriptions/aliases. This functionality is not currently part of this specification.
+
+### Search
 
 A `wbsearchentities` equivalent has not been included in the specification.
-
-Some features of `wbgetentities` are not included in the specification, such as lookup by `site` and `title`.
 
 Investigations will be carried out to determine if such functionality may make sense to be included as part of the primary entity retrieval / listing endpoint, or if search and lookup should remain a separate topic.
 
