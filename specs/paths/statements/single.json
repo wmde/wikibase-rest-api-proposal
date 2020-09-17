@@ -5,7 +5,9 @@
         "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}`",
         "parameters": [
             { "$ref": "../../global/parameters.json#/statementId" },
-            { "$ref": "../../global/parameters.json#/fields" }
+            { "$ref": "../../global/parameters.json#/fields" },
+            { "$ref": "../../global/parameters.json#/ifNoneMatch" },
+            { "$ref": "../../global/parameters.json#/ifModifiedSince" }
         ],
         "responses": {
             "200": { "$ref": "../../global/responses.json#/Statement" },
