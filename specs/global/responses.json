@@ -92,8 +92,13 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Entity" } 
+                    "type": "object",
+                    "properties": {
+                        "entities": {
+                            "type": "array",
+                            "items": { "$ref": "./schemas.json#/Entity" }
+                        }
+                    }
                 }
             }
         }
