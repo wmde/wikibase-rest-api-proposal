@@ -160,7 +160,21 @@
     "QualifierHash": { "type": "string" },
     "ReferenceHash": { "type": "string" },
     "Statement": { "type": "object" },
-    "Sitelink": { "type": "object" },
+    "Sitelink": {
+        "type": "object",
+        "properties": {
+            "site": {
+                "type": "string"
+            },
+            "title": {
+                "type": "string"
+            },
+            "badges": {
+                "type": "array",
+                "items": { "type": "string" }
+            }
+        }
+    },
     "Snak": { "type": "object" },
     "SnakMap": { "type": "object" },
     "MediawikiEditComment": { "type": "string" },
