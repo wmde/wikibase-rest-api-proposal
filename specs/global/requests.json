@@ -1,12 +1,19 @@
 {
     "PatchList": {
-        "description": "A list of JSON-PATCH objects that describe changes to the resource",
+        "description": "Edit payload containing a list of JSON-PATCH objects that describe changes to the resource",
         "required": true,
         "content": {
-            "application/json-patch+json": {
+            "application/json": {
                 "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/DocumentPatch" }
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "properties": { "patches": { "$ref": "./schemas.json#/DocumentPatchList" } }
+                        },
+                        {
+                            "$ref": "./schemas.json#/MediawikiEdit"
+                        }
+                    ]
                 }
             }
         }
@@ -54,7 +61,17 @@
         "required": true,
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Snak" }
+                "schema": {
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "properties": { "snak": { "$ref": "./schemas.json#/Snak" } }
+                        },
+                        {
+                            "$ref": "./schemas.json#/MediawikiEdit"
+                        }
+                    ]
+                }
             }
         }
     },
@@ -82,7 +99,17 @@
         "required": true,
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/SnakMap" }
+                "schema": {
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "properties": { "reference": { "$ref": "./schemas.json#/SnakMap" } }
+                        },
+                        {
+                            "$ref": "./schemas.json#/MediawikiEdit"
+                        }
+                    ]
+                }
             }
         }
     },
@@ -91,7 +118,17 @@
         "required": true,
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Sitelink" }
+                "schema": {
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "properties": { "sitelink": { "$ref": "./schemas.json#/Sitelink" } }
+                        },
+                        {
+                            "$ref": "./schemas.json#/MediawikiEdit"
+                        }
+                    ]
+                }
             }
         }
     },

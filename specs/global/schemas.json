@@ -29,6 +29,11 @@
         },
         "required": [ "code", "message" ]
     },
+    "DocumentPatchList" : {
+        "description": "A list of JSONPatch objects as defined by RFC 6902",
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/DocumentPatch" }
+    },
     "DocumentPatch": {
         "description": "A JSONPatch object as defined by RFC 6902",
         "type": "object",
