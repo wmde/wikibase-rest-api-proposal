@@ -159,6 +159,7 @@
     "Snak": { "type": "object" },
     "SnakMap": { "type": "object" },
     "MediawikiEditComment": { "type": "string" },
+    "MediawikiDeletionReason": { "type": "string" },
     "MediawikiEditTags": {
         "type": "array",
         "items": { "$ref": "./schemas.json#/MediawikiEditTag" }

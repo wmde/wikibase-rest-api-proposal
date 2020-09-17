@@ -33,6 +33,7 @@
             { "$ref": "../../../../global/parameters.json#/entityId" },
             { "$ref": "../../../../global/parameters.json#/wikiId" }
         ],
+        "requestBody": { "$ref": "../../../../global/requests.json#/Edit" },
         "responses": {
             "200": { "$ref": "../../../../global/responses.json#/OK" },
             "404": { "$ref": "../../../../global/responses.json#/NotFound" },
