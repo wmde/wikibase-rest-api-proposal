@@ -54,3 +54,7 @@ In addition to the principles mentioned above, the Wikibase API also supports he
 ## Errors
 
 https://www.mediawiki.org/wiki/Core_Platform_Team/Initiative/Core_REST_API_in_Mediawiki/Design_principles#Errors
+
+## Response bodies upon changes
+
+When resources are returned upon creation or change we do **not** include meta information, like edit tags or the summary. The resource as it is returned may be the result of a merge between what was submitted and server state, so there is no direct connection between the resource state and the submitted payload.
