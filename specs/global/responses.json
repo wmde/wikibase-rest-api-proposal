@@ -327,8 +327,12 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Statement" } 
+                    "properties": {
+                        "statements": {
+                            "type": "array",
+                            "items": { "$ref": "./schemas.json#/Statement" } 
+                        }
+                    }
                 }
             }
         }
