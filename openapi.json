@@ -553,7 +553,7 @@
         }
       },
       "SnakMap": {
-        "description": "A map of propertyId to Snak Object",
+        "description": "A map of propertyId to Snak Objects",
         "headers": {
           "Last-Modified": {
             "schema": {
@@ -808,16 +808,85 @@
         "type": "string"
       },
       "Statement": {
-        "type": "object"
+        "type": "object",
+        "properties": {
+          "mainsnak": {
+            "$ref": "#/components/schemas/Snak"
+          },
+          "id": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "string"
+          },
+          "qualifiers": {
+            "$ref": "#/components/schemas/SnakMap"
+          },
+          "references": {
+            "$ref": "#/components/schemas/SnakMapList"
+          }
+        }
       },
       "Sitelink": {
-        "type": "object"
+        "type": "object",
+        "properties": {
+          "site": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "badges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
       },
       "Snak": {
-        "type": "object"
+        "type": "object",
+        "properties": {
+          "snaktype": {
+            "type": "string"
+          },
+          "property": {
+            "type": "string"
+          },
+          "datatype": {
+            "type": "string"
+          },
+          "datavalue": {
+            "type": "object",
+            "additionalProperties": true,
+            "example": {
+              "type": "string",
+              "value": "I am a goat"
+            }
+          }
+        }
+      },
+      "SnakList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Snak"
+        }
       },
       "SnakMap": {
-        "type": "object"
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/SnakList"
+        },
+        "example": {
+          "P31": [],
+          "P100": []
+        }
+      },
+      "SnakMapList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SnakMap"
+        }
       },
       "MediawikiEditComment": {
         "type": "string"
@@ -2258,7 +2327,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/SnakList"
+            "$ref": "#/components/responses/SnakMap"
           },
           "304": {
             "$ref": "#/components/responses/NotModified"
