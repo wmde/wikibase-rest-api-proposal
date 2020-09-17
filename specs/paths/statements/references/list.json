@@ -2,7 +2,7 @@
     "get": {
         "tags": [ "statements" ],
         "summary": "Lists references for a Statement",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entity_id}/statements/{statement_id}/references`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references`",
         "parameters": [
             { "$ref": "../../../global/parameters.json#/statementId" },
             { "$ref": "../../../global/parameters.json#/fields" },
@@ -22,7 +22,7 @@
     "post": {
         "tags": ["statements"],
         "summary": "Add a new Reference to a Statement",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entity_id}/statements/{statement_id}/references`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references`",
         "parameters": [
             { "$ref": "../../../global/parameters.json#/statementId" }
         ],
