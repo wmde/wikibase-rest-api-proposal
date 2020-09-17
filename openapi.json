@@ -22,7 +22,7 @@
       },
       "entityId": {
         "in": "path",
-        "name": "entityId",
+        "name": "entity_id",
         "description": "The id of the required item or property",
         "required": true,
         "schema": {
@@ -32,7 +32,7 @@
       },
       "entityType": {
         "in": "path",
-        "name": "entityType",
+        "name": "entity_type",
         "description": "The type of the required entity. Can only be one of `items` or `properties`.",
         "required": true,
         "schema": {
@@ -82,7 +82,7 @@
       },
       "qualifierHash": {
         "in": "path",
-        "name": "qualifierHash",
+        "name": "qualifier_hash",
         "description": "Single qualifier by hash",
         "required": true,
         "schema": {
@@ -91,7 +91,7 @@
       },
       "referenceHash": {
         "in": "path",
-        "name": "referenceHash",
+        "name": "reference_hash",
         "description": "Single reference by hash",
         "required": true,
         "schema": {
@@ -100,7 +100,7 @@
       },
       "statementId": {
         "in": "path",
-        "name": "statementId",
+        "name": "statement_id",
         "description": "The id of the required statement",
         "required": true,
         "schema": {
@@ -109,7 +109,7 @@
         }
       },
       "wikiId": {
-        "name": "wikiId",
+        "name": "wiki_id",
         "in": "path",
         "description": "The id of the wiki that the sitelink directs to",
         "required": true,
@@ -891,7 +891,7 @@
     }
   ],
   "paths": {
-    "/entities/{entityType}": {
+    "/entities/{entity_type}": {
       "get": {
         "tags": [
           "entities"
@@ -978,7 +978,7 @@
         }
       }
     },
-    "/entities/{entityType}/{entityId}": {
+    "/entities/{entity_type}/{entity_id}": {
       "get": {
         "tags": [
           "entities"
@@ -1030,7 +1030,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1entities~1%7BentityType%7D/post/requestBody"
+          "$ref": "#/paths/~1entities~1%7Bentity_type%7D/post/requestBody"
         },
         "responses": {
           "200": {
@@ -1064,7 +1064,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/patch/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/patch/requestBody"
         },
         "responses": {
           "200": {
@@ -1126,7 +1126,7 @@
         }
       }
     },
-    "/entities/{entityType}/{entityId}/aliases": {
+    "/entities/{entity_type}/{entity_id}/aliases": {
       "get": {
         "tags": [
           "entities"
@@ -1184,7 +1184,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/patch/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/patch/requestBody"
         },
         "responses": {
           "200": {
@@ -1205,7 +1205,7 @@
         }
       }
     },
-    "/entities/{entityType}/{entityId}/aliases/{lang}": {
+    "/entities/{entity_type}/{entity_id}/aliases/{lang}": {
       "get": {
         "tags": [
           "entities"
@@ -1317,7 +1317,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/patch/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/patch/requestBody"
         },
         "responses": {
           "200": {
@@ -1354,7 +1354,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/delete/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody"
         },
         "responses": {
           "200": {
@@ -1375,7 +1375,7 @@
         }
       }
     },
-    "/entities/{entityType}/{entityId}/descriptions": {
+    "/entities/{entity_type}/{entity_id}/descriptions": {
       "get": {
         "tags": [
           "entities"
@@ -1439,7 +1439,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/patch/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/patch/requestBody"
         },
         "responses": {
           "200": {
@@ -1460,7 +1460,7 @@
         }
       }
     },
-    "/entities/{entityType}/{entityId}/descriptions/{lang}": {
+    "/entities/{entity_type}/{entity_id}/descriptions/{lang}": {
       "get": {
         "tags": [
           "entities"
@@ -1515,7 +1515,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1entities~1%7BentityType%7D~1%7BentityId%7D~1labels~1%7Blang%7D/put/requestBody"
+          "$ref": "#/paths/~1entities~1%7Bentity_type%7D~1%7Bentity_id%7D~1labels~1%7Blang%7D/put/requestBody"
         },
         "responses": {
           "200": {
@@ -1552,7 +1552,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/delete/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody"
         },
         "responses": {
           "200": {
@@ -1573,7 +1573,7 @@
         }
       }
     },
-    "/entities/{entityType}/{entityId}/labels": {
+    "/entities/{entity_type}/{entity_id}/labels": {
       "get": {
         "tags": [
           "entities"
@@ -1631,7 +1631,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/patch/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/patch/requestBody"
         },
         "responses": {
           "200": {
@@ -1646,7 +1646,7 @@
         }
       }
     },
-    "/entities/{entityType}/{entityId}/labels/{lang}": {
+    "/entities/{entity_type}/{entity_id}/labels/{lang}": {
       "get": {
         "tags": [
           "entities"
@@ -1752,7 +1752,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/delete/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody"
         },
         "responses": {
           "200": {
@@ -1767,7 +1767,7 @@
         }
       }
     },
-    "/entities/{entityType}/{entityId}/statements": {
+    "/entities/{entity_type}/{entity_id}/statements": {
       "get": {
         "tags": [
           "entities",
@@ -1830,7 +1830,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/put/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/put/requestBody"
         },
         "responses": {
           "200": {
@@ -1851,7 +1851,7 @@
         }
       }
     },
-    "/entities/items/{entityId}/sitelinks": {
+    "/entities/items/{entity_id}/sitelinks": {
       "get": {
         "tags": [
           "items"
@@ -1944,7 +1944,7 @@
         }
       }
     },
-    "/entities/items/{entityId}/sitelinks/{wikiId}": {
+    "/entities/items/{entity_id}/sitelinks/{wiki_id}": {
       "get": {
         "tags": [
           "items"
@@ -1993,7 +1993,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/patch/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/patch/requestBody"
         },
         "responses": {
           "200": {
@@ -2027,7 +2027,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/delete/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody"
         },
         "responses": {
           "200": {
@@ -2048,13 +2048,13 @@
         }
       }
     },
-    "/statements/{statementId}": {
+    "/statements/{statement_id}": {
       "get": {
         "tags": [
           "statements"
         ],
         "summary": "Retrieves a single Statement from an entity (items | properties)",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2191,7 +2191,7 @@
           "statements"
         ],
         "summary": "Single statement from an entity (items | properties)",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2226,13 +2226,13 @@
         }
       }
     },
-    "/statements/{statementId}/qualifiers": {
+    "/statements/{statement_id}/qualifiers": {
       "get": {
         "tags": [
           "statements"
         ],
         "summary": "Lists qualifiers for a Statement",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2276,7 +2276,7 @@
           "statements"
         ],
         "summary": "Add a new Qualifier to a Statement",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2324,13 +2324,13 @@
         }
       }
     },
-    "/statements/{statementId}/qualifiers/{qualifierHash}": {
+    "/statements/{statement_id}/qualifiers/{qualifier_hash}": {
       "get": {
         "tags": [
           "statements"
         ],
         "summary": "Single qualifier by hash",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers/{qualifierHash}`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifierHash}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2368,7 +2368,7 @@
           "statements"
         ],
         "summary": "Update a qualifier",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers/{qualifierHash}`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifierHash}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2378,7 +2378,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D~1qualifiers/post/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D~1qualifiers/post/requestBody"
         },
         "responses": {
           "200": {
@@ -2403,7 +2403,7 @@
           "statements"
         ],
         "summary": "Single qualifier by hash",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/qualifiers/{qualifierHash}`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifier_hash}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2413,7 +2413,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/delete/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody"
         },
         "responses": {
           "200": {
@@ -2434,13 +2434,13 @@
         }
       }
     },
-    "/statements/{statementId}/references": {
+    "/statements/{statement_id}/references": {
       "get": {
         "tags": [
           "statements"
         ],
         "summary": "Lists references for a Statement",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2484,7 +2484,7 @@
           "statements"
         ],
         "summary": "Add a new Reference to a Statement",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2532,13 +2532,13 @@
         }
       }
     },
-    "/statements/{statementId}/references/{referenceHash}": {
+    "/statements/{statement_id}/references/{reference_hash}": {
       "get": {
         "tags": [
           "statements"
         ],
         "summary": "Single reference by hash",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references/{referenceHash}`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2576,7 +2576,7 @@
           "statements"
         ],
         "summary": "Update a reference",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references/{referenceHash}`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2586,7 +2586,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D~1references/post/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D~1references/post/requestBody"
         },
         "responses": {
           "200": {
@@ -2611,7 +2611,7 @@
           "statements"
         ],
         "summary": "Single reference by hash",
-        "description": "This endpoint is also accessible through `/entities/(items|properties)/{entityId}/statements/{statementId}/references/{referenceHash}`",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2621,7 +2621,7 @@
           }
         ],
         "requestBody": {
-          "$ref": "#/paths/~1statements~1%7BstatementId%7D/delete/requestBody"
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody"
         },
         "responses": {
           "200": {
