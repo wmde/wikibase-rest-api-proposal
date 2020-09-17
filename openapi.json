@@ -189,6 +189,26 @@
           }
         }
       },
+      "UnauthenticatedError": {
+        "description": "An authentication error has occurred. This can happen due to missing authentication (i.e. no token presented) on resources which require it.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "UnauthorizedError": {
+        "description": "An authorization error has occurred. This can happen if an authenticated user has insufficient privileges.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
       "Entity": {
         "description": "A single wikibase entity",
         "headers": {
@@ -829,6 +849,12 @@
           }
         }
       }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
     }
   },
   "tags": [
@@ -933,6 +959,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -1000,6 +1032,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -1039,6 +1077,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -1073,6 +1117,12 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
           },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
@@ -1146,6 +1196,12 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
           },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
@@ -1237,6 +1293,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -1268,6 +1330,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -1298,6 +1366,12 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
           },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
@@ -1344,6 +1418,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -1371,6 +1451,12 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
           },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
@@ -1442,6 +1528,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -1472,6 +1564,12 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
           },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
@@ -1745,6 +1843,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -1820,6 +1924,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -1884,6 +1994,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -1911,6 +2027,12 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
           },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
@@ -1974,6 +2096,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -2019,6 +2147,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -2051,6 +2185,12 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
           },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
@@ -2132,6 +2272,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -2201,6 +2347,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -2229,6 +2381,12 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
           },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
@@ -2310,6 +2468,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -2379,6 +2543,12 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -2408,11 +2578,22 @@
           "404": {
             "$ref": "#/components/responses/NotFound"
           },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
         }
       }
     }
-  }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
 }
