@@ -99,7 +99,7 @@
         }
     },
     "EntityAliases": {
-        "description": "A list of aliases by language",
+        "description": "A list of aliases for the requested language",
         "headers": {
             "Last-Modified": {
                 "schema": {
