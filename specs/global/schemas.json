@@ -3,18 +3,56 @@
         "type": "object",
         "additionalProperties": {
             "$ref": "./schemas.json#/Term"
+        },
+        "example": {
+            "en": {
+                "language": "en",
+                "value": "Japan"
+            },
+            "fr": {
+                "language": "fr",
+                "value": "Japon"
+            }
         }
     },
     "Descriptions": {
         "type": "object",
         "additionalProperties": {
             "$ref": "./schemas.json#/Term"
+        },
+        "example": {
+            "en": {
+                "language": "en",
+                "value": "Science-fiction writer"
+            },
+            "fr": {
+                "language": "fr",
+                "value": "écrivain de science-fiction"
+            }
         }
     },
     "Aliases": {
         "type": "object",
         "additionalProperties": {
             "$ref": "./schemas.json#/AliasList"
+        },
+        "example": {
+            "en": [ 
+                { 
+                    "language": "en",
+                    "value": "world"
+                },
+                { 
+                    "language": "en",
+                    "value": "earth"
+                }
+            ],
+            "fr": [
+                { 
+                    "language": "fr",
+                    "value": "monde"
+                }
+            ]
         }
     },
     "AliasList": {

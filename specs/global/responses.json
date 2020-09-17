@@ -99,7 +99,7 @@
         }
     },
     "EntityAliases": {
-        "description": "A list of aliases by language",
+        "description": "A list of aliases for the requested language",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -184,7 +184,7 @@
             "application/json": {
                 "schema": {
                     "type": "array",
-                    "items": { "$ref": "./schemas.json#/AliasList" } 
+                    "items": { "$ref": "./schemas.json#/Aliases" } 
                 }
             }
         }
@@ -207,10 +207,7 @@
         },
         "content": {
             "application/json": {
-                "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Term" } 
-                }
+                "schema": { "$ref": "./schemas.json#/Descriptions" }
             }
         }
     },
@@ -232,10 +229,7 @@
         },
         "content": {
             "application/json": {
-                "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Term" } 
-                }
+                "schema": { "$ref": "./schemas.json#/Labels" }
             }
         }
     },

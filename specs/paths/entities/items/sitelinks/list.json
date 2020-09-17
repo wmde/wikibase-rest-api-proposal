@@ -25,7 +25,7 @@
         ],
         "requestBody": { "$ref": "../../../../global/requests.json#/Sitelink" },
         "responses": {
-            "200": { "$ref": "../../../../global/responses.json#/SitelinkList" },
+            "200": { "$ref": "../../../../global/responses.json#/Sitelink" },
             "404": { "$ref": "../../../../global/responses.json#/NotFound" },
             "501": { "$ref": "../../../../global/responses.json#/UnauthenticatedError" },
             "503": { "$ref": "../../../../global/responses.json#/UnauthorizedError" },
