@@ -207,10 +207,7 @@
         },
         "content": {
             "application/json": {
-                "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Term" } 
-                }
+                "schema": { "$ref": "./schemas.json#/Descriptions" }
             }
         }
     },

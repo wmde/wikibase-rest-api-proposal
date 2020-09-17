@@ -9,6 +9,16 @@
         "type": "object",
         "additionalProperties": {
             "$ref": "./schemas.json#/Term"
+        },
+        "example": {
+            "en": {
+                "language": "en",
+                "value": "Science-fiction writer"
+            },
+            "fr": {
+                "language": "fr",
+                "value": "écrivain de science-fiction"
+            }
         }
     },
     "Aliases": {
@@ -17,7 +27,7 @@
             "$ref": "./schemas.json#/AliasList"
         },
         "example": {
-            "en": [
+            "en": [ 
                 { 
                     "language": "en",
                     "value": "world"
