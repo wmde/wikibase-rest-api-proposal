@@ -69,7 +69,7 @@
             {
                 "type": "object",
                 "properties": {
-                    "sitelinks": { "$ref": "./schemas.json#/SitelinkMap" }
+                    "sitelinks": { "$ref": "./payloads.json#/SitelinkMap" }
                 }
             }
         ]
@@ -149,7 +149,7 @@
         "type": "object",
         "properties": {
             "mainsnak" : {
-                "$ref": "./schemas.json#/Snak"
+                "$ref": "./interfaces.json#/Snak"
             },
             "id": {
                 "type": "string"
@@ -180,51 +180,9 @@
             }
         }
     },
-    "SitelinkMap": {
-        "type": "object",
-        "additionalProperties": {
-            "$ref": "./schemas.json#/Sitelink"
-        },
-        "example": {
-            "afwiki": {
-                "site": "afwiki",
-                "title": "Douglas Adams",
-                "badges": [],
-                "url": "https://af.wikipedia.org/wiki/Douglas_Adams"
-            },
-            "arwiki": {
-                "site": "arwiki",
-                "title": "دوغلاس آدمز",
-                "badges": [],
-                "url": "https://ar.wikipedia.org/wiki/%D8%AF%D9%88%D8%BA%D9%84%D8%A7%D8%B3_%D8%A2%D8%AF%D9%85%D8%B2"
-            }
-        }
-    },
-    "Snak": {
-        "type": "object",
-        "properties": {
-            "snaktype": {
-                "type": "string"
-            },
-            "property": {
-                "type": "string"
-            },
-            "datatype": {
-                "type": "string"
-            },
-            "datavalue": {
-                "type": "object",
-                "additionalProperties": true,
-                "example": {
-                    "type" : "string",
-                    "value" : "I am a goat"
-                }
-            }
-        }
-    },
     "SnakList": {
         "type": "array",
-        "items": { "$ref": "./schemas.json#/Snak" }
+        "items": { "$ref": "./interfaces.json#/Snak" }
     },
     "SnakMap": {
         "type": "object",
@@ -268,6 +226,9 @@
                 "$ref": "./schemas.json#/MediawikiEditTags"
             }
         }
+    },
+    "Qualifier": {
+        "$ref": "./interfaces.json#/Snak"
     },
     "Qualifiers": {
         "$ref": "./schemas.json#/SnakMap"
@@ -336,7 +297,7 @@
     "HashedSnak": {
         "allOf": [
             {
-                "$ref": "./schemas.json#/Snak"
+                "$ref": "./interfaces.json#/Snak"
             },
             {
                 "type": "object",

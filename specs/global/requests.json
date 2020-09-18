@@ -57,7 +57,7 @@
         }
     },
     "Qualifier": {
-        "description": "A Wikibase Snak object",
+        "description": "A Wikibase qualifier object",
         "required": true,
         "content": {
             "application/json": {
@@ -65,7 +65,7 @@
                     "allOf": [
                         {
                             "type": "object",
-                            "properties": { "snak": { "$ref": "./schemas.json#/Snak" } }
+                            "properties": { "qualifier": { "$ref": "./schemas.json#/Qualifier" } }
                         },
                         {
                             "$ref": "./schemas.json#/MediawikiEdit"

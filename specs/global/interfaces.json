@@ -29,6 +29,28 @@
             "statements"
         ]
     },
+    "Snak": {
+        "type": "object",
+        "properties": {
+            "snaktype": {
+                "type": "string"
+            },
+            "property": {
+                "type": "string"
+            },
+            "datatype": {
+                "type": "string"
+            },
+            "datavalue": {
+                "type": "object",
+                "additionalProperties": true,
+                "example": {
+                    "type" : "string",
+                    "value" : "I am a goat"
+                }
+            }
+        }
+    },
     "SnakHash": {
         "description": "Hash of a snak",
         "type": "string",

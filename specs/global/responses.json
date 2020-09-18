@@ -279,7 +279,7 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/SitelinkMap" } 
+                "schema": { "$ref": "./payloads.json#/SitelinkMap" } 
             }
         }
     },
