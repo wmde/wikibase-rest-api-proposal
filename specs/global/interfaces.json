@@ -18,6 +18,17 @@
             "aliases"
         ]
     },
+    "HashedSnak": {
+        "allOf": [
+            {
+                "$ref": "./interfaces.json#/Snak"
+            },
+            {
+                "type": "object",
+                "properties": { "hash": { "$ref": "./interfaces.json#/SnakHash" } }
+            }
+        ]
+    },
     "MediawikiEditComment": { "type": "string" },
     "MediawikiDeletionReason": { "type": "string" },
     "MediawikiEditTags": {
@@ -96,5 +107,19 @@
         "required": [
             "statements"
         ]
+    },
+    "HashedSnakList": {
+        "type": "array",
+        "items": { "$ref": "./interfaces.json#/HashedSnak" }
+    },
+    "HashedSnakMap": {
+        "type": "object",
+        "additionalProperties": {
+            "$ref": "#/HashedSnakList"
+        },
+        "example": {
+            "P31": [],
+            "P100": []
+        }
     }
 }

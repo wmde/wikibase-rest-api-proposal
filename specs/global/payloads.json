@@ -58,7 +58,7 @@
         }
     },
     "PersistedQualifiers": {
-        "$ref": "./schemas.json#/HashedSnakMap"
+        "$ref": "./interfaces.json#/HashedSnakMap"
     },
     "PersistedReference": {
         "allOf": [
@@ -86,7 +86,7 @@
         "type": "object",
         "properties": {
             "mainsnak" : {
-                "$ref": "./schemas.json#/HashedSnak"
+                "$ref": "./interfaces.json#/HashedSnak"
             },
             "id": {
                 "type": "string"

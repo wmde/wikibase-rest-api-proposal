@@ -180,9 +180,6 @@
             }
         }
     },
-    "Qualifier": {
-        "$ref": "./interfaces.json#/Snak"
-    },
     "Qualifiers": {
         "$ref": "./interfaces.json#/SnakMap"
     },
@@ -197,30 +194,5 @@
     "References": {
         "type": "array",
         "items": { "$ref": "./schemas.json#/Reference" }
-    },
-    "HashedSnak": {
-        "allOf": [
-            {
-                "$ref": "./interfaces.json#/Snak"
-            },
-            {
-                "type": "object",
-                "properties": { "hash": { "$ref": "./interfaces.json#/SnakHash" } }
-            }
-        ]
-    },
-    "HashedSnakList": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/HashedSnak" }
-    },
-    "HashedSnakMap": {
-        "type": "object",
-        "additionalProperties": {
-            "$ref": "./schemas.json#/HashedSnakList"
-        },
-        "example": {
-            "P31": [],
-            "P100": []
-        }
     }
 }

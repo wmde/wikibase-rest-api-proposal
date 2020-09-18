@@ -65,7 +65,7 @@
                     "allOf": [
                         {
                             "type": "object",
-                            "properties": { "qualifier": { "$ref": "./schemas.json#/Qualifier" } }
+                            "properties": { "qualifier": { "$ref": "./interfaces.json#/Snak" } }
                         },
                         {
                             "$ref": "./payloads.json#/MediawikiEdit"
