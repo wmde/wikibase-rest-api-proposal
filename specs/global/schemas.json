@@ -180,10 +180,6 @@
             }
         }
     },
-    "SnakMapList": {
-        "type": "array",
-        "items": { "$ref": "./interfaces.json#/SnakMap" }
-    },
     "MediawikiEditComment": { "type": "string" },
     "MediawikiDeletionReason": { "type": "string" },
     "MediawikiEditTags": {
