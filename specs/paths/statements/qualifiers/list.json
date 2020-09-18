@@ -13,7 +13,7 @@
             { "$ref": "../../../global/parameters.json#/ifModifiedSince" }
         ],
         "responses": {
-            "200": { "$ref": "../../../global/responses.json#/SnakMap" },
+            "200": { "$ref": "../../../global/responses.json#/Qualifier" },
             "304": { "$ref": "../../../global/responses.json#/NotModified" },
             "404": { "$ref": "../../../global/responses.json#/NotFound" },
             "default": { "$ref": "../../../global/responses.json#/UnexpectedError" }
@@ -28,7 +28,7 @@
         ],
         "requestBody": { "$ref": "../../../global/requests.json#/Qualifier" },
         "responses": {
-            "200": { "$ref": "../../../global/responses.json#/QualifierHash" },
+            "200": { "$ref": "../../../global/responses.json#/Qualifier" },
             "404": { "$ref": "../../../global/responses.json#/NotFound" },
             "501": { "$ref": "../../../global/responses.json#/UnauthenticatedError" },
             "503": { "$ref": "../../../global/responses.json#/UnauthorizedError" },

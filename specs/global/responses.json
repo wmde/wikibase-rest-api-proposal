@@ -301,7 +301,7 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Statement" }
+                "schema": { "$ref": "./schemas.json#/PersistedStatement" }
             }
         }
     },
@@ -325,17 +325,14 @@
             "application/json": {
                 "schema": {
                     "properties": {
-                        "statements": {
-                            "type": "array",
-                            "items": { "$ref": "./schemas.json#/Statement" } 
-                        }
+                        "statements": { "$ref": "./schemas.json#/PersistedStatementList" }
                     }
                 }
             }
         }
     },
-    "Snak": {
-        "description": "A property - value pair Object",
+    "Qualifier": {
+        "description": "Persisted Qualifier with hash",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -352,12 +349,12 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./schemas.json#/Snak" }
+                "schema":  { "$ref": "./schemas.json#/HashedSnak" }
             }
         }
     },
-    "SnakList": {
-        "description": "A list of Snak (Property - Value pair) Objects",
+    "Qualifiers": {
+        "description": "Persisted Qualifiers with hashes",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -374,15 +371,12 @@
         },
         "content": {
             "application/json": {
-                "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Snak" } 
-                }
+                "schema":  { "$ref": "./schemas.json#/PersistedQualifiers" }
             }
         }
     },
-    "SnakMap": {
-        "description": "A map of propertyId to Snak Objects",
+    "Reference": {
+        "description": "Persisted Reference with hash",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -399,12 +393,12 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./schemas.json#/SnakMap" }
+                "schema":  { "$ref": "./schemas.json#/PersistedReference" }
             }
         }
     },
-    "SnakMapList": {
-        "description": "A list of Snakmaps",
+    "References": {
+        "description": "Persisted References with hashes",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -421,26 +415,7 @@
         },
         "content": {
             "application/json": {
-                "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/SnakMap" } 
-                }
-            }
-        }
-    },
-    "ReferenceHash": {
-        "description": "Modified Reference Hash",
-        "content": {
-            "application/json": {
-                "schema": { "$ref": "./schemas.json#/ReferenceHash" }
-            }
-        }
-    },
-    "QualifierHash": {
-        "description": "Modified Qualifier Hash",
-        "content": {
-            "application/json": {
-                "schema": { "$ref": "./schemas.json#/QualifierHash" }
+                "schema": { "$ref": "./schemas.json#/PersistedReferences" }
             }
         }
     }
