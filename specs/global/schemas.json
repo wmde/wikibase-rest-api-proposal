@@ -55,19 +55,6 @@
             ]
         }
     },
-    "Error": { 
-        "type": "object",
-        "properties": {
-            "code": { "type": "string" },
-            "message": { "type": "string" }
-        },
-        "required": [ "code", "message" ]
-    },
-    "DocumentPatchList" : {
-        "description": "A list of JSONPatch objects as defined by RFC 6902",
-        "type": "array",
-        "items": { "$ref": "./payloads.json#/DocumentPatch" }
-    },
     "Item": {
         "allOf": [
             {

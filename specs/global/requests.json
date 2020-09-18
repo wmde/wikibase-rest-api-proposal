@@ -8,7 +8,7 @@
                     "allOf": [
                         {
                             "type": "object",
-                            "properties": { "patches": { "$ref": "./schemas.json#/DocumentPatchList" } }
+                            "properties": { "patches": { "$ref": "./payloads.json#/DocumentPatchList" } }
                         },
                         {
                             "$ref": "./schemas.json#/MediawikiEdit"

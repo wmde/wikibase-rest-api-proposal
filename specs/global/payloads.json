@@ -22,6 +22,11 @@
         },
         "required": ["op", "path"]
     },
+    "DocumentPatchList" : {
+        "description": "A list of JSONPatch objects as defined by RFC 6902",
+        "type": "array",
+        "items": { "$ref": "./payloads.json#/DocumentPatch" }
+    },
     "Error": { 
         "type": "object",
         "properties": {
