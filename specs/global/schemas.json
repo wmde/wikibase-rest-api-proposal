@@ -5,14 +5,7 @@
             "$ref": "./schemas.json#/Term"
         },
         "example": {
-            "en": {
-                "language": "en",
-                "value": "Douglas Adams"
-            },
-            "fr": {
-                "language": "fr",
-                "value": "Douglas Adams"
-            }
+            "$ref": "./entity.json#/labels"
         }
     },
     "Descriptions": {
@@ -21,14 +14,7 @@
             "$ref": "./schemas.json#/Term"
         },
         "example": {
-            "en": {
-                "language": "en",
-                "value": "Science-fiction writer"
-            },
-            "fr": {
-                "language": "fr",
-                "value": "écrivain de science-fiction"
-            }
+            "$ref": "./entity.json#/descriptions"
         }
     },
     "Aliases": {
@@ -37,27 +23,15 @@
             "$ref": "./schemas.json#/AliasList"
         },
         "example": {
-            "en": [
-                {
-                    "language": "en",
-                    "value": "Douglas Noel Adams"
-                },
-                {
-                    "language": "en",
-                    "value": "Douglas Noël Adams"
-                }
-            ],
-            "fr": [
-                {
-                    "language": "fr",
-                    "value": "Douglas Noel Adams"
-                }
-            ]
+            "$ref": "./entity.json#/aliases"
         }
     },
     "AliasList": {
         "type": "array",
-        "items": { "$ref": "./schemas.json#/Term" }
+        "items": { "$ref": "./schemas.json#/Term" },
+        "example": {
+            "$ref": "./entity.json#/aliases/en"
+        }
     },
     "Error": { 
         "type": "object",
@@ -398,19 +372,21 @@
             }
         ],
         "example": {
-            "hash": "",
-            "snaks": {
-                "P31": [],
-                "P100": []
-            }
+            "$ref": "./entity.json#/statements/P735/0/references/0"
         }
     },
     "PersistedReferences": {
         "type": "array",
-        "items": { "$ref": "./schemas.json#/PersistedReference" }
+        "items": { "$ref": "./schemas.json#/PersistedReference" },
+        "example": {
+            "$ref": "./entity.json#/statements/P735/0/references"
+        }
     },
     "PersistedQualifiers": {
-        "$ref": "./schemas.json#/HashedSnakMap"
+        "$ref": "./schemas.json#/HashedSnakMap",
+        "example": {
+            "$ref": "./entity.json#/statements/P735/0/qualifiers"
+        }
     },
     "HashedSnak": {
         "allOf": [
@@ -421,11 +397,17 @@
                 "type": "object",
                 "properties": { "hash": { "$ref": "./schemas.json#/SnakHash" } }
             }
-        ]
+        ],
+        "example": {
+            "$ref": "./entity.json#/statements/P735/0/qualifiers/P1545/0"
+        }
     },
     "HashedSnakList": {
         "type": "array",
-        "items": { "$ref": "./schemas.json#/HashedSnak" }
+        "items": { "$ref": "./schemas.json#/HashedSnak" },
+        "example": {
+            "$ref": "./entity.json#/statements/P735/0/qualifiers/P1545"
+        }
     },
     "HashedSnakMap": {
         "type": "object",
@@ -433,8 +415,7 @@
             "$ref": "./schemas.json#/HashedSnakList"
         },
         "example": {
-            "P31": [],
-            "P100": []
+            "$ref": "./entity.json#/statements/P735/0/qualifiers"
         }
     }
 }

@@ -1,0 +1,123 @@
+{
+    "type": "item",
+    "id": "Q42",
+    "labels": {
+        "en": {
+            "language": "en",
+            "value": "Douglas Adams"
+        },
+        "la": {
+            "language": "plat",
+            "value": "Duglassius Adams"
+        }
+    },
+    "descriptions": {
+        "en": {
+            "language": "en",
+            "value": "English writer and humorist"
+        },
+        "fr": {
+            "language": "fr",
+            "value": "\u00e9crivain anglais de science-fiction"
+        }
+    },
+    "aliases": {
+        "en": [
+            {
+                "language": "en",
+                "value": "Douglas Noel Adams"
+            },
+            {
+                "language": "en",
+                "value": "Douglas No\u00ebl Adams"
+            }
+        ]
+    },
+    "statements": {
+        "P735": [
+            {
+                "type": "statement",
+                "id": "Q42$1e106952-4b58-6067-c831-8593ce3d70f5",
+                "rank": "normal",
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P735",
+                    "hash": "0b1cda0270608741b4a2fa43d004d5fe748228d7",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "item",
+                            "numeric-id": 19688263,
+                            "id": "Q19688263"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                },
+                "qualifiers": {
+                    "P1545": [
+                        {
+                            "snaktype": "value",
+                            "property": "P1545",
+                            "hash": "7241753c62a310cf84895620ea82250dcea65835",
+                            "datavalue": {
+                                "value": "2",
+                                "type": "string"
+                            },
+                            "datatype": "string"
+                        }
+                    ]
+                },
+                "references": [
+                    {
+                        "hash": "a02f3a77ddd343e6b88be25696b055f5131c3d64",
+                        "snaks": {
+                            "P227": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P227",
+                                    "hash": "2a20755d12051fc95152d6107bd8a34e7fbc63c4",
+                                    "datavalue": {
+                                        "value": "119033364",
+                                        "type": "string"
+                                    },
+                                    "datatype": "external-id"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "hash": "c1b3a8484d531e0eac6b9835b63e74b1412ccdb0",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2015-07-07T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "sitelinks": {
+        "enwiki": {
+            "site": "enwiki",
+            "title": "Douglas Adams",
+            "badges": [ "Q12950" ]
+        },
+        "afwiki": {
+            "site": "afwiki",
+            "title": "Douglas Adams",
+            "badges": []
+        }
+    }
+}
