@@ -57,6 +57,28 @@
             }
         }
     },
+    "PersistedReference": {
+        "allOf": [
+            {
+                "$ref": "./schemas.json#/Reference"
+            },
+            {
+                "type": "object",
+                "properties": { "hash": { "$ref": "./schemas.json#/ReferenceHash" } }
+            }
+        ],
+        "example": {
+            "hash": "",
+            "snaks": {
+                "P31": [],
+                "P100": []
+            }
+        }
+    },
+    "PersistedReferences": {
+        "type": "array",
+        "items": { "$ref": "#/PersistedReference" }
+    },
     "PersistedStatement": {
         "type": "object",
         "properties": {
@@ -73,7 +95,7 @@
                 "$ref": "./schemas.json#/PersistedQualifiers"
             },
             "references": {
-                "$ref": "./schemas.json#/PersistedReferences"
+                "$ref": "#/PersistedReferences"
             }
         }
     },

@@ -198,28 +198,6 @@
         "type": "array",
         "items": { "$ref": "./schemas.json#/Reference" }
     },
-    "PersistedReference": {
-        "allOf": [
-            {
-                "$ref": "./schemas.json#/Reference"
-            },
-            {
-                "type": "object",
-                "properties": { "hash": { "$ref": "./schemas.json#/ReferenceHash" } }
-            }
-        ],
-        "example": {
-            "hash": "",
-            "snaks": {
-                "P31": [],
-                "P100": []
-            }
-        }
-    },
-    "PersistedReferences": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/PersistedReference" }
-    },
     "PersistedQualifiers": {
         "$ref": "./schemas.json#/HashedSnakMap"
     },

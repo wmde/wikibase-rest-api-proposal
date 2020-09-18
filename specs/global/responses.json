@@ -393,7 +393,7 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./schemas.json#/PersistedReference" }
+                "schema":  { "$ref": "./payloads.json#/PersistedReference" }
             }
         }
     },
@@ -415,7 +415,7 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/PersistedReferences" }
+                "schema": { "$ref": "./payloads.json#/PersistedReferences" }
             }
         }
     }
