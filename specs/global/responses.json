@@ -301,7 +301,7 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/PersistedStatement" }
+                "schema": { "$ref": "./payloads.json#/PersistedStatement" }
             }
         }
     },

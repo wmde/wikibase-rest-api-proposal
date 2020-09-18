@@ -57,8 +57,28 @@
             }
         }
     },
+    "PersistedStatement": {
+        "type": "object",
+        "properties": {
+            "mainsnak" : {
+                "$ref": "./schemas.json#/HashedSnak"
+            },
+            "id": {
+                "type": "string"
+            },
+            "rank": {
+                "type": "string"
+            },
+            "qualifiers": {
+                "$ref": "./schemas.json#/PersistedQualifiers"
+            },
+            "references": {
+                "$ref": "./schemas.json#/PersistedReferences"
+            }
+        }
+    },
     "PersistedStatementList": {
         "type": "array",
-        "items": { "$ref": "./schemas.json#/PersistedStatement" }
+        "items": { "$ref": "#/PersistedStatement" }
     }
 }

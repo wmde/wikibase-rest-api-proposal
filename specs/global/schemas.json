@@ -198,26 +198,6 @@
         "type": "array",
         "items": { "$ref": "./schemas.json#/Reference" }
     },
-    "PersistedStatement": {
-        "type": "object",
-        "properties": {
-            "mainsnak" : {
-                "$ref": "./schemas.json#/HashedSnak"
-            },
-            "id": {
-                "type": "string"
-            },
-            "rank": {
-                "type": "string"
-            },
-            "qualifiers": {
-                "$ref": "./schemas.json#/PersistedQualifiers"
-            },
-            "references": {
-                "$ref": "./schemas.json#/PersistedReferences"
-            }
-        }
-    },
     "PersistedReference": {
         "allOf": [
             {
