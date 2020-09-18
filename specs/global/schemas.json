@@ -120,10 +120,6 @@
             "propertyName": "type"
         }
     },
-    "EntityList": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/Entity" } 
-    },
     "Term": {
         "type": "object",
         "properties": {
@@ -168,10 +164,6 @@
                 "$ref": "./schemas.json#/References"
             }
         }
-    },
-    "StatementList": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/Statement" }
     },
     "Sitelink": {
         "type": "object",
