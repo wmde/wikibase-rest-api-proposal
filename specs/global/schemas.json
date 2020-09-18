@@ -69,7 +69,7 @@
             {
                 "type": "object",
                 "properties": {
-                    "sitelinks": { "$ref": "./payloads.json#/SitelinkMap" }
+                    "sitelinks": { "$ref": "./interfaces.json#/SitelinkMap" }
                 }
             }
         ]
@@ -180,23 +180,9 @@
             }
         }
     },
-    "SnakList": {
-        "type": "array",
-        "items": { "$ref": "./interfaces.json#/Snak" }
-    },
-    "SnakMap": {
-        "type": "object",
-        "additionalProperties": {
-            "$ref": "./schemas.json#/SnakList"
-        },
-        "example": {
-            "P31": [],
-            "P100": []
-        }
-    },
     "SnakMapList": {
         "type": "array",
-        "items": { "$ref": "./schemas.json#/SnakMap" }
+        "items": { "$ref": "./interfaces.json#/SnakMap" }
     },
     "MediawikiEditComment": { "type": "string" },
     "MediawikiDeletionReason": { "type": "string" },
@@ -231,23 +217,19 @@
         "$ref": "./interfaces.json#/Snak"
     },
     "Qualifiers": {
-        "$ref": "./schemas.json#/SnakMap"
-    },
-    "References": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/Reference" }
+        "$ref": "./interfaces.json#/SnakMap"
     },
     "Reference": {
         "type": "object",
         "properties": {
             "snaks": {
-                "$ref": "./schemas.json#/SnakMap"
+                "$ref": "./interfaces.json#/SnakMap"
             }
         }
     },
-    "PersistedStatementList": {
+    "References": {
         "type": "array",
-        "items": { "$ref": "./schemas.json#/PersistedStatement" }
+        "items": { "$ref": "./schemas.json#/Reference" }
     },
     "PersistedStatement": {
         "type": "object",

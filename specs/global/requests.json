@@ -103,7 +103,7 @@
                     "allOf": [
                         {
                             "type": "object",
-                            "properties": { "reference": { "$ref": "./schemas.json#/SnakMap" } }
+                            "properties": { "reference": { "$ref": "./interfaces.json#/SnakMap" } }
                         },
                         {
                             "$ref": "./schemas.json#/MediawikiEdit"

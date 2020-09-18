@@ -18,16 +18,25 @@
             "aliases"
         ]
     },
-    "StatementsBearing": {
+    "SitelinkMap": {
         "type": "object",
-        "properties": {
-            "statements": {
-                "type": "object"
-            }
+        "additionalProperties": {
+            "$ref": "./schemas.json#/Sitelink"
         },
-        "required": [
-            "statements"
-        ]
+        "example": {
+            "afwiki": {
+                "site": "afwiki",
+                "title": "Douglas Adams",
+                "badges": [],
+                "url": "https://af.wikipedia.org/wiki/Douglas_Adams"
+            },
+            "arwiki": {
+                "site": "arwiki",
+                "title": "دوغلاس آدمز",
+                "badges": [],
+                "url": "https://ar.wikipedia.org/wiki/%D8%AF%D9%88%D8%BA%D9%84%D8%A7%D8%B3_%D8%A2%D8%AF%D9%85%D8%B2"
+            }
+        }
     },
     "Snak": {
         "type": "object",
@@ -55,5 +64,30 @@
         "description": "Hash of a snak",
         "type": "string",
         "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
+    },
+    "SnakList": {
+        "type": "array",
+        "items": { "$ref": "./interfaces.json#/Snak" }
+    },
+    "SnakMap": {
+        "type": "object",
+        "additionalProperties": {
+            "$ref": "./interfaces.json#/SnakList"
+        },
+        "example": {
+            "P31": [],
+            "P100": []
+        }
+    },
+    "StatementsBearing": {
+        "type": "object",
+        "properties": {
+            "statements": {
+                "type": "object"
+            }
+        },
+        "required": [
+            "statements"
+        ]
     }
 }

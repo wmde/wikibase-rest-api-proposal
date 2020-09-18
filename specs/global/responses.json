@@ -279,7 +279,7 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./payloads.json#/SitelinkMap" } 
+                "schema": { "$ref": "./interfaces.json#/SitelinkMap" } 
             }
         }
     },
@@ -325,7 +325,7 @@
             "application/json": {
                 "schema": {
                     "properties": {
-                        "statements": { "$ref": "./schemas.json#/PersistedStatementList" }
+                        "statements": { "$ref": "./payloads.json#/PersistedStatementList" }
                     }
                 }
             }
