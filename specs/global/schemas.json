@@ -180,35 +180,6 @@
             }
         }
     },
-    "MediawikiEditComment": { "type": "string" },
-    "MediawikiDeletionReason": { "type": "string" },
-    "MediawikiEditTags": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/MediawikiEditTag" }
-    },
-    "MediawikiEditTag": { "type": "string" },
-    "MediawikiEdit": {
-        "type": "object",
-        "properties": {
-            "comment": {
-                "$ref": "./schemas.json#/MediawikiEditComment"
-            },
-            "tags": {
-                "$ref": "./schemas.json#/MediawikiEditTags"
-            }
-        }
-    },
-    "MediawikiDeletion": {
-        "type": "object",
-        "properties": {
-            "reason": {
-                "$ref": "./schemas.json#/MediawikiDeletionReason"
-            },
-            "tags": {
-                "$ref": "./schemas.json#/MediawikiEditTags"
-            }
-        }
-    },
     "Qualifier": {
         "$ref": "./interfaces.json#/Snak"
     },

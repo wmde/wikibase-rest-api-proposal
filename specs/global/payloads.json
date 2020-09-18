@@ -35,6 +35,28 @@
         },
         "required": [ "code", "message" ]
     },
+    "MediawikiEdit": {
+        "type": "object",
+        "properties": {
+            "comment": {
+                "$ref": "./interfaces.json#/MediawikiEditComment"
+            },
+            "tags": {
+                "$ref": "./interfaces.json#/MediawikiEditTags"
+            }
+        }
+    },
+    "MediawikiDeletion": {
+        "type": "object",
+        "properties": {
+            "reason": {
+                "$ref": "./interfaces.json#/MediawikiDeletionReason"
+            },
+            "tags": {
+                "$ref": "./interfaces.json#/MediawikiEditTags"
+            }
+        }
+    },
     "PersistedStatementList": {
         "type": "array",
         "items": { "$ref": "./schemas.json#/PersistedStatement" }

@@ -18,6 +18,13 @@
             "aliases"
         ]
     },
+    "MediawikiEditComment": { "type": "string" },
+    "MediawikiDeletionReason": { "type": "string" },
+    "MediawikiEditTags": {
+        "type": "array",
+        "items": { "$ref": "#/MediawikiEditTag" }
+    },
+    "MediawikiEditTag": { "type": "string" },
     "SitelinkMap": {
         "type": "object",
         "additionalProperties": {

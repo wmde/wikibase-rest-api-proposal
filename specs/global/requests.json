@@ -11,7 +11,7 @@
                             "properties": { "patches": { "$ref": "./payloads.json#/DocumentPatchList" } }
                         },
                         {
-                            "$ref": "./schemas.json#/MediawikiEdit"
+                            "$ref": "./payloads.json#/MediawikiEdit"
                         }
                     ]
                 }
@@ -30,7 +30,7 @@
                             "properties": { "aliases": { "$ref": "./payloads.json#/AliasList" } }
                         },
                         {
-                            "$ref": "./schemas.json#/MediawikiEdit"
+                            "$ref": "./payloads.json#/MediawikiEdit"
                         }
                     ]
                 }
@@ -49,7 +49,7 @@
                             "properties": { "entity": { "$ref": "./schemas.json#/Entity" } }
                         },
                         {
-                            "$ref": "./schemas.json#/MediawikiEdit"
+                            "$ref": "./payloads.json#/MediawikiEdit"
                         }
                     ]
                 }
@@ -68,7 +68,7 @@
                             "properties": { "qualifier": { "$ref": "./schemas.json#/Qualifier" } }
                         },
                         {
-                            "$ref": "./schemas.json#/MediawikiEdit"
+                            "$ref": "./payloads.json#/MediawikiEdit"
                         }
                     ]
                 }
@@ -87,7 +87,7 @@
                             "properties": { "statement": { "$ref": "./schemas.json#/Statement" } }
                         },
                         {
-                            "$ref": "./schemas.json#/MediawikiEdit"
+                            "$ref": "./payloads.json#/MediawikiEdit"
                         }
                     ]
                 }
@@ -106,7 +106,7 @@
                             "properties": { "reference": { "$ref": "./interfaces.json#/SnakMap" } }
                         },
                         {
-                            "$ref": "./schemas.json#/MediawikiEdit"
+                            "$ref": "./payloads.json#/MediawikiEdit"
                         }
                     ]
                 }
@@ -125,7 +125,7 @@
                             "properties": { "sitelink": { "$ref": "./schemas.json#/Sitelink" } }
                         },
                         {
-                            "$ref": "./schemas.json#/MediawikiEdit"
+                            "$ref": "./payloads.json#/MediawikiEdit"
                         }
                     ]
                 }
@@ -144,7 +144,7 @@
                             "properties": { "term": { "$ref": "./schemas.json#/Term" } }
                         },
                         {
-                            "$ref": "./schemas.json#/MediawikiEdit"
+                            "$ref": "./payloads.json#/MediawikiEdit"
                         }
                     ]
                 }
@@ -156,7 +156,7 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "$ref": "./schemas.json#/MediawikiEdit"
+                    "$ref": "./payloads.json#/MediawikiEdit"
                 }
             }
         }
@@ -166,7 +166,7 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "$ref": "./schemas.json#/MediawikiDeletion"
+                    "$ref": "./payloads.json#/MediawikiDeletion"
                 }
             }
         }
