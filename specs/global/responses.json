@@ -298,7 +298,7 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Statement" }
+                "schema": { "$ref": "./schemas.json#/PersistedStatement" }
             }
         }
     },
@@ -320,15 +320,12 @@
         },
         "content": {
             "application/json": {
-                "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Statement" } 
-                }
+                "schema": { "$ref": "./schemas.json#/PersistedStatementList" }
             }
         }
     },
     "Qualifier": {
-        "description": "Qualifier as a Snak Object",
+        "description": "Persisted Qualifier with hash",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -345,12 +342,12 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./schemas.json#/Snak" }
+                "schema":  { "$ref": "./schemas.json#/HashedSnak" }
             }
         }
     },
     "Qualifiers": {
-        "description": "Qualifiers as a map of propertyId to Snak Objects",
+        "description": "Persisted Qualifiers with hashes",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -367,12 +364,12 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./schemas.json#/SnakMap" }
+                "schema":  { "$ref": "./schemas.json#/PersistedQualifiers" }
             }
         }
     },
     "Reference": {
-        "description": "A Reference as a map of propertyId to Snak Objects",
+        "description": "Persisted Reference with hash",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -389,12 +386,12 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./schemas.json#/SnakMap" }
+                "schema":  { "$ref": "./schemas.json#/PersistedReference" }
             }
         }
     },
     "References": {
-        "description": "References as a list of Snakmaps",
+        "description": "Persisted References with hashes",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -411,7 +408,7 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/SnakMapList" }
+                "schema": { "$ref": "./schemas.json#/PersistedReferences" }
             }
         }
     }

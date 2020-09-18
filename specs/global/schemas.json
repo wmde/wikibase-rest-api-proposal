@@ -205,6 +205,11 @@
         "type": "string",
         "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
     },
+    "SnakHash": {
+        "description": "Hash of a snak",
+        "type": "string",
+        "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
+    },
     "Statement": {
         "type": "object",
         "properties": {
@@ -218,12 +223,16 @@
                 "type": "string"
             },
             "qualifiers": {
-                "$ref": "./schemas.json#/SnakMap"
+                "$ref": "./schemas.json#/Qualifiers"
             },
             "references": {
-                "$ref": "./schemas.json#/SnakMapList"
+                "$ref": "./schemas.json#/References"
             }
         }
+    },
+    "StatementList": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/Statement" }
     },
     "Sitelink": {
         "type": "object",
@@ -307,6 +316,95 @@
             "tags": {
                 "$ref": "./schemas.json#/MediawikiEditTags"
             }
+        }
+    },
+    "Qualifiers": {
+        "$ref": "./schemas.json#/SnakMap"
+    },
+    "References": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/Reference" }
+    },
+    "Reference": {
+        "type": "object",
+        "properties": {
+            "snaks": {
+                "$ref": "./schemas.json#/SnakMap"
+            }
+        }
+    },
+    "PersistedStatementList": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/PersistedStatement" }
+    },
+    "PersistedStatement": {
+        "type": "object",
+        "properties": {
+            "mainsnak" : {
+                "$ref": "./schemas.json#/HashedSnak"
+            },
+            "id": {
+                "type": "string"
+            },
+            "rank": {
+                "type": "string"
+            },
+            "qualifiers": {
+                "$ref": "./schemas.json#/PersistedQualifiers"
+            },
+            "references": {
+                "$ref": "./schemas.json#/PersistedReferences"
+            }
+        }
+    },
+    "PersistedReference": {
+        "allOf": [
+            {
+                "$ref": "./schemas.json#/Reference"
+            },
+            {
+                "type": "object",
+                "properties": { "hash": { "$ref": "./schemas.json#/ReferenceHash" } }
+            }
+        ],
+        "example": {
+            "hash": "",
+            "snaks": {
+                "P31": [],
+                "P100": []
+            }
+        }
+    },
+    "PersistedReferences": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/PersistedReference" }
+    },
+    "PersistedQualifiers": {
+        "$ref": "./schemas.json#/HashedSnakMap"
+    },
+    "HashedSnak": {
+        "allOf": [
+            {
+                "$ref": "./schemas.json#/Snak"
+            },
+            {
+                "type": "object",
+                "properties": { "hash": { "$ref": "./schemas.json#/SnakHash" } }
+            }
+        ]
+    },
+    "HashedSnakList": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/HashedSnak" }
+    },
+    "HashedSnakMap": {
+        "type": "object",
+        "additionalProperties": {
+            "$ref": "./schemas.json#/HashedSnakList"
+        },
+        "example": {
+            "P31": [],
+            "P100": []
         }
     }
 }
