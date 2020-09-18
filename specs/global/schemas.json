@@ -198,9 +198,6 @@
         "type": "array",
         "items": { "$ref": "./schemas.json#/Reference" }
     },
-    "PersistedQualifiers": {
-        "$ref": "./schemas.json#/HashedSnakMap"
-    },
     "HashedSnak": {
         "allOf": [
             {

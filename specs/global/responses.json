@@ -371,7 +371,7 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./schemas.json#/PersistedQualifiers" }
+                "schema":  { "$ref": "./payloads.json#/PersistedQualifiers" }
             }
         }
     },

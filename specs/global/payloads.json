@@ -57,6 +57,9 @@
             }
         }
     },
+    "PersistedQualifiers": {
+        "$ref": "./schemas.json#/HashedSnakMap"
+    },
     "PersistedReference": {
         "allOf": [
             {
@@ -92,7 +95,7 @@
                 "type": "string"
             },
             "qualifiers": {
-                "$ref": "./schemas.json#/PersistedQualifiers"
+                "$ref": "#/PersistedQualifiers"
             },
             "references": {
                 "$ref": "#/PersistedReferences"
