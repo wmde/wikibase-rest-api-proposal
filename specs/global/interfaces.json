@@ -1,0 +1,32 @@
+{
+    "Fingerprintable": {
+        "type": "object",
+        "properties": {
+            "labels": {
+                "$ref": "./schemas.json#/Labels"
+            },
+            "descriptions": {
+                "$ref": "./schemas.json#/Descriptions"
+            },
+            "aliases": {
+                "$ref": "./schemas.json#/Aliases"
+            }
+        },
+        "required": [
+            "labels",
+            "descriptions",
+            "aliases"
+        ]
+    },
+    "StatementsBearing": {
+        "type": "object",
+        "properties": {
+            "statements": {
+                "type": "object"
+            }
+        },
+        "required": [
+            "statements"
+        ]
+    }
+}

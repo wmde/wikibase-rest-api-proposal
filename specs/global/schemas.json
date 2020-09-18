@@ -70,26 +70,7 @@
     "DocumentPatchList" : {
         "description": "A list of JSONPatch objects as defined by RFC 6902",
         "type": "array",
-        "items": { "$ref": "./schemas.json#/DocumentPatch" }
-    },
-    "DocumentPatch": {
-        "description": "A JSONPatch object as defined by RFC 6902",
-        "type": "object",
-        "properties": {
-            "op": {
-                "description": "The operation to perform",
-                "type": "string",
-                "enum": [ "add", "remove", "replace" ]
-            },
-            "path": {
-                "description": "A JSON-Pointer for the property to manipulate",
-                "type": "string"
-            },
-            "value": {
-                "description": "The value to be used within the operation"
-            }
-        },
-        "required": ["op", "path"]
+        "items": { "$ref": "./payloads.json#/DocumentPatch" }
     },
     "Item": {
         "allOf": [
@@ -97,10 +78,10 @@
                 "$ref": "./schemas.json#/Entity"
             },
             {
-                "$ref": "./schemas.json#/Fingerprintable"
+                "$ref": "./interfaces.json#/Fingerprintable"
             },
             {
-                "$ref": "./schemas.json#/StatementsBearing"
+                "$ref": "./interfaces.json#/StatementsBearing"
             },
             {
                 "type": "object",
@@ -116,10 +97,10 @@
                 "$ref": "./schemas.json#/Entity"
             },
             {
-                "$ref": "./schemas.json#/Fingerprintable"
+                "$ref": "./interfaces.json#/Fingerprintable"
             },
             {
-                "$ref": "./schemas.json#/StatementsBearing"
+                "$ref": "./interfaces.json#/StatementsBearing"
             },
             {
                 "type": "object",
@@ -132,36 +113,6 @@
                     "datatype"
                 ]
             }
-        ]
-    },
-    "Fingerprintable": {
-        "type": "object",
-        "properties": {
-            "labels": {
-                "$ref": "./schemas.json#/Labels"
-            },
-            "descriptions": {
-                "$ref": "./schemas.json#/Descriptions"
-            },
-            "aliases": {
-                "$ref": "./schemas.json#/Aliases"
-            }
-        },
-        "required": [
-            "labels",
-            "descriptions",
-            "aliases"
-        ]
-    },
-    "StatementsBearing": {
-        "type": "object",
-        "properties": {
-            "statements": {
-                "type": "object"
-            }
-        },
-        "required": [
-            "statements"
         ]
     },
     "Entity": {

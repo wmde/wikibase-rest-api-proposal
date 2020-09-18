@@ -1,0 +1,21 @@
+{
+    "DocumentPatch": {
+        "description": "A JSONPatch object as defined by RFC 6902",
+        "type": "object",
+        "properties": {
+            "op": {
+                "description": "The operation to perform",
+                "type": "string",
+                "enum": [ "add", "remove", "replace" ]
+            },
+            "path": {
+                "description": "A JSON-Pointer for the property to manipulate",
+                "type": "string"
+            },
+            "value": {
+                "description": "The value to be used within the operation"
+            }
+        },
+        "required": ["op", "path"]
+    }
+}
