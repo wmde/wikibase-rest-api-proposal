@@ -57,32 +57,22 @@
             }
         }
     },
-    "PersistedQualifiers": {
-        "$ref": "./interfaces.json#/HashedSnakMap"
+    "NewQualifier": {
+        "$ref": "./interfaces.json#/Snak"
     },
-    "PersistedReference": {
-        "allOf": [
-            {
-                "$ref": "./schemas.json#/Reference"
-            },
-            {
-                "type": "object",
-                "properties": { "hash": { "$ref": "./schemas.json#/ReferenceHash" } }
-            }
-        ],
-        "example": {
-            "hash": "",
+    "NewReference": {
+        "type": "object",
+        "properties": {
             "snaks": {
-                "P31": [],
-                "P100": []
+                "$ref": "./interfaces.json#/SnakMap"
             }
         }
     },
-    "PersistedReferences": {
+    "NewReferences": {
         "type": "array",
-        "items": { "$ref": "#/PersistedReference" }
+        "items": { "$ref": "#/NewReference" }
     },
-    "PersistedStatement": {
+    "NewStatement": {
         "type": "object",
         "properties": {
             "mainsnak" : {
@@ -95,15 +85,22 @@
                 "type": "string"
             },
             "qualifiers": {
-                "$ref": "#/PersistedQualifiers"
+                "$ref": "./interfaces.json#/SnakMap"
             },
             "references": {
-                "$ref": "#/PersistedReferences"
+                "$ref": "#/NewReferences"
             }
         }
     },
+    "PersistedQualifiers": {
+        "$ref": "./interfaces.json#/HashedSnakMap"
+    },
+    "PersistedReferences": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/Reference" }
+    },
     "PersistedStatementList": {
         "type": "array",
-        "items": { "$ref": "#/PersistedStatement" }
+        "items": { "$ref": "./schemas.json#/Statement" }
     }
 }

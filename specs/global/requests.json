@@ -65,7 +65,7 @@
                     "allOf": [
                         {
                             "type": "object",
-                            "properties": { "qualifier": { "$ref": "./interfaces.json#/Snak" } }
+                            "properties": { "qualifier": { "$ref": "./payloads.json#/NewQualifier" } }
                         },
                         {
                             "$ref": "./payloads.json#/MediawikiEdit"
@@ -84,7 +84,7 @@
                     "allOf": [
                         {
                             "type": "object",
-                            "properties": { "statement": { "$ref": "./schemas.json#/Statement" } }
+                            "properties": { "statement": { "$ref": "./payloads.json#/NewStatement" } }
                         },
                         {
                             "$ref": "./payloads.json#/MediawikiEdit"
@@ -101,13 +101,8 @@
             "application/json": {
                 "schema": {
                     "allOf": [
-                        {
-                            "type": "object",
-                            "properties": { "reference": { "$ref": "./interfaces.json#/SnakMap" } }
-                        },
-                        {
-                            "$ref": "./payloads.json#/MediawikiEdit"
-                        }
+                        { "$ref": "./payloads.json#/NewReference" },
+                        { "$ref": "./payloads.json#/MediawikiEdit" }
                     ]
                 }
             }

@@ -149,7 +149,7 @@
         "type": "object",
         "properties": {
             "mainsnak" : {
-                "$ref": "./interfaces.json#/Snak"
+                "$ref": "./interfaces.json#/HashedSnak"
             },
             "id": {
                 "type": "string"
@@ -158,10 +158,11 @@
                 "type": "string"
             },
             "qualifiers": {
-                "$ref": "./schemas.json#/Qualifiers"
+                "$ref": "./interfaces.json#/HashedSnakMap"
             },
             "references": {
-                "$ref": "./schemas.json#/References"
+                "type": "array",
+                "items": { "$ref": "./schemas.json#/Reference" }
             }
         }
     },
@@ -180,19 +181,23 @@
             }
         }
     },
-    "Qualifiers": {
-        "$ref": "./interfaces.json#/SnakMap"
+    "Qualifier": {
+        "allOf": [
+            { "$ref": "./interfaces.json#/HashBearing"},
+            { "$ref": "./interfaces.json#/Snak" }
+        ]
     },
     "Reference": {
-        "type": "object",
-        "properties": {
-            "snaks": {
-                "$ref": "./interfaces.json#/SnakMap"
+        "allOf": [
+            { "$ref": "./interfaces.json#/HashBearing"},
+            {
+                "type": "object",
+                "properties": {
+                    "snaks": {
+                        "$ref": "./interfaces.json#/HashedSnakMap"
+                    }
+                }
             }
-        }
-    },
-    "References": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/Reference" }
-    }
+        ]
+    } 
 }

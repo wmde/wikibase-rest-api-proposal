@@ -301,7 +301,7 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./payloads.json#/PersistedStatement" }
+                "schema": { "$ref": "./schemas.json#/Statement" }
             }
         }
     },
@@ -349,7 +349,7 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./interfaces.json#/HashedSnak" }
+                "schema":  { "$ref": "./schemas.json#/Qualifier" }
             }
         }
     },
@@ -393,7 +393,7 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./payloads.json#/PersistedReference" }
+                "schema":  { "$ref": "./schemas.json#/Reference" }
             }
         }
     },

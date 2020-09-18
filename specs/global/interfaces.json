@@ -18,16 +18,34 @@
             "aliases"
         ]
     },
+    "HashBearing": {
+        "type": "object",
+        "properties": { "hash": { "$ref": "#/SnakHash"} }
+    },
     "HashedSnak": {
         "allOf": [
             {
-                "$ref": "./interfaces.json#/Snak"
+                "$ref": "#/Snak"
             },
             {
                 "type": "object",
-                "properties": { "hash": { "$ref": "./interfaces.json#/SnakHash" } }
+                "properties": { "hash": { "$ref": "#/SnakHash" } }
             }
         ]
+    },
+    "HashedSnakList": {
+        "type": "array",
+        "items": { "$ref": "#/HashedSnak" }
+    },
+    "HashedSnakMap": {
+        "type": "object",
+        "additionalProperties": {
+            "$ref": "#/HashedSnakList"
+        },
+        "example": {
+            "P31": [],
+            "P100": []
+        }
     },
     "MediawikiEditComment": { "type": "string" },
     "MediawikiDeletionReason": { "type": "string" },
@@ -107,19 +125,5 @@
         "required": [
             "statements"
         ]
-    },
-    "HashedSnakList": {
-        "type": "array",
-        "items": { "$ref": "./interfaces.json#/HashedSnak" }
-    },
-    "HashedSnakMap": {
-        "type": "object",
-        "additionalProperties": {
-            "$ref": "#/HashedSnakList"
-        },
-        "example": {
-            "P31": [],
-            "P100": []
-        }
     }
 }
