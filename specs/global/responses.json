@@ -327,8 +327,8 @@
             }
         }
     },
-    "Snak": {
-        "description": "A property - value pair Object",
+    "Qualifier": {
+        "description": "Qualifier as a Snak Object",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -349,33 +349,8 @@
             }
         }
     },
-    "SnakList": {
-        "description": "A list of Snak (Property - Value pair) Objects",
-        "headers": {
-            "Last-Modified": {
-                "schema": {
-                    "type": "string"
-                },
-                "description": "Last modified date"
-            },
-            "ETag": {
-                "schema": {
-                    "type": "string"
-                },
-                "description": "Last entity revision number"
-            }
-        },
-        "content": {
-            "application/json": {
-                "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Snak" } 
-                }
-            }
-        }
-    },
-    "SnakMap": {
-        "description": "A map of propertyId to Snak Objects",
+    "Qualifiers": {
+        "description": "Qualifiers as a map of propertyId to Snak Objects",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -396,8 +371,8 @@
             }
         }
     },
-    "SnakMapList": {
-        "description": "A list of Snakmaps",
+    "Reference": {
+        "description": "A Reference as a map of propertyId to Snak Objects",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -414,10 +389,29 @@
         },
         "content": {
             "application/json": {
+                "schema":  { "$ref": "./schemas.json#/SnakMap" }
+            }
+        }
+    },
+    "References": {
+        "description": "References as a list of Snakmaps",
+        "headers": {
+            "Last-Modified": {
                 "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/SnakMap" } 
-                }
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/SnakMapList" }
             }
         }
     }
