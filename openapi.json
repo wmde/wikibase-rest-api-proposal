@@ -86,7 +86,7 @@
         "description": "Single qualifier by hash",
         "required": true,
         "schema": {
-          "type": "string"
+          "$ref": "#/components/schemas/QualifierHash"
         }
       },
       "referenceHash": {
@@ -95,7 +95,7 @@
         "description": "Single reference by hash",
         "required": true,
         "schema": {
-          "type": "string"
+          "$ref": "#/components/schemas/ReferenceHash"
         }
       },
       "statementId": {
@@ -466,7 +466,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Statement"
+              "$ref": "#/components/schemas/PersistedStatement"
             }
           }
         }
@@ -492,18 +492,15 @@
             "schema": {
               "properties": {
                 "statements": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Statement"
-                  }
+                  "$ref": "#/components/schemas/PersistedStatementList"
                 }
               }
             }
           }
         }
       },
-      "Snak": {
-        "description": "A property - value pair Object",
+      "Qualifier": {
+        "description": "Persisted Qualifier with hash",
         "headers": {
           "Last-Modified": {
             "schema": {
@@ -521,13 +518,13 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Snak"
+              "$ref": "#/components/schemas/HashedSnak"
             }
           }
         }
       },
-      "SnakList": {
-        "description": "A list of Snak (Property - Value pair) Objects",
+      "Qualifiers": {
+        "description": "Persisted Qualifiers with hashes",
         "headers": {
           "Last-Modified": {
             "schema": {
@@ -545,16 +542,13 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Snak"
-              }
+              "$ref": "#/components/schemas/HashedSnakMap"
             }
           }
         }
       },
-      "SnakMap": {
-        "description": "A map of propertyId to Snak Objects",
+      "Reference": {
+        "description": "Persisted Reference with hash",
         "headers": {
           "Last-Modified": {
             "schema": {
@@ -572,13 +566,13 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/SnakMap"
+              "$ref": "#/components/schemas/PersistedReference"
             }
           }
         }
       },
-      "SnakMapList": {
-        "description": "A list of Snakmaps",
+      "References": {
+        "description": "Persisted References with hashes",
         "headers": {
           "Last-Modified": {
             "schema": {
@@ -596,30 +590,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/SnakMap"
-              }
-            }
-          }
-        }
-      },
-      "ReferenceHash": {
-        "description": "Modified Reference Hash",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/ReferenceHash"
-            }
-          }
-        }
-      },
-      "QualifierHash": {
-        "description": "Modified Qualifier Hash",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/QualifierHash"
+              "$ref": "#/components/schemas/PersistedReferences"
             }
           }
         }
@@ -855,10 +826,19 @@
         ]
       },
       "QualifierHash": {
-        "type": "string"
+        "description": "Hash of a qualifier",
+        "type": "string",
+        "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
       },
       "ReferenceHash": {
-        "type": "string"
+        "description": "Hash of a reference",
+        "type": "string",
+        "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
+      },
+      "SnakHash": {
+        "description": "Hash of a snak",
+        "type": "string",
+        "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
       },
       "Statement": {
         "type": "object",
@@ -876,8 +856,14 @@
             "$ref": "#/components/schemas/SnakMap"
           },
           "references": {
-            "$ref": "#/components/schemas/SnakMapList"
+            "$ref": "#/components/schemas/References"
           }
+        }
+      },
+      "StatementList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Statement"
         }
       },
       "Sitelink": {
@@ -996,6 +982,111 @@
           "tags": {
             "$ref": "#/components/schemas/MediawikiEditTags"
           }
+        }
+      },
+      "Qualifiers": {
+        "$ref": "#/components/schemas/SnakMap"
+      },
+      "References": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Reference"
+        }
+      },
+      "Reference": {
+        "type": "object",
+        "properties": {
+          "snaks": {
+            "$ref": "#/components/schemas/SnakMap"
+          }
+        }
+      },
+      "PersistedStatementList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PersistedStatement"
+        }
+      },
+      "PersistedStatement": {
+        "type": "object",
+        "properties": {
+          "mainsnak": {
+            "$ref": "#/components/schemas/HashedSnak"
+          },
+          "id": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "string"
+          },
+          "qualifiers": {
+            "$ref": "#/components/schemas/HashedSnakMap"
+          },
+          "references": {
+            "$ref": "#/components/schemas/PersistedReferences"
+          }
+        }
+      },
+      "PersistedReference": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Reference"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "hash": {
+                "$ref": "#/components/schemas/ReferenceHash"
+              }
+            }
+          }
+        ],
+        "example": {
+          "hash": "",
+          "snaks": {
+            "P31": [],
+            "P100": []
+          }
+        }
+      },
+      "PersistedReferences": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PersistedReference"
+        }
+      },
+      "PersistedQualifiers": {
+        "$ref": "#/components/schemas/HashedSnakMap"
+      },
+      "HashedSnak": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Snak"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "hash": {
+                "$ref": "#/components/schemas/SnakHash"
+              }
+            }
+          }
+        ]
+      },
+      "HashedSnakList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/HashedSnak"
+        }
+      },
+      "HashedSnakMap": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/HashedSnakList"
+        },
+        "example": {
+          "P31": [],
+          "P100": []
         }
       }
     },
@@ -2400,7 +2491,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/SnakMap"
+            "$ref": "#/components/responses/Qualifier"
           },
           "304": {
             "$ref": "#/components/responses/NotModified"
@@ -2449,7 +2540,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/QualifierHash"
+            "$ref": "#/components/responses/Qualifier"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -2492,7 +2583,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/Snak"
+            "$ref": "#/components/responses/Qualifier"
           },
           "304": {
             "$ref": "#/components/responses/NotModified"
@@ -2524,7 +2615,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/QualifierHash"
+            "$ref": "#/components/responses/Qualifier"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -2608,7 +2699,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/SnakMapList"
+            "$ref": "#/components/responses/References"
           },
           "304": {
             "$ref": "#/components/responses/NotModified"
@@ -2657,7 +2748,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ReferenceHash"
+            "$ref": "#/components/responses/Reference"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -2700,7 +2791,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/SnakMap"
+            "$ref": "#/components/responses/Reference"
           },
           "304": {
             "$ref": "#/components/responses/NotModified"
@@ -2732,7 +2823,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ReferenceHash"
+            "$ref": "#/components/responses/Reference"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
