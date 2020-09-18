@@ -238,9 +238,14 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Entity"
+              "type": "object",
+              "properties": {
+                "entities": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Entity"
+                  }
+                }
               }
             }
           }
@@ -265,7 +270,11 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/AliasList"
+              "properties": {
+                "aliases": {
+                  "$ref": "#/components/schemas/AliasList"
+                }
+              }
             }
           }
         }
@@ -337,10 +346,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Aliases"
-              }
+              "$ref": "#/components/schemas/Aliases"
             }
           }
         }
@@ -418,7 +424,7 @@
         }
       },
       "SitelinkList": {
-        "description": "A single sitelink",
+        "description": "A list of sitelinks by site id",
         "headers": {
           "Last-Modified": {
             "schema": {
@@ -436,10 +442,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Sitelink"
-              }
+              "$ref": "#/components/schemas/SitelinkMap"
             }
           }
         }
@@ -487,9 +490,13 @@
         "content": {
           "application/json": {
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Statement"
+              "properties": {
+                "statements": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Statement"
+                  }
+                }
               }
             }
           }
@@ -627,11 +634,11 @@
         "example": {
           "en": {
             "language": "en",
-            "value": "Japan"
+            "value": "Douglas Adams"
           },
           "fr": {
             "language": "fr",
-            "value": "Japon"
+            "value": "Douglas Adams"
           }
         }
       },
@@ -660,17 +667,17 @@
           "en": [
             {
               "language": "en",
-              "value": "world"
+              "value": "Douglas Noel Adams"
             },
             {
               "language": "en",
-              "value": "earth"
+              "value": "Douglas Noël Adams"
             }
           ],
           "fr": [
             {
               "language": "fr",
-              "value": "monde"
+              "value": "Douglas Noel Adams"
             }
           ]
         }
@@ -739,6 +746,14 @@
           },
           {
             "$ref": "#/components/schemas/StatementsBearing"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "sitelinks": {
+                "$ref": "#/components/schemas/SitelinkMap"
+              }
+            }
           }
         ]
       },
@@ -818,6 +833,12 @@
           "propertyName": "type"
         }
       },
+      "EntityList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Entity"
+        }
+      },
       "Term": {
         "type": "object",
         "properties": {
@@ -873,6 +894,26 @@
             "items": {
               "type": "string"
             }
+          }
+        }
+      },
+      "SitelinkMap": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Sitelink"
+        },
+        "example": {
+          "afwiki": {
+            "site": "afwiki",
+            "title": "Douglas Adams",
+            "badges": [],
+            "url": "https://af.wikipedia.org/wiki/Douglas_Adams"
+          },
+          "arwiki": {
+            "site": "arwiki",
+            "title": "دوغلاس آدمز",
+            "badges": [],
+            "url": "https://ar.wikipedia.org/wiki/%D8%AF%D9%88%D8%BA%D9%84%D8%A7%D8%B3_%D8%A2%D8%AF%D9%85%D8%B2"
           }
         }
       },
