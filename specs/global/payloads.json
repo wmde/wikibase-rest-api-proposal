@@ -1,4 +1,8 @@
 {
+    "AliasList": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/Term" }
+    },
     "DocumentPatch": {
         "description": "A JSONPatch object as defined by RFC 6902",
         "type": "object",
@@ -17,5 +21,13 @@
             }
         },
         "required": ["op", "path"]
+    },
+    "Error": { 
+        "type": "object",
+        "properties": {
+            "code": { "type": "string" },
+            "message": { "type": "string" }
+        },
+        "required": [ "code", "message" ]
     }
 }

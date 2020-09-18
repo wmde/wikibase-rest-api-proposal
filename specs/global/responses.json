@@ -37,7 +37,7 @@
         "description": "The specified resource was not found",
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Error" }
+                "schema": { "$ref": "./payloads.json#/Error" }
             }
         }
     },
@@ -45,7 +45,7 @@
         "description": "An unexpected error has occurred",
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Error" }
+                "schema": { "$ref": "./payloads.json#/Error" }
             }
         }
     },
@@ -53,7 +53,7 @@
         "description": "An authentication error has occurred. This can happen due to missing authentication (i.e. no token presented) on resources which require it.",
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Error" }
+                "schema": { "$ref": "./payloads.json#/Error" }
             }
         }
     },
@@ -61,7 +61,7 @@
         "description": "An authorization error has occurred. This can happen if an authenticated user has insufficient privileges.",
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Error" }
+                "schema": { "$ref": "./payloads.json#/Error" }
             }
         }
     },
@@ -123,7 +123,7 @@
             "application/json": {
                 "schema":  {
                     "properties": {
-                        "aliases": { "$ref": "./schemas.json#/AliasList" }
+                        "aliases": { "$ref": "./payloads.json#/AliasList" }
                     }
                 }
             }

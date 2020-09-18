@@ -27,7 +27,7 @@
                     "allOf": [
                         {
                             "type": "object",
-                            "properties": { "aliases": { "$ref": "./schemas.json#/AliasList" } }
+                            "properties": { "aliases": { "$ref": "./payloads.json#/AliasList" } }
                         },
                         {
                             "$ref": "./schemas.json#/MediawikiEdit"

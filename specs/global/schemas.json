@@ -34,7 +34,7 @@
     "Aliases": {
         "type": "object",
         "additionalProperties": {
-            "$ref": "./schemas.json#/AliasList"
+            "$ref": "./payloads.json#/AliasList"
         },
         "example": {
             "en": [
@@ -54,10 +54,6 @@
                 }
             ]
         }
-    },
-    "AliasList": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/Term" }
     },
     "Error": { 
         "type": "object",
