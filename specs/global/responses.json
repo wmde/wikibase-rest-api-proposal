@@ -92,8 +92,13 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Entity" } 
+                    "type": "object",
+                    "properties": {
+                        "entities": {
+                            "type": "array",
+                            "items": { "$ref": "./schemas.json#/Entity" }
+                        }
+                    }
                 }
             }
         }
@@ -116,7 +121,11 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./schemas.json#/AliasList" }
+                "schema":  {
+                    "properties": {
+                        "aliases": { "$ref": "./schemas.json#/AliasList" }
+                    }
+                }
             }
         }
     },
@@ -182,10 +191,7 @@
         },
         "content": {
             "application/json": {
-                "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Aliases" } 
-                }
+                "schema":  { "$ref": "./schemas.json#/Aliases" }
             }
         }
     },
@@ -256,7 +262,7 @@
         }
     },
     "SitelinkList": {
-        "description": "A single sitelink",
+        "description": "A list of sitelinks by site id",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -273,10 +279,7 @@
         },
         "content": {
             "application/json": {
-                "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Sitelink" } 
-                }
+                "schema": { "$ref": "./schemas.json#/SitelinkMap" } 
             }
         }
     },
@@ -321,8 +324,12 @@
         "content": {
             "application/json": {
                 "schema": {
-                    "type": "array",
-                    "items": { "$ref": "./schemas.json#/Statement" } 
+                    "properties": {
+                        "statements": {
+                            "type": "array",
+                            "items": { "$ref": "./schemas.json#/Statement" } 
+                        }
+                    }
                 }
             }
         }

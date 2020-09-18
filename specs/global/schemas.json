@@ -7,11 +7,11 @@
         "example": {
             "en": {
                 "language": "en",
-                "value": "Japan"
+                "value": "Douglas Adams"
             },
             "fr": {
                 "language": "fr",
-                "value": "Japon"
+                "value": "Douglas Adams"
             }
         }
     },
@@ -37,20 +37,20 @@
             "$ref": "./schemas.json#/AliasList"
         },
         "example": {
-            "en": [ 
-                { 
+            "en": [
+                {
                     "language": "en",
-                    "value": "world"
+                    "value": "Douglas Noel Adams"
                 },
-                { 
+                {
                     "language": "en",
-                    "value": "earth"
+                    "value": "Douglas Noël Adams"
                 }
             ],
             "fr": [
-                { 
+                {
                     "language": "fr",
-                    "value": "monde"
+                    "value": "Douglas Noel Adams"
                 }
             ]
         }
@@ -101,6 +101,12 @@
             },
             {
                 "$ref": "./schemas.json#/StatementsBearing"
+            },
+            {
+                "type": "object",
+                "properties": {
+                    "sitelinks": { "$ref": "./schemas.json#/SitelinkMap" }
+                }
             }
         ]
     },
@@ -180,6 +186,10 @@
             "propertyName": "type"
         }
     },
+    "EntityList": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/Entity" } 
+    },
     "Term": {
         "type": "object",
         "properties": {
@@ -229,6 +239,26 @@
             "badges": {
                 "type": "array",
                 "items": { "type": "string" }
+            }
+        }
+    },
+    "SitelinkMap": {
+        "type": "object",
+        "additionalProperties": {
+            "$ref": "./schemas.json#/Sitelink"
+        },
+        "example": {
+            "afwiki": {
+                "site": "afwiki",
+                "title": "Douglas Adams",
+                "badges": [],
+                "url": "https://af.wikipedia.org/wiki/Douglas_Adams"
+            },
+            "arwiki": {
+                "site": "arwiki",
+                "title": "دوغلاس آدمز",
+                "badges": [],
+                "url": "https://ar.wikipedia.org/wiki/%D8%AF%D9%88%D8%BA%D9%84%D8%A7%D8%B3_%D8%A2%D8%AF%D9%85%D8%B2"
             }
         }
     },
