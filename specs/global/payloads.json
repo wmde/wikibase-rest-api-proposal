@@ -57,6 +57,16 @@
             }
         }
     },
+    "NewProperty": {
+        "allOf": [
+            {
+                "$ref": "./interfaces.json#/Fingerprintable"
+            },
+            {
+                "$ref": "./interfaces.json#/StatementsBearing"
+            }
+        ]
+    },
     "NewItem": {
         "allOf": [
             {
