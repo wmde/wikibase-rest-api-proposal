@@ -37,25 +37,6 @@
             }
         }
     },
-    "Entity": {
-        "description": "Edit payload containing a Wikibase entity object (Item / Property)",
-        "required": true,
-        "content": {
-            "application/json": {
-                "schema": {
-                    "allOf": [
-                        {
-                            "type": "object",
-                            "properties": { "entity": { "$ref": "./schemas.json#/Entity" } }
-                        },
-                        {
-                            "$ref": "./payloads.json#/MediawikiEdit"
-                        }
-                    ]
-                }
-            }
-        }
-    },
     "Item": {
         "description": "Edit payload containing a Wikibase Item",
         "required": true,
