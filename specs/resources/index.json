@@ -27,10 +27,10 @@
         "$ref": "./statements/list.json"
     },
     "/entities/items/{entity_id}/sitelinks": {
-        "$ref": "./entities/items/sitelinks/list.json"
+        "$ref": "./sitelinks/list.json"
     },
     "/entities/items/{entity_id}/sitelinks/{wiki_id}": {
-        "$ref": "./entities/items/sitelinks/single.json"
+        "$ref": "./sitelinks/single.json"
     },
     "/statements/{statement_id}": {
         "$ref": "./statements/single.json"
