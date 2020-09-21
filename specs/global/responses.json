@@ -415,7 +415,12 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./payloads.json#/PersistedReferences" }
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "references": { "$ref": "./payloads.json#/PersistedReferences" }
+                    }
+                }
             }
         }
     }
