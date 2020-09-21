@@ -81,6 +81,22 @@
                 "description": "Wikibase Data Model - Statements",
                 "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
             }
+        },
+        {
+            "name": "qualifiers",
+            "description": "Wikibase Statement Qualifiers",
+            "externalDocs": {
+                "description": "Wikibase Data Model - Statements",
+                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
+            }
+        },
+        {
+            "name": "references",
+            "description": "Wikibase Statement References",
+            "externalDocs": {
+                "description": "Wikibase Data Model - Statements",
+                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
+            }
         }
     ],
     "paths": {
