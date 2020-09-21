@@ -6,10 +6,10 @@
         "$ref": "./entities/single.json"
     },
     "/entities/{entity_type}/{entity_id}/aliases": {
-        "$ref": "./entities/aliases/list.json"
+        "$ref": "./aliases/list.json"
     },
     "/entities/{entity_type}/{entity_id}/aliases/{lang}": {
-        "$ref": "./entities/aliases/singleLang.json"
+        "$ref": "./aliases/singleLang.json"
     },
     "/entities/{entity_type}/{entity_id}/descriptions": {
         "$ref": "./entities/descriptions/list.json"
