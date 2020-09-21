@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": [ "entities" ],
+        "tags": [ "aliases" ],
         "summary": "Retrieves an entity's alias lists",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
@@ -16,7 +16,7 @@
         }
     },
     "patch": {
-        "tags": [ "entities" ],
+        "tags": [ "aliases" ],
         "summary": "Updates an entity's alias lists",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },

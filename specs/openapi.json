@@ -67,11 +67,11 @@
             }
         },
         {
-            "name": "entities",
-            "description": "Wikibase Entities",
+            "name": "aliases",
+            "description": "Wikibase Entity Aliases",
             "externalDocs": {
-                "description": "Wikibase Data Model - Values",
-                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Values"
+                "description": "Wikibase Data Model - Terms",
+                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#EntityDescriptions_of_Items_and_Properties"
             }
         },
         {
