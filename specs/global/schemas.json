@@ -73,7 +73,7 @@
     "Item": {
         "allOf": [
             {
-                "$ref": "./schemas.json#/Entity"
+                "$ref": "./interfaces.json#/Entity"
             },
             {
                 "$ref": "./interfaces.json#/Fingerprintable"
@@ -92,7 +92,7 @@
     "Property": {
         "allOf": [
             {
-                "$ref": "./schemas.json#/Entity"
+                "$ref": "./interfaces.json#/Entity"
             },
             {
                 "$ref": "./interfaces.json#/Fingerprintable"
@@ -112,28 +112,6 @@
                 ]
             }
         ]
-    },
-    "Entity": {
-        "type": "object",
-        "properties": {
-            "id": {
-                "type": "string"
-            },
-            "type": {
-                "type": "string"
-            },
-            "modified": {
-                "type": "string",
-                "format": "date-time"
-            }
-        },
-		"required": [
-            "id",
-            "type"
-        ],
-        "discriminator": {
-            "propertyName": "type"
-        }
     },
     "Term": {
         "type": "object",
