@@ -1,0 +1,29 @@
+{
+    "get": {
+        "tags": ["items"],
+        "summary": "Retrieve a list of Wikibase Items",
+        "parameters": [
+            { "$ref": "../../global/parameters.json#/fields" },
+            { "$ref": "../../global/parameters.json#/offset" },
+            { "$ref": "../../global/parameters.json#/page" },
+            { "$ref": "../../global/parameters.json#/per_page" }
+        ],
+        "responses": {
+            "200": { "$ref": "../../global/responses.json#/ItemList" },
+            "404": { "$ref": "../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
+        }
+    },
+    "post": {
+        "tags": ["items"],
+        "summary": "Create a new Wikibase Item",
+        "requestBody": { "$ref": "../../global/requests.json#/Item" },
+        "responses": {
+            "200": { "$ref": "../../global/responses.json#/Item" },
+            "404": { "$ref": "../../global/responses.json#/NotFound" },
+            "501": { "$ref": "../../global/responses.json#/UnauthenticatedError" },
+            "503": { "$ref": "../../global/responses.json#/UnauthorizedError" },
+            "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
+        }
+    }
+}
