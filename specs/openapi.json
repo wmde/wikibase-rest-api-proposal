@@ -35,11 +35,27 @@
             }
         },
         {
+            "name": "sitelinks",
+            "description": "Wikibase Item Sitelinks",
+            "externalDocs": {
+                "description": "Wikidata Glossary - Sitelinks",
+                "url" : "https://www.wikidata.org/wiki/Wikidata:Glossary#Sitelink"
+            }
+        },
+        {
             "name": "properties",
             "description": "Wikibase Properties",
             "externalDocs": {
                 "description": "Wikibase Datamodel - Properties",
                 "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Properties"
+            }
+        },
+        {
+            "name": "labels",
+            "description": "Wikibase Entity Labels",
+            "externalDocs": {
+                "description": "Wikibase Data Model - Terms",
+                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#EntityDescriptions_of_Items_and_Properties"
             }
         },
         {

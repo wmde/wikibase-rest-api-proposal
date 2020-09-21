@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": [ "entities" ],
+        "tags": [ "labels" ],
         "summary": "Retrieves an entity's labels list",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
@@ -16,7 +16,7 @@
         }
     },
     "patch": {
-        "tags": [ "entities" ],
+        "tags": [ "labels" ],
         "summary": "Updates an entity's label list",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
