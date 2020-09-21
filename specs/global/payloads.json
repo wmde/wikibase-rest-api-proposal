@@ -76,7 +76,7 @@
         "type": "object",
         "properties": {
             "mainsnak" : {
-                "$ref": "./interfaces.json#/HashedSnak"
+                "$ref": "./interfaces.json#/Snak"
             },
             "id": {
                 "type": "string"
