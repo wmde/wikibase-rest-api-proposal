@@ -37,7 +37,7 @@
         "description": "The specified resource was not found",
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Error" }
+                "schema": { "$ref": "./payloads.json#/Error" }
             }
         }
     },
@@ -45,7 +45,7 @@
         "description": "An unexpected error has occurred",
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Error" }
+                "schema": { "$ref": "./payloads.json#/Error" }
             }
         }
     },
@@ -53,7 +53,7 @@
         "description": "An authentication error has occurred. This can happen due to missing authentication (i.e. no token presented) on resources which require it.",
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Error" }
+                "schema": { "$ref": "./payloads.json#/Error" }
             }
         }
     },
@@ -61,7 +61,7 @@
         "description": "An authorization error has occurred. This can happen if an authenticated user has insufficient privileges.",
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Error" }
+                "schema": { "$ref": "./payloads.json#/Error" }
             }
         }
     },
@@ -123,7 +123,7 @@
             "application/json": {
                 "schema":  {
                     "properties": {
-                        "aliases": { "$ref": "./schemas.json#/AliasList" }
+                        "aliases": { "$ref": "./payloads.json#/AliasList" }
                     }
                 }
             }
@@ -279,7 +279,7 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/SitelinkMap" } 
+                "schema": { "$ref": "./interfaces.json#/SitelinkMap" } 
             }
         }
     },
@@ -301,7 +301,7 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/PersistedStatement" }
+                "schema": { "$ref": "./schemas.json#/Statement" }
             }
         }
     },
@@ -325,7 +325,7 @@
             "application/json": {
                 "schema": {
                     "properties": {
-                        "statements": { "$ref": "./schemas.json#/PersistedStatementList" }
+                        "statements": { "$ref": "./payloads.json#/PersistedStatementList" }
                     }
                 }
             }
@@ -349,7 +349,7 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./schemas.json#/HashedSnak" }
+                "schema":  { "$ref": "./schemas.json#/Qualifier" }
             }
         }
     },
@@ -371,7 +371,7 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./schemas.json#/PersistedQualifiers" }
+                "schema":  { "$ref": "./payloads.json#/PersistedQualifiers" }
             }
         }
     },
@@ -393,7 +393,7 @@
         },
         "content": {
             "application/json": {
-                "schema":  { "$ref": "./schemas.json#/PersistedReference" }
+                "schema":  { "$ref": "./schemas.json#/Reference" }
             }
         }
     },
@@ -415,7 +415,12 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/PersistedReferences" }
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "references": { "$ref": "./payloads.json#/PersistedReferences" }
+                    }
+                }
             }
         }
     }

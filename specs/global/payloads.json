@@ -1,0 +1,106 @@
+{
+    "AliasList": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/Term" }
+    },
+    "DocumentPatch": {
+        "description": "A JSONPatch object as defined by RFC 6902",
+        "type": "object",
+        "properties": {
+            "op": {
+                "description": "The operation to perform",
+                "type": "string",
+                "enum": [ "add", "remove", "replace" ]
+            },
+            "path": {
+                "description": "A JSON-Pointer for the property to manipulate",
+                "type": "string"
+            },
+            "value": {
+                "description": "The value to be used within the operation"
+            }
+        },
+        "required": ["op", "path"]
+    },
+    "DocumentPatchList" : {
+        "description": "A list of JSONPatch objects as defined by RFC 6902",
+        "type": "array",
+        "items": { "$ref": "./payloads.json#/DocumentPatch" }
+    },
+    "Error": { 
+        "type": "object",
+        "properties": {
+            "code": { "type": "string" },
+            "message": { "type": "string" }
+        },
+        "required": [ "code", "message" ]
+    },
+    "MediawikiEdit": {
+        "type": "object",
+        "properties": {
+            "comment": {
+                "$ref": "./interfaces.json#/MediawikiEditComment"
+            },
+            "tags": {
+                "$ref": "./interfaces.json#/MediawikiEditTags"
+            }
+        }
+    },
+    "MediawikiDeletion": {
+        "type": "object",
+        "properties": {
+            "reason": {
+                "$ref": "./interfaces.json#/MediawikiDeletionReason"
+            },
+            "tags": {
+                "$ref": "./interfaces.json#/MediawikiEditTags"
+            }
+        }
+    },
+    "NewQualifier": {
+        "$ref": "./interfaces.json#/Snak"
+    },
+    "NewReference": {
+        "type": "object",
+        "properties": {
+            "snaks": {
+                "$ref": "./interfaces.json#/SnakMap"
+            }
+        }
+    },
+    "NewReferences": {
+        "type": "array",
+        "items": { "$ref": "#/NewReference" }
+    },
+    "NewStatement": {
+        "type": "object",
+        "properties": {
+            "mainsnak" : {
+                "$ref": "./interfaces.json#/Snak"
+            },
+            "id": {
+                "type": "string"
+            },
+            "rank": {
+                "type": "string"
+            },
+            "qualifiers": {
+                "$ref": "./interfaces.json#/SnakMap"
+            },
+            "references": {
+                "$ref": "#/NewReferences"
+            }
+        }
+    },
+    "PersistedQualifiers": {
+        "$ref": "./interfaces.json#/HashedSnakMap"
+    },
+    "PersistedReferences": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/Reference" }
+    },
+    "PersistedStatementList": {
+        "type": "array",
+        "items": { "$ref": "./schemas.json#/Statement" }
+    }
+}

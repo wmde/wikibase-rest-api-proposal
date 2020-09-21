@@ -34,7 +34,7 @@
     "Aliases": {
         "type": "object",
         "additionalProperties": {
-            "$ref": "./schemas.json#/AliasList"
+            "$ref": "./payloads.json#/AliasList"
         },
         "example": {
             "en": [
@@ -55,41 +55,20 @@
             ]
         }
     },
-    "AliasList": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/Term" }
-    },
-    "Error": { 
+    "Sitelink": {
         "type": "object",
         "properties": {
-            "code": { "type": "string" },
-            "message": { "type": "string" }
-        },
-        "required": [ "code", "message" ]
-    },
-    "DocumentPatchList" : {
-        "description": "A list of JSONPatch objects as defined by RFC 6902",
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/DocumentPatch" }
-    },
-    "DocumentPatch": {
-        "description": "A JSONPatch object as defined by RFC 6902",
-        "type": "object",
-        "properties": {
-            "op": {
-                "description": "The operation to perform",
-                "type": "string",
-                "enum": [ "add", "remove", "replace" ]
-            },
-            "path": {
-                "description": "A JSON-Pointer for the property to manipulate",
+            "site": {
                 "type": "string"
             },
-            "value": {
-                "description": "The value to be used within the operation"
+            "title": {
+                "type": "string"
+            },
+            "badges": {
+                "type": "array",
+                "items": { "type": "string" }
             }
-        },
-        "required": ["op", "path"]
+        }
     },
     "Item": {
         "allOf": [
@@ -97,15 +76,15 @@
                 "$ref": "./schemas.json#/Entity"
             },
             {
-                "$ref": "./schemas.json#/Fingerprintable"
+                "$ref": "./interfaces.json#/Fingerprintable"
             },
             {
-                "$ref": "./schemas.json#/StatementsBearing"
+                "$ref": "./interfaces.json#/StatementsBearing"
             },
             {
                 "type": "object",
                 "properties": {
-                    "sitelinks": { "$ref": "./schemas.json#/SitelinkMap" }
+                    "sitelinks": { "$ref": "./interfaces.json#/SitelinkMap" }
                 }
             }
         ]
@@ -116,10 +95,10 @@
                 "$ref": "./schemas.json#/Entity"
             },
             {
-                "$ref": "./schemas.json#/Fingerprintable"
+                "$ref": "./interfaces.json#/Fingerprintable"
             },
             {
-                "$ref": "./schemas.json#/StatementsBearing"
+                "$ref": "./interfaces.json#/StatementsBearing"
             },
             {
                 "type": "object",
@@ -132,36 +111,6 @@
                     "datatype"
                 ]
             }
-        ]
-    },
-    "Fingerprintable": {
-        "type": "object",
-        "properties": {
-            "labels": {
-                "$ref": "./schemas.json#/Labels"
-            },
-            "descriptions": {
-                "$ref": "./schemas.json#/Descriptions"
-            },
-            "aliases": {
-                "$ref": "./schemas.json#/Aliases"
-            }
-        },
-        "required": [
-            "labels",
-            "descriptions",
-            "aliases"
-        ]
-    },
-    "StatementsBearing": {
-        "type": "object",
-        "properties": {
-            "statements": {
-                "type": "object"
-            }
-        },
-        "required": [
-            "statements"
         ]
     },
     "Entity": {
@@ -185,10 +134,6 @@
         "discriminator": {
             "propertyName": "type"
         }
-    },
-    "EntityList": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/Entity" } 
     },
     "Term": {
         "type": "object",
@@ -215,16 +160,14 @@
         "type": "string",
         "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
     },
-    "SnakHash": {
-        "description": "Hash of a snak",
-        "type": "string",
-        "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
+    "Snak":{
+        "$ref": "./interfaces.json#/Snak"
     },
     "Statement": {
         "type": "object",
         "properties": {
             "mainsnak" : {
-                "$ref": "./schemas.json#/Snak"
+                "$ref": "#/Snak"
             },
             "id": {
                 "type": "string"
@@ -233,208 +176,31 @@
                 "type": "string"
             },
             "qualifiers": {
-                "$ref": "./schemas.json#/Qualifiers"
+                "$ref": "./interfaces.json#/HashedSnakMap"
             },
             "references": {
-                "$ref": "./schemas.json#/References"
-            }
-        }
-    },
-    "StatementList": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/Statement" }
-    },
-    "Sitelink": {
-        "type": "object",
-        "properties": {
-            "site": {
-                "type": "string"
-            },
-            "title": {
-                "type": "string"
-            },
-            "badges": {
                 "type": "array",
-                "items": { "type": "string" }
+                "items": { "$ref": "./schemas.json#/Reference" }
             }
         }
     },
-    "SitelinkMap": {
-        "type": "object",
-        "additionalProperties": {
-            "$ref": "./schemas.json#/Sitelink"
-        },
-        "example": {
-            "afwiki": {
-                "site": "afwiki",
-                "title": "Douglas Adams",
-                "badges": [],
-                "url": "https://af.wikipedia.org/wiki/Douglas_Adams"
-            },
-            "arwiki": {
-                "site": "arwiki",
-                "title": "دوغلاس آدمز",
-                "badges": [],
-                "url": "https://ar.wikipedia.org/wiki/%D8%AF%D9%88%D8%BA%D9%84%D8%A7%D8%B3_%D8%A2%D8%AF%D9%85%D8%B2"
-            }
-        }
-    },
-    "Snak": {
-        "type": "object",
-        "properties": {
-            "snaktype": {
-                "type": "string"
-            },
-            "property": {
-                "type": "string"
-            },
-            "datatype": {
-                "type": "string"
-            },
-            "datavalue": {
-                "type": "object",
-                "additionalProperties": true,
-                "example": {
-                    "type" : "string",
-                    "value" : "I am a goat"
-                }
-            }
-        }
-    },
-    "SnakList": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/Snak" }
-    },
-    "SnakMap": {
-        "type": "object",
-        "additionalProperties": {
-            "$ref": "./schemas.json#/SnakList"
-        },
-        "example": {
-            "P31": [],
-            "P100": []
-        }
-    },
-    "SnakMapList": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/SnakMap" }
-    },
-    "MediawikiEditComment": { "type": "string" },
-    "MediawikiDeletionReason": { "type": "string" },
-    "MediawikiEditTags": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/MediawikiEditTag" }
-    },
-    "MediawikiEditTag": { "type": "string" },
-    "MediawikiEdit": {
-        "type": "object",
-        "properties": {
-            "comment": {
-                "$ref": "./schemas.json#/MediawikiEditComment"
-            },
-            "tags": {
-                "$ref": "./schemas.json#/MediawikiEditTags"
-            }
-        }
-    },
-    "MediawikiDeletion": {
-        "type": "object",
-        "properties": {
-            "reason": {
-                "$ref": "./schemas.json#/MediawikiDeletionReason"
-            },
-            "tags": {
-                "$ref": "./schemas.json#/MediawikiEditTags"
-            }
-        }
-    },
-    "Qualifiers": {
-        "$ref": "./schemas.json#/SnakMap"
-    },
-    "References": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/Reference" }
-    },
-    "Reference": {
-        "type": "object",
-        "properties": {
-            "snaks": {
-                "$ref": "./schemas.json#/SnakMap"
-            }
-        }
-    },
-    "PersistedStatementList": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/PersistedStatement" }
-    },
-    "PersistedStatement": {
-        "type": "object",
-        "properties": {
-            "mainsnak" : {
-                "$ref": "./schemas.json#/HashedSnak"
-            },
-            "id": {
-                "type": "string"
-            },
-            "rank": {
-                "type": "string"
-            },
-            "qualifiers": {
-                "$ref": "./schemas.json#/PersistedQualifiers"
-            },
-            "references": {
-                "$ref": "./schemas.json#/PersistedReferences"
-            }
-        }
-    },
-    "PersistedReference": {
+    "Qualifier": {
         "allOf": [
-            {
-                "$ref": "./schemas.json#/Reference"
-            },
-            {
-                "type": "object",
-                "properties": { "hash": { "$ref": "./schemas.json#/ReferenceHash" } }
-            }
-        ],
-        "example": {
-            "hash": "",
-            "snaks": {
-                "P31": [],
-                "P100": []
-            }
-        }
-    },
-    "PersistedReferences": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/PersistedReference" }
-    },
-    "PersistedQualifiers": {
-        "$ref": "./schemas.json#/HashedSnakMap"
-    },
-    "HashedSnak": {
-        "allOf": [
-            {
-                "$ref": "./schemas.json#/Snak"
-            },
-            {
-                "type": "object",
-                "properties": { "hash": { "$ref": "./schemas.json#/SnakHash" } }
-            }
+            { "$ref": "./interfaces.json#/HashBearing"},
+            { "$ref": "./interfaces.json#/Snak" }
         ]
     },
-    "HashedSnakList": {
-        "type": "array",
-        "items": { "$ref": "./schemas.json#/HashedSnak" }
-    },
-    "HashedSnakMap": {
-        "type": "object",
-        "additionalProperties": {
-            "$ref": "./schemas.json#/HashedSnakList"
-        },
-        "example": {
-            "P31": [],
-            "P100": []
-        }
-    }
+    "Reference": {
+        "allOf": [
+            { "$ref": "./interfaces.json#/HashBearing"},
+            {
+                "type": "object",
+                "properties": {
+                    "snaks": {
+                        "$ref": "./interfaces.json#/HashedSnakMap"
+                    }
+                }
+            }
+        ]
+    } 
 }
