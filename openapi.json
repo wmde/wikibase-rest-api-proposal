@@ -174,7 +174,19 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Error"
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "message"
+              ]
             }
           }
         }
@@ -184,7 +196,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Error"
+              "$ref": "#/components/responses/NotFound/content/application~1json/schema"
             }
           }
         }
@@ -194,7 +206,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Error"
+              "$ref": "#/components/responses/NotFound/content/application~1json/schema"
             }
           }
         }
@@ -204,7 +216,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Error"
+              "$ref": "#/components/responses/NotFound/content/application~1json/schema"
             }
           }
         }
@@ -272,7 +284,7 @@
             "schema": {
               "properties": {
                 "aliases": {
-                  "$ref": "#/components/schemas/AliasList"
+                  "$ref": "#/components/schemas/Aliases/additionalProperties"
                 }
               }
             }
@@ -442,7 +454,24 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/SitelinkMap"
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/components/schemas/Sitelink"
+              },
+              "example": {
+                "afwiki": {
+                  "site": "afwiki",
+                  "title": "Douglas Adams",
+                  "badges": [],
+                  "url": "https://af.wikipedia.org/wiki/Douglas_Adams"
+                },
+                "arwiki": {
+                  "site": "arwiki",
+                  "title": "دوغلاس آدمز",
+                  "badges": [],
+                  "url": "https://ar.wikipedia.org/wiki/%D8%AF%D9%88%D8%BA%D9%84%D8%A7%D8%B3_%D8%A2%D8%AF%D9%85%D8%B2"
+                }
+              }
             }
           }
         }
@@ -466,7 +495,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/PersistedStatement"
+              "$ref": "#/components/schemas/Statement"
             }
           }
         }
@@ -492,7 +521,10 @@
             "schema": {
               "properties": {
                 "statements": {
-                  "$ref": "#/components/schemas/PersistedStatementList"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Statement"
+                  }
                 }
               }
             }
@@ -518,7 +550,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/HashedSnak"
+              "$ref": "#/components/schemas/Qualifier"
             }
           }
         }
@@ -542,7 +574,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/HashedSnakMap"
+              "$ref": "#/components/schemas/Statement/properties/qualifiers"
             }
           }
         }
@@ -566,7 +598,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/PersistedReference"
+              "$ref": "#/components/schemas/Reference"
             }
           }
         }
@@ -590,7 +622,15 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/PersistedReferences"
+              "type": "object",
+              "properties": {
+                "references": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Reference"
+                  }
+                }
+              }
             }
           }
         }
@@ -632,7 +672,10 @@
       "Aliases": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/AliasList"
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Term"
+          }
         },
         "example": {
           "en": [
@@ -653,59 +696,22 @@
           ]
         }
       },
-      "AliasList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Term"
-        }
-      },
-      "Error": {
+      "Sitelink": {
         "type": "object",
         "properties": {
-          "code": {
+          "site": {
             "type": "string"
           },
-          "message": {
+          "title": {
             "type": "string"
+          },
+          "badges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
-        },
-        "required": [
-          "code",
-          "message"
-        ]
-      },
-      "DocumentPatchList": {
-        "description": "A list of JSONPatch objects as defined by RFC 6902",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DocumentPatch"
         }
-      },
-      "DocumentPatch": {
-        "description": "A JSONPatch object as defined by RFC 6902",
-        "type": "object",
-        "properties": {
-          "op": {
-            "description": "The operation to perform",
-            "type": "string",
-            "enum": [
-              "add",
-              "remove",
-              "replace"
-            ]
-          },
-          "path": {
-            "description": "A JSON-Pointer for the property to manipulate",
-            "type": "string"
-          },
-          "value": {
-            "description": "The value to be used within the operation"
-          }
-        },
-        "required": [
-          "op",
-          "path"
-        ]
       },
       "Item": {
         "allOf": [
@@ -713,16 +719,40 @@
             "$ref": "#/components/schemas/Entity"
           },
           {
-            "$ref": "#/components/schemas/Fingerprintable"
+            "type": "object",
+            "properties": {
+              "labels": {
+                "$ref": "#/components/schemas/Labels"
+              },
+              "descriptions": {
+                "$ref": "#/components/schemas/Descriptions"
+              },
+              "aliases": {
+                "$ref": "#/components/schemas/Aliases"
+              }
+            },
+            "required": [
+              "labels",
+              "descriptions",
+              "aliases"
+            ]
           },
           {
-            "$ref": "#/components/schemas/StatementsBearing"
+            "type": "object",
+            "properties": {
+              "statements": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "statements"
+            ]
           },
           {
             "type": "object",
             "properties": {
               "sitelinks": {
-                "$ref": "#/components/schemas/SitelinkMap"
+                "$ref": "#/components/responses/SitelinkList/content/application~1json/schema"
               }
             }
           }
@@ -734,10 +764,10 @@
             "$ref": "#/components/schemas/Entity"
           },
           {
-            "$ref": "#/components/schemas/Fingerprintable"
+            "$ref": "#/components/schemas/Item/allOf/1"
           },
           {
-            "$ref": "#/components/schemas/StatementsBearing"
+            "$ref": "#/components/schemas/Item/allOf/2"
           },
           {
             "type": "object",
@@ -750,36 +780,6 @@
               "datatype"
             ]
           }
-        ]
-      },
-      "Fingerprintable": {
-        "type": "object",
-        "properties": {
-          "labels": {
-            "$ref": "#/components/schemas/Labels"
-          },
-          "descriptions": {
-            "$ref": "#/components/schemas/Descriptions"
-          },
-          "aliases": {
-            "$ref": "#/components/schemas/Aliases"
-          }
-        },
-        "required": [
-          "labels",
-          "descriptions",
-          "aliases"
-        ]
-      },
-      "StatementsBearing": {
-        "type": "object",
-        "properties": {
-          "statements": {
-            "type": "object"
-          }
-        },
-        "required": [
-          "statements"
         ]
       },
       "Entity": {
@@ -802,12 +802,6 @@
         ],
         "discriminator": {
           "propertyName": "type"
-        }
-      },
-      "EntityList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Entity"
         }
       },
       "Term": {
@@ -835,74 +829,6 @@
         "type": "string",
         "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
       },
-      "SnakHash": {
-        "description": "Hash of a snak",
-        "type": "string",
-        "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
-      },
-      "Statement": {
-        "type": "object",
-        "properties": {
-          "mainsnak": {
-            "$ref": "#/components/schemas/Snak"
-          },
-          "id": {
-            "type": "string"
-          },
-          "rank": {
-            "type": "string"
-          },
-          "qualifiers": {
-            "$ref": "#/components/schemas/SnakMap"
-          },
-          "references": {
-            "$ref": "#/components/schemas/References"
-          }
-        }
-      },
-      "StatementList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Statement"
-        }
-      },
-      "Sitelink": {
-        "type": "object",
-        "properties": {
-          "site": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "badges": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "SitelinkMap": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Sitelink"
-        },
-        "example": {
-          "afwiki": {
-            "site": "afwiki",
-            "title": "Douglas Adams",
-            "badges": [],
-            "url": "https://af.wikipedia.org/wiki/Douglas_Adams"
-          },
-          "arwiki": {
-            "site": "arwiki",
-            "title": "دوغلاس آدمز",
-            "badges": [],
-            "url": "https://ar.wikipedia.org/wiki/%D8%AF%D9%88%D8%BA%D9%84%D8%A7%D8%B3_%D8%A2%D8%AF%D9%85%D8%B2"
-          }
-        }
-      },
       "Snak": {
         "type": "object",
         "properties": {
@@ -925,93 +851,11 @@
           }
         }
       },
-      "SnakList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Snak"
-        }
-      },
-      "SnakMap": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/SnakList"
-        },
-        "example": {
-          "P31": [],
-          "P100": []
-        }
-      },
-      "SnakMapList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SnakMap"
-        }
-      },
-      "MediawikiEditComment": {
-        "type": "string"
-      },
-      "MediawikiDeletionReason": {
-        "type": "string"
-      },
-      "MediawikiEditTags": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/MediawikiEditTag"
-        }
-      },
-      "MediawikiEditTag": {
-        "type": "string"
-      },
-      "MediawikiEdit": {
-        "type": "object",
-        "properties": {
-          "comment": {
-            "$ref": "#/components/schemas/MediawikiEditComment"
-          },
-          "tags": {
-            "$ref": "#/components/schemas/MediawikiEditTags"
-          }
-        }
-      },
-      "MediawikiDeletion": {
-        "type": "object",
-        "properties": {
-          "reason": {
-            "$ref": "#/components/schemas/MediawikiDeletionReason"
-          },
-          "tags": {
-            "$ref": "#/components/schemas/MediawikiEditTags"
-          }
-        }
-      },
-      "Qualifiers": {
-        "$ref": "#/components/schemas/SnakMap"
-      },
-      "References": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Reference"
-        }
-      },
-      "Reference": {
-        "type": "object",
-        "properties": {
-          "snaks": {
-            "$ref": "#/components/schemas/SnakMap"
-          }
-        }
-      },
-      "PersistedStatementList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/PersistedStatement"
-        }
-      },
-      "PersistedStatement": {
+      "Statement": {
         "type": "object",
         "properties": {
           "mainsnak": {
-            "$ref": "#/components/schemas/HashedSnak"
+            "$ref": "#/components/schemas/Snak"
           },
           "id": {
             "type": "string"
@@ -1020,74 +864,69 @@
             "type": "string"
           },
           "qualifiers": {
-            "$ref": "#/components/schemas/HashedSnakMap"
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Snak"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "hash": {
+                        "$ref": "#/paths/~1statements~1%7Bstatement_id%7D~1qualifiers/post/responses/200/content/application~1json/schema/allOf/0/properties/hash"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "example": {
+              "P31": [],
+              "P100": []
+            }
           },
           "references": {
-            "$ref": "#/components/schemas/PersistedReferences"
-          }
-        }
-      },
-      "PersistedReference": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Reference"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "hash": {
-                "$ref": "#/components/schemas/ReferenceHash"
-              }
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Reference"
             }
           }
-        ],
-        "example": {
-          "hash": "",
-          "snaks": {
-            "P31": [],
-            "P100": []
-          }
         }
       },
-      "PersistedReferences": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/PersistedReference"
-        }
-      },
-      "PersistedQualifiers": {
-        "$ref": "#/components/schemas/HashedSnakMap"
-      },
-      "HashedSnak": {
+      "Qualifier": {
         "allOf": [
-          {
-            "$ref": "#/components/schemas/Snak"
-          },
           {
             "type": "object",
             "properties": {
               "hash": {
-                "$ref": "#/components/schemas/SnakHash"
+                "description": "Hash of a snak",
+                "type": "string",
+                "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Snak"
+          }
+        ]
+      },
+      "Reference": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Qualifier/allOf/0"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "snaks": {
+                "$ref": "#/components/schemas/Statement/properties/qualifiers"
               }
             }
           }
         ]
-      },
-      "HashedSnakList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/HashedSnak"
-        }
-      },
-      "HashedSnakMap": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/HashedSnakList"
-        },
-        "example": {
-          "P31": [],
-          "P100": []
-        }
       }
     },
     "securitySchemes": {
@@ -1185,7 +1024,7 @@
                     }
                   },
                   {
-                    "$ref": "#/components/schemas/MediawikiEdit"
+                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema"
                   }
                 ]
               }
@@ -1335,7 +1174,15 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MediawikiDeletion"
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema/properties/tags"
+                  }
+                }
               }
             }
           }
@@ -1503,12 +1350,12 @@
                     "type": "object",
                     "properties": {
                       "aliases": {
-                        "$ref": "#/components/schemas/AliasList"
+                        "$ref": "#/components/schemas/Aliases/additionalProperties"
                       }
                     }
                   },
                   {
-                    "$ref": "#/components/schemas/MediawikiEdit"
+                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema"
                   }
                 ]
               }
@@ -1949,7 +1796,7 @@
                     }
                   },
                   {
-                    "$ref": "#/components/schemas/MediawikiEdit"
+                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema"
                   }
                 ]
               }
@@ -2151,7 +1998,7 @@
                     }
                   },
                   {
-                    "$ref": "#/components/schemas/MediawikiEdit"
+                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema"
                   }
                 ]
               }
@@ -2338,12 +2185,39 @@
                     "type": "object",
                     "properties": {
                       "patches": {
-                        "$ref": "#/components/schemas/DocumentPatchList"
+                        "description": "A list of JSONPatch objects as defined by RFC 6902",
+                        "type": "array",
+                        "items": {
+                          "description": "A JSONPatch object as defined by RFC 6902",
+                          "type": "object",
+                          "properties": {
+                            "op": {
+                              "description": "The operation to perform",
+                              "type": "string",
+                              "enum": [
+                                "add",
+                                "remove",
+                                "replace"
+                              ]
+                            },
+                            "path": {
+                              "description": "A JSON-Pointer for the property to manipulate",
+                              "type": "string"
+                            },
+                            "value": {
+                              "description": "The value to be used within the operation"
+                            }
+                          },
+                          "required": [
+                            "op",
+                            "path"
+                          ]
+                        }
                       }
                     }
                   },
                   {
-                    "$ref": "#/components/schemas/MediawikiEdit"
+                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema"
                   }
                 ]
               }
@@ -2389,12 +2263,42 @@
                     "type": "object",
                     "properties": {
                       "statement": {
-                        "$ref": "#/components/schemas/Statement"
+                        "type": "object",
+                        "properties": {
+                          "mainsnak": {
+                            "$ref": "#/components/schemas/Snak"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "rank": {
+                            "type": "string"
+                          },
+                          "qualifiers": {
+                            "type": "object",
+                            "additionalProperties": {
+                              "type": "array",
+                              "items": {
+                                "$ref": "#/components/schemas/Snak"
+                              }
+                            },
+                            "example": {
+                              "P31": [],
+                              "P100": []
+                            }
+                          },
+                          "references": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/paths/~1statements~1%7Bstatement_id%7D~1references/post/requestBody/content/application~1json/schema/allOf/0/properties/reference"
+                            }
+                          }
+                        }
                       }
                     }
                   },
                   {
-                    "$ref": "#/components/schemas/MediawikiEdit"
+                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema"
                   }
                 ]
               }
@@ -2435,7 +2339,18 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MediawikiEdit"
+                "type": "object",
+                "properties": {
+                  "comment": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
               }
             }
           }
@@ -2491,7 +2406,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/Qualifier"
+            "$ref": "#/components/responses/Qualifiers"
           },
           "304": {
             "$ref": "#/components/responses/NotModified"
@@ -2516,7 +2431,7 @@
           }
         ],
         "requestBody": {
-          "description": "A Wikibase Snak object",
+          "description": "A Wikibase qualifier object",
           "required": true,
           "content": {
             "application/json": {
@@ -2525,13 +2440,13 @@
                   {
                     "type": "object",
                     "properties": {
-                      "snak": {
+                      "qualifier": {
                         "$ref": "#/components/schemas/Snak"
                       }
                     }
                   },
                   {
-                    "$ref": "#/components/schemas/MediawikiEdit"
+                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema"
                   }
                 ]
               }
@@ -2734,12 +2649,17 @@
                     "type": "object",
                     "properties": {
                       "reference": {
-                        "$ref": "#/components/schemas/SnakMap"
+                        "type": "object",
+                        "properties": {
+                          "snaks": {
+                            "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/put/requestBody/content/application~1json/schema/allOf/0/properties/statement/properties/qualifiers"
+                          }
+                        }
                       }
                     }
                   },
                   {
-                    "$ref": "#/components/schemas/MediawikiEdit"
+                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema"
                   }
                 ]
               }
