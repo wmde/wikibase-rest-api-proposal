@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": [ "items" ],
+        "tags": [ "sitelinks" ],
         "summary": "Retrieves an Item's sitelink by wiki-id",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityId" },
@@ -16,7 +16,7 @@
         }
     },
     "patch": {
-        "tags": [ "items" ],
+        "tags": [ "sitelinks" ],
         "summary": "Updates an Item's sitelink by wiki-id",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityId" },
@@ -32,7 +32,7 @@
         }
     },
     "delete": {
-        "tags": [ "items" ],
+        "tags": [ "sitelinks" ],
         "summary": "Item's sitelink by wiki-id",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityId" },
