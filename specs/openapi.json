@@ -86,8 +86,8 @@
             "name": "qualifiers",
             "description": "Wikibase Statement Qualifiers",
             "externalDocs": {
-                "description": "Wikibase Data Model - Statements",
-                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
+                "description": "Wikidata Glossary - Qualifier",
+                "url" : "https://www.wikidata.org/wiki/Wikidata:Glossary#Qualifier"
             }
         },
         {
