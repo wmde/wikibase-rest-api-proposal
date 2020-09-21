@@ -56,6 +56,25 @@
             }
         }
     },
+    "Item": {
+        "description": "Edit payload containing a Wikibase Item",
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": {
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "properties": { "item": { "$ref": "./payloads.json#/NewItem" } }
+                        },
+                        {
+                            "$ref": "./payloads.json#/MediawikiEdit"
+                        }
+                    ]
+                }
+            }
+        }
+    },
     "Qualifier": {
         "description": "A Wikibase qualifier object",
         "required": true,
