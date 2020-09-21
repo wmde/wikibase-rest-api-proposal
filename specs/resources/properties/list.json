@@ -2,7 +2,7 @@
     "get": {
         "tags": ["properties"],
         "summary": "Retrieve a list of Wikibase Properties",
-        "parameters": [,
+        "parameters": [
             { "$ref": "../../global/parameters.json#/fields" },
             { "$ref": "../../global/parameters.json#/offset" },
             { "$ref": "../../global/parameters.json#/page" },

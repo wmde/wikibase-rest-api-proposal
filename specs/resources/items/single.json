@@ -21,7 +21,7 @@
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityId" }
         ],
-        "requestBody": { "$ref": "../../global/responses.json#/Item" },
+        "requestBody": { "$ref": "../../global/requests.json#/Item" },
         "responses": {
             "200": { "$ref": "../../global/responses.json#/Item" },
             "404": { "$ref": "../../global/responses.json#/NotFound" },
