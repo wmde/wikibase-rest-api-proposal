@@ -42,9 +42,9 @@
         "$ref": "./qualifiers/single.json"
     },
     "/statements/{statement_id}/references": {
-        "$ref": "./statements/references/list.json"
+        "$ref": "./references/list.json"
     },
     "/statements/{statement_id}/references/{reference_hash}": {
-        "$ref": "./statements/references/single.json"
+        "$ref": "./references/single.json"
     }
 }
