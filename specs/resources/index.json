@@ -12,10 +12,10 @@
         "$ref": "./aliases/singleLang.json"
     },
     "/entities/{entity_type}/{entity_id}/descriptions": {
-        "$ref": "./entities/descriptions/list.json"
+        "$ref": "./descriptions/list.json"
     },
     "/entities/{entity_type}/{entity_id}/descriptions/{lang}": {
-        "$ref": "./entities/descriptions/singleLang.json"
+        "$ref": "./descriptions/singleLang.json"
     },
     "/entities/{entity_type}/{entity_id}/labels": {
         "$ref": "./entities/labels/list.json"
