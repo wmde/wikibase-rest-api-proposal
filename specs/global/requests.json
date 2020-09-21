@@ -84,7 +84,7 @@
                     "allOf": [
                         {
                             "type": "object",
-                            "properties": { "entity": { "$ref": "./schemas.json#/NewProperty" } }
+                            "properties": { "property": { "$ref": "./payloads.json#/NewProperty" } }
                         },
                         {
                             "$ref": "./payloads.json#/MediawikiEdit"

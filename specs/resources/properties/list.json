@@ -1,29 +1,25 @@
 {
     "get": {
-        "tags": ["entities"],
-        "summary": "Retrieve a list of Wikibase Entities (Items or Properties)",
-        "parameters": [
-            { "$ref": "../../global/parameters.json#/entityType" },
+        "tags": ["properties"],
+        "summary": "Retrieve a list of Wikibase Properties",
+        "parameters": [,
             { "$ref": "../../global/parameters.json#/fields" },
             { "$ref": "../../global/parameters.json#/offset" },
             { "$ref": "../../global/parameters.json#/page" },
             { "$ref": "../../global/parameters.json#/per_page" }
         ],
         "responses": {
-            "200": { "$ref": "../../global/responses.json#/EntityList" },
+            "200": { "$ref": "../../global/responses.json#/PropertyList" },
             "404": { "$ref": "../../global/responses.json#/NotFound" },
             "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
         }
     },
     "post": {
-        "tags": ["entities"],
+        "tags": ["properties"],
         "summary": "Create a new Wikibase Entity",
-        "parameters": [
-            { "$ref": "../../global/parameters.json#/entityType" }
-        ],
-        "requestBody": { "$ref": "../../global/requests.json#/Entity" },
+        "requestBody": { "$ref": "../../global/requests.json#/Property" },
         "responses": {
-            "200": { "$ref": "../../global/responses.json#/Entity" },
+            "200": { "$ref": "../../global/responses.json#/Property" },
             "404": { "$ref": "../../global/responses.json#/NotFound" },
             "501": { "$ref": "../../global/responses.json#/UnauthenticatedError" },
             "503": { "$ref": "../../global/responses.json#/UnauthorizedError" },
