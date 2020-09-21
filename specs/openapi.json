@@ -59,6 +59,14 @@
             }
         },
         {
+            "name": "descriptions",
+            "description": "Wikibase Entity Descriptions",
+            "externalDocs": {
+                "description": "Wikibase Data Model - Terms",
+                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#EntityDescriptions_of_Items_and_Properties"
+            }
+        },
+        {
             "name": "entities",
             "description": "Wikibase Entities",
             "externalDocs": {

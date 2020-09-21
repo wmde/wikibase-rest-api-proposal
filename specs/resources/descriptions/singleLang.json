@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": [ "entities" ],
+        "tags": [ "descriptions" ],
         "summary": "Retrieves an entity's description by language",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
@@ -17,7 +17,7 @@
         }
     },
     "put": {
-        "tags": ["entities"],
+        "tags": ["descriptions"],
         "summary": "Add / Replace a description to an entity by language",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
@@ -34,7 +34,7 @@
         }
     },
     "delete": {
-        "tags": [ "entities" ],
+        "tags": [ "descriptions" ],
         "summary": "Deletes an entity's description by language",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
