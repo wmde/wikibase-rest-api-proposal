@@ -18,10 +18,10 @@
         "$ref": "./descriptions/singleLang.json"
     },
     "/entities/{entity_type}/{entity_id}/labels": {
-        "$ref": "./entities/labels/list.json"
+        "$ref": "./labels/list.json"
     },
     "/entities/{entity_type}/{entity_id}/labels/{lang}": {
-        "$ref": "./entities/labels/singleLang.json"
+        "$ref": "./labels/singleLang.json"
     },
     "/entities/{entity_type}/{entity_id}/statements": {
         "$ref": "./statements/list.json"
