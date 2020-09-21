@@ -101,7 +101,13 @@
             "application/json": {
                 "schema": {
                     "allOf": [
-                        { "$ref": "./payloads.json#/NewReference" },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "reference": { "$ref": "./payloads.json#/NewReference" }
+                            }
+
+                        },
                         { "$ref": "./payloads.json#/MediawikiEdit" }
                     ]
                 }
