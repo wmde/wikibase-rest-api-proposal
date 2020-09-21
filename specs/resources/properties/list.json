@@ -16,7 +16,7 @@
     },
     "post": {
         "tags": ["properties"],
-        "summary": "Create a new Wikibase Entity",
+        "summary": "Create a new Wikibase Property",
         "requestBody": { "$ref": "../../global/requests.json#/Property" },
         "responses": {
             "200": { "$ref": "../../global/responses.json#/Property" },
