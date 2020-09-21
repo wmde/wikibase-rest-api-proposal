@@ -27,14 +27,6 @@
     },
     "tags": [
         {
-            "name": "entities",
-            "description": "Wikibase Entities",
-            "externalDocs": {
-                "description": "Wikibase Data Model - Values",
-                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Values"
-            }
-        },
-        {
             "name": "items",
             "description": "Wikibase Items",
             "externalDocs": {
@@ -48,6 +40,14 @@
             "externalDocs": {
                 "description": "Wikibase Datamodel - Properties",
                 "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Properties"
+            }
+        },
+        {
+            "name": "entities",
+            "description": "Wikibase Entities",
+            "externalDocs": {
+                "description": "Wikibase Data Model - Values",
+                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Values"
             }
         },
         {
