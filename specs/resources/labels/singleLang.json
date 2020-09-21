@@ -1,0 +1,49 @@
+{
+    "get": {
+        "tags": [ "entities" ],
+        "summary": "Retrieve an entity's label by language",
+        "parameters": [
+            { "$ref": "../../global/parameters.json#/entityType" },
+            { "$ref": "../../global/parameters.json#/entityId" },
+            { "$ref": "../../global/parameters.json#/lang" },
+            { "$ref": "../../global/parameters.json#/ifNoneMatch" },
+            { "$ref": "../../global/parameters.json#/ifModifiedSince" }
+        ],
+        "responses": {
+            "200": { "$ref": "../../global/responses.json#/EntityLabel" },
+            "304": { "$ref": "../../global/responses.json#/NotModified" },
+            "404": { "$ref": "../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
+        }
+    },
+    "put": {
+        "tags": ["entities"],
+        "summary": "Add / Replace a label to an entity by language",
+        "parameters": [
+            { "$ref": "../../global/parameters.json#/entityType" },
+            { "$ref": "../../global/parameters.json#/entityId" },
+            { "$ref": "../../global/parameters.json#/lang" }
+        ],
+        "requestBody": { "$ref": "../../global/requests.json#/Term" },
+        "responses": {
+            "200": { "$ref": "../../global/responses.json#/EntityLabel" },
+            "404": { "$ref": "../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
+        }
+    },
+    "delete": {
+        "tags": [ "entities" ],
+        "summary": "Delete an entity's label by language",
+        "parameters": [
+            { "$ref": "../../global/parameters.json#/entityType" },
+            { "$ref": "../../global/parameters.json#/entityId" },
+            { "$ref": "../../global/parameters.json#/lang" }
+        ],
+        "requestBody": { "$ref": "../../global/requests.json#/Edit" },
+        "responses": {
+            "200": { "$ref": "../../global/responses.json#/OK" },
+            "404": { "$ref": "../../global/responses.json#/NotFound" },
+            "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
+        }
+    }
+}
