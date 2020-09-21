@@ -55,6 +55,21 @@
             ]
         }
     },
+    "Sitelink": {
+        "type": "object",
+        "properties": {
+            "site": {
+                "type": "string"
+            },
+            "title": {
+                "type": "string"
+            },
+            "badges": {
+                "type": "array",
+                "items": { "type": "string" }
+            }
+        }
+    },
     "Item": {
         "allOf": [
             {
@@ -163,21 +178,6 @@
             "references": {
                 "type": "array",
                 "items": { "$ref": "./schemas.json#/Reference" }
-            }
-        }
-    },
-    "Sitelink": {
-        "type": "object",
-        "properties": {
-            "site": {
-                "type": "string"
-            },
-            "title": {
-                "type": "string"
-            },
-            "badges": {
-                "type": "array",
-                "items": { "type": "string" }
             }
         }
     },
