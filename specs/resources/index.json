@@ -36,10 +36,10 @@
         "$ref": "./statements/single.json"
     },
     "/statements/{statement_id}/qualifiers": {
-        "$ref": "./statements/qualifiers/list.json"
+        "$ref": "./qualifiers/list.json"
     },
     "/statements/{statement_id}/qualifiers/{qualifier_hash}": {
-        "$ref": "./statements/qualifiers/single.json"
+        "$ref": "./qualifiers/single.json"
     },
     "/statements/{statement_id}/references": {
         "$ref": "./statements/references/list.json"
