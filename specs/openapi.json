@@ -94,8 +94,8 @@
             "name": "references",
             "description": "Wikibase Statement References",
             "externalDocs": {
-                "description": "Wikibase Data Model - Statements",
-                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
+                "description": "Wikidata Glossary - Reference",
+                "url" : "https://www.wikidata.org/wiki/Wikidata:Glossary#References"
             }
         }
     ],

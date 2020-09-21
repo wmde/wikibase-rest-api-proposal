@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": [ "statements" ],
+        "tags": [ "references" ],
         "summary": "Lists references for a Statement",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references`",
         "parameters": [
@@ -20,7 +20,7 @@
         }
     },
     "post": {
-        "tags": ["statements"],
+        "tags": ["references"],
         "summary": "Add a new Reference to a Statement",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references`",
         "parameters": [

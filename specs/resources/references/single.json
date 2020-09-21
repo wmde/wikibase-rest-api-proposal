@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": [ "statements" ],
+        "tags": [ "references" ],
         "summary": "Single reference by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
@@ -18,7 +18,7 @@
         }
     },
     "post": {
-        "tags": ["statements"],
+        "tags": ["references"],
         "summary": "Update a reference",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
@@ -35,7 +35,7 @@
         }
     },
     "delete": {
-        "tags": [ "statements" ],
+        "tags": [ "references" ],
         "summary": "Single reference by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
