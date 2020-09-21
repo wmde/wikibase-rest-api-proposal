@@ -87,6 +87,28 @@
             }
         }
     },
+    "Property": {
+        "description": "A single Wikibase Property",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Property" }
+            }
+        }
+    },
     "Item": {
         "description": "A single wikibase item",
         "headers": {
@@ -119,6 +141,22 @@
                         "entities": {
                             "type": "array",
                             "items": { "$ref": "./schemas.json#/Entity" }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "PropertyList": {
+        "description": "A list of Wikibase Properties",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "properties": {
+                            "type": "array",
+                            "items": { "$ref": "./schemas.json#/Property" }
                         }
                     }
                 }
