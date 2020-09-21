@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": [ "statements" ],
+        "tags": [ "qualifiers" ],
         "summary": "Single qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifierHash}`",
         "parameters": [
@@ -18,7 +18,7 @@
         }
     },
     "post": {
-        "tags": ["statements"],
+        "tags": ["qualifiers"],
         "summary": "Update a qualifier",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifierHash}`",
         "parameters": [
@@ -35,7 +35,7 @@
         }
     },
     "delete": {
-        "tags": [ "statements" ],
+        "tags": [ "qualifiers" ],
         "summary": "Single qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifier_hash}`",
         "parameters": [

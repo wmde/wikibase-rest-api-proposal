@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": [ "statements" ],
+        "tags": [ "qualifiers" ],
         "summary": "Lists qualifiers for a Statement",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers`",
         "parameters": [
@@ -17,7 +17,7 @@
         }
     },
     "post": {
-        "tags": ["statements"],
+        "tags": ["qualifiers"],
         "summary": "Add a new Qualifier to a Statement",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers`",
         "parameters": [
