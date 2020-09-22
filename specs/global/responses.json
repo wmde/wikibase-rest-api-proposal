@@ -195,7 +195,7 @@
             }
         }
     },
-    "EntityDescriptionList": {
+    "EntityDescriptionMap": {
         "description": "Entity Description by language",
         "headers": {
             "Last-Modified": {
@@ -217,7 +217,7 @@
             }
         }
     },
-    "EntityLabelList": {
+    "EntityLabelMap": {
         "description": "Entity Label by language",
         "headers": {
             "Last-Modified": {

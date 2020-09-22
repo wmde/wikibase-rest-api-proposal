@@ -1,7 +1,7 @@
 {
     "get": {
         "tags": [ "entities" ],
-        "summary": "Retrieves an entity's labels list",
+        "summary": "Retrieves an entity's labels map",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" },
@@ -12,7 +12,7 @@
             { "$ref": "../../global/parameters.json#/ifModifiedSince" }
         ],
         "responses": {
-            "200": { "$ref": "../../global/responses.json#/EntityLabelList" },
+            "200": { "$ref": "../../global/responses.json#/EntityLabelMap" },
             "304": { "$ref": "../../global/responses.json#/NotModified" },
             "404": { "$ref": "../../global/responses.json#/NotFound" },
             "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
@@ -20,14 +20,14 @@
     },
     "patch": {
         "tags": [ "entities" ],
-        "summary": "Updates an entity's label list",
+        "summary": "Updates an entity's labels map",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" }
         ],
         "requestBody": { "$ref": "../../global/requests.json#/PatchList" },
         "responses": {
-            "200": { "$ref": "../../global/responses.json#/EntityLabelList" },
+            "200": { "$ref": "../../global/responses.json#/EntityLabelMap" },
             "404": { "$ref": "../../global/responses.json#/NotFound" },
             "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
         }
