@@ -52,7 +52,7 @@
         }
     ],
     "paths": {
-        "$ref": "./paths/index.json"
+        "$ref": "./resources/index.json"
     },
     "security": [
         {},
