@@ -24,13 +24,8 @@
     },
     "HashedSnak": {
         "allOf": [
-            {
-                "$ref": "#/Snak"
-            },
-            {
-                "type": "object",
-                "properties": { "hash": { "$ref": "#/SnakHash" } }
-            }
+            { "$ref": "#/Snak" },
+            { "$ref": "#/HashBearing" }
         ]
     },
     "HashedSnakList": {

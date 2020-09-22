@@ -197,7 +197,7 @@
                 "type": "object",
                 "properties": {
                     "snaks": {
-                        "$ref": "./interfaces.json#/HashedSnakMap"
+                        "$ref": "./interfaces.json#/SnakMap"
                     }
                 }
             }
