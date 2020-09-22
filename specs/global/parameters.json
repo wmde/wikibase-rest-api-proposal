@@ -2,10 +2,13 @@
     "fields": {
         "in": "query",
         "name": "_fields",
-        "description": "Comma separated list of fields to include in each response object",
+        "description": "Comma separated list of fields to include in each response object. See [JSON Data Model](https://www.mediawiki.org/wiki/Wikibase/DataModel/JSON) for field names.",
         "required": false,
+        "style": "form",
+        "explode": "false",
         "schema": {
-            "type": "string"
+            "type": "array",
+            "items": {"type": "string"}
         }
     },
     "entityId":{
