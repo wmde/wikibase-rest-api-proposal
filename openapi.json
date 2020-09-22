@@ -15,10 +15,15 @@
       "fields": {
         "in": "query",
         "name": "_fields",
-        "description": "Comma separated list of fields to include in each response object",
+        "description": "Comma separated list of fields to include in each response object. See [JSON Data Model](https://www.mediawiki.org/wiki/Wikibase/DataModel/JSON) for field names.",
         "required": false,
+        "style": "form",
+        "explode": false,
         "schema": {
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "entityId": {
@@ -29,6 +34,16 @@
         "schema": {
           "type": "string",
           "pattern": "^(Q|P)[1-9]\\d{0,9}$"
+        },
+        "examples": {
+          "item": {
+            "summary": "Example of Item Id",
+            "value": "Q42"
+          },
+          "property": {
+            "summary": "Example of Property Id",
+            "value": "P18"
+          }
         }
       },
       "entityType": {
@@ -52,7 +67,8 @@
         "schema": {
           "type": "string",
           "pattern": "^[a-z]{2}[a-z0-9-]*$"
-        }
+        },
+        "example": "en"
       },
       "offset": {
         "in": "query",
@@ -61,7 +77,8 @@
         "required": false,
         "schema": {
           "type": "integer"
-        }
+        },
+        "example": 20
       },
       "page": {
         "in": "query",
@@ -70,7 +87,8 @@
         "required": false,
         "schema": {
           "type": "integer"
-        }
+        },
+        "example": 1
       },
       "per_page": {
         "in": "query",
@@ -79,7 +97,8 @@
         "required": false,
         "schema": {
           "type": "integer"
-        }
+        },
+        "example": 50
       },
       "qualifierHash": {
         "in": "path",
@@ -107,7 +126,8 @@
         "schema": {
           "type": "string",
           "pattern": "^(Q|P)[1-9]\\d{0,9}\\$.+$"
-        }
+        },
+        "example": "Q42$F078E5B3-F9A8-480E-B7AC-D97778CBBEF9"
       },
       "wikiId": {
         "name": "wiki_id",
@@ -116,7 +136,8 @@
         "required": true,
         "schema": {
           "type": "string"
-        }
+        },
+        "example": "enwiki"
       },
       "ifNoneMatch": {
         "name": "If-None-Match",
@@ -124,6 +145,16 @@
         "description": "Conditionally request a resource only if changed since specified entity revision number",
         "schema": {
           "type": "string"
+        },
+        "examples": {
+          "weak": {
+            "summary": "Weak ETag",
+            "value": "W/\"1276705620\""
+          },
+          "strong": {
+            "summary": "Strong ETag",
+            "value": "1276705620"
+          }
         }
       },
       "ifModifiedSince": {
@@ -132,7 +163,8 @@
         "description": "Conditionally request a resource only if it changed since specified date",
         "schema": {
           "type": "string"
-        }
+        },
+        "example": "Sat, 06 Jun 2020 16:38:47 GMT"
       }
     },
     "responses": {
