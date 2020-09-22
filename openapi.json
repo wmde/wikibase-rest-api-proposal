@@ -874,12 +874,7 @@
                     "$ref": "#/components/schemas/Snak"
                   },
                   {
-                    "type": "object",
-                    "properties": {
-                      "hash": {
-                        "$ref": "#/paths/~1statements~1%7Bstatement_id%7D~1qualifiers/post/responses/200/content/application~1json/schema/allOf/0/properties/hash"
-                      }
-                    }
+                    "$ref": "#/components/schemas/Qualifier/allOf/0"
                   }
                 ]
               }
@@ -923,7 +918,17 @@
             "type": "object",
             "properties": {
               "snaks": {
-                "$ref": "#/components/schemas/Statement/properties/qualifiers"
+                "type": "object",
+                "additionalProperties": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Snak"
+                  }
+                },
+                "example": {
+                  "P31": [],
+                  "P100": []
+                }
               }
             }
           }
@@ -2276,17 +2281,7 @@
                             "type": "string"
                           },
                           "qualifiers": {
-                            "type": "object",
-                            "additionalProperties": {
-                              "type": "array",
-                              "items": {
-                                "$ref": "#/components/schemas/Snak"
-                              }
-                            },
-                            "example": {
-                              "P31": [],
-                              "P100": []
-                            }
+                            "$ref": "#/components/schemas/Reference/allOf/1/properties/snaks"
                           },
                           "references": {
                             "type": "array",
@@ -2653,7 +2648,7 @@
                         "type": "object",
                         "properties": {
                           "snaks": {
-                            "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/put/requestBody/content/application~1json/schema/allOf/0/properties/statement/properties/qualifiers"
+                            "$ref": "#/components/schemas/Reference/allOf/1/properties/snaks"
                           }
                         }
                       }
