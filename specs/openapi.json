@@ -38,7 +38,7 @@
             "name": "sitelinks",
             "description": "Wikibase Item Sitelinks",
             "externalDocs": {
-                "description": "Wikidata Data Model (JSON) - Sitelinks",
+                "description": "Wikidata Data Model - Sitelinks",
                 "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel/JSON#Site_Links"
             }
         },
@@ -46,7 +46,7 @@
             "name": "properties",
             "description": "Wikibase Properties",
             "externalDocs": {
-                "description": "Wikibase Datamodel - Properties",
+                "description": "Wikibase Data Model - Properties",
                 "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Properties"
             }
         },
