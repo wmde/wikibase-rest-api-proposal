@@ -43,14 +43,6 @@
             }
         },
         {
-            "name": "entities",
-            "description": "Wikibase Entities",
-            "externalDocs": {
-                "description": "Wikibase Data Model - Values",
-                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Values"
-            }
-        },
-        {
             "name": "statements",
             "description": "Wikibase Statements",
             "externalDocs": {

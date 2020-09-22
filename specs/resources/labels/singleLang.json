@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": [ "entities" ],
+        "tags": [ "items", "properties" ],
         "summary": "Retrieve an entity's label by language",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
@@ -17,7 +17,7 @@
         }
     },
     "put": {
-        "tags": ["entities"],
+        "tags": [ "items", "properties" ],
         "summary": "Add / Replace a label to an entity by language",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
@@ -32,7 +32,7 @@
         }
     },
     "delete": {
-        "tags": [ "entities" ],
+        "tags": [ "items", "properties" ],
         "summary": "Delete an entity's label by language",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },

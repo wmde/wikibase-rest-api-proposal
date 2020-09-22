@@ -1,6 +1,6 @@
 {
     "get": {
-        "tags": ["entities", "statements"],
+        "tags": [ "items", "properties" ],
         "summary": "Retrieve a list of entity Statements",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
@@ -20,7 +20,7 @@
         }
     },
     "post": {
-        "tags": ["entities", "statements"],
+        "tags": [ "items", "properties" ],
         "summary": "Add a new Statement to an entity (Item | Property)",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
