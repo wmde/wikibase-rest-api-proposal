@@ -6,45 +6,45 @@
         "$ref": "./entities/single.json"
     },
     "/entities/{entity_type}/{entity_id}/aliases": {
-        "$ref": "./entities/aliases/list.json"
+        "$ref": "./aliases/list.json"
     },
     "/entities/{entity_type}/{entity_id}/aliases/{lang}": {
-        "$ref": "./entities/aliases/singleLang.json"
+        "$ref": "./aliases/singleLang.json"
     },
     "/entities/{entity_type}/{entity_id}/descriptions": {
-        "$ref": "./entities/descriptions/list.json"
+        "$ref": "./descriptions/list.json"
     },
     "/entities/{entity_type}/{entity_id}/descriptions/{lang}": {
-        "$ref": "./entities/descriptions/singleLang.json"
+        "$ref": "./descriptions/singleLang.json"
     },
     "/entities/{entity_type}/{entity_id}/labels": {
-        "$ref": "./entities/labels/list.json"
+        "$ref": "./labels/list.json"
     },
     "/entities/{entity_type}/{entity_id}/labels/{lang}": {
-        "$ref": "./entities/labels/singleLang.json"
+        "$ref": "./labels/singleLang.json"
     },
     "/entities/{entity_type}/{entity_id}/statements": {
         "$ref": "./statements/list.json"
     },
     "/entities/items/{entity_id}/sitelinks": {
-        "$ref": "./entities/items/sitelinks/list.json"
+        "$ref": "./sitelinks/list.json"
     },
     "/entities/items/{entity_id}/sitelinks/{wiki_id}": {
-        "$ref": "./entities/items/sitelinks/single.json"
+        "$ref": "./sitelinks/single.json"
     },
     "/statements/{statement_id}": {
         "$ref": "./statements/single.json"
     },
     "/statements/{statement_id}/qualifiers": {
-        "$ref": "./statements/qualifiers/list.json"
+        "$ref": "./qualifiers/list.json"
     },
     "/statements/{statement_id}/qualifiers/{qualifier_hash}": {
-        "$ref": "./statements/qualifiers/single.json"
+        "$ref": "./qualifiers/single.json"
     },
     "/statements/{statement_id}/references": {
-        "$ref": "./statements/references/list.json"
+        "$ref": "./references/list.json"
     },
     "/statements/{statement_id}/references/{reference_hash}": {
-        "$ref": "./statements/references/single.json"
+        "$ref": "./references/single.json"
     }
 }
