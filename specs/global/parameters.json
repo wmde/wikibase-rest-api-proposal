@@ -5,7 +5,7 @@
         "description": "Comma separated list of fields to include in each response object. See [JSON Data Model](https://www.mediawiki.org/wiki/Wikibase/DataModel/JSON) for field names.",
         "required": false,
         "style": "form",
-        "explode": "false",
+        "explode": false,
         "schema": {
             "type": "array",
             "items": {"type": "string"}
