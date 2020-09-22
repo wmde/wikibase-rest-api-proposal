@@ -6,7 +6,15 @@ module.exports = function (_) {
 
     this.addContextDependency( path.dirname( this.resourcePath ) );
 
-    SwaggerParser.bundle(this.resourcePath)
+    SwaggerParser
+        .bundle(
+            this.resourcePath,
+            {
+                resolve: {
+                    http: false,
+                },
+            },
+        )
         .then(spec => done(null, JSON.stringify(spec)))
         .catch(({message}) => done(message))
 } 
