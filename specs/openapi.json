@@ -38,8 +38,8 @@
             "name": "sitelinks",
             "description": "Wikibase Item Sitelinks",
             "externalDocs": {
-                "description": "Wikidata Glossary - Sitelinks",
-                "url" : "https://www.wikidata.org/wiki/Wikidata:Glossary#Sitelink"
+                "description": "Wikidata Data Model (JSON) - Sitelinks",
+                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel/JSON#Site_Links"
             }
         },
         {
@@ -86,16 +86,16 @@
             "name": "qualifiers",
             "description": "Wikibase Statement Qualifiers",
             "externalDocs": {
-                "description": "Wikidata Glossary - Qualifier",
-                "url" : "https://www.wikidata.org/wiki/Wikidata:Glossary#Qualifier"
+                "description": "Wikibase Data Model - Snaks",
+                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Snaks"
             }
         },
         {
             "name": "references",
             "description": "Wikibase Statement References",
             "externalDocs": {
-                "description": "Wikidata Glossary - Reference",
-                "url" : "https://www.wikidata.org/wiki/Wikidata:Glossary#References"
+                "description": "Wikidata Data Model - Reference Records",
+                "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#ReferenceRecords"
             }
         }
     ],
