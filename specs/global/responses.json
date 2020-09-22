@@ -233,7 +233,7 @@
             }
         }
     },
-    "EntityDescriptionList": {
+    "EntityDescriptions": {
         "description": "Entity Description by language",
         "headers": {
             "Last-Modified": {
@@ -255,7 +255,7 @@
             }
         }
     },
-    "EntityLabelList": {
+    "EntityLabels": {
         "description": "Entity Label by language",
         "headers": {
             "Last-Modified": {
@@ -317,7 +317,7 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./interfaces.json#/SitelinkMap" } 
+                "schema": { "$ref": "./interfaces.json#/Sitelinks" }
             }
         }
     },
