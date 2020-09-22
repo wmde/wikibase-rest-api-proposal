@@ -2,7 +2,7 @@
   "name": "wikibase-rest-api-proposal",
   "version": "0.0.1",
   "description": "Wikibase REST API proposal",
-  "main": "openapi.json",
+  "main": "dist/openapi.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "swagger-cli validate specs/openapi.json",
@@ -16,7 +16,9 @@
     "type": "git",
     "url": "git+https://github.com/wmde/wikibase-rest-api-proposal.git"
   },
-  "author": "",
+  "author": {
+    "name": "The Wikidata team"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wmde/wikibase-rest-api-proposal/issues"
