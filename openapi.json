@@ -955,6 +955,12 @@
               "P100": []
             }
           },
+          "qualifiers-order": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "references": {
             "type": "array",
             "items": {
@@ -999,6 +1005,12 @@
                 "example": {
                   "P31": [],
                   "P100": []
+                }
+              },
+              "snaks-order": {
+                "type": "array",
+                "items": {
+                  "type": "string"
                 }
               }
             }
@@ -2565,14 +2577,17 @@
                           "mainsnak": {
                             "$ref": "#/components/schemas/Snak"
                           },
-                          "id": {
-                            "type": "string"
-                          },
                           "rank": {
                             "type": "string"
                           },
                           "qualifiers": {
                             "$ref": "#/components/schemas/Reference/allOf/1/properties/snaks"
+                          },
+                          "qualifiers-order": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
                           },
                           "references": {
                             "type": "array",
@@ -2934,6 +2949,12 @@
                         "properties": {
                           "snaks": {
                             "$ref": "#/components/schemas/Reference/allOf/1/properties/snaks"
+                          },
+                          "snaks-order": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
