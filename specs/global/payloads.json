@@ -91,6 +91,12 @@
         "properties": {
             "snaks": {
                 "$ref": "./interfaces.json#/SnakMap"
+            },
+            "snaks-order": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
             }
         }
     },
@@ -104,14 +110,17 @@
             "mainsnak" : {
                 "$ref": "./interfaces.json#/Snak"
             },
-            "id": {
-                "type": "string"
-            },
             "rank": {
                 "type": "string"
             },
             "qualifiers": {
                 "$ref": "./interfaces.json#/SnakMap"
+            },
+            "qualifiers-order": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
             },
             "references": {
                 "$ref": "#/NewReferences"
