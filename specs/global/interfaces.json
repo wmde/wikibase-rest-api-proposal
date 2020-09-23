@@ -71,6 +71,14 @@
         "type": "array",
         "items": { "$ref": "#/MediawikiEditTag" }
     },
+    "MediawikiTitle": {
+        "type": "object",
+        "properties": {
+            "pageid": { "type": "integer" },
+            "lastrevid": { "type": "integer" },
+            "title": { "type": "string" }
+        }
+    },
     "SitelinkMap": {
         "type": "object",
         "additionalProperties": {
