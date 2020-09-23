@@ -64,13 +64,13 @@
             "P100": []
         }
     },
-    "MediawikiEditComment": { "type": "string" },
     "MediawikiDeletionReason": { "type": "string" },
+    "MediawikiEditComment": { "type": "string" },
+    "MediawikiEditTag": { "type": "string" },
     "MediawikiEditTags": {
         "type": "array",
         "items": { "$ref": "#/MediawikiEditTag" }
     },
-    "MediawikiEditTag": { "type": "string" },
     "SitelinkMap": {
         "type": "object",
         "additionalProperties": {
