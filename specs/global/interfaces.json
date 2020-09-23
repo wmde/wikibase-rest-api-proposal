@@ -64,12 +64,22 @@
             "P100": []
         }
     },
+    "MediawikiBotFlag": { "type": "boolean" },
     "MediawikiDeletionReason": { "type": "string" },
     "MediawikiEditComment": { "type": "string" },
-    "MediawikiEditTag": { "type": "string" },
+    "MediawikiEditTag": { "type": "string" },,
     "MediawikiEditTags": {
         "type": "array",
         "items": { "$ref": "#/MediawikiEditTag" }
+    },
+    "MediawikiLatestRevision": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer",
+                "example": "123"
+            }
+        }
     },
     "MediawikiTitle": {
         "type": "object",
