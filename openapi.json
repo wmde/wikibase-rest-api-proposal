@@ -254,8 +254,8 @@
           }
         }
       },
-      "Entity": {
-        "description": "A single wikibase entity",
+      "Property": {
+        "description": "A single Wikibase Property",
         "headers": {
           "Last-Modified": {
             "schema": {
@@ -273,22 +273,64 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Entity"
+              "$ref": "#/components/schemas/Property"
             }
           }
         }
       },
-      "EntityList": {
-        "description": "A list of wikibase entities",
+      "Item": {
+        "description": "A single wikibase item",
+        "headers": {
+          "Last-Modified": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last modified date"
+          },
+          "ETag": {
+            "schema": {
+              "type": "string"
+            },
+            "description": "Last entity revision number"
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Item"
+            }
+          }
+        }
+      },
+      "PropertyList": {
+        "description": "A list of Wikibase Properties",
         "content": {
           "application/json": {
             "schema": {
               "type": "object",
               "properties": {
-                "entities": {
+                "properties": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Entity"
+                    "$ref": "#/components/schemas/Property"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ItemList": {
+        "description": "A list of wikibase items",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Item"
                   }
                 }
               }
@@ -749,7 +791,26 @@
       "Item": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/Entity"
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "modified": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "id",
+              "type"
+            ],
+            "discriminator": {
+              "propertyName": "type"
+            }
           },
           {
             "type": "object",
@@ -794,7 +855,7 @@
       "Property": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/Entity"
+            "$ref": "#/components/schemas/Item/allOf/0"
           },
           {
             "$ref": "#/components/schemas/Item/allOf/1"
@@ -814,28 +875,6 @@
             ]
           }
         ]
-      },
-      "Entity": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "modified": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "required": [
-          "id",
-          "type"
-        ],
-        "discriminator": {
-          "propertyName": "type"
-        }
       },
       "Term": {
         "type": "object",
@@ -976,19 +1015,27 @@
   },
   "tags": [
     {
-      "name": "entities",
-      "description": "Wikibase Entities",
-      "externalDocs": {
-        "description": "Wikibase Data Model - Values",
-        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Values"
-      }
-    },
-    {
       "name": "items",
       "description": "Wikibase Items",
       "externalDocs": {
         "description": "Wikibase Datamodel - Items",
         "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Items"
+      }
+    },
+    {
+      "name": "properties",
+      "description": "Wikibase Properties",
+      "externalDocs": {
+        "description": "Wikibase Datamodel - Properties",
+        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Properties"
+      }
+    },
+    {
+      "name": "entities",
+      "description": "Wikibase Entities",
+      "externalDocs": {
+        "description": "Wikibase Data Model - Values",
+        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Values"
       }
     },
     {
@@ -1001,249 +1048,6 @@
     }
   ],
   "paths": {
-    "/entities/{entity_type}": {
-      "get": {
-        "tags": [
-          "entities"
-        ],
-        "summary": "Retrieve a list of Wikibase Entities (Items or Properties)",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/entityType"
-          },
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/per_page"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/EntityList"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "entities"
-        ],
-        "summary": "Create a new Wikibase Entity",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/entityType"
-          }
-        ],
-        "requestBody": {
-          "description": "Edit payload containing a Wikibase entity object (Item / Property)",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "allOf": [
-                  {
-                    "type": "object",
-                    "properties": {
-                      "entity": {
-                        "$ref": "#/components/schemas/Entity"
-                      }
-                    }
-                  },
-                  {
-                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema"
-                  }
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/Entity"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "501": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "503": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      }
-    },
-    "/entities/{entity_type}/{entity_id}": {
-      "get": {
-        "tags": [
-          "entities"
-        ],
-        "summary": "Single Entity",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/entityType"
-          },
-          {
-            "$ref": "#/components/parameters/entityId"
-          },
-          {
-            "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/ifNoneMatch"
-          },
-          {
-            "$ref": "#/components/parameters/ifModifiedSince"
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/Entity"
-          },
-          "304": {
-            "$ref": "#/components/responses/NotModified"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "entities"
-        ],
-        "summary": "Replace a Wikibase Entity by Id",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/entityType"
-          },
-          {
-            "$ref": "#/components/parameters/entityId"
-          }
-        ],
-        "requestBody": {
-          "$ref": "#/paths/~1entities~1%7Bentity_type%7D/post/requestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/Entity"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "501": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "503": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      },
-      "patch": {
-        "tags": [
-          "entities"
-        ],
-        "summary": "Update a Wikibase Entity by Id",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/entityType"
-          },
-          {
-            "$ref": "#/components/parameters/entityId"
-          }
-        ],
-        "requestBody": {
-          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/patch/requestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/Entity"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "501": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "503": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "entities"
-        ],
-        "summary": "Single Entity",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/entityType"
-          },
-          {
-            "$ref": "#/components/parameters/entityId"
-          }
-        ],
-        "requestBody": {
-          "description": "Delete payload including a reason for deletion",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "reason": {
-                    "type": "string"
-                  },
-                  "tags": {
-                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema/properties/tags"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/OK"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
-          "501": {
-            "$ref": "#/components/responses/UnauthenticatedError"
-          },
-          "503": {
-            "$ref": "#/components/responses/UnauthorizedError"
-          },
-          "default": {
-            "$ref": "#/components/responses/UnexpectedError"
-          }
-        }
-      }
-    },
     "/entities/{entity_type}/{entity_id}/aliases": {
       "get": {
         "tags": [
@@ -1969,6 +1773,244 @@
         }
       }
     },
+    "/entities/items": {
+      "get": {
+        "tags": [
+          "items"
+        ],
+        "summary": "Retrieve a list of Wikibase Items",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/per_page"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ItemList"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "items"
+        ],
+        "summary": "Create a new Wikibase Item",
+        "requestBody": {
+          "description": "Edit payload containing a Wikibase Item",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "item": {
+                        "allOf": [
+                          {
+                            "$ref": "#/components/schemas/Item/allOf/1"
+                          },
+                          {
+                            "$ref": "#/components/schemas/Item/allOf/2"
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "sitelinks": {
+                                "$ref": "#/components/responses/SitelinkList/content/application~1json/schema"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Item"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      }
+    },
+    "/entities/items/{entity_id}": {
+      "get": {
+        "tags": [
+          "items"
+        ],
+        "summary": "Single Wikibase Item by Id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Item"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "items"
+        ],
+        "summary": "Replace a Wikibase Item by Id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1entities~1items/post/requestBody"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Item"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "items"
+        ],
+        "summary": "Update a Wikibase Item by Id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/patch/requestBody"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Item"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "items"
+        ],
+        "summary": "Delete a Single Item by Id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "description": "Delete payload including a reason for deletion",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema/properties/tags"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      }
+    },
     "/entities/items/{entity_id}/sitelinks": {
       "get": {
         "tags": [
@@ -2146,6 +2188,221 @@
         ],
         "requestBody": {
           "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      }
+    },
+    "/entities/properties": {
+      "get": {
+        "tags": [
+          "properties"
+        ],
+        "summary": "Retrieve a list of Wikibase Properties",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          },
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/per_page"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/PropertyList"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "properties"
+        ],
+        "summary": "Create a new Wikibase Property",
+        "requestBody": {
+          "description": "Edit payload containing a Wikibase Property",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "property": {
+                        "allOf": [
+                          {
+                            "$ref": "#/components/schemas/Item/allOf/1"
+                          },
+                          {
+                            "$ref": "#/components/schemas/Item/allOf/2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/delete/requestBody/content/application~1json/schema"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Property"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      }
+    },
+    "/entities/properties/{entity_id}": {
+      "get": {
+        "tags": [
+          "properties"
+        ],
+        "summary": "Single Property",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          },
+          {
+            "$ref": "#/components/parameters/fields"
+          },
+          {
+            "$ref": "#/components/parameters/ifNoneMatch"
+          },
+          {
+            "$ref": "#/components/parameters/ifModifiedSince"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Property"
+          },
+          "304": {
+            "$ref": "#/components/responses/NotModified"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "properties"
+        ],
+        "summary": "Replace a Wikibase Property by Id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1entities~1properties/post/requestBody"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Property"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "properties"
+        ],
+        "summary": "Update a Wikibase Property by Id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/patch/requestBody"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Property"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/UnauthenticatedError"
+          },
+          "503": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "default": {
+            "$ref": "#/components/responses/UnexpectedError"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "properties"
+        ],
+        "summary": "Remove a Single Property by Id",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/entityId"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/paths/~1entities~1items~1%7Bentity_id%7D/delete/requestBody"
         },
         "responses": {
           "200": {
