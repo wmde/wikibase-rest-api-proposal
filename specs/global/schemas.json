@@ -156,6 +156,12 @@
             "qualifiers": {
                 "$ref": "./interfaces.json#/HashedSnakMap"
             },
+            "qualifiers-order": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
             "references": {
                 "type": "array",
                 "items": { "$ref": "./schemas.json#/Reference" }
