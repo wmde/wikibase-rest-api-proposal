@@ -46,6 +46,9 @@
             },
             "bot": {
                 "$ref": "./interfaces.json#/MediawikiBotFlag"
+            },
+            "latest": {
+                "$ref": "./interfaces.json#/MediawikiLatestRevision"
             }
         }
     },

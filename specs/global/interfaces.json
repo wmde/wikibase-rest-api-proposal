@@ -67,6 +67,15 @@
     "MediawikiEditComment": { "type": "string" },
     "MediawikiDeletionReason": { "type": "string" },
     "MediawikiBotFlag": { "type": "boolean" },
+    "MediawikiLatestRevision": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer",
+                "example": "123"
+            }
+        }
+    },
     "MediawikiEditTags": {
         "type": "array",
         "items": { "$ref": "#/MediawikiEditTag" }
