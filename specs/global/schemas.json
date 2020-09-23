@@ -182,6 +182,12 @@
                 "properties": {
                     "snaks": {
                         "$ref": "./interfaces.json#/SnakMap"
+                    },
+                    "snaks-order": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }
             }
