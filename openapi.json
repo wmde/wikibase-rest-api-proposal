@@ -1018,24 +1018,48 @@
       "name": "items",
       "description": "Wikibase Items",
       "externalDocs": {
-        "description": "Wikibase Datamodel - Items",
+        "description": "Wikibase Data Model - Items",
         "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Items"
+      }
+    },
+    {
+      "name": "sitelinks",
+      "description": "Wikibase Item Sitelinks",
+      "externalDocs": {
+        "description": "Wikibase Data Model - Sitelinks",
+        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel/JSON#Site_Links"
       }
     },
     {
       "name": "properties",
       "description": "Wikibase Properties",
       "externalDocs": {
-        "description": "Wikibase Datamodel - Properties",
+        "description": "Wikibase Data Model - Properties",
         "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Properties"
       }
     },
     {
-      "name": "entities",
-      "description": "Wikibase Entities",
+      "name": "labels",
+      "description": "Wikibase Entity Labels",
       "externalDocs": {
-        "description": "Wikibase Data Model - Values",
-        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Values"
+        "description": "Wikibase Data Model - Terms",
+        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#EntityDescriptions_of_Items_and_Properties"
+      }
+    },
+    {
+      "name": "descriptions",
+      "description": "Wikibase Entity Descriptions",
+      "externalDocs": {
+        "description": "Wikibase Data Model - Terms",
+        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#EntityDescriptions_of_Items_and_Properties"
+      }
+    },
+    {
+      "name": "aliases",
+      "description": "Wikibase Entity Aliases",
+      "externalDocs": {
+        "description": "Wikibase Data Model - Terms",
+        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#EntityDescriptions_of_Items_and_Properties"
       }
     },
     {
@@ -1045,13 +1069,29 @@
         "description": "Wikibase Data Model - Statements",
         "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Statements"
       }
+    },
+    {
+      "name": "qualifiers",
+      "description": "Wikibase Statement Qualifiers",
+      "externalDocs": {
+        "description": "Wikibase Data Model - Snaks",
+        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#Snaks"
+      }
+    },
+    {
+      "name": "references",
+      "description": "Wikibase Statement References",
+      "externalDocs": {
+        "description": "Wikidata Data Model - Reference Records",
+        "url": "https://www.mediawiki.org/wiki/Wikibase/DataModel#ReferenceRecords"
+      }
     }
   ],
   "paths": {
     "/entities/{entity_type}/{entity_id}/aliases": {
       "get": {
         "tags": [
-          "entities"
+          "aliases"
         ],
         "summary": "Retrieves an entity's alias lists",
         "parameters": [
@@ -1085,7 +1125,7 @@
       },
       "patch": {
         "tags": [
-          "entities"
+          "aliases"
         ],
         "summary": "Updates an entity's alias lists",
         "parameters": [
@@ -1121,7 +1161,7 @@
     "/entities/{entity_type}/{entity_id}/aliases/{lang}": {
       "get": {
         "tags": [
-          "entities"
+          "aliases"
         ],
         "summary": "Retrieves an entity's alias list by language",
         "parameters": [
@@ -1158,7 +1198,7 @@
       },
       "put": {
         "tags": [
-          "entities"
+          "aliases"
         ],
         "summary": "Add / Replace a whole alias list by language",
         "parameters": [
@@ -1215,7 +1255,7 @@
       },
       "patch": {
         "tags": [
-          "entities"
+          "aliases"
         ],
         "summary": "Updates an entity's alias list by language",
         "parameters": [
@@ -1252,7 +1292,7 @@
       },
       "delete": {
         "tags": [
-          "entities"
+          "aliases"
         ],
         "summary": "Deletes an entity's alias list by language",
         "parameters": [
@@ -1291,7 +1331,7 @@
     "/entities/{entity_type}/{entity_id}/descriptions": {
       "get": {
         "tags": [
-          "entities"
+          "descriptions"
         ],
         "summary": "Retrieves an entity's description list",
         "parameters": [
@@ -1331,7 +1371,7 @@
       },
       "patch": {
         "tags": [
-          "entities"
+          "descriptions"
         ],
         "summary": "Updates an entity's description list",
         "parameters": [
@@ -1367,7 +1407,7 @@
     "/entities/{entity_type}/{entity_id}/descriptions/{lang}": {
       "get": {
         "tags": [
-          "entities"
+          "descriptions"
         ],
         "summary": "Retrieves an entity's description by language",
         "parameters": [
@@ -1404,7 +1444,7 @@
       },
       "put": {
         "tags": [
-          "entities"
+          "descriptions"
         ],
         "summary": "Add / Replace a description to an entity by language",
         "parameters": [
@@ -1441,7 +1481,7 @@
       },
       "delete": {
         "tags": [
-          "entities"
+          "descriptions"
         ],
         "summary": "Deletes an entity's description by language",
         "parameters": [
@@ -1480,7 +1520,7 @@
     "/entities/{entity_type}/{entity_id}/labels": {
       "get": {
         "tags": [
-          "entities"
+          "labels"
         ],
         "summary": "Retrieves an entity's labels list",
         "parameters": [
@@ -1514,7 +1554,7 @@
       },
       "patch": {
         "tags": [
-          "entities"
+          "labels"
         ],
         "summary": "Updates an entity's label list",
         "parameters": [
@@ -1544,7 +1584,7 @@
     "/entities/{entity_type}/{entity_id}/labels/{lang}": {
       "get": {
         "tags": [
-          "entities"
+          "labels"
         ],
         "summary": "Retrieve an entity's label by language",
         "parameters": [
@@ -1581,7 +1621,7 @@
       },
       "put": {
         "tags": [
-          "entities"
+          "labels"
         ],
         "summary": "Add / Replace a label to an entity by language",
         "parameters": [
@@ -1632,7 +1672,7 @@
       },
       "delete": {
         "tags": [
-          "entities"
+          "labels"
         ],
         "summary": "Delete an entity's label by language",
         "parameters": [
@@ -1665,7 +1705,6 @@
     "/entities/{entity_type}/{entity_id}/statements": {
       "get": {
         "tags": [
-          "entities",
           "statements"
         ],
         "summary": "Retrieve a list of entity Statements",
@@ -1712,7 +1751,6 @@
       },
       "post": {
         "tags": [
-          "entities",
           "statements"
         ],
         "summary": "Add a new Statement to an entity (Item | Property)",
@@ -1987,7 +2025,7 @@
     "/entities/items/{entity_id}/sitelinks": {
       "get": {
         "tags": [
-          "items"
+          "sitelinks"
         ],
         "summary": "Retrieves an item's sitelinks",
         "parameters": [
@@ -2018,7 +2056,7 @@
       },
       "post": {
         "tags": [
-          "items"
+          "sitelinks"
         ],
         "summary": "Creates an item's sitelink",
         "parameters": [
@@ -2071,7 +2109,7 @@
     "/entities/items/{entity_id}/sitelinks/{wiki_id}": {
       "get": {
         "tags": [
-          "items"
+          "sitelinks"
         ],
         "summary": "Retrieves an Item's sitelink by wiki-id",
         "parameters": [
@@ -2105,7 +2143,7 @@
       },
       "patch": {
         "tags": [
-          "items"
+          "sitelinks"
         ],
         "summary": "Updates an Item's sitelink by wiki-id",
         "parameters": [
@@ -2139,7 +2177,7 @@
       },
       "delete": {
         "tags": [
-          "items"
+          "sitelinks"
         ],
         "summary": "Item's sitelink by wiki-id",
         "parameters": [
@@ -2638,7 +2676,7 @@
     "/statements/{statement_id}/qualifiers": {
       "get": {
         "tags": [
-          "statements"
+          "qualifiers"
         ],
         "summary": "Lists qualifiers for a Statement",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers`",
@@ -2673,7 +2711,7 @@
       },
       "post": {
         "tags": [
-          "statements"
+          "qualifiers"
         ],
         "summary": "Add a new Qualifier to a Statement",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers`",
@@ -2727,7 +2765,7 @@
     "/statements/{statement_id}/qualifiers/{qualifier_hash}": {
       "get": {
         "tags": [
-          "statements"
+          "qualifiers"
         ],
         "summary": "Single qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifierHash}`",
@@ -2765,7 +2803,7 @@
       },
       "post": {
         "tags": [
-          "statements"
+          "qualifiers"
         ],
         "summary": "Update a qualifier",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifierHash}`",
@@ -2800,7 +2838,7 @@
       },
       "delete": {
         "tags": [
-          "statements"
+          "qualifiers"
         ],
         "summary": "Single qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifier_hash}`",
@@ -2837,7 +2875,7 @@
     "/statements/{statement_id}/references": {
       "get": {
         "tags": [
-          "statements"
+          "references"
         ],
         "summary": "Lists references for a Statement",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references`",
@@ -2872,7 +2910,7 @@
       },
       "post": {
         "tags": [
-          "statements"
+          "references"
         ],
         "summary": "Add a new Reference to a Statement",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references`",
@@ -2931,7 +2969,7 @@
     "/statements/{statement_id}/references/{reference_hash}": {
       "get": {
         "tags": [
-          "statements"
+          "references"
         ],
         "summary": "Single reference by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
@@ -2969,7 +3007,7 @@
       },
       "post": {
         "tags": [
-          "statements"
+          "references"
         ],
         "summary": "Update a reference",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
@@ -3004,7 +3042,7 @@
       },
       "delete": {
         "tags": [
-          "statements"
+          "references"
         ],
         "summary": "Single reference by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
