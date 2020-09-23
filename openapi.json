@@ -2598,6 +2598,18 @@
                     "items": {
                       "type": "string"
                     }
+                  },
+                  "bot": {
+                    "type": "boolean"
+                  },
+                  "latest": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "example": "123"
+                      }
+                    }
                   }
                 }
               }
