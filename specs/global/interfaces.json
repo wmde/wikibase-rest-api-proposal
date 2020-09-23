@@ -74,7 +74,77 @@
         "items": { "$ref": "#/MediawikiEditTag" }
     },
     "MediawikiEditTag": { "type": "string" },
-    "Sitelinks": {
+    "NewProperty": {
+        "allOf": [
+            {
+                "$ref": "#/Fingerprintable"
+            },
+            {
+                "$ref": "#/StatementsBearing"
+            }
+        ]
+    },
+    "NewItem": {
+        "allOf": [
+            {
+                "$ref": "#/Fingerprintable"
+            },
+            {
+                "$ref": "#/StatementsBearing"
+            },
+            {
+                "type": "object",
+                "properties": {
+                    "sitelinks": { "$ref": "#/SitelinkMap" }
+                }
+            }
+        ]
+    },
+    "NewQualifier": {
+        "$ref": "#/Snak"
+    },
+    "NewReference": {
+        "type": "object",
+        "properties": {
+            "snaks": {
+                "$ref": "#/Snaks"
+            },
+            "snaks-order": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "NewReferences": {
+        "type": "array",
+        "items": { "$ref": "#/NewReference" }
+    },
+    "NewStatement": {
+        "type": "object",
+        "properties": {
+            "mainsnak" : {
+                "$ref": "#/Snak"
+            },
+            "rank": {
+                "type": "string"
+            },
+            "qualifiers": {
+                "$ref": "#/Snaks"
+            },
+            "qualifiers-order": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "references": {
+                "$ref": "#/NewReferences"
+            }
+        }
+    },
+    "SitelinkMap": {
         "type": "object",
         "additionalProperties": {
             "$ref": "./schemas.json#/Sitelink"
