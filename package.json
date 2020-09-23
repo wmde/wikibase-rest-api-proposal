@@ -19,7 +19,7 @@
   "author": {
     "name": "The Wikidata team"
   },
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/wmde/wikibase-rest-api-proposal/issues"
   },
