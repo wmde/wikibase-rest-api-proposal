@@ -36,6 +36,12 @@ The badges API distracts from the main focus and complexity of the proposed spec
 
 It's likely that badges, or some way of retrieving lists of entities would be included as a separate endpoint.
 
+### Response links
+
+Many REST APIs link to endpoints around them.
+The Mediawiki core team suggested that they may also want to do this.
+It is likley that we will investigate this in the future, but for this this falls out of scope for the initial spec.
+
 ### UI focused modules
 
 The existing modules serve mainly as part of the Wikibase UI editing and display workflow and are not deemed to be used much externally.
