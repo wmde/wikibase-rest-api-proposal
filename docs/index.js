@@ -1,6 +1,5 @@
 
 import SwaggerUI from 'swagger-ui';
-import SwaggerParser from "@apidevtools/swagger-parser";
 
 import 'swagger-ui/dist/swagger-ui.css';
 
