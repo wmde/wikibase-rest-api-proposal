@@ -1,4 +1,26 @@
 {
+    "Entity": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string"
+            },
+            "type": {
+                "type": "string"
+            },
+            "modified": {
+                "type": "string",
+                "format": "date-time"
+            }
+        },
+		"required": [
+            "id",
+            "type"
+        ],
+        "discriminator": {
+            "propertyName": "type"
+        }
+    },
     "Fingerprintable": {
         "type": "object",
         "properties": {

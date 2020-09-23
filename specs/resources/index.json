@@ -1,10 +1,4 @@
 {
-    "/entities/{entity_type}": {
-        "$ref": "./entities/list.json"
-    },
-    "/entities/{entity_type}/{entity_id}": {
-        "$ref": "./entities/single.json"
-    },
     "/entities/{entity_type}/{entity_id}/aliases": {
         "$ref": "./aliases/list.json"
     },
@@ -26,11 +20,23 @@
     "/entities/{entity_type}/{entity_id}/statements": {
         "$ref": "./statements/list.json"
     },
+    "/entities/items": {
+        "$ref": "./items/list.json"
+    },
+    "/entities/items/{entity_id}": {
+        "$ref": "./items/single.json"
+    },
     "/entities/items/{entity_id}/sitelinks": {
         "$ref": "./sitelinks/list.json"
     },
     "/entities/items/{entity_id}/sitelinks/{wiki_id}": {
         "$ref": "./sitelinks/single.json"
+    },
+    "/entities/properties": {
+        "$ref": "./properties/list.json"
+    },
+    "/entities/properties/{entity_id}": {
+        "$ref": "./properties/single.json"
     },
     "/statements/{statement_id}": {
         "$ref": "./statements/single.json"

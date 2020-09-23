@@ -65,8 +65,8 @@
             }
         }
     },
-    "Entity": {
-        "description": "A single wikibase entity",
+    "Property": {
+        "description": "A single Wikibase Property",
         "headers": {
             "Last-Modified": {
                 "schema": {
@@ -83,20 +83,58 @@
         },
         "content": {
             "application/json": {
-                "schema": { "$ref": "./schemas.json#/Entity" }
+                "schema": { "$ref": "./schemas.json#/Property" }
             }
         }
     },
-    "EntityList": {
-        "description": "A list of wikibase entities",
+    "Item": {
+        "description": "A single wikibase item",
+        "headers": {
+            "Last-Modified": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last modified date"
+            },
+            "ETag": {
+                "schema": {
+                    "type": "string"
+                },
+                "description": "Last entity revision number"
+            }
+        },
+        "content": {
+            "application/json": {
+                "schema": { "$ref": "./schemas.json#/Item" }
+            }
+        }
+    },
+    "PropertyList": {
+        "description": "A list of Wikibase Properties",
         "content": {
             "application/json": {
                 "schema": {
                     "type": "object",
                     "properties": {
-                        "entities": {
+                        "properties": {
                             "type": "array",
-                            "items": { "$ref": "./schemas.json#/Entity" }
+                            "items": { "$ref": "./schemas.json#/Property" }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "ItemList": {
+        "description": "A list of wikibase items",
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "items": {
+                            "type": "array",
+                            "items": { "$ref": "./schemas.json#/Item" }
                         }
                     }
                 }

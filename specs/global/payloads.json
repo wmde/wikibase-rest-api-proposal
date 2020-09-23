@@ -57,6 +57,32 @@
             }
         }
     },
+    "NewProperty": {
+        "allOf": [
+            {
+                "$ref": "./interfaces.json#/Fingerprintable"
+            },
+            {
+                "$ref": "./interfaces.json#/StatementsBearing"
+            }
+        ]
+    },
+    "NewItem": {
+        "allOf": [
+            {
+                "$ref": "./interfaces.json#/Fingerprintable"
+            },
+            {
+                "$ref": "./interfaces.json#/StatementsBearing"
+            },
+            {
+                "type": "object",
+                "properties": {
+                    "sitelinks": { "$ref": "./interfaces.json#/SitelinkMap" }
+                }
+            }
+        ]
+    },
     "NewQualifier": {
         "$ref": "./interfaces.json#/Snak"
     },

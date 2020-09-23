@@ -1,31 +1,29 @@
 {
     "get": {
-        "tags": [ "entities" ],
-        "summary": "Single Entity",
+        "tags": [ "items" ],
+        "summary": "Single Wikibase Item by Id",
         "parameters": [
-            { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" },
             { "$ref": "../../global/parameters.json#/fields" },
             { "$ref": "../../global/parameters.json#/ifNoneMatch" },
             { "$ref": "../../global/parameters.json#/ifModifiedSince" }
         ],
         "responses": {
-            "200": { "$ref": "../../global/responses.json#/Entity" },
+            "200": { "$ref": "../../global/responses.json#/Item" },
             "304": { "$ref": "../../global/responses.json#/NotModified" },
             "404": { "$ref": "../../global/responses.json#/NotFound" },
             "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
         }
     },
     "put": {
-        "tags": ["entities"],
-        "summary": "Replace a Wikibase Entity by Id",
+        "tags": ["items"],
+        "summary": "Replace a Wikibase Item by Id",
         "parameters": [
-            { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" }
         ],
-        "requestBody": { "$ref": "../../global/requests.json#/Entity" },
+        "requestBody": { "$ref": "../../global/requests.json#/Item" },
         "responses": {
-            "200": { "$ref": "../../global/responses.json#/Entity" },
+            "200": { "$ref": "../../global/responses.json#/Item" },
             "404": { "$ref": "../../global/responses.json#/NotFound" },
             "501": { "$ref": "../../global/responses.json#/UnauthenticatedError" },
             "503": { "$ref": "../../global/responses.json#/UnauthorizedError" },
@@ -33,15 +31,14 @@
         }
     },
     "patch": {
-        "tags": ["entities"],
-        "summary": "Update a Wikibase Entity by Id",
+        "tags": ["items"],
+        "summary": "Update a Wikibase Item by Id",
         "parameters": [
-            { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" }
         ],
         "requestBody": { "$ref": "../../global/requests.json#/PatchList" },
         "responses": {
-            "200": { "$ref": "../../global/responses.json#/Entity" },
+            "200": { "$ref": "../../global/responses.json#/Item" },
             "404": { "$ref": "../../global/responses.json#/NotFound" },
             "501": { "$ref": "../../global/responses.json#/UnauthenticatedError" },
             "503": { "$ref": "../../global/responses.json#/UnauthorizedError" },
@@ -49,10 +46,9 @@
         }
     },
     "delete": {
-        "tags": [ "entities" ],
-        "summary": "Single Entity",
+        "tags": [ "items" ],
+        "summary": "Delete a Single Item by Id",
         "parameters": [
-            { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" }
         ],
         "requestBody": { "$ref": "../../global/requests.json#/Deletion" },
