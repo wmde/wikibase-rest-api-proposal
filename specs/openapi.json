@@ -30,7 +30,7 @@
             "name": "items",
             "description": "Wikibase Items",
             "externalDocs": {
-                "description": "Wikibase Datamodel - Items",
+                "description": "Wikibase Data Model - Items",
                 "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel#Items"
             }
         },
@@ -38,7 +38,7 @@
             "name": "sitelinks",
             "description": "Wikibase Item Sitelinks",
             "externalDocs": {
-                "description": "Wikidata Data Model - Sitelinks",
+                "description": "Wikibase Data Model - Sitelinks",
                 "url" : "https://www.mediawiki.org/wiki/Wikibase/DataModel/JSON#Site_Links"
             }
         },
