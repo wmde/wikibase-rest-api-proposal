@@ -1062,15 +1062,6 @@
             "$ref": "#/components/parameters/entityId"
           },
           {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/per_page"
-          },
-          {
             "$ref": "#/components/parameters/ifNoneMatch"
           },
           {
@@ -1311,15 +1302,6 @@
             "$ref": "#/components/parameters/entityId"
           },
           {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/per_page"
-          },
-          {
             "$ref": "#/components/parameters/ifNoneMatch"
           },
           {
@@ -1507,15 +1489,6 @@
           },
           {
             "$ref": "#/components/parameters/entityId"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/per_page"
           },
           {
             "$ref": "#/components/parameters/ifNoneMatch"
@@ -2020,15 +1993,6 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/entityId"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/per_page"
           },
           {
             "$ref": "#/components/parameters/ifNoneMatch"
@@ -2674,15 +2638,6 @@
             "$ref": "#/components/parameters/fields"
           },
           {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/per_page"
-          },
-          {
             "$ref": "#/components/parameters/ifNoneMatch"
           },
           {
@@ -2880,15 +2835,6 @@
           },
           {
             "$ref": "#/components/parameters/fields"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/per_page"
           },
           {
             "$ref": "#/components/parameters/ifNoneMatch"
