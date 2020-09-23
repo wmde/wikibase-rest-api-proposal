@@ -46,7 +46,7 @@
                     "allOf": [
                         {
                             "type": "object",
-                            "properties": { "item": { "$ref": "./payloads.json#/NewItem" } }
+                            "properties": { "item": { "$ref": "./interfaces.json#/NewItem" } }
                         },
                         {
                             "$ref": "./payloads.json#/MediawikiEdit"
@@ -65,7 +65,7 @@
                     "allOf": [
                         {
                             "type": "object",
-                            "properties": { "property": { "$ref": "./payloads.json#/NewProperty" } }
+                            "properties": { "property": { "$ref": "./interfaces.json#/NewProperty" } }
                         },
                         {
                             "$ref": "./payloads.json#/MediawikiEdit"
@@ -84,7 +84,7 @@
                     "allOf": [
                         {
                             "type": "object",
-                            "properties": { "qualifier": { "$ref": "./payloads.json#/NewQualifier" } }
+                            "properties": { "qualifier": { "$ref": "./interfaces.json#/NewQualifier" } }
                         },
                         {
                             "$ref": "./payloads.json#/MediawikiEdit"
@@ -103,7 +103,7 @@
                     "allOf": [
                         {
                             "type": "object",
-                            "properties": { "statement": { "$ref": "./payloads.json#/NewStatement" } }
+                            "properties": { "statement": { "$ref": "./interfaces.json#/NewStatement" } }
                         },
                         {
                             "$ref": "./payloads.json#/MediawikiEdit"
@@ -123,7 +123,7 @@
                         {
                             "type": "object",
                             "properties": {
-                                "reference": { "$ref": "./payloads.json#/NewReference" }
+                                "reference": { "$ref": "./interfaces.json#/NewReference" }
                             }
 
                         },
