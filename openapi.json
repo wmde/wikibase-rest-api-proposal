@@ -438,7 +438,7 @@
           }
         }
       },
-      "EntityDescriptionList": {
+      "EntityDescriptions": {
         "description": "Entity Description by language",
         "headers": {
           "Last-Modified": {
@@ -462,7 +462,7 @@
           }
         }
       },
-      "EntityLabelList": {
+      "EntityLabels": {
         "description": "Entity Label by language",
         "headers": {
           "Last-Modified": {
@@ -1345,7 +1345,7 @@
         "tags": [
           "descriptions"
         ],
-        "summary": "Retrieves an entity's description list",
+        "summary": "Retrieves an entity's descriptions",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1362,7 +1362,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/EntityDescriptionList"
+            "$ref": "#/components/responses/EntityDescriptions"
           },
           "304": {
             "$ref": "#/components/responses/NotModified"
@@ -1385,7 +1385,7 @@
         "tags": [
           "descriptions"
         ],
-        "summary": "Updates an entity's description list",
+        "summary": "Updates an entity's descriptions",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1399,7 +1399,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/EntityDescriptionList"
+            "$ref": "#/components/responses/EntityDescriptions"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -1534,7 +1534,7 @@
         "tags": [
           "labels"
         ],
-        "summary": "Retrieves an entity's labels list",
+        "summary": "Retrieves an entity's labels",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1551,7 +1551,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/EntityLabelList"
+            "$ref": "#/components/responses/EntityLabels"
           },
           "304": {
             "$ref": "#/components/responses/NotModified"
@@ -1568,7 +1568,7 @@
         "tags": [
           "labels"
         ],
-        "summary": "Updates an entity's label list",
+        "summary": "Updates an entity's labels",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1582,7 +1582,7 @@
         },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/EntityLabelList"
+            "$ref": "#/components/responses/EntityLabels"
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
@@ -2935,7 +2935,7 @@
           }
         ],
         "requestBody": {
-          "description": "A Wikibase SnakMap object",
+          "description": "A Wikibase reference",
           "required": true,
           "content": {
             "application/json": {
