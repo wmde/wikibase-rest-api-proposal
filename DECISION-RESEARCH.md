@@ -18,7 +18,20 @@
 
 # Trailblaze (September 2020)
 
-TBA
+## Title / Revision info in response bodies
+
+**Decision:Leave this meta infomation out of the response bodies for the first iteration.**
+
+- `lastrevid` & `modified`
+  - We already get an ETag with the revision ID, and a usable timestamp, that may cover the usage of this meta data
+- `title` & `pageid`
+  - Used to jump from Wikibase entities to titles for use with the MediaWiki core APIs (deletion & protection etc)
+    - Deletion is now provided in our REST API
+    - We could provide further APIs for other functionality such as protection, undeletion etc.
+  - Could be used for linking, but `Special:EntityPage` is also an option there
+- `ns`
+  - Will be easily available via the WikibaseManifest REST API in the future.
+  - The ID itself is probably not that useful anyway
 
 # Prototyping (July 2020)
 
