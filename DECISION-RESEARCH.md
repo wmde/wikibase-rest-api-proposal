@@ -299,7 +299,7 @@ Sources:
 
 ## Resources in Plural vs Singular
 
-**Decision: Plural for everything.**
+**Decision: Plural for everything. For consistency's sake.**
 
 - “Plurals denote collection resources.”
 - “Neither way is right or wrong, go with what you like best.” 
