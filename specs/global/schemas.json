@@ -82,10 +82,7 @@
                 "$ref": "./interfaces.json#/StatementsBearing"
             },
             {
-                "type": "object",
-                "properties": {
-                    "sitelinks": { "$ref": "./interfaces.json#/Sitelinks" }
-                }
+                "$ref": "./interfaces.json#/SitelinkBearing"
             }
         ]
     },
