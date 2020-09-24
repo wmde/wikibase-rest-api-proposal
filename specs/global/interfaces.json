@@ -144,7 +144,7 @@
     "SitelinkBearing": {
         "type": "object",
         "properties": {
-            "sitelinks": { "$ref": "#/SitelinkMap" }
+            "sitelinks": { "$ref": "#/Sitelinks" }
         }
     },
     "SitelinkMap": {
