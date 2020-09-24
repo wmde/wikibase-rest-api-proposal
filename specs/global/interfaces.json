@@ -7,10 +7,6 @@
             },
             "type": {
                 "type": "string"
-            },
-            "modified": {
-                "type": "string",
-                "format": "date-time"
             }
         },
 		"required": [
