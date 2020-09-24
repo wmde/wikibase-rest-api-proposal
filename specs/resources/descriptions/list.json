@@ -1,7 +1,7 @@
 {
     "get": {
         "tags": [ "descriptions" ],
-        "summary": "Retrieves an entity's description list",
+        "summary": "Retrieves an entity's descriptions",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" },
@@ -9,7 +9,7 @@
             { "$ref": "../../global/parameters.json#/ifModifiedSince" }
         ],
         "responses": {
-            "200": { "$ref": "../../global/responses.json#/EntityDescriptionList" },
+            "200": { "$ref": "../../global/responses.json#/EntityDescriptions" },
             "304": { "$ref": "../../global/responses.json#/NotModified" },
             "404": { "$ref": "../../global/responses.json#/NotFound" },
             "501": { "$ref": "../../global/responses.json#/UnauthenticatedError" },
@@ -19,14 +19,14 @@
     },
     "patch": {
         "tags": [ "descriptions" ],
-        "summary": "Updates an entity's description list",
+        "summary": "Updates an entity's descriptions",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" }
         ],
         "requestBody": { "$ref": "../../global/requests.json#/PatchList" },
         "responses": {
-            "200": { "$ref": "../../global/responses.json#/EntityDescriptionList" },
+            "200": { "$ref": "../../global/responses.json#/EntityDescriptions" },
             "404": { "$ref": "../../global/responses.json#/NotFound" },
             "501": { "$ref": "../../global/responses.json#/UnauthenticatedError" },
             "503": { "$ref": "../../global/responses.json#/UnauthorizedError" },

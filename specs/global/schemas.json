@@ -84,7 +84,7 @@
             {
                 "type": "object",
                 "properties": {
-                    "sitelinks": { "$ref": "./interfaces.json#/SitelinkMap" }
+                    "sitelinks": { "$ref": "./interfaces.json#/Sitelinks" }
                 }
             }
         ]
@@ -154,7 +154,7 @@
                 "type": "string"
             },
             "qualifiers": {
-                "$ref": "./interfaces.json#/HashedSnakMap"
+                "$ref": "./interfaces.json#/HashedSnaks"
             },
             "qualifiers-order": {
                 "type": "array",
@@ -181,7 +181,7 @@
                 "type": "object",
                 "properties": {
                     "snaks": {
-                        "$ref": "./interfaces.json#/SnakMap"
+                        "$ref": "./interfaces.json#/Snaks"
                     },
                     "snaks-order": {
                         "type": "array",
