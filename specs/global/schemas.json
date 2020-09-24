@@ -157,20 +157,7 @@
     "Reference": {
         "allOf": [
             { "$ref": "./interfaces.json#/HashBearing"},
-            {
-                "type": "object",
-                "properties": {
-                    "snaks": {
-                        "$ref": "./interfaces.json#/Snaks"
-                    },
-                    "snaks-order": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
+            { "$ref": "./interfaces.json#/NewReference"}
         ]
     } 
 }
