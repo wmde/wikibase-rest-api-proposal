@@ -90,7 +90,7 @@ Next page, client finds the minimum created date of 2018-01-20T00:00:00 from pre
 
 ## Filtering rows
 
-**Status Quo: This fell out of the SCOPE of the spec, thus no decision was really made.**
+**Status Quo: This fell out of the [SCOPE](./SCOPE.md) of the spec, thus no decision was really made.**
 
 ### Research intro
 
