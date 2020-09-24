@@ -38,9 +38,7 @@ It's likely that badges, or some way of retrieving lists of entities would be in
 
 ### Response links
 
-Many REST APIs link to endpoints around them.
-The Mediawiki core team suggested that they may also want to do this.
-It is likley that we will investigate this in the future, but for this this falls out of scope for the initial spec.
+Many REST APIs link to endpoints around them. Unfortunately, for the time being, this kind of linking falls out of scope for the initial specification of this API. However, we do intend to investigate this topic for future iterations of this spec, in accordance with recommendations from the Mediawiki Core Platform Team.
 
 ### UI focused modules
 
