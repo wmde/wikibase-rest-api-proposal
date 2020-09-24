@@ -8,7 +8,8 @@ import spec from '../specs/openapi.json';
 const ui = SwaggerUI({
     spec,
     dom_id: '#swagger',
-    deepLinking: true
+    deepLinking: true,
+    defaultModelRendering: "model"
 });
 
 ui.initOAuth({
