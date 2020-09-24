@@ -74,16 +74,6 @@
         "items": { "$ref": "#/MediawikiEditTag" }
     },
     "MediawikiEditTag": { "type": "string" },
-    "NewProperty": {
-        "allOf": [
-            {
-                "$ref": "#/Fingerprintable"
-            },
-            {
-                "$ref": "#/StatementsBearing"
-            }
-        ]
-    },
     "NewItem": {
         "allOf": [
             {
@@ -93,10 +83,17 @@
                 "$ref": "#/StatementsBearing"
             },
             {
-                "type": "object",
-                "properties": {
-                    "sitelinks": { "$ref": "#/SitelinkMap" }
-                }
+                "$ref": "#/SitelinkBearing"
+            }
+        ]
+    },
+    "NewProperty": {
+        "allOf": [
+            {
+                "$ref": "#/Fingerprintable"
+            },
+            {
+                "$ref": "#/StatementsBearing"
             }
         ]
     },
@@ -142,6 +139,12 @@
             "references": {
                 "$ref": "#/NewReferences"
             }
+        }
+    },
+    "SitelinkBearing": {
+        "type": "object",
+        "properties": {
+            "sitelinks": { "$ref": "#/SitelinkMap" }
         }
     },
     "SitelinkMap": {
