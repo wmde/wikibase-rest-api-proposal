@@ -129,31 +129,24 @@
         "$ref": "./interfaces.json#/Snak"
     },
     "Statement": {
-        "type": "object",
-        "properties": {
-            "mainsnak" : {
-                "$ref": "#/Snak"
-            },
-            "id": {
-                "type": "string"
-            },
-            "rank": {
-                "type": "string"
-            },
-            "qualifiers": {
-                "$ref": "./interfaces.json#/HashedSnaks"
-            },
-            "qualifiers-order": {
-                "type": "array",
-                "items": {
-                    "type": "string"
+        "allOf": [
+            { "$ref": "./interfaces.json#/NewStatement" },
+            {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "qualifiers": {
+                        "$ref": "./interfaces.json#/HashedSnaks"
+                    },
+                    "references": {
+                        "type": "array",
+                        "items": { "$ref": "./schemas.json#/Reference" }
+                    }
                 }
-            },
-            "references": {
-                "type": "array",
-                "items": { "$ref": "./schemas.json#/Reference" }
             }
-        }
+        ]
     },
     "Qualifier": {
         "allOf": [
