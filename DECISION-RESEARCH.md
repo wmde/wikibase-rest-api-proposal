@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Trailblaze (September 2020)](#trailblaze-september-2020)
+- [Prototyping (July 2020)](#prototyping-july-2020)
+  - [/entity/item/Q42 vs /entity/Q42](#entityitemq42-vs-entityq42)
+  - [Consistent "default edit parameters"](#consistent-default-edit-parameters)
+  - [Pagination](#pagination)
+  - [Filtering rows](#filtering-rows)
+  - [Updating resources](#updating-resources)
+  - [Entities + Statements](#entities--statements)
+  - [RevisionIds (Path? Query?)](#revisionids-path-query)
+  - [Conditional Requests](#conditional-requests)
+  - [Resources in Plural vs Singular](#resources-in-plural-vs-singular)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Trailblaze (September 2020)
 
 TBA
