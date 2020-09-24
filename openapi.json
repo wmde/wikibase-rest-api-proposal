@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://www.wikidata.org/w/rest.php/wikibase/v0"
+      "url": "https://not-yet-implemented.wikidata.org/w/rest.php/wikibase/v0"
     }
   ],
   "components": {
