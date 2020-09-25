@@ -32,7 +32,7 @@ Investigations will be carried out to determine if such functionality may make s
 
 A `wbmergeitems` and `wbcreateredirect` equivalent have not been included in the specification.
 
-These would be included in the final spec.
+These will be investigated in the future and the funcionality will likely be implemented, but perhaps not in a directly comparable way.
 
 ### Badges
 
