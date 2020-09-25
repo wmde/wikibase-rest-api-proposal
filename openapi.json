@@ -653,7 +653,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/Statement/properties/qualifiers"
+              "$ref": "#/components/schemas/Statement/allOf/1/properties/qualifiers"
             }
           }
         }
@@ -914,50 +914,78 @@
         }
       },
       "Statement": {
-        "type": "object",
-        "properties": {
-          "mainsnak": {
-            "$ref": "#/components/schemas/Snak"
-          },
-          "id": {
-            "type": "string"
-          },
-          "rank": {
-            "type": "string"
-          },
-          "qualifiers": {
+        "allOf": [
+          {
             "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "allOf": [
-                  {
+            "properties": {
+              "mainsnak": {
+                "$ref": "#/components/schemas/Snak"
+              },
+              "rank": {
+                "type": "string"
+              },
+              "qualifiers": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "array",
+                  "items": {
                     "$ref": "#/components/schemas/Snak"
-                  },
-                  {
-                    "$ref": "#/components/schemas/Reference/allOf/0"
                   }
-                ]
+                },
+                "example": {
+                  "P31": [],
+                  "P100": []
+                }
+              },
+              "qualifiers-order": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "references": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Reference/allOf/1"
+                }
               }
-            },
-            "example": {
-              "P31": [],
-              "P100": []
             }
           },
-          "qualifiers-order": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "references": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Reference"
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "qualifiers": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "array",
+                  "items": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Snak"
+                      },
+                      {
+                        "$ref": "#/components/schemas/Reference/allOf/0"
+                      }
+                    ]
+                  }
+                },
+                "example": {
+                  "P31": [],
+                  "P100": []
+                }
+              },
+              "references": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Reference"
+                }
+              }
             }
           }
-        }
+        ]
       },
       "Qualifier": {
         "allOf": [
@@ -985,17 +1013,7 @@
             "type": "object",
             "properties": {
               "snaks": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Snak"
-                  }
-                },
-                "example": {
-                  "P31": [],
-                  "P100": []
-                }
+                "$ref": "#/paths/~1statements~1%7Bstatement_id%7D/put/requestBody/content/application~1json/schema/allOf/0/properties/statement/properties/qualifiers"
               },
               "snaks-order": {
                 "type": "array",
@@ -1842,12 +1860,7 @@
                             "$ref": "#/components/schemas/Item/allOf/2"
                           },
                           {
-                            "type": "object",
-                            "properties": {
-                              "sitelinks": {
-                                "$ref": "#/components/responses/SitelinkList/content/application~1json/schema"
-                              }
-                            }
+                            "$ref": "#/components/schemas/Item/allOf/3"
                           }
                         ]
                       }
@@ -2562,30 +2575,7 @@
                     "type": "object",
                     "properties": {
                       "statement": {
-                        "type": "object",
-                        "properties": {
-                          "mainsnak": {
-                            "$ref": "#/components/schemas/Snak"
-                          },
-                          "rank": {
-                            "type": "string"
-                          },
-                          "qualifiers": {
-                            "$ref": "#/components/schemas/Reference/allOf/1/properties/snaks"
-                          },
-                          "qualifiers-order": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "references": {
-                            "type": "array",
-                            "items": {
-                              "$ref": "#/paths/~1statements~1%7Bstatement_id%7D~1references/post/requestBody/content/application~1json/schema/allOf/0/properties/reference"
-                            }
-                          }
-                        }
+                        "$ref": "#/components/schemas/Statement/allOf/0"
                       }
                     }
                   },
@@ -2935,18 +2925,7 @@
                     "type": "object",
                     "properties": {
                       "reference": {
-                        "type": "object",
-                        "properties": {
-                          "snaks": {
-                            "$ref": "#/components/schemas/Reference/allOf/1/properties/snaks"
-                          },
-                          "snaks-order": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          }
-                        }
+                        "$ref": "#/components/schemas/Reference/allOf/1"
                       }
                     }
                   },
