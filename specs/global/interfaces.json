@@ -147,7 +147,7 @@
             "sitelinks": { "$ref": "#/Sitelinks" }
         }
     },
-    "SitelinkMap": {
+    "Sitelinks": {
         "type": "object",
         "additionalProperties": {
             "$ref": "./schemas.json#/Sitelink"
