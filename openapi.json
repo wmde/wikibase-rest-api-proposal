@@ -106,7 +106,9 @@
         "description": "Single qualifier by hash",
         "required": true,
         "schema": {
-          "$ref": "#/components/schemas/QualifierHash"
+          "description": "Hash of a qualifier",
+          "type": "string",
+          "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
         }
       },
       "referenceHash": {
@@ -115,7 +117,9 @@
         "description": "Single reference by hash",
         "required": true,
         "schema": {
-          "$ref": "#/components/schemas/ReferenceHash"
+          "description": "Hash of a reference",
+          "type": "string",
+          "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
         }
       },
       "statementId": {
@@ -887,16 +891,6 @@
           "value"
         ]
       },
-      "QualifierHash": {
-        "description": "Hash of a qualifier",
-        "type": "string",
-        "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
-      },
-      "ReferenceHash": {
-        "description": "Hash of a reference",
-        "type": "string",
-        "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
-      },
       "Snak": {
         "type": "object",
         "properties": {
@@ -941,7 +935,7 @@
                     "$ref": "#/components/schemas/Snak"
                   },
                   {
-                    "$ref": "#/components/schemas/Qualifier/allOf/0"
+                    "$ref": "#/components/schemas/Reference/allOf/0"
                   }
                 ]
               }
@@ -968,14 +962,7 @@
       "Qualifier": {
         "allOf": [
           {
-            "type": "object",
-            "properties": {
-              "hash": {
-                "description": "Hash of a snak",
-                "type": "string",
-                "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
-              }
-            }
+            "$ref": "#/components/schemas/Reference/allOf/0"
           },
           {
             "$ref": "#/components/schemas/Snak"
@@ -985,7 +972,14 @@
       "Reference": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/Qualifier/allOf/0"
+            "type": "object",
+            "properties": {
+              "hash": {
+                "description": "Hash of a snak",
+                "type": "string",
+                "example": "455481eeac76e6a8af71a6b493c073d54788e7e9"
+              }
+            }
           },
           {
             "type": "object",
