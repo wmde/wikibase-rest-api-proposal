@@ -279,10 +279,10 @@ Mediawiki core REST API only has revisionid when looking specifically at revisio
 
 ## Conditional Requests
 
-**Decision: We will implement conditional requests for gets.**
+**Decision: We will initialy implement conditional requests for gets (consistent with MediaWiki core). We are undecided around conditional requests for edits and for now and have aligned with MediaWiki core not using headers for edit requests, instead returning a revision id in the payload.**
 
 - TL;DR use HTTP spec to prevent the “lost update problem”
-- MediaWiki core REST API makes use of conditional requests
+- MediaWiki core REST API makes use of conditional requests for gets.
 - ETag + HTTP 409 CONFLICT
 - Preconditions in headers
   - If-Match
