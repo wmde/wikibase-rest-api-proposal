@@ -28,6 +28,12 @@ A `wbsearchentities` equivalent has not been included in the specification.
 
 Investigations will be carried out to determine if such functionality may make sense to be included as part of the primary entity retrieval / listing endpoint, or if search and lookup should remain a separate topic.
 
+### Merging Items & Redirects
+
+A `wbmergeitems` and `wbcreateredirect` equivalent have not been included in the specification.
+
+These will be investigated in the future and the funcionality will likely be implemented, but perhaps not in a directly comparable way.
+
 ### Badges
 
 A `wbavailablebadges` equivalent has not been included in the specification.
