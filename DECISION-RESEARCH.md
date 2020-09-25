@@ -13,6 +13,7 @@
   - [RevisionIds (Path? Query?)](#revisionids-path-query)
   - [Conditional Requests](#conditional-requests)
   - [Resources in Plural vs Singular](#resources-in-plural-vs-singular)
+  - [Indexed collections](#indexed-collections)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -313,3 +314,9 @@ Sources:
 - https://restfulapi.net/rest-api-design-tutorial-with-example/
 - https://restapitutorial.com/lessons/restquicktips.html
 - https://stackoverflow.com/questions/6845772/rest-uri-convention-singular-or-plural-name-of-resource-while-creating-it/6846057#6846057
+
+## Indexed collections
+
+In the wikibase action API, e.g. `wbgetentities`, the returned entity collection is structured as a map, indexed by entity ids. This can speed up retrieval of specific, known entities.
+
+We considered this behavior for this API entity collection end points as well. However, the argument was brought forward that this could conflict with the need of ordered results on these end points (see [Filtering rows](#filtering-rows)). We deferred further discussions at this point with a note that requests for specific entities best should be performed against the individual resource, with a reference to the possibility to mitigate possibly resulting performance concerns (a notorious reason to group requests against certain know entities into one request) [on other layers](https://developers.google.com/web/fundamentals/performance/http2#request_and_response_multiplexing).
