@@ -88,7 +88,7 @@
         "description": "Single qualifier by hash",
         "required": true,
         "schema": {
-            "$ref": "./schemas.json#/QualifierHash"
+            "$ref": "./interfaces.json#/QualifierHash"
         }
     },
     "referenceHash": {
@@ -97,7 +97,7 @@
         "description": "Single reference by hash",
         "required": true,
         "schema": {
-            "$ref": "./schemas.json#/ReferenceHash"
+            "$ref": "./interfaces.json#/ReferenceHash"
         }
     },
     "statementId": {
