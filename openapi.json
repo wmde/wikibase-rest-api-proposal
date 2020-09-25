@@ -1878,9 +1878,6 @@
           "200": {
             "$ref": "#/components/responses/Item"
           },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
           "501": {
             "$ref": "#/components/responses/UnauthenticatedError"
           },
@@ -2295,9 +2292,6 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/Property"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
           },
           "501": {
             "$ref": "#/components/responses/UnauthenticatedError"
