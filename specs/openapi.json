@@ -3,7 +3,7 @@
     "info": {
         "title":"Wikibase REST API Proposal",
         "version":"1.0",
-        "description": "<p>This is a proposal for the structure of the future Wikibase REST API.</p><h2>Authentication</h2><p>Authentication is optional for all paths but individual resources may require it (e.g. particular items).</p>"
+        "description": "<p>This is a proposal for the structure of the future Wikibase REST API.</p><h2>Authentication</h2><p>Authentication is optional for all paths but individual resources may require it (e.g. particular Items).</p>"
     },
     "servers": [
         { "url":"https://not-yet-implemented.wikidata.org/w/rest.php/wikibase/v0" }
