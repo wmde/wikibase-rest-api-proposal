@@ -31,13 +31,13 @@ Example: `entities/items/<id>/statements/<id>/qualifiers/<hash>`
 
 ### PATCH
 
-In addition to the Mediawiki core principles we will also use `PATCH`.
+In addition to the MediaWiki core principles we will also use `PATCH`.
 
 `PATCH` operations will make use of [JSON-Patch (RFC6902)](https://tools.ietf.org/html/rfc6902) which defines a structure for expressing a sequence of operations to apply to JSON objects.
 
 ## Headers
 
-In addition to the Mediawiki core principles , the Wikibase API also supports headers for [conditional requests](https://www.mediawiki.org/wiki/API:REST_API/Conditional_requests) to optimize client side caching.
+In addition to the MediaWiki core principles , the Wikibase API also supports headers for [conditional requests](https://www.mediawiki.org/wiki/API:REST_API/Conditional_requests) to optimize client side caching.
 
 ## Response bodies upon changes
 
