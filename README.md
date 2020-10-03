@@ -4,11 +4,11 @@ Prototype schema for the future Wikibase REST API.
 
 The schema can be previewed at https://wmde.github.io/wikibase-rest-api-proposal
 
-The specification follows some [general API design principles](PRINCIPLES.md). Some existing Wikibase APIs have not been included in purpose. You can read more in the [scope document](SCOPE.md).
+The specification follows some [general API design principles](PRINCIPLES.md). Some existing Wikibase APIs have not been included on purpose. You can read more in the [scope document](SCOPE.md).
 
 ## Development
 
-This project is using a Javascript tool chain to build an openapi specification and a user interface to show it.
+This project is using a Javascript tool chain to build an OpenAPI specification and a user interface to show it.
 
 ### Prerequisites
 
