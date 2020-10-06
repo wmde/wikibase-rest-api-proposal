@@ -29,7 +29,7 @@
       "entityId": {
         "in": "path",
         "name": "entity_id",
-        "description": "The id of the required item or property",
+        "description": "The id of the required Item or Property",
         "required": true,
         "schema": {
           "type": "string",
@@ -103,7 +103,7 @@
       "qualifierHash": {
         "in": "path",
         "name": "qualifier_hash",
-        "description": "Single qualifier by hash",
+        "description": "Single Qualifier by hash",
         "required": true,
         "schema": {
           "description": "Hash of a qualifier",
@@ -125,7 +125,7 @@
       "statementId": {
         "in": "path",
         "name": "statement_id",
-        "description": "The id of the required statement",
+        "description": "The id of the required Statement",
         "required": true,
         "schema": {
           "type": "string",
@@ -136,7 +136,7 @@
       "wikiId": {
         "name": "wiki_id",
         "in": "path",
-        "description": "The id of the wiki that the sitelink directs to",
+        "description": "The id of the wiki that the Sitelink directs to",
         "required": true,
         "schema": {
           "type": "string"
