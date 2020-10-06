@@ -322,7 +322,7 @@
         }
     },
     "Statement": {
-        "description": "A single Wikibase statement",
+        "description": "A single Wikibase Statement",
         "headers": {
             "Last-Modified": {
                 "schema": {
