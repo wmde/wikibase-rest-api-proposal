@@ -21,7 +21,7 @@
     },
     "post": {
         "tags": ["statements"],
-        "summary": "Add a new Statement to an entity (Item | Property)",
+        "summary": "Add a new Statement to an entity",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" }
