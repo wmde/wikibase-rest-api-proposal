@@ -2756,7 +2756,7 @@
         "tags": [
           "qualifiers"
         ],
-        "summary": "Single qualifier by hash",
+        "summary": "Single Qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifierHash}`",
         "parameters": [
           {
@@ -2794,7 +2794,7 @@
         "tags": [
           "qualifiers"
         ],
-        "summary": "Update a qualifier",
+        "summary": "Update a Qualifier",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifierHash}`",
         "parameters": [
           {
@@ -2829,7 +2829,7 @@
         "tags": [
           "qualifiers"
         ],
-        "summary": "Single qualifier by hash",
+        "summary": "Single Qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifier_hash}`",
         "parameters": [
           {
