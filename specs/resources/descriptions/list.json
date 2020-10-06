@@ -1,7 +1,7 @@
 {
     "get": {
         "tags": [ "descriptions" ],
-        "summary": "Retrieves an entity's descriptions",
+        "summary": "Retrieve an entity's descriptions",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" },
@@ -19,7 +19,7 @@
     },
     "patch": {
         "tags": [ "descriptions" ],
-        "summary": "Updates an entity's descriptions",
+        "summary": "Update an entity's descriptions",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" }
