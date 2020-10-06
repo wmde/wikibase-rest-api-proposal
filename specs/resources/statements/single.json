@@ -1,7 +1,7 @@
 {
     "get": {
         "tags": [ "statements" ],
-        "summary": "Retrieves a single Statement from an entity (items | properties)",
+        "summary": "Retrieves a single Statement from an entity",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}`",
         "parameters": [
             { "$ref": "../../global/parameters.json#/statementId" },
@@ -48,7 +48,7 @@
     },
     "delete": {
         "tags": [ "statements" ],
-        "summary": "Single statement from an entity (items | properties)",
+        "summary": "Single statement from an entity",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}`",
         "parameters": [
             { "$ref": "../../global/parameters.json#/statementId" }
