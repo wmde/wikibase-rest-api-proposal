@@ -283,7 +283,7 @@
         }
       },
       "Item": {
-        "description": "A single wikibase item",
+        "description": "A single Wikibase Item",
         "headers": {
           "Last-Modified": {
             "schema": {
@@ -325,7 +325,7 @@
         }
       },
       "ItemList": {
-        "description": "A list of wikibase items",
+        "description": "A list of Wikibase Items",
         "content": {
           "application/json": {
             "schema": {
@@ -556,7 +556,7 @@
         }
       },
       "Statement": {
-        "description": "A single wikibase statement",
+        "description": "A single Wikibase Statement",
         "headers": {
           "Last-Modified": {
             "schema": {
@@ -580,7 +580,7 @@
         }
       },
       "StatementList": {
-        "description": "A list of wikibase statements",
+        "description": "A list of Wikibase Statements",
         "headers": {
           "Last-Modified": {
             "schema": {
