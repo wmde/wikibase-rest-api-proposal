@@ -2039,7 +2039,7 @@
         "tags": [
           "sitelinks"
         ],
-        "summary": "Retrieves an item's sitelinks",
+        "summary": "Retrieves an Item's sitelinks",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityId"
@@ -2070,7 +2070,7 @@
         "tags": [
           "sitelinks"
         ],
-        "summary": "Creates an item's sitelink",
+        "summary": "Creates an Item's sitelink",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityId"
