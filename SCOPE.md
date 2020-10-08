@@ -46,11 +46,14 @@ It's likely that badges, or some way of retrieving lists of entities would be in
 
 Many REST APIs link to endpoints around them. Unfortunately, for the time being, this kind of linking falls out of scope for the initial specification of this API. However, we do intend to investigate this topic for future iterations of this spec, in accordance with recommendations from the Mediawiki Core Platform Team.
 
+### wbformatentities
+
+A `wbformatentities` equivalent has not been included in the specification.
+
 ### UI focused modules
 
 The existing modules serve mainly as part of the Wikibase UI editing and display workflow and are not deemed to be used much externally.
 
-- `wbformatentities`
 - `wbformatvalue`
 - `wbparsevalue`
 
