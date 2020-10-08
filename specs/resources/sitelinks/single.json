@@ -33,7 +33,7 @@
     },
     "delete": {
         "tags": [ "sitelinks" ],
-        "summary": "Item's sitelink by wiki-id",
+        "summary": "Delete an Item's sitelink by wiki-id",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityId" },
             { "$ref": "../../global/parameters.json#/wikiId" }

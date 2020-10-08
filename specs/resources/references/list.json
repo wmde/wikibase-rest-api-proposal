@@ -1,7 +1,7 @@
 {
     "get": {
         "tags": [ "references" ],
-        "summary": "Lists references for a Statement",
+        "summary": "Retrieve references for a Statement",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references`",
         "parameters": [
             { "$ref": "../../global/parameters.json#/statementId" },

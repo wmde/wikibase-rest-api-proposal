@@ -1,7 +1,7 @@
 {
     "get": {
         "tags": [ "properties" ],
-        "summary": "Single Property",
+        "summary": "Retrieve a single Property by Id",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityId" },
             { "$ref": "../../global/parameters.json#/fields" },

@@ -1,7 +1,7 @@
 {
     "get": {
         "tags": [ "sitelinks" ],
-        "summary": "Retrieves an Item's sitelinks",
+        "summary": "Retrieve an Item's sitelinks",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityId" },
             { "$ref": "../../global/parameters.json#/ifNoneMatch" },
@@ -16,7 +16,7 @@
     },
     "post": {
         "tags": [ "sitelinks" ],
-        "summary": "Creates an Item's sitelink",
+        "summary": "Add a new Sitelink to an Item",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityId" }
         ],

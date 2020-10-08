@@ -1,7 +1,7 @@
 {
     "get": {
         "tags": [ "items" ],
-        "summary": "Single Wikibase Item by Id",
+        "summary": "Retrieve a single Wikibase Item by Id",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityId" },
             { "$ref": "../../global/parameters.json#/fields" },

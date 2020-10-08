@@ -1,7 +1,7 @@
 {
     "get": {
         "tags": [ "references" ],
-        "summary": "Single reference by hash",
+        "summary": "Retrieve a single reference by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
             { "$ref": "../../global/parameters.json#/statementId" },
@@ -19,7 +19,7 @@
     },
     "post": {
         "tags": ["references"],
-        "summary": "Update a reference",
+        "summary": "Update a reference  by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
             { "$ref": "../../global/parameters.json#/statementId" },
@@ -36,7 +36,7 @@
     },
     "delete": {
         "tags": [ "references" ],
-        "summary": "Single reference by hash",
+        "summary": "Delete a single reference by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
             { "$ref": "../../global/parameters.json#/statementId" },

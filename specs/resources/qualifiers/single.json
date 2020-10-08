@@ -1,7 +1,7 @@
 {
     "get": {
         "tags": [ "qualifiers" ],
-        "summary": "Single Qualifier by hash",
+        "summary": "Retrieve a single Qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifierHash}`",
         "parameters": [
             { "$ref": "../../global/parameters.json#/statementId" },
@@ -19,7 +19,7 @@
     },
     "post": {
         "tags": ["qualifiers"],
-        "summary": "Update a Qualifier",
+        "summary": "Update a Qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifierHash}`",
         "parameters": [
             { "$ref": "../../global/parameters.json#/statementId" },
@@ -36,7 +36,7 @@
     },
     "delete": {
         "tags": [ "qualifiers" ],
-        "summary": "Single Qualifier by hash",
+        "summary": "Delete a single Qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifier_hash}`",
         "parameters": [
             { "$ref": "../../global/parameters.json#/statementId" },
