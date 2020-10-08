@@ -1113,7 +1113,7 @@
         "tags": [
           "aliases"
         ],
-        "summary": "Retrieves an entity's alias lists",
+        "summary": "Retrieve an entity's alias lists",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1147,7 +1147,7 @@
         "tags": [
           "aliases"
         ],
-        "summary": "Updates an entity's alias lists",
+        "summary": "Update an entity's alias lists",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1183,7 +1183,7 @@
         "tags": [
           "aliases"
         ],
-        "summary": "Retrieves an entity's alias list by language",
+        "summary": "Retrieve an entity's alias list by language",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1277,7 +1277,7 @@
         "tags": [
           "aliases"
         ],
-        "summary": "Updates an entity's alias list by language",
+        "summary": "Update an entity's alias list by language",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1314,7 +1314,7 @@
         "tags": [
           "aliases"
         ],
-        "summary": "Deletes an entity's alias list by language",
+        "summary": "Delete an entity's alias list by language",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1353,7 +1353,7 @@
         "tags": [
           "descriptions"
         ],
-        "summary": "Retrieves an entity's descriptions",
+        "summary": "Retrieve an entity's descriptions",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1393,7 +1393,7 @@
         "tags": [
           "descriptions"
         ],
-        "summary": "Updates an entity's descriptions",
+        "summary": "Update an entity's descriptions",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1429,7 +1429,7 @@
         "tags": [
           "descriptions"
         ],
-        "summary": "Retrieves an entity's description by language",
+        "summary": "Retrieve an entity's description by language",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1503,7 +1503,7 @@
         "tags": [
           "descriptions"
         ],
-        "summary": "Deletes an entity's description by language",
+        "summary": "Delete an entity's description by language",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1542,7 +1542,7 @@
         "tags": [
           "labels"
         ],
-        "summary": "Retrieves an entity's labels",
+        "summary": "Retrieve an entity's labels",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1576,7 +1576,7 @@
         "tags": [
           "labels"
         ],
-        "summary": "Updates an entity's labels",
+        "summary": "Update an entity's labels",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1773,7 +1773,7 @@
         "tags": [
           "statements"
         ],
-        "summary": "Add a new Statement to an entity (Item | Property)",
+        "summary": "Add a new Statement to an entity",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1892,7 +1892,7 @@
         "tags": [
           "items"
         ],
-        "summary": "Single Wikibase Item by Id",
+        "summary": "Retrieve a single Wikibase Item by Id",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityId"
@@ -2036,7 +2036,7 @@
         "tags": [
           "sitelinks"
         ],
-        "summary": "Retrieves an Item's sitelinks",
+        "summary": "Retrieve an Item's sitelinks",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityId"
@@ -2067,7 +2067,7 @@
         "tags": [
           "sitelinks"
         ],
-        "summary": "Creates an Item's sitelink",
+        "summary": "Add a new Sitelink to an Item",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityId"
@@ -2188,7 +2188,7 @@
         "tags": [
           "sitelinks"
         ],
-        "summary": "Item's sitelink by wiki-id",
+        "summary": "Delete an Item's sitelink by wiki-id",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityId"
@@ -2304,7 +2304,7 @@
         "tags": [
           "properties"
         ],
-        "summary": "Single Property",
+        "summary": "Retrieve a single Property by Id",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityId"
@@ -2433,7 +2433,7 @@
         "tags": [
           "statements"
         ],
-        "summary": "Retrieves a single Statement from an entity",
+        "summary": "Retrieve a single Statement from an entity",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}`",
         "parameters": [
           {
@@ -2468,7 +2468,7 @@
         "tags": [
           "statements"
         ],
-        "summary": "Updates a Wikibase Statement by Id",
+        "summary": "Update a Wikibase Statement by Id",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}`",
         "parameters": [
           {
@@ -2547,7 +2547,7 @@
         "tags": [
           "statements"
         ],
-        "summary": "Replaces a Wikibase Statement by Id",
+        "summary": "Replace a Wikibase Statement by Id",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}`",
         "parameters": [
           {
@@ -2599,7 +2599,7 @@
         "tags": [
           "statements"
         ],
-        "summary": "Deletes a single Statement from an entity",
+        "summary": "Delete a single Statement from an entity",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}`",
         "parameters": [
           {
@@ -2663,7 +2663,7 @@
         "tags": [
           "qualifiers"
         ],
-        "summary": "Lists qualifiers for a Statement",
+        "summary": "Retrieve Qualifiers for a Statement",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers`",
         "parameters": [
           {
@@ -2752,7 +2752,7 @@
         "tags": [
           "qualifiers"
         ],
-        "summary": "Single Qualifier by hash",
+        "summary": "Retrieve a single Qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifierHash}`",
         "parameters": [
           {
@@ -2790,7 +2790,7 @@
         "tags": [
           "qualifiers"
         ],
-        "summary": "Update a Qualifier",
+        "summary": "Update a Qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifierHash}`",
         "parameters": [
           {
@@ -2825,7 +2825,7 @@
         "tags": [
           "qualifiers"
         ],
-        "summary": "Single Qualifier by hash",
+        "summary": "Delete a single Qualifier by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/qualifiers/{qualifier_hash}`",
         "parameters": [
           {
@@ -2862,7 +2862,7 @@
         "tags": [
           "references"
         ],
-        "summary": "Lists references for a Statement",
+        "summary": "Retrieve references for a Statement",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references`",
         "parameters": [
           {
@@ -2951,7 +2951,7 @@
         "tags": [
           "references"
         ],
-        "summary": "Single reference by hash",
+        "summary": "Retrieve a single reference by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
           {
@@ -2989,7 +2989,7 @@
         "tags": [
           "references"
         ],
-        "summary": "Update a reference",
+        "summary": "Update a reference  by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
           {
@@ -3024,7 +3024,7 @@
         "tags": [
           "references"
         ],
-        "summary": "Single reference by hash",
+        "summary": "Delete a single reference by hash",
         "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}/references/{reference_hash}`",
         "parameters": [
           {
