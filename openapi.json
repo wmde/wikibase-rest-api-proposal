@@ -1828,9 +1828,6 @@
           "200": {
             "$ref": "#/components/responses/ItemList"
           },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
-          },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
           }
@@ -2245,9 +2242,6 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/PropertyList"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFound"
           },
           "default": {
             "$ref": "#/components/responses/UnexpectedError"
