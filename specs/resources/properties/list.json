@@ -10,7 +10,6 @@
         ],
         "responses": {
             "200": { "$ref": "../../global/responses.json#/PropertyList" },
-            "404": { "$ref": "../../global/responses.json#/NotFound" },
             "default": { "$ref": "../../global/responses.json#/UnexpectedError" }
         }
     },
