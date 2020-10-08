@@ -2469,6 +2469,7 @@
           "statements"
         ],
         "summary": "Updates a Wikibase Statement by Id",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
@@ -2547,6 +2548,7 @@
           "statements"
         ],
         "summary": "Replaces a Wikibase Statement by Id",
+        "description": "This endpoint is also accessible through `/entities/{entity_type}/{entity_id}/statements/{statement_id}`",
         "parameters": [
           {
             "$ref": "#/components/parameters/statementId"
