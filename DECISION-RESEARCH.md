@@ -38,9 +38,15 @@
 
 Research and decision record from the July 2020 prototyping week.
 
-## /entity/item/Q42 vs /entity/Q42
+## /entities/items/Q42 vs /entities/Q42
 
-**Decision: /entity/item/Q42 TBA why...**
+**Decision: /entities/items/Q42**
+
+This allows us to:
+
+- Easily separate the payload and response examples and schema for different entity types in the spec.
+- Allow a world in which Entity IDs may not have their entity types coded into them in some way.
+- Allow for clear seperation between entity endpoints and other endpoints (such as statements, badges and anything to come in the future.)
 
 ---
 
