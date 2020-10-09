@@ -21,7 +21,7 @@
   },
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://phabricator.wikimedia.org/tag/wikibase_rest_api_schema/"
+    "url": "https://phabricator.wikimedia.org/tag/feedback_fall_2020/"
   },
   "homepage": "https://github.com/wmde/wikibase-rest-api-proposal#readme",
   "devDependencies": {
