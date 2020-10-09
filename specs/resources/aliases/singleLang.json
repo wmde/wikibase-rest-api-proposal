@@ -1,7 +1,7 @@
 {
     "get": {
         "tags": [ "aliases" ],
-        "summary": "Retrieve an entity's alias list by language",
+        "summary": "Retrieve an entity's aliases for a specific language",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" },
@@ -20,7 +20,7 @@
     },
     "put": {
         "tags": ["aliases"],
-        "summary": "Add / Replace a whole alias list by language",
+        "summary": "Add / Replace an entity's aliases for a specific language",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" },
@@ -37,7 +37,7 @@
     },
     "patch": {
         "tags": [ "aliases" ],
-        "summary": "Update an entity's alias list by language",
+        "summary": "Update an entity's aliases for a specific language",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" },
@@ -54,7 +54,7 @@
     },
     "delete": {
         "tags": [ "aliases" ],
-        "summary": "Delete an entity's alias list by language",
+        "summary": "Delete an entity's aliases for a specific language",
         "parameters": [
             { "$ref": "../../global/parameters.json#/entityType" },
             { "$ref": "../../global/parameters.json#/entityId" },
