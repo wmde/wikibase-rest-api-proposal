@@ -302,6 +302,8 @@ Sources:
 
 **Decision: Plural for everything. For consistency's sake.**
 
+We want to [prevent a dispute](./PRINCIPLES.md#Plurality) where there does not seem to be a "right" or "wrong". A topic into which energy would be better invested is the [linking between resources in responses](./SCOPE.md#response-links) which is related in that it would absolve the clients from "thinking about" and processing the URIs for the most part.
+
 - “Plurals denote collection resources.”
 - “Neither way is right or wrong, go with what you like best.” 
 - MediaWiki core REST API doesn’t appear to use plurals everywhere, `/page/{title}/links/language`
