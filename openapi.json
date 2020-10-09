@@ -1113,7 +1113,7 @@
         "tags": [
           "aliases"
         ],
-        "summary": "Retrieve an entity's alias lists",
+        "summary": "Retrieve an entity's aliases",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1147,7 +1147,7 @@
         "tags": [
           "aliases"
         ],
-        "summary": "Update an entity's alias lists",
+        "summary": "Update an entity's aliases",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1183,7 +1183,7 @@
         "tags": [
           "aliases"
         ],
-        "summary": "Retrieve an entity's alias list by language",
+        "summary": "Retrieve an entity's aliases for a specific language",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1220,7 +1220,7 @@
         "tags": [
           "aliases"
         ],
-        "summary": "Add / Replace a whole alias list by language",
+        "summary": "Add / Replace an entity's aliases for a specific language",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1277,7 +1277,7 @@
         "tags": [
           "aliases"
         ],
-        "summary": "Update an entity's alias list by language",
+        "summary": "Update an entity's aliases for a specific language",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
@@ -1314,7 +1314,7 @@
         "tags": [
           "aliases"
         ],
-        "summary": "Delete an entity's alias list by language",
+        "summary": "Delete an entity's aliases for a specific language",
         "parameters": [
           {
             "$ref": "#/components/parameters/entityType"
