@@ -9,7 +9,7 @@ Any extra or modified principles are included below.
 ## Schedule
 
 - **Existing mass used API functionality before less used features before new functionality.**
-- **Core Wikibase entities before supplementary infomation before extended entities.**
+- **Core Wikibase entities before supplementary information before non-core entities.**
 
 We need to get the basic stuff covered early, and then we can elaborate to more specific activity. Having the base functionality done first is going to get us the most input from developers.
 
