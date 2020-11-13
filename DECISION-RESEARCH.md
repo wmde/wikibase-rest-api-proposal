@@ -210,7 +210,7 @@ Retrieves all the items containing the terms red chair and the price is greater 
 
 ## Updating resources
 
-**Decision: Use PATCH and json-patch **
+**Decision: Use PATCH and json-patch**
 
 ### Patch
 
