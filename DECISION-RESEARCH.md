@@ -299,6 +299,7 @@ Mediawiki core REST API only has revisionid when looking specifically at revisio
 
 Sources:
 
+- https://api.wikimedia.org/wiki/Documentation/Best_practices/Conditional_requests
 - https://dzone.com/articles/concurrency-control-in-rest-api-with-spring-framew
 - https://www.novatec-gmbh.de/en/blog/managing-concurrency-in-a-distributed-restful-environment-with-spring-boot-and-angular2/
 
