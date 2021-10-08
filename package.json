@@ -37,7 +37,7 @@
     "openapi-types": "^7.0.1",
     "style-loader": "^1.2.1",
     "swagger-ui": "^3.34.0",
-    "webpack": "^4.44.2",
+    "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   }
