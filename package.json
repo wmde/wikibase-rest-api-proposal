@@ -38,7 +38,7 @@
     "style-loader": "^1.2.1",
     "swagger-ui": "^3.34.0",
     "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
+    "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^3.11.0"
   }
 }
