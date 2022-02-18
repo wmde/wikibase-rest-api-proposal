@@ -15,7 +15,7 @@
       "fields": {
         "in": "query",
         "name": "_fields",
-        "description": "Comma separated list of fields to include in each response object. See [JSON Data Model](https://www.mediawiki.org/wiki/Wikibase/DataModel/JSON) for field names.",
+        "description": "Comma separated list of fields to include in each response object. See [JSON Data Model](https://doc.wikimedia.org/Wikibase/master/php/md_docs_topics_json.html) for field names.",
         "required": false,
         "style": "form",
         "explode": false,
