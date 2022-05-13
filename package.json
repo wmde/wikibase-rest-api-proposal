@@ -26,7 +26,7 @@
   "homepage": "https://github.com/wmde/wikibase-rest-api-proposal#readme",
   "devDependencies": {
     "@apidevtools/swagger-cli": "^4.0.4",
-    "@apidevtools/swagger-parser": "^10.0.2",
+    "@apidevtools/swagger-parser": "^10.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.1.1",
     "css-loader": "^4.3.0",
